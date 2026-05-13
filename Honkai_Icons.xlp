@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AssetObjects..XLP>
+    <m_Version>
+        <major>1</major>
+        <minor>0</minor>
+        <build>0</build>
+        <revision>0</revision>
+    </m_Version>
+    <m_ClassName text="UITexture"/>
+    <m_PackageName text="UI/Honkai_Icons"/>
+    <m_Entries>
+        <!-- 崩坏指挥终端 专属UI图标 -->
+        <Element>
+            <m_EntryID text="Honkai_Terminal_Icon_38"/>
+            <m_ObjectName text="Honkai_Terminal_Icon_38"/>
+        </Element>
+
+        <!-- 崩坏文明 图标图集 -->
+        <Element>
+            <m_EntryID text="HonkaiCiv_22"/>
+            <m_ObjectName text="HonkaiCiv_22"/>
+        </Element>
+        <Element>
+            <m_EntryID text="HonkaiCiv_30"/>
+            <m_ObjectName text="HonkaiCiv_30"/>
+        </Element>
+        <Element>
+            <m_EntryID text="HonkaiCiv_32"/>
+            <m_ObjectName text="HonkaiCiv_32"/>
+        </Element>
+        <Element>
+            <m_EntryID text="HonkaiCiv_36"/>
+            <m_ObjectName text="HonkaiCiv_36"/>
+        </Element>
+        <Element>
+            <m_EntryID text="HonkaiCiv_44"/>
+            <m_ObjectName text="HonkaiCiv_44"/>
+        </Element>
+        <Element>
+            <m_EntryID text="HonkaiCiv_45"/>
+            <m_ObjectName text="HonkaiCiv_45"/>
+        </Element>
+        <Element>
+            <m_EntryID text="HonkaiCiv_48"/>
+            <m_ObjectName text="HonkaiCiv_48"/>
+        </Element>
+        <Element>
+            <m_EntryID text="HonkaiCiv_50"/>
+            <m_ObjectName text="HonkaiCiv_50"/>
+        </Element>
+        <Element>
+            <m_EntryID text="HonkaiCiv_64"/>
+            <m_ObjectName text="HonkaiCiv_64"/>
+        </Element>
+        <Element>
+            <m_EntryID text="HonkaiCiv_80"/>
+            <m_ObjectName text="HonkaiCiv_80"/>
+        </Element>
+        <Element>
+            <m_EntryID text="HonkaiCiv_128"/>
+            <m_ObjectName text="HonkaiCiv_128"/>
+        </Element>
+        <Element>
+            <m_EntryID text="HonkaiCiv_200"/>
+            <m_ObjectName text="HonkaiCiv_200"/>
+        </Element>
+        <Element>
+            <m_EntryID text="HonkaiCiv_256"/>
+            <m_ObjectName text="HonkaiCiv_256"/>
+        </Element>
+
+        <!-- 空之律者 领袖头像图集 -->
+        <Element>
+            <m_EntryID text="herrscher_of_the_void_head_32"/>
+            <m_ObjectName text="herrscher_of_the_void_head_32"/>
+        </Element>
+        <Element>
+            <m_EntryID text="herrscher_of_the_void_head_45"/>
+            <m_ObjectName text="herrscher_of_the_void_head_45"/>
+        </Element>
+        <Element>
+            <m_EntryID text="herrscher_of_the_void_head_48"/>
+            <m_ObjectName text="herrscher_of_the_void_head_48"/>
+        </Element>
+        <Element>
+            <m_EntryID text="herrscher_of_the_void_head_50"/>
+            <m_ObjectName text="herrscher_of_the_void_head_50"/>
+        </Element>
+        <Element>
+            <m_EntryID text="herrscher_of_the_void_head_55"/>
+            <m_ObjectName text="herrscher_of_the_void_head_55"/>
+        </Element>
+        <Element>
+            <m_EntryID text="herrscher_of_the_void_head_64"/>
+            <m_ObjectName text="herrscher_of_the_void_head_64"/>
+        </Element>
+        <Element>
+            <m_EntryID text="herrscher_of_the_void_head_80"/>
+            <m_ObjectName text="herrscher_of_the_void_head_80"/>
+        </Element>
+        <Element>
+            <m_EntryID text="herrscher_of_the_void_head_256"/>
+            <m_ObjectName text="herrscher_of_the_void_head_256"/>
+        </Element>
+    </m_Entries>
+    <m_AllowedPlatforms>
+        <Element>WINDOWS</Element>
+        <Element>MACOS</Element>
+        <Element>IOS</Element>
+        <Element>LINUX</Element>
+    </m_AllowedPlatforms>
+</AssetObjects..XLP>

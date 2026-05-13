@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+    <Types>
+        <Row Type="CIVILIZATION_HONKAI" Kind="KIND_CIVILIZATION"/>
+        <Row Type="TRAIT_CIVILIZATION_HONKAI_DUMMY" Kind="KIND_TRAIT"/>
+    </Types>
+    <Traits>
+        <Row TraitType="TRAIT_CIVILIZATION_HONKAI_DUMMY" Name="LOC_TRAIT_CIVILIZATION_HONKAI_DUMMY_NAME" Description="LOC_TRAIT_CIVILIZATION_HONKAI_DUMMY_DESC"/>
+    </Traits>
+    <CivilizationTraits>
+        <Row CivilizationType="CIVILIZATION_HONKAI" TraitType="TRAIT_CIVILIZATION_HONKAI_DUMMY"/>
+    </CivilizationTraits>
+    <Civilizations>
+        <Row CivilizationType="CIVILIZATION_HONKAI" Name="LOC_CIVILIZATION_HONKAI_NAME" Description="LOC_CIVILIZATION_HONKAI_DESCRIPTION" Adjective="LOC_CIVILIZATION_HONKAI_ADJECTIVE" StartingCivilizationLevelType="CIVILIZATION_LEVEL_FULL_CIV" RandomCityNameDepth="1" Ethnicity="ETHNICITY_ASIAN"/>
+    </Civilizations>
+    <CityNames>
+        <!-- 必须有至少一个城市名，否则进游戏会卡死 -->
+        <Row CivilizationType="CIVILIZATION_HONKAI" CityName="虚数枢纽"/>
+        <Row CivilizationType="CIVILIZATION_HONKAI" CityName="天命总部"/>
+    </CityNames>
+    <CivilizationCitizenNames>
+        <!-- 必须有平民名字，否则人口增长时引擎必定闪退 -->
+        <Row CivilizationType="CIVILIZATION_HONKAI" CitizenName="西琳" Female="1"/>
+        <Row CivilizationType="CIVILIZATION_HONKAI" CitizenName="贝拉" Female="1"/>
+        <Row CivilizationType="CIVILIZATION_HONKAI" CitizenName="琪亚娜" Female="1"/>
+        <Row CivilizationType="CIVILIZATION_HONKAI" CitizenName="奥托" Female="0"/>
+    </CivilizationCitizenNames>
+</GameData>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="5a8134cb-72e9-4bd4-8fc2-dcbe7891d18a" version="1">
+  <Properties>
+    <Name>LOC_HONKAI_UI_TEST_NAME</Name>
+    <Description>崩坏里世界：独立UI指挥终端测试模组</Description>
+    <Authors>Albert</Authors>
+    <CompatibleVersions>1.2,2.0</CompatibleVersions>
+  </Properties>
+
+  <Dependencies>
+    <Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="Expansion: Gathering Storm" />
+    <Mod id="1B28771A-C749-434B-9053-D1380C553DE9" title="Expansion: Rise and Fall" />
+  </Dependencies>
+
+  <LocalizedText>
+    <Text id="LOC_HONKAI_UI_TEST_NAME">
+      <zh_Hans_CN>崩坏指挥终端 (独立UI测试)</zh_Hans_CN>
+    </Text>
+  </LocalizedText>
+
+  <FrontEndActions>
+    <UpdateArt id="HONKAI_ART_FRONTEND">
+      <!-- 挂载 .dep 文件 -->
+      <File>kongzhilvzhe.dep</File>
+    </UpdateArt>
+    <UpdateText id="HONKAI_TEXT_FRONTEND">
+      <File>Honkai_Text.xml</File>
+    </UpdateText>
+    <UpdateDatabase id="HONKAI_CONFIG">
+      <Properties>
+        <LoadOrder>999999</LoadOrder>
+      </Properties>
+      <File>Config.xml</File>
+    </UpdateDatabase>
+    <UpdateIcons id="HONKAI_ICONS_FRONT">
+      <Properties>
+        <LoadOrder>999999</LoadOrder>
+      </Properties>
+      <File>Icons.xml</File>
+    </UpdateIcons>
+
+    <!-- 必须在 FrontEnd 也写一遍 ImportFiles，确保主菜单也能看到图片 -->
+    <ImportFiles id="HONKAI_TEXTURES_FRONT">
+      <Items>
+        <File>Textures/HonkaiCiv_22.dds</File>
+        <File>Textures/HonkaiCiv_30.dds</File>
+        <File>Textures/HonkaiCiv_32.dds</File>
+        <File>Textures/HonkaiCiv_36.dds</File>
+        <File>Textures/HonkaiCiv_44.dds</File>
+        <File>Textures/HonkaiCiv_45.dds</File>
+        <File>Textures/HonkaiCiv_48.dds</File>
+        <File>Textures/HonkaiCiv_50.dds</File>
+        <File>Textures/HonkaiCiv_64.dds</File>
+        <File>Textures/HonkaiCiv_80.dds</File>
+        <File>Textures/HonkaiCiv_128.dds</File>
+        <File>Textures/HonkaiCiv_200.dds</File>
+        <File>Textures/HonkaiCiv_256.dds</File>
+        <File>Textures/herrscher_of_the_void_head_32.dds</File>
+        <File>Textures/herrscher_of_the_void_head_45.dds</File>
+        <File>Textures/herrscher_of_the_void_head_48.dds</File>
+        <File>Textures/herrscher_of_the_void_head_50.dds</File>
+        <File>Textures/herrscher_of_the_void_head_55.dds</File>
+        <File>Textures/herrscher_of_the_void_head_64.dds</File>
+        <File>Textures/herrscher_of_the_void_head_80.dds</File>
+        <File>Textures/herrscher_of_the_void_head_256.dds</File>
+        <File>Textures/Honkai_Terminal_Icon38.dds</File>
+        <!-- [前台散图测试] 单开一行导入 512x1024 选人散图 (若出错直接删此行) -->
+        <File>Textures/herrscher_of_the_void_xuanren.dds</File>
+      </Items>
+    </ImportFiles>
+  </FrontEndActions>
+
+  <InGameActions>
+    <!-- 局内导入所有散图 -->
+    <ImportFiles id="HONKAI_TEXTURES_INGAME">
+      <Items>
+        <File>Textures/HonkaiCiv_22.dds</File>
+        <File>Textures/HonkaiCiv_30.dds</File>
+        <File>Textures/HonkaiCiv_32.dds</File>
+        <File>Textures/HonkaiCiv_36.dds</File>
+        <File>Textures/HonkaiCiv_44.dds</File>
+        <File>Textures/HonkaiCiv_45.dds</File>
+        <File>Textures/HonkaiCiv_48.dds</File>
+        <File>Textures/HonkaiCiv_50.dds</File>
+        <File>Textures/HonkaiCiv_64.dds</File>
+        <File>Textures/HonkaiCiv_80.dds</File>
+        <File>Textures/HonkaiCiv_128.dds</File>
+        <File>Textures/HonkaiCiv_200.dds</File>
+        <File>Textures/HonkaiCiv_256.dds</File>
+        <File>Textures/herrscher_of_the_void_head_32.dds</File>
+        <File>Textures/herrscher_of_the_void_head_45.dds</File>
+        <File>Textures/herrscher_of_the_void_head_48.dds</File>
+        <File>Textures/herrscher_of_the_void_head_50.dds</File>
+        <File>Textures/herrscher_of_the_void_head_55.dds</File>
+        <File>Textures/herrscher_of_the_void_head_64.dds</File>
+        <File>Textures/herrscher_of_the_void_head_80.dds</File>
+        <File>Textures/herrscher_of_the_void_head_256.dds</File>
+        <File>Textures/Honkai_Terminal_Icon38.dds</File>
+      </Items>
+    </ImportFiles>
+    <AddUserInterfaces id="HONKAI_TECH_TREE_UI">
+      <Properties><Context>InGame</Context></Properties>
+      <File>HonkaiTechTree.xml</File>
+    </AddUserInterfaces>
+    <UpdateDatabase id="HONKAI_INGAME_DATABASE">
+      <File>Honkai_Civilization.xml</File>
+      <File>Honkai_Leader_HoV.xml</File>
+    </UpdateDatabase>
+    <UpdateArt id="HONKAI_ART_INGAME"><File>kongzhilvzhe.dep</File></UpdateArt>
+    <UpdateText id="HONKAI_TEXT_INGAME"><File>Honkai_Text.xml</File></UpdateText>
+    <UpdateIcons id="HONKAI_ICONS_INGAME">
+      <Properties><LoadOrder>999999</LoadOrder></Properties>
+      <File>Icons.xml</File>
+    </UpdateIcons>
+    <AddGameplayScripts id="HONKAI_GAMEPLAY_SCRIPTS"><File>HonkaiEnergySystem.lua</File></AddGameplayScripts>
+  </InGameActions>
+
+  <Files>
+    <!-- 声明我们需要加载的文件 -->
+    <File>Config.xml</File>
+    <File>Icons.xml</File>
+    <File>Honkai_Text.xml</File>
+    <File>Honkai_Civilization.xml</File>
+    <File>Honkai_Leader_HoV.xml</File>
+    <File>HonkaiTechTree.xml</File>
+    <File>HonkaiTechTree.lua</File>
+    <File>HonkaiEnergySystem.lua</File>
+    <File>Textures/HonkaiCiv_22.dds</File>
+    <File>Textures/HonkaiCiv_30.dds</File>
+    <File>Textures/HonkaiCiv_32.dds</File>
+    <File>Textures/HonkaiCiv_36.dds</File>
+    <File>Textures/HonkaiCiv_44.dds</File>
+    <File>Textures/HonkaiCiv_45.dds</File>
+    <File>Textures/HonkaiCiv_48.dds</File>
+    <File>Textures/HonkaiCiv_50.dds</File>
+    <File>Textures/HonkaiCiv_64.dds</File>
+    <File>Textures/HonkaiCiv_80.dds</File>
+    <File>Textures/HonkaiCiv_128.dds</File>
+    <File>Textures/HonkaiCiv_200.dds</File>
+    <File>Textures/HonkaiCiv_256.dds</File>
+    <File>Textures/herrscher_of_the_void_head_32.dds</File>
+    <File>Textures/herrscher_of_the_void_head_45.dds</File>
+    <File>Textures/herrscher_of_the_void_head_48.dds</File>
+    <File>Textures/herrscher_of_the_void_head_50.dds</File>
+    <File>Textures/herrscher_of_the_void_head_55.dds</File>
+    <File>Textures/herrscher_of_the_void_head_64.dds</File>
+    <File>Textures/herrscher_of_the_void_head_80.dds</File>
+    <File>Textures/herrscher_of_the_void_head_256.dds</File>
+    <File>Textures/Honkai_Terminal_Icon38.dds</File>
+    
+    <!-- [前台散图测试] 选人界面的散图物理文件声明 (若出错直接删此行) -->
+    <File>Textures/herrscher_of_the_void_xuanren.dds</File>
+    <!-- [前台散图测试] 挂载前台专用图纸，用于引导引擎生吃散图 (若出错直接删此行) -->
+    <File>FallbackLeaders.artdef</File>
+    
+    <!-- 挂载美术中枢与打包文件 (请确保这三个文件已经复制到模组下) -->
+    <File>kongzhilvzhe.dep</File>
+    <File>ArtDefs/herrscher_of_the_void_leader.artdef</File>
+    <File>Platforms/Windows/BLPs/leader_herrscher_of_the_void.blp</File>
+  </Files>
+</Mod>

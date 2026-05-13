@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+    <LocalizedText>
+        <!-- 文明 -->
+        <Row Tag="LOC_CIVILIZATION_HONKAI_NAME" Language="zh_Hans_CN"><Text>崩坏</Text></Row>
+        <Row Tag="LOC_CIVILIZATION_HONKAI_DESCRIPTION" Language="zh_Hans_CN"><Text>崩坏</Text></Row>
+        <Row Tag="LOC_CIVILIZATION_HONKAI_ADJECTIVE" Language="zh_Hans_CN"><Text>崩坏的</Text></Row>
+
+        <!-- 领袖 -->
+        <Row Tag="LOC_LEADER_HOH_VOID_HERRSCHER_NAME" Language="zh_Hans_CN"><Text>空之律者</Text></Row>
+        <Row Tag="LOC_LOADING_INFO_LEADER_HOH_VOID_HERRSCHER" Language="zh_Hans_CN"><Text>人类，不过是虫子罢了……</Text></Row>
+        <Row Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_HOH_VOID_HERRSCHER_QUOTE" Language="zh_Hans_CN"><Text>这就是……神明的力量。</Text></Row>
+
+        <!-- 特质 -->
+        <Row Tag="LOC_TRAIT_CIVILIZATION_HONKAI_DUMMY_NAME" Language="zh_Hans_CN"><Text>崩坏灾难</Text></Row>
+        <Row Tag="LOC_TRAIT_CIVILIZATION_HONKAI_DUMMY_DESC" Language="zh_Hans_CN"><Text>（此为占位符，后续将填充时代惩罚的具体描述）</Text></Row>
+        <Row Tag="LOC_TRAIT_LEADER_HOV_DUMMY_NAME" Language="zh_Hans_CN"><Text>虚数权能</Text></Row>
+        <Row Tag="LOC_TRAIT_LEADER_HOV_DUMMY_DESC" Language="zh_Hans_CN"><Text>降临之神使。（此为占位符，后续将填充免疫惩罚的具体描述）</Text></Row>
+    </LocalizedText>
+</GameData>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+    <Types>
+        <Row Type="LEADER_HOH_VOID_HERRSCHER" Kind="KIND_LEADER"/>
+        <Row Type="TRAIT_LEADER_HOV_DUMMY" Kind="KIND_TRAIT"/>
+    </Types>
+    <Traits>
+        <Row TraitType="TRAIT_LEADER_HOV_DUMMY" Name="LOC_TRAIT_LEADER_HOV_DUMMY_NAME" Description="LOC_TRAIT_LEADER_HOV_DUMMY_DESC"/>
+    </Traits>
+    <LeaderTraits>
+        <Row LeaderType="LEADER_HOH_VOID_HERRSCHER" TraitType="TRAIT_LEADER_HOV_DUMMY"/>
+    </LeaderTraits>
+    <Leaders>
+        <Row LeaderType="LEADER_HOH_VOID_HERRSCHER" Name="LOC_LEADER_HOH_VOID_HERRSCHER_NAME" InheritFrom="LEADER_DEFAULT" SceneLayers="4"/>
+    </Leaders>
+    <CivilizationLeaders>
+        <Row CivilizationType="CIVILIZATION_HONKAI" LeaderType="LEADER_HOH_VOID_HERRSCHER" CapitalName="虚数枢纽"/>
+    </CivilizationLeaders>
+    <!-- 必须分配颜色，否则引擎渲染文明边界时会闪退 -->
+    <Colors>
+        <Row Type="COLOR_HOH_VOID_PRIMARY" Color="225,230,235,255"/> <!-- 高科技冷白 -->
+        <Row Type="COLOR_HOH_VOID_SECONDARY" Color="45,50,55,255"/>   <!-- 机械深灰 -->
+    </Colors>
+    <PlayerColors>
+        <Row Type="LEADER_HOH_VOID_HERRSCHER" Usage="Unique" PrimaryColor="COLOR_HOH_VOID_PRIMARY" SecondaryColor="COLOR_HOH_VOID_SECONDARY"/>
+    </PlayerColors>
+    <!-- 补全载入界面和外交界面的基础防崩溃信息 -->
+    <LoadingInfo>
+        <!-- [读条立绘测试] 增加 ForegroundImage 属性来生吃散图 (若出错可直接删去该属性) -->
+        <Row LeaderType="LEADER_HOH_VOID_HERRSCHER" ForegroundImage="herrscher_of_the_void_xuanren.dds" BackgroundImage="LEADER_QIN_BACKGROUND" PlayDawnOfManAudio="0" LeaderText="LOC_LOADING_INFO_LEADER_HOH_VOID_HERRSCHER"/>
+    </LoadingInfo>
+    <DiplomacyInfo>
+        <Row Type="LEADER_HOH_VOID_HERRSCHER" BackgroundImage="LEADER_QIN_BACKGROUND"/>
+    </DiplomacyInfo>
+    <LeaderQuotes>
+        <Row LeaderType="LEADER_HOH_VOID_HERRSCHER" Quote="LOC_PEDIA_LEADERS_PAGE_LEADER_HOH_VOID_HERRSCHER_QUOTE"/>
+    </LeaderQuotes>
+</GameData>

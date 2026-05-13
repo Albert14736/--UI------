@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+    <IconTextureAtlases>
+        <!-- CMA 产出：崩坏文明 图标图集 -->
+        <Row Name="ATLAS_HonkaiCiv256" IconSize="22" IconsPerRow="1" IconsPerColumn="1" Filename="HonkaiCiv_22.dds"/>
+        <Row Name="ATLAS_HonkaiCiv256" IconSize="30" IconsPerRow="1" IconsPerColumn="1" Filename="HonkaiCiv_30.dds"/>
+        <Row Name="ATLAS_HonkaiCiv256" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="HonkaiCiv_32.dds"/>
+        <Row Name="ATLAS_HonkaiCiv256" IconSize="36" IconsPerRow="1" IconsPerColumn="1" Filename="HonkaiCiv_36.dds"/>
+        <Row Name="ATLAS_HonkaiCiv256" IconSize="44" IconsPerRow="1" IconsPerColumn="1" Filename="HonkaiCiv_44.dds"/>
+        <Row Name="ATLAS_HonkaiCiv256" IconSize="45" IconsPerRow="1" IconsPerColumn="1" Filename="HonkaiCiv_45.dds"/>
+        <Row Name="ATLAS_HonkaiCiv256" IconSize="48" IconsPerRow="1" IconsPerColumn="1" Filename="HonkaiCiv_48.dds"/>
+        <Row Name="ATLAS_HonkaiCiv256" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="HonkaiCiv_50.dds"/>
+        <Row Name="ATLAS_HonkaiCiv256" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="HonkaiCiv_64.dds"/>
+        <Row Name="ATLAS_HonkaiCiv256" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="HonkaiCiv_80.dds"/>
+        <Row Name="ATLAS_HonkaiCiv256" IconSize="128" IconsPerRow="1" IconsPerColumn="1" Filename="HonkaiCiv_128.dds"/>
+        <Row Name="ATLAS_HonkaiCiv256" IconSize="200" IconsPerRow="1" IconsPerColumn="1" Filename="HonkaiCiv_200.dds"/>
+        <Row Name="ATLAS_HonkaiCiv256" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="HonkaiCiv_256.dds"/>
+
+        <!-- CMA 产出：空之律者 领袖头像图集 -->
+        <Row Name="ATLAS_herrscher_of_the_void_head" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="herrscher_of_the_void_head_32.dds"/>
+        <Row Name="ATLAS_herrscher_of_the_void_head" IconSize="45" IconsPerRow="1" IconsPerColumn="1" Filename="herrscher_of_the_void_head_45.dds"/>
+        <Row Name="ATLAS_herrscher_of_the_void_head" IconSize="48" IconsPerRow="1" IconsPerColumn="1" Filename="herrscher_of_the_void_head_48.dds"/>
+        <Row Name="ATLAS_herrscher_of_the_void_head" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="herrscher_of_the_void_head_50.dds"/>
+        <Row Name="ATLAS_herrscher_of_the_void_head" IconSize="55" IconsPerRow="1" IconsPerColumn="1" Filename="herrscher_of_the_void_head_55.dds"/>
+        <Row Name="ATLAS_herrscher_of_the_void_head" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="herrscher_of_the_void_head_64.dds"/>
+        <Row Name="ATLAS_herrscher_of_the_void_head" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="herrscher_of_the_void_head_80.dds"/>
+        <Row Name="ATLAS_herrscher_of_the_void_head" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="herrscher_of_the_void_head_256.dds"/>
+
+        <!-- 专为前台 UI 引擎准备的 1024 独立散图图集 -->
+        <Row Name="ATLAS_HOV_FRONTDESK" IconSize="1024" IconsPerRow="1" IconsPerColumn="1" Filename="herrscher_of_the_void_frontdesk.dds"/>
+    </IconTextureAtlases>
+
+    <IconDefinitions>
+        <!-- 领袖与文明的主图标 -->
+        <Row Name="ICON_LEADER_HOH_VOID_HERRSCHER" Atlas="ATLAS_herrscher_of_the_void_head" Index="0"/>
+        <Row Name="ICON_CIVILIZATION_HONKAI"       Atlas="ATLAS_HonkaiCiv256" Index="0"/>
+        
+        <!-- 领袖背景图 (由于背景还没好，先用游戏原版的纯黑透明图垫底，防止穿模) -->
+        <Row Name="ICON_LEADER_HOH_VOID_HERRSCHER_BACKGROUND" Atlas="ATLAS_herrscher_of_the_void_head" Index="0"/>
+        
+        <!-- SELECTION 仅仅用于前台左侧的圆形选人按钮，必须绑定 256 大头贴！ -->
+        <Row Name="SELECTION_LEADER_HOH_VOID_HERRSCHER" Atlas="ATLAS_herrscher_of_the_void_head" Index="0"/>
+
+        <!-- 给前台大立绘专门映射的代号 -->
+        <Row Name="ICON_LEADER_HOH_VOID_HERRSCHER_PORTRAIT" Atlas="ATLAS_HOV_FRONTDESK" Index="0"/>
+    </IconDefinitions>
+</GameData>

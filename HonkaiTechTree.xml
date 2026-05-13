@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context>
+    <!-- ========================================================================= -->
+    <!-- 主界面窗口：借鉴了官方宗教界面的绝美外壳 -->
+    <!-- ========================================================================= -->
+    <Container ID="TechTreeContainer" Anchor="C,C" Size="1200,720" Offset="0,0">
+        <Image ID="HonkaiBG" Size="parent,parent" Texture="Religion_BG" StretchMode="Tile" ConsumeMouse="1"/>
+        
+        <!-- 顶部发光标题栏 -->
+        <Grid Size="parent,40" Texture="Controls_SubHeader2" ConsumeMouse="1" SliceCorner="20,2" SliceTextureSize="40,40">
+            <Label String="崩坏指挥终端 / 女武神觉醒树" Anchor="C,C" Style="FontFlair22" FontStyle="glow" ColorSet="ShellHeader" />
+        </Grid>
+
+        <!-- 左上角：三行字进度追踪器 -->
+        <Stack Anchor="L,T" Offset="20,15" StackGrowth="Down" Padding="4" ConsumeMouse="1">
+            <Stack StackGrowth="Right"><Label String="崩坏能产出: " Style="FontFlair16" ColorSet="ShellHeader"/><Label ID="YieldAmountLabel" String="+0" Style="FontFlair16" ColorSet="ResGoldLabelCS"/></Stack>
+            <Stack StackGrowth="Right"><Label String="当前储备: " Style="FontFlair16" ColorSet="ShellHeader"/><Label ID="EnergyAmountLabel" String="0" Style="FontFlair16" ColorSet="ResFaithLabelCS" FontStyle="glow"/></Stack>
+            <Stack StackGrowth="Right"><Label String="正在研究: " Style="FontFlair16" ColorSet="ShellHeader"/><Label ID="CurrentResearchLabel" String="无" Style="FontFlair16" ColorSet="ResScienceLabelCS"/></Stack>
+        </Stack>
+
+        <!-- 全屏金色外边框 -->
+        <Grid Offset="-8,-8" Size="parent+16,parent+16" Style="ScreenFrame"/>
+
+        <!-- 抄作业成功：必须放在 ScreenFrame 之后，确保层级最高，不被边框吃鼠标事件！ -->
+        <Button ID="CloseTreeButton" Anchor="R,T" Size="44,44" Texture="Controls_CloseLarge"/>
+
+        <!-- 内部底板：带金色花纹的内框 -->
+        <Grid ID="InnerFrame" Size="parent-40,parent-80" Offset="20,60" Texture="Religion_OverviewFrame" SliceCorner="15,15">
+            
+            <!-- 科技树画板（带拖动和滚动功能） -->
+            <!-- 恢复为最自然、最稳定的竖直向下滚动！ -->
+            <ScrollPanel ID="TechScrollPanel" Size="parent-20,parent-20" Offset="10,10" AutoScrollBar="1" Vertical="1">
+                <!-- 竖向画板：高度拉到3000，足以容纳庞大的瀑布流技能树 -->
+                <Container ID="TechCanvas" Size="2000,3000">
+                    <!-- 这里将用 Lua 动态生成科技节点 -->
+                </Container>
+                <!-- 使用侵蚀之律者同款、官方最稳定的垂直滑块 -->
+                <ScrollBar Style="Slider_Light" Anchor="R,T" Length="parent" Offset="2,0"/>
+            </ScrollPanel>
+
+        </Grid>
+    </Container>
+
+    <!-- ========================================================================= -->
+    <!-- 科技节点的模板 (Instance) -->
+    <!-- ========================================================================= -->
+    <Instance Name="HonkaiTechNodeInstance">
+        <!-- 提前完成明天的排版：将节点框缩小到 160x65，更加精致，不占空间！ -->
+        <GridButton ID="NodeButton" Size="160,65" Style="ButtonControl" Anchor="L,T">
+            <Stack StackGrowth="Down" Anchor="C,C">
+                <Label ID="NodeName" Style="FontFlair16" String="科技名称" FontStyle="stroke" ColorSet="ShellHeader"/>
+                <Label ID="NodeCost" Style="FontNormal14" String="100 崩坏能" Color0="255,200,50,255"/>
+            </Stack>
+            <!-- 正在研究时的蓝色边框 -->
+            <Image ID="ResearchingFrame" Size="parent,parent" Texture="Controls_ButtonHighlight" Color="0,200,255,200" Hidden="1" StretchMode="Fill"/>
+            <Image ID="UnlockedFrame" Size="parent,parent" Texture="Controls_ButtonHighlight" Hidden="1" StretchMode="Fill"/>
+        </GridButton>
+    </Instance>
+
+    <!-- ========================================================================= -->
+    <!-- 左上角无入侵注入按钮的模板 (Instance) -->
+    <!-- ========================================================================= -->
+    <Instance Name="LaunchBarItemHonkai">
+        <!-- 完美复刻参考模组的底层格式：使用官方标准底图 + 内部嵌图 -->
+        <Button ID="LaunchItemHonkaiButton" Anchor="L,C" Size="49,49" Texture="LaunchBar_Hook_GreatWorksButton" Style="ButtonNormalText" TextureOffset="0,2" StateOffsetIncrement="0,49" ToolTip="打开崩坏指挥终端">
+            <!-- 修正去掉了多余下划线的文件名，精准生吃物理文件 -->
+            <Image ID="LaunchItemIcon" Texture="Honkai_Terminal_Icon38.dds" Size="38,38" Anchor="C,C" Offset="0,0" Hidden="0"/>
+        </Button>
+    </Instance>
+
+</Context>
