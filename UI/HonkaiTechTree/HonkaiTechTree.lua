@@ -234,8 +234,29 @@ end
 -- ===========================================================================
 function SetCurrentNode( hash:number, item )
 	if hash ~= nil then
-		-- [崩坏系统拦截]：切断向引擎发送研究原版科技的指令
-		print("【崩坏指挥终端】玩家点击了：", item.Name)
+		local pPlayer = Players[Game.GetLocalPlayer()]
+		if pPlayer:GetProperty("UNLOCKED_" .. item.Type) == 1 then
+			print("【崩坏指挥终端】科技已解锁！")
+			return
+		end
+		local hasAllPrereqs = true
+		for _, prereqId in pairs(item.Prereqs) do
+			if prereqId ~= PREREQ_ID_TREE_START then
+				local prereqType = g_kItemDefaults[prereqId].Type
+				if pPlayer:GetProperty("UNLOCKED_" .. prereqType) ~= 1 then
+					hasAllPrereqs = false
+					break
+				end
+			end
+		end
+		if not hasAllPrereqs then
+			UI.PlaySound("Play_UI_Click_False");
+			return
+		end
+		-- 无论钱够不够，全部交给底层挂载排队或秒解
+		if ExposedMembers.Honkai and ExposedMembers.Honkai.SetResearchTarget then
+			ExposedMembers.Honkai.SetResearchTarget(Game.GetLocalPlayer(), item.Type, item.Cost)
+		end
 		UI.PlaySound("Confirm_Tech_TechTree");
 	else
 		UI.DataError("Attempt to change current tree item with NIL hash!");
@@ -651,7 +672,7 @@ function AllocateUI( kNodeGrid:table, kPaths:table )
 		node.Top:SetOffsetVal( horizontal, vertical);
 		g_uiNodes[item.Type] = node;
 	end
-
+	
 	if Controls.TreeStart ~= nil then
 		local h,v = ColumnRowToPixelXY( TREE_START_COLUMN, TREE_START_ROW );
 		Controls.TreeStart:SetOffsetVal( h+SIZE_NODE_X-42,v-71 );		-- TODO: Science-out the magic (numbers).
@@ -1063,6 +1084,9 @@ end
 -- ===========================================================================
 function View( playerTechData:table )
 	
+	local pts = Players[m_ePlayer]:GetProperty("HONKAI_RESEARCH_POINTS") or 0
+	Controls.ModalScreenTitle:SetText(Locale.ToUpper("崩坏指挥终端 / 当前崩坏能: " .. pts .. " 点"));
+	
 	-- Output the node states for the tree
 	for _,uiNode in pairs(g_uiNodes) do
 		PopulateNode( uiNode, playerTechData);
@@ -1156,13 +1180,46 @@ function GetCurrentData( ePlayer:number, eCompletedTech:number )
 		data[DATA_FIELD_PLAYERINFO].Stats	= {};
 	end	
 
+	local pPlayer = Players[ePlayer]
+	local currentPoints = pPlayer:GetProperty("HONKAI_RESEARCH_POINTS") or 0
+	local currentResearch = pPlayer:GetProperty("HONKAI_CURRENT_RESEARCH")
+
 	for type,item in pairs(g_kItemDefaults) do
+		local isUnlocked = (pPlayer:GetProperty("UNLOCKED_" .. type) == 1)
+		local status = ITEM_STATUS.BLOCKED
+		if isUnlocked then
+			status = ITEM_STATUS.RESEARCHED
+		else
+			local hasAllPrereqs = true
+			for _, prereqId in pairs(item.Prereqs) do
+				if prereqId ~= PREREQ_ID_TREE_START then
+					local prereqType = g_kItemDefaults[prereqId].Type
+					if pPlayer:GetProperty("UNLOCKED_" .. prereqType) ~= 1 then
+						hasAllPrereqs = false
+						break
+					end
+				end
+			end
+			if hasAllPrereqs then status = ITEM_STATUS.READY end
+			
+			-- 检查是否为当前排队的科研目标
+			if type == currentResearch then
+				status = ITEM_STATUS.CURRENT
+			end
+		end
+		
+		local progress = 0
+		local turnsLeft = 0
+		if status == ITEM_STATUS.CURRENT or status == ITEM_STATUS.READY then
+			progress = currentPoints
+			turnsLeft = math.ceil(math.max(0, item.Cost - currentPoints) / 10) -- 暂时写死每回合发 10 点，用于算剩余回合
+		end
 		data[DATA_FIELD_LIVEDATA][type] = {
 			Cost		= item.Cost,
 			IsBoosted	= false,
-			Progress	= 0,
-			Status		= ITEM_STATUS.READY, -- 【数据伪装】先让所有节点强制点亮（可研究）
-			Turns		= 0,
+			Progress	= progress,
+			Status		= status,
+			Turns		= turnsLeft,
 			IsRecommended = false,
 			IsRevealed  = true
 		}
@@ -1487,13 +1544,13 @@ function BuildTree()
 end
 
 function LateInitialize()
+    m_ePlayer = Game.GetLocalPlayer();
+    if (m_ePlayer == -1) then return; end
     
     g_kItemDefaults = PopulateItemData();
     PopulateEraData();
     BuildTree();
 
-    m_ePlayer = Game.GetLocalPlayer();
-    if (m_ePlayer == -1) then return; end
 
     Resize();	
     m_kCurrentData = GetCurrentData( m_ePlayer );
@@ -1520,8 +1577,6 @@ function Initialize()
     ContextPtr:SetInputHandler( HonkaiInputHandler, true );
     ContextPtr:SetShutdown( OnShutdown );
     
-    Controls.ModalScreenClose:RegisterCallback(Mouse.eLClick, HideHonkaiWindow);
-    Controls.ModalScreenTitle:SetText(Locale.ToUpper("崩坏指挥终端 / 女武神觉醒树"));
 
     -- 【侵蚀之律者同款伪监听拦截网】
     LuaEvents.Tutorial_ToggleInGameOptionsMenu.Add(HideHonkaiWindow)
@@ -1550,6 +1605,16 @@ function Initialize()
     Events.CityFocusChanged.Add( OnUpdateResearchOnTechChanged );
 
     m_TopPanelConsideredHeight = Controls.Vignette:GetSizeY() - TOP_PANEL_OFFSET;
+    
+    Controls.ModalScreenClose:RegisterCallback(Mouse.eLClick, HideHonkaiWindow);
+
+    -- 监听底层发来的“已购买”广播，瞬间刷新 UI
+    LuaEvents.HonkaiTech_RefreshUI.Add(function(playerID)
+        if playerID == m_ePlayer then
+            m_kCurrentData = GetCurrentData(m_ePlayer);
+            if not ContextPtr:IsHidden() then View(m_kCurrentData); end
+        end
+    end)
 
     -- 手动触发初始化，因为 LoadGameViewStateDone 触发时 UI 引擎已经错过了 Init 阶段
     HonkaiInitHandler(false)
