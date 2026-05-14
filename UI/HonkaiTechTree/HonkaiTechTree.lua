@@ -234,135 +234,20 @@ end
 -- ===========================================================================
 function SetCurrentNode( hash:number, item )
 	if hash ~= nil then
-
-		local localPlayerTechs = Players[Game.GetLocalPlayer()]:GetTechs();
-		-- Get the complete path to the tech
-		--local pathToTech = localPlayerTechs:GetResearchPath( hash );
-		tPrereqTechsPath = {};
-		local pathToTech = GetAllTechPathPrereqs(item)
-		
-		--if pathToTech then
-		--	print(pathToTech)
-		--	for i, v in pairs(pathToTech) do
-		--		print("Tech Path: ", i, v)
-		--	end
-		--end
-
-		local tParameters = {};
-		tParameters[PlayerOperations.PARAM_TECH_TYPE]	= pathToTech;
-		if m_shiftDown then
-			tParameters[PlayerOperations.PARAM_INSERT_MODE] = PlayerOperations.VALUE_APPEND;
-		else
-			tParameters[PlayerOperations.PARAM_INSERT_MODE] = PlayerOperations.VALUE_EXCLUSIVE;
-		end
-		UI.RequestPlayerOperation(Game.GetLocalPlayer(), PlayerOperations.RESEARCH, tParameters);
-        UI.PlaySound("Confirm_Tech_TechTree");
-		
-		
-		--local tech:table		= GameInfo.Technologies[item.Type];
-		--local techType:string	= tech and tech.TechnologyType;
-		--local techID	:number = GameInfo.Technologies[item.Type].Index;
-		--local	Cost		= localPlayerTechs:GetResearchCost(techID);
-		--local	IsBoosted	= localPlayerTechs:HasBoostBeenTriggered(techID);
-		--local	Progress	= localPlayerTechs:GetResearchProgress(techID);
-		--print("Checking Tech: ", techType, Cost, IsBoosted, Progress, techID)
-		--print("##############################################################")
-					
+		-- [崩坏系统拦截]：切断向引擎发送研究原版科技的指令
+		print("【崩坏指挥终端】玩家点击了：", item.Name)
+		UI.PlaySound("Confirm_Tech_TechTree");
 	else
 		UI.DataError("Attempt to change current tree item with NIL hash!");
 	end
-
 end
 
 ------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 function GetAllTechPathPrereqs(item)
-	
-	local tTempTable = {};
-	local tTempTable2 = {};
-	
-	local playerTechs = Players[Game.GetLocalPlayer()]:GetTechs();
-	
-	local CostValue = 50000
-	local function GetPrereqs(prereq, AdditionalCost)
-		local AdditionalCost = AdditionalCost + 10
-		for _,prereqId in pairs(prereq.Prereqs) do
-			if prereqId ~= PREREQ_ID_TREE_START then
-				local prereq :table = g_kItemDefaults[prereqId];
-				if (prereq ~= nil) then
-					local techID = GameInfo.Technologies[prereq.Type].Index;
-					local tech:table = GameInfo.Technologies[prereq.Type];
-					local techType = tech and tech.TechnologyType;
-					local Cost = playerTechs:GetResearchCost(techID);
-					local Progress = playerTechs:GetResearchProgress(techID);
-					local column:number = prereq.Column + g_kEras[prereq.EraType].PriorColumns;
-					local priorColumns = g_kEras[prereq.EraType].PriorColumns;
-					--print("Column: ", column, prereq.Column, g_kEras[prereq.EraType].PriorColumns)
-					if not playerTechs:HasTech(techID) then
-						--print("Has Tech")
-						--local remCost = CostValue - (Cost*0.5) - Progress - AdditionalCost
-						local remCost = CostValue - (Cost*2) + (Progress) - AdditionalCost + (column * 2000)
-						local IsThere = false
-						for i,tech2 in pairs(tTempTable) do
-							local tech2ID = tech2.techID
-							local tech2Type = tech2.techType
-							if (techID == tech2ID) or (techType == tech2Type) then
-								IsThere = true
-						--		if tech2.timesPrereq < 1 then
-						--			tTempTable[i].Cost = tech2.Cost - (Cost*0.3)
-						--			tTempTable[i].timesPrereq = tech2.timesPrereq + 1
-						--		end
-							end
-						end
-						if (IsThere == false) then
-							row = {};
-							row.techID = techID
-							row.Cost = remCost
-							row.techType = techType
-							row.timesPrereq = 0
-							--row.column = column
-							--row.priorColumns = priorColumns
-							--row.Cos = Cost
-							--row.Pro = Progress
-							table.insert(tTempTable, row);
-							--print("1111 Checking Prereq: ", techType, techID)
-							GetPrereqs(prereq, AdditionalCost)
-							--print("//////////////////////")
-						end
-					end
-				end
-			end
-		end
-	end
-	GetPrereqs(item, 0)
-	
-	local tech:table		= GameInfo.Technologies[item.Type];
-	local techType:string	= tech and tech.TechnologyType;
-	local techID	:number = GameInfo.Technologies[item.Type].Index;
-	local Cost = playerTechs:GetResearchCost(techID);
-	local Progress = playerTechs:GetResearchProgress(techID);
-	--local column:number = item.Column + g_kEras[item.EraType].PriorColumns;
-	--local priorColumns = g_kEras[item.EraType].PriorColumns;
-	--local remCost = CostValue - (Cost*0.5) - Progress + 1000
-	--local remCost = CostValue
-	local tech = {}
-	tech.techID = techID
-	tech.Cost = 999999
-	tech.techType = techType
-	--tech.column = column
-	--tech.priorColumns = priorColumns
-	--tech.Cos = Cost
-	--tech.Pro = Progress
-	table.insert(tTempTable, tech);
-	
-	table.sort (tTempTable, function(a, b) return a.Cost < b.Cost; end);
-	for i,v in ipairs(tTempTable) do
-		--print("Soooooort: ", i, v.techID, v.techType, "Final Cost", v.Cost)
-		--tTempTable2[i] = v.techID
-		table.insert(tTempTable2, v.techID);
-	end
-	
-	return tTempTable2
+	return {}
 end
+
 
 -- ===========================================================================
 --	If the next item isn't immediate, show a path of #s traversing the tree 
@@ -721,7 +606,7 @@ function AllocateUI( kNodeGrid:table, kPaths:table )
 		local tech:table		= GameInfo.Technologies[item.Type];
 		local techType:string	= tech and tech.TechnologyType;
 
-		local unlockableTypes	= GetUnlockablesForTech_Cached(techType, playerId, playerUnlockables);
+		local unlockableTypes	= techType and GetUnlockablesForTech_Cached(techType, playerId, playerUnlockables) or nil;
 		local node				:table;
 		local numUnlocks		:number = 0;
 
@@ -741,7 +626,7 @@ function AllocateUI( kNodeGrid:table, kPaths:table )
 		local horizontal, vertical = ColumnRowToPixelXY(era.PriorColumns + item.Column, item.UITreeRow );
 
 		-- Add data fields to UI component
-		node.Type	= techType;						-- Dynamically add "Type" field to UI node for quick look ups in item data table.
+		node.Type	= item.Type;					-- Dynamically add "Type" field to UI node for quick look ups in item data table.
 		node.x		= horizontal;					-- Granted x,y can be looked up via GetOffset() but caching the values here for
 		node.y		= vertical - VERTICAL_CENTER;	-- other LUA functions to use removes the necessity of a slow C++ roundtrip.
 
@@ -755,7 +640,9 @@ function AllocateUI( kNodeGrid:table, kPaths:table )
 		end
 		node["unlockGOV"] = InstanceManager:new( "GovernmentIcon", "GovernmentInstanceGrid", node.UnlockStack );
 	
-		PopulateUnlockablesForTech(playerId, tech.Index, node["unlockIM"], function() SetCurrentNode(item.Hash, item); end);
+		if tech ~= nil then
+			PopulateUnlockablesForTech(playerId, tech.Index, node["unlockIM"], function() SetCurrentNode(item.Hash, item); end);
+		end
 
 		node.NodeButton:RegisterCallback( Mouse.eLClick, function() SetCurrentNode(item.Hash, item); end);
 		node.OtherStates:RegisterCallback( Mouse.eLClick, function() SetCurrentNode(item.Hash, item); end);
@@ -966,15 +853,9 @@ end
 
 -- ===========================================================================
 function UpdateAllianceIcon(node)
-	local techID = GameInfo.Technologies[node.Type].Index;
-	if AllyHasOrIsResearchingTech(techID) then
-		node.AllianceIcon:SetToolTipString(GetAllianceIconToolTip());
-		node.AllianceIcon:SetColor(GetAllianceIconColor());
-		node.Alliance:SetHide(false);
-	else
-		node.Alliance:SetHide(true);
-	end
+	node.Alliance:SetHide(true);
 end
+
 
 -- ===========================================================================
 --	Now its own function so Mods / Expansions can modify the nodes
@@ -1109,7 +990,7 @@ function PopulateNode(uiNode, playerTechData)
 		uiNode.BoostIcon:SetColor(UI.GetColorValueFromHexLiteral(0x66000000));
 	else
 
-		uiNode.NodeButton:SetToolTipString(ToolTipHelper.GetToolTip(item.Type, Game.GetLocalPlayer()));
+		uiNode.NodeButton:SetToolTipString(item.Description);
 
 		if(uiNode.Type ~= nil) then
 			local iconName :string = DATA_ICON_PREFIX .. uiNode.Type;
@@ -1181,8 +1062,6 @@ end
 --	active player's item data. 
 -- ===========================================================================
 function View( playerTechData:table )
-	
-	CalculateAllianceResearchBonus();
 	
 	-- Output the node states for the tree
 	for _,uiNode in pairs(g_uiNodes) do
@@ -1266,200 +1145,30 @@ end
 --	Load all the 'live' data for a player.
 -- ===========================================================================
 function GetCurrentData( ePlayer:number, eCompletedTech:number )
-	
-	-- If first time, initialize player data tables.
 	local data	:table = m_kAllPlayersTechData[ePlayer];	
 	if data == nil then
-		-- Initialize player's top level tables:
 		data = {};
 		data[DATA_FIELD_LIVEDATA]			= {};
 		data[DATA_FIELD_PLAYERINFO]			= {};
 		data[DATA_FIELD_UIOPTIONS]			= {};
-		
-		-- Initialize data, and sub tables within the top tables.
-		data[DATA_FIELD_PLAYERINFO].Player	= ePlayer;	-- Number of this player
-		data[DATA_FIELD_PLAYERINFO].Markers	= {};		-- Hold a condenced, UI-ready version of stats
-		data[DATA_FIELD_PLAYERINFO].Stats	= {};		-- Hold stats on where each player is (based on what this player can see)
+		data[DATA_FIELD_PLAYERINFO].Player	= ePlayer;
+		data[DATA_FIELD_PLAYERINFO].Markers	= {};
+		data[DATA_FIELD_PLAYERINFO].Stats	= {};
 	end	
 
-	local kPlayer		:table	= Players[ePlayer];
-	local playerTechs	:table	= kPlayer:GetTechs();
-	local currentTechID	:number = playerTechs:GetResearchingTech();
-
-	-- Get recommendations
-	local techRecommendations:table = {};
-	local kGrandAI:table = kPlayer:GetGrandStrategicAI();
-	if kGrandAI then
-		for i,recommendation in pairs(kGrandAI:GetTechRecommendations()) do
-			techRecommendations[recommendation.TechHash] = recommendation.TechScore;
-		end
-	end
-
-	-- DEBUG: Output header to console.
-	if debugOutputTechInfo then
-		print("                          Item Id  Status      Progress   $ Era              Prereqs");
-		print("------------------------------ --- ---------- --------- --- ---------------- --------------------------");
-	end
-
-	-- Loop through all items and place in appropriate buckets as well
-	-- read in the associated information for it.
 	for type,item in pairs(g_kItemDefaults) do
-		local techID	:number = GameInfo.Technologies[item.Type].Index;
-		local status	:number = ITEM_STATUS.BLOCKED;
-		local turnsLeft	:number = playerTechs:GetTurnsToResearch(techID);
-		if playerTechs:HasTech(techID) or techID == eCompletedTech then
-			status = ITEM_STATUS.RESEARCHED;
-			turnsLeft = 0;
-		elseif techID == currentTechID then
-			status = ITEM_STATUS.CURRENT;
-			turnsLeft = playerTechs:GetTurnsLeft();
-		elseif playerTechs:CanResearch(techID) then
-			status = ITEM_STATUS.READY;
-		end
-
 		data[DATA_FIELD_LIVEDATA][type] = {
-			Cost		= playerTechs:GetResearchCost(techID),
-			IsBoosted	= playerTechs:HasBoostBeenTriggered(techID),
-			Progress	= playerTechs:GetResearchProgress(techID),
-			Status		= status,
-			Turns		= turnsLeft
+			Cost		= item.Cost,
+			IsBoosted	= false,
+			Progress	= 0,
+			Status		= ITEM_STATUS.READY, -- 【数据伪装】先让所有节点强制点亮（可研究）
+			Turns		= 0,
+			IsRecommended = false,
+			IsRevealed  = true
 		}
-
-		-- Determine if tech is recommended
-		if techRecommendations[item.Hash] then
-			data[DATA_FIELD_LIVEDATA][type].AdvisorType = GameInfo.Technologies[item.Type].AdvisorType;
-			data[DATA_FIELD_LIVEDATA][type].IsRecommended = true;
-		else
-			data[DATA_FIELD_LIVEDATA][type].IsRecommended = false;
-		end
-
-		-- DEBUG: Output to console detailed information about the tech.
-		if debugOutputTechInfo then
-			local this:table = data[DATA_FIELD_LIVEDATA][type];
-			print( string.format("%30s %-3d %-10s %4d/%-4d %3d %-16s %s %d",
-				type,item.Index,
-				STATUS_ART[status].Name,
-				this.Progress,
-				this.Cost,
-				this.Turns,
-				item.EraType,
-				GetPrereqsString(item.Prereqs),
-				item.UITreeRow
-			));
-		end
 	end
 
-	local players = Game.GetPlayers{Major = true};
-
-	-- Determine where all players are.
-	local playerVisibility = PlayersVisibility[ePlayer];
-	if playerVisibility ~= nil then
-		for i, otherPlayer in ipairs(players) do
-			local playerID		:number = otherPlayer:GetID();
-			local playerTech	:table  = players[i]:GetTechs();
-			local currentTech	:number = playerTech:GetResearchingTech();
-			data[DATA_FIELD_PLAYERINFO].Stats[playerID] = {
-				CurrentID		= currentTech,		-- tech currently being researched
-				HasMet			= kPlayer:GetDiplomacy():HasMet(playerID) or playerID==ePlayer or debugShowAllMarkers;
-				HighestColumn	= -1,				-- where they are in the timeline
-				HighestEra		= ""
-			};
-
-			-- The latest tech a player may be researching may not be the one
-			-- furthest along in time; so go through ALL the techs and track
-			-- the highest column of all researched tech.
-			local highestColumn :number = -1;
-			local highestEra	:string = "";
-			for _,item in pairs(g_kItemDefaults) do
-				local techID:number = GameInfo.Technologies[item.Type].Index;
-				if playerTech:HasTech(techID) then
-					local column:number = item.Column + g_kEras[item.EraType].PriorColumns;
-					if column > highestColumn then
-						highestColumn	= column;
-						highestEra		= item.EraType;
-					end
-				end
-			end
-			data[DATA_FIELD_PLAYERINFO].Stats[playerID].HighestColumn	= highestColumn;
-			data[DATA_FIELD_PLAYERINFO].Stats[playerID].HighestEra		= highestEra;
-		end
-	end
-
-	-- All player data is added.. build markers data based on player data.
-	local checkedID:table = {};
-	data[DATA_FIELD_PLAYERINFO].Markers	= {};
-	for playerID:number, targetPlayer:table in pairs(data[DATA_FIELD_PLAYERINFO].Stats) do
-		-- Only look for IDs that haven't already been merged into a marker.
-		if checkedID[playerID] == nil and targetPlayer.HasMet then
-			checkedID[playerID] = true;
-			local markerData:table = {};
-			if data[DATA_FIELD_PLAYERINFO].Markers[playerID] ~= nil then
-				markerData = data[DATA_FIELD_PLAYERINFO].Markers[playerID];
-				markerData.HighestColumn = targetPlayer.HighestColumn;
-				markerData.HighestEra    = targetPlayer.HighestEra;
-				markerData.IsPlayerHere  = (playerID == ePlayer);
-			else
-				markerData = {
-							HighestColumn	= targetPlayer.HighestColumn,	-- Which column this marker should be placed
-							HighestEra		= targetPlayer.HighestEra,
-							IsPlayerHere	= (playerID == ePlayer),				
-							PlayerNums		= {playerID}}									-- All players who share this marker spot
-				table.insert( data[DATA_FIELD_PLAYERINFO].Markers, markerData );				
-			end
-
-			-- SPECIAL CASE: Current player starts at column 0 so it's immediately visible on timeline:
-			if playerID == ePlayer and markerData.HighestColumn == -1 then
-				markerData.HighestColumn = 0;		
-				local firstEra:table = nil;
-				for _,era in pairs(g_kEras) do
-					if firstEra == nil or era.Index < firstEra.Index then
-						firstEra = era;
-					end
-				end
-				if firstEra then
-					markerData.HighestEra = firstEra.Index;
-				else
-					markerData.HighestEra = 0;
-				end
-			end
-
-			-- Traverse all the IDs and merge them with this one.
-			for anotherID:number, anotherPlayer:table in pairs(data[DATA_FIELD_PLAYERINFO].Stats) do				
-				-- Don't add if: it's ourself, if hasn't researched at least 1 tech, if we haven't met
-				if playerID ~= anotherID and anotherPlayer.HighestColumn > -1 and anotherPlayer.HasMet then		
-					if markerData.HighestColumn == data[DATA_FIELD_PLAYERINFO].Stats[anotherID].HighestColumn then
-						checkedID[anotherID] = true;
-						-- Need to do this check if player's ID didn't show up first in the list in creating the marker.						
-						if anotherID == ePlayer then
-							markerData.IsPlayerHere	= true;
-						end
-						local foundAnotherID:boolean = false;
-
-						for _, playernumsID in pairs(markerData.PlayerNums) do
-							if not foundAnotherID and playernumsID == anotherID then
-								foundAnotherID = true;
-							end
-						end
-
-						if not foundAnotherID then
-							table.insert( markerData.PlayerNums, anotherID );
-						end
-					end
-				end
-			end
-		end
-	end
-	
-	-- Loop through all items and add an IsRevealed field.
-	local playerTechs:table = Players[ePlayer]:GetTechs();
-	for type,item in pairs(g_kItemDefaults) do
-		if (playerTechs ~= nil and playerTechs.IsTechRevealed ~= nil) then
-			data[DATA_FIELD_LIVEDATA][type]["IsRevealed"] = playerTechs:IsTechRevealed(item.Index);
-		else
-			data[DATA_FIELD_LIVEDATA][type]["IsRevealed"] = true;
-		end
-	end
-
+	data[DATA_FIELD_PLAYERINFO].Markers = {}
 	return data;
 end
 
@@ -1581,75 +1290,63 @@ end
 --	RETURN: A table of node data (techs/civics/etc...) with a prereq for each entry.
 -- ===========================================================================
 function PopulateItemData()
-
 	local kItemDefaults :table = {};		-- Table to return
 
-	function GetHash(t)
-		local r = GameInfo.Types[t];
-		if(r) then
-			return r.Hash;
-		else
-			return 0;
-		end
-	end
+	local HonkaiTechTreeData = {
+		{
+			Type = "HONKAI_TECH_PERCEPTION",
+			Name = "崩坏能感知",
+			Description = "一切的开始。允许开采崩坏能矿脉，并揭示基础的崩坏现象。",
+			Cost = 25,
+			EraType = "ERA_ANCIENT",
+			UITreeRow = 0,
+			Prereqs = {},
+			Column = 1
+		},
+		{
+			Type = "HONKAI_TECH_ST_FREYA",
+			Name = "圣芙蕾雅学园",
+			Description = "解锁特色建筑【圣芙蕾雅学园】，允许训练初级女武神。",
+			Cost = 60,
+			EraType = "ERA_ANCIENT",
+			UITreeRow = 1,
+			Prereqs = {"HONKAI_TECH_PERCEPTION"},
+			Column = 2
+		},
+		{
+			Type = "HONKAI_TECH_SCHICKSAL",
+			Name = "天命武装",
+			Description = "解锁天命阵营的特色近战机甲与防御战术。",
+			Cost = 60,
+			EraType = "ERA_ANCIENT",
+			UITreeRow = -1,
+			Prereqs = {"HONKAI_TECH_PERCEPTION"},
+			Column = 2
+		}
+	}
 
-	local techNodes:table = UITree.GetAvailableTechs();
-	for _,techNode in ipairs(techNodes) do
-
-		local row:table		= GameInfo.Technologies[techNode.Name];
-
+	for i, row in ipairs(HonkaiTechTreeData) do
 		local kEntry:table	= {};
-		kEntry.Type			= row.TechnologyType;
+		kEntry.Type			= row.Type;
 		kEntry.Name			= row.Name;
 		kEntry.BoostText	= "";
-		kEntry.Column		= -1;
-		kEntry.Cost			= techNode.Cost;
-		kEntry.Description	= row.Description and Locale.Lookup( row.Description );
+		kEntry.Column		= row.Column;
+		kEntry.Cost			= row.Cost;
+		kEntry.Description	= row.Description;
 		kEntry.EraType		= row.EraType;
-		kEntry.Hash			= GetHash(kEntry.Type);
-		kEntry.Index		= row.Index;
+		kEntry.Hash			= i; 
+		kEntry.Index		= i; 
 		kEntry.IsBoostable	= false;
-		kEntry.Prereqs		= {};				-- IDs for prerequisite item(s)
-		kEntry.UITreeRow	= techNode.TreeRow;
-		kEntry.Unlocks		= {};				-- Each unlock has: unlockType, iconUnavail, iconAvail, tooltip
+		kEntry.Prereqs		= row.Prereqs;
+		kEntry.UITreeRow	= row.UITreeRow;
+		kEntry.Unlocks		= {};
 
-		-- Only add if not debugging or in debug range.
-		if	((table.count(debugExplicitList) == 0 and debugFilterTechMaxIndex ==-1 ) or
-			(table.count(debugExplicitList) == 0 and kEntry.Index < debugFilterTechMaxIndex) or
-			(table.count(debugExplicitList) ~= 0 and debugExplicitList[kEntry.Index ] ~= nil)) and
-			((table.count(debugExcludeList) == 0) or debugExcludeList[kEntry.Index] == nil) then
-
-			-- Boost?
-			for boostRow in GameInfo.Boosts() do
-				if boostRow.TechnologyType == kEntry.Type then
-					kEntry.BoostText = Locale.Lookup( boostRow.TriggerDescription );
-					kEntry.IsBoostable = true;
-					kEntry.BoostAmount = boostRow.Boost;
-					break;
-				end
-			end
-
-			if (table.count(techNode.PrereqTechTypes) > 0) then
-				for __,prereqTechType in ipairs(techNode.PrereqTechTypes) do
-					local prereqRow:table = GameInfo.Technologies[prereqTechType];
-					table.insert( kEntry.Prereqs, prereqRow.TechnologyType );
-				end
-			end
-			-- If no prereqs were found, set item to special tree start value
-			if table.count(kEntry.Prereqs) == 0 then
-				table.insert(kEntry.Prereqs, PREREQ_ID_TREE_START);
-			end
-
-			-- Warn if DB has an out of bounds entry.
-			if kEntry.UITreeRow < ROW_MIN or kEntry.UITreeRow > ROW_MAX then
-				UI.DataError("UITreeRow for '"..kEntry.Type.."' has an out of bound UITreeRow="..tostring(kEntry.UITreeRow).."  MIN="..tostring(ROW_MIN).."  MAX="..tostring(ROW_MAX));
-			end
-
-			AddTechToEra( kEntry );
-
-			-- Save entry into master list.
-			kItemDefaults[kEntry.Type] = kEntry;
+		if table.count(kEntry.Prereqs) == 0 then
+			table.insert(kEntry.Prereqs, PREREQ_ID_TREE_START);
 		end
+
+		AddTechToEra( kEntry );
+		kItemDefaults[kEntry.Type] = kEntry;
 	end
 
 	return kItemDefaults;
