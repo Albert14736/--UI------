@@ -25,6 +25,7 @@
     </UpdateArt>
     <UpdateText id="HONKAI_TEXT_FRONTEND">
       <File>Honkai_Text.xml</File>
+      <File>HonkaiTechTree_Text.xml</File>
     </UpdateText>
     <UpdateDatabase id="HONKAI_CONFIG">
       <Properties>
@@ -126,7 +127,10 @@
       <File>Honkai_Leader_HoV.xml</File>
     </UpdateDatabase>
     <UpdateArt id="HONKAI_ART_INGAME"><File>kongzhilvzhe.dep</File></UpdateArt>
-    <UpdateText id="HONKAI_TEXT_INGAME"><File>Honkai_Text.xml</File></UpdateText>
+    <UpdateText id="HONKAI_TEXT_INGAME">
+      <File>Honkai_Text.xml</File>
+      <File>HonkaiTechTree_Text.xml</File>
+    </UpdateText>
     <UpdateIcons id="HONKAI_ICONS_INGAME">
       <Properties><LoadOrder>999999</LoadOrder></Properties>
       <File>Icons.xml</File>
@@ -139,6 +143,7 @@
     <File>Config.xml</File>
     <File>Icons.xml</File>
     <File>Honkai_Text.xml</File>
+    <File>HonkaiTechTree_Text.xml</File>
     <File>Honkai_Civilization.xml</File>
     <File>Honkai_Leader_HoV.xml</File>
     <File>UI/HonkaiTechTree/HonkaiTechTree.xml</File>

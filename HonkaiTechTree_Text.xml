@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+    <LocalizedText>
+        <!-- ========================================================== -->
+        <!-- 简体中文 (zh_Hans_CN) -->
+        <!-- ========================================================== -->
+        <Row Tag="LOC_HONKAI_TECH_PERCEPTION_NAME" Language="zh_Hans_CN">
+            <Text>崩坏能感知</Text>
+        </Row>
+        <Row Tag="LOC_HONKAI_TECH_PERCEPTION_DESC" Language="zh_Hans_CN">
+            <Text>消耗 25 [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]一切的开始。允许开采崩坏能矿脉，并揭示基础的崩坏现象。</Text>
+        </Row>
+        <Row Tag="LOC_HONKAI_TECH_ST_FREYA_NAME" Language="zh_Hans_CN">
+            <Text>圣芙蕾雅学园</Text>
+        </Row>
+        <Row Tag="LOC_HONKAI_TECH_ST_FREYA_DESC" Language="zh_Hans_CN">
+            <Text>消耗 60 [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]解锁特色建筑【圣芙蕾雅学园】，允许训练初级女武神。</Text>
+        </Row>
+        <Row Tag="LOC_HONKAI_TECH_SCHICKSAL_NAME" Language="zh_Hans_CN">
+            <Text>天命武装</Text>
+        </Row>
+        <Row Tag="LOC_HONKAI_TECH_SCHICKSAL_DESC" Language="zh_Hans_CN">
+            <Text>消耗 60 [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]解锁天命阵营的特色近战机甲与防御战术。</Text>
+        </Row>
+
+        <!-- ========================================================== -->
+        <!-- 繁体中文 (zh_Hant_HK) -->
+        <!-- ========================================================== -->
+        <Row Tag="LOC_HONKAI_TECH_PERCEPTION_NAME" Language="zh_Hant_HK">
+            <Text>崩壞能感知</Text>
+        </Row>
+        <Row Tag="LOC_HONKAI_TECH_PERCEPTION_DESC" Language="zh_Hant_HK">
+            <Text>消耗 25 [ICON_Faith] 崩壞能[NEWLINE][NEWLINE]一切的開始。允許開採崩壞能礦脈，並揭示基礎的崩壞現象。</Text>
+        </Row>
+        <Row Tag="LOC_HONKAI_TECH_ST_FREYA_NAME" Language="zh_Hant_HK">
+            <Text>聖芙蕾雅學園</Text>
+        </Row>
+        <Row Tag="LOC_HONKAI_TECH_ST_FREYA_DESC" Language="zh_Hant_HK">
+            <Text>消耗 60 [ICON_Faith] 崩壞能[NEWLINE][NEWLINE]解鎖特色建築【聖芙蕾雅學園】，允許訓練初級女武神。</Text>
+        </Row>
+        <Row Tag="LOC_HONKAI_TECH_SCHICKSAL_NAME" Language="zh_Hant_HK">
+            <Text>天命武裝</Text>
+        </Row>
+        <Row Tag="LOC_HONKAI_TECH_SCHICKSAL_DESC" Language="zh_Hant_HK">
+            <Text>消耗 60 [ICON_Faith] 崩壞能[NEWLINE][NEWLINE]解鎖天命陣營的特色近戰機甲與防禦戰術。</Text>
+        </Row>
+
+        <!-- ========================================================== -->
+        <!-- 英语 (en_US) 涵盖所有英语国家默认读取 -->
+        <!-- ========================================================== -->
+        <Row Tag="LOC_HONKAI_TECH_PERCEPTION_NAME" Language="en_US">
+            <Text>Honkai Perception</Text>
+        </Row>
+        <Row Tag="LOC_HONKAI_TECH_PERCEPTION_DESC" Language="en_US">
+            <Text>Cost 25 [ICON_Faith] Honkai Energy[NEWLINE][NEWLINE]The beginning of everything. Allows the extraction of Honkai Energy veins and reveals basic Honkai phenomena.</Text>
+        </Row>
+        <Row Tag="LOC_HONKAI_TECH_ST_FREYA_NAME" Language="en_US">
+            <Text>St. Freya Academy</Text>
+        </Row>
+        <Row Tag="LOC_HONKAI_TECH_ST_FREYA_DESC" Language="en_US">
+            <Text>Cost 60 [ICON_Faith] Honkai Energy[NEWLINE][NEWLINE]Unlocks the unique building [St. Freya Academy], allowing the training of novice Valkyries.</Text>
+        </Row>
+        <Row Tag="LOC_HONKAI_TECH_SCHICKSAL_NAME" Language="en_US">
+            <Text>Schicksal Armament</Text>
+        </Row>
+        <Row Tag="LOC_HONKAI_TECH_SCHICKSAL_DESC" Language="en_US">
+            <Text>Cost 60 [ICON_Faith] Honkai Energy[NEWLINE][NEWLINE]Unlocks unique Schicksal mechas and defensive tactics.</Text>
+        </Row>
+    </LocalizedText>
+</GameData>

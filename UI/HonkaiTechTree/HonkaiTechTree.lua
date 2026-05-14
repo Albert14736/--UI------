@@ -1364,8 +1364,8 @@ function PopulateItemData()
 	local HonkaiTechTreeData = {
 		{
 			Type = "HONKAI_TECH_PERCEPTION",
-			Name = "崩坏能感知",
-			Description = "一切的开始。允许开采崩坏能矿脉，并揭示基础的崩坏现象。",
+			Name = "LOC_HONKAI_TECH_PERCEPTION_NAME",
+			Description = "LOC_HONKAI_TECH_PERCEPTION_DESC",
 			Cost = 25,
 			EraType = "ERA_ANCIENT",
 			UITreeRow = 0,
@@ -1374,8 +1374,8 @@ function PopulateItemData()
 		},
 		{
 			Type = "HONKAI_TECH_ST_FREYA",
-			Name = "圣芙蕾雅学园",
-			Description = "解锁特色建筑【圣芙蕾雅学园】，允许训练初级女武神。",
+			Name = "LOC_HONKAI_TECH_ST_FREYA_NAME",
+			Description = "LOC_HONKAI_TECH_ST_FREYA_DESC",
 			Cost = 60,
 			EraType = "ERA_ANCIENT",
 			UITreeRow = 1,
@@ -1384,8 +1384,8 @@ function PopulateItemData()
 		},
 		{
 			Type = "HONKAI_TECH_SCHICKSAL",
-			Name = "天命武装",
-			Description = "解锁天命阵营的特色近战机甲与防御战术。",
+			Name = "LOC_HONKAI_TECH_SCHICKSAL_NAME",
+			Description = "LOC_HONKAI_TECH_SCHICKSAL_DESC",
 			Cost = 60,
 			EraType = "ERA_ANCIENT",
 			UITreeRow = -1,
@@ -1401,7 +1401,7 @@ function PopulateItemData()
 		kEntry.BoostText	= "";
 		kEntry.Column		= row.Column;
 		kEntry.Cost			= row.Cost;
-		kEntry.Description	= row.Description;
+		kEntry.Description	= Locale.Lookup(row.Description);
 		kEntry.EraType		= row.EraType;
 		kEntry.Hash			= i; 
 		kEntry.Index		= i; 
