@@ -36,9 +36,6 @@ include( "TechAndCivicSupport");	-- (Already includes Civ6Common and InstanceMan
 include( "TechFilterFunctions" );
 include( "ModalScreen_PlayerYieldsHelper" );
 include( "GameCapabilities" );
-include( "TechAndCivicSupport_6T" );
-include( "AllianceResearchSupport" );
-
 print(" --- | 6T Tech Tree Loaded! | ---")
 -- ===========================================================================
 --	DEBUG

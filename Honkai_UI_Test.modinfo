@@ -148,8 +148,6 @@
     <File>Honkai_Leader_HoV.xml</File>
     <File>UI/HonkaiTechTree/HonkaiTechTree.xml</File>
     <File>UI/HonkaiTechTree/HonkaiTechTree.lua</File>
-    <File>UI/HonkaiTechTree/TechAndCivicSupport_6T.lua</File>
-    <File>UI/HonkaiTechTree/TechAndCivicUnlockables_6T.lua</File>
     <File>HonkaiEnergySystem.lua</File>
     <File>Textures/HonkaiCiv_22.dds</File>
     <File>Textures/HonkaiCiv_30.dds</File>
