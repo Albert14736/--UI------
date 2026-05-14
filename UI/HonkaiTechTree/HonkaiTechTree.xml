@@ -122,7 +122,7 @@
 		<Container ID="Top" Offset="0,-36" Size="90,768">
 			<!--Image Anchor="L,B" Offset="-20,-5" Size="128,128" Texture="Tree_EraPip"-->
 			<Image ID="EraLabel" Anchor="L,B" Offset="0,-5" Size="128,695" Texture="EraLabel_Parchment.dds" >
-				<Label ID="EraTitle" Offset="73,570" Rotate="270" Style="TreeEraBigText" Color="255,255,255,255" />
+				<Label ID="EraTitle" Offset="73,570" Rotate="270" Style="TreeEraBigText" Color="38,39,32,255" />
 				<!-- <Label	ID="Date"										Offset="85,8"		Rotate="270" Style="TreeEraSmallText" String="1000 B.C. - 500 AD (placeholder)"/> -->
 			</Image>
 			<Image ID="ArtLeft" Anchor="L,C" Offset="18,0" Size="8,parent" Texture="Parchment_Separator" Alpha="1.0"/>
@@ -133,7 +133,7 @@
 
 	<Instance Name="EraArtInstance">
 		<Container ID="Top" Anchor="L,B" Size="parent,parent" Offset="0,0">
-			<Image ID="BG" Anchor="L,B" Texture="Parchment_Pattern" Offset="350,0" StretchMode="Fill" Size="parent+2,parent" Color="255,255,255,255" Alpha="0.1"/>
+			<Image ID="BG" Anchor="L,B" Texture="Parchment_Pattern" Offset="350,0" StretchMode="Fill" Size="parent+2,parent" Color="0,0,0,255" Alpha="0.15"/>
 		</Container>
 	</Instance>
 
