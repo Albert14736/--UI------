@@ -96,11 +96,30 @@
         <File>Textures/herrscher_of_the_void_head_80.dds</File>
         <File>Textures/herrscher_of_the_void_head_256.dds</File>
         <File>Textures/Honkai_Terminal_Icon38.dds</File>
+        <File>UI/Textures/Checkboxes_2.dds</File>
+        <File>UI/Textures/EraBG_Empty.dds</File>
+        <File>UI/Textures/EraLabel_Civic.dds</File>
+        <File>UI/Textures/EraLabel_Parchment.dds</File>
+        <File>UI/Textures/EraLabel_Tech.dds</File>
+        <File>UI/Textures/Frame_EraRollover_Medieval_6T_Top.dds</File>
+        <File>UI/Textures/Frame_EraRollover_PostClassical_6T_Bottom.dds</File>
+        <File>UI/Textures/Tree_Path_DashEN_2.dds</File>
+        <File>UI/Textures/Tree_Path_DashES_2.dds</File>
+        <File>UI/Textures/Tree_Path_DashEW_2.dds</File>
+        <File>UI/Textures/Tree_Path_DashNE_2.dds</File>
+        <File>UI/Textures/Tree_Path_DashNS_2.dds</File>
+        <File>UI/Textures/Tree_Path_DashSE_2.dds</File>
+        <File>UI/Textures/Tree_Path_EN_2.dds</File>
+        <File>UI/Textures/Tree_Path_ES_2.dds</File>
+        <File>UI/Textures/Tree_Path_EW_2.dds</File>
+        <File>UI/Textures/Tree_Path_NE_2.dds</File>
+        <File>UI/Textures/Tree_Path_NS_2.dds</File>
+        <File>UI/Textures/Tree_Path_SE_2.dds</File>
       </Items>
     </ImportFiles>
     <AddUserInterfaces id="HONKAI_TECH_TREE_UI">
       <Properties><Context>InGame</Context></Properties>
-      <File>HonkaiTechTree.xml</File>
+      <File>UI/HonkaiTechTree/HonkaiTechTree.xml</File>
     </AddUserInterfaces>
     <UpdateDatabase id="HONKAI_INGAME_DATABASE">
       <File>Honkai_Civilization.xml</File>
@@ -122,8 +141,10 @@
     <File>Honkai_Text.xml</File>
     <File>Honkai_Civilization.xml</File>
     <File>Honkai_Leader_HoV.xml</File>
-    <File>HonkaiTechTree.xml</File>
-    <File>HonkaiTechTree.lua</File>
+    <File>UI/HonkaiTechTree/HonkaiTechTree.xml</File>
+    <File>UI/HonkaiTechTree/HonkaiTechTree.lua</File>
+    <File>UI/HonkaiTechTree/TechAndCivicSupport_6T.lua</File>
+    <File>UI/HonkaiTechTree/TechAndCivicUnlockables_6T.lua</File>
     <File>HonkaiEnergySystem.lua</File>
     <File>Textures/HonkaiCiv_22.dds</File>
     <File>Textures/HonkaiCiv_30.dds</File>
@@ -147,6 +168,25 @@
     <File>Textures/herrscher_of_the_void_head_80.dds</File>
     <File>Textures/herrscher_of_the_void_head_256.dds</File>
     <File>Textures/Honkai_Terminal_Icon38.dds</File>
+    <File>UI/Textures/Checkboxes_2.dds</File>
+    <File>UI/Textures/EraBG_Empty.dds</File>
+    <File>UI/Textures/EraLabel_Civic.dds</File>
+    <File>UI/Textures/EraLabel_Parchment.dds</File>
+    <File>UI/Textures/EraLabel_Tech.dds</File>
+    <File>UI/Textures/Frame_EraRollover_Medieval_6T_Top.dds</File>
+    <File>UI/Textures/Frame_EraRollover_PostClassical_6T_Bottom.dds</File>
+    <File>UI/Textures/Tree_Path_DashEN_2.dds</File>
+    <File>UI/Textures/Tree_Path_DashES_2.dds</File>
+    <File>UI/Textures/Tree_Path_DashEW_2.dds</File>
+    <File>UI/Textures/Tree_Path_DashNE_2.dds</File>
+    <File>UI/Textures/Tree_Path_DashNS_2.dds</File>
+    <File>UI/Textures/Tree_Path_DashSE_2.dds</File>
+    <File>UI/Textures/Tree_Path_EN_2.dds</File>
+    <File>UI/Textures/Tree_Path_ES_2.dds</File>
+    <File>UI/Textures/Tree_Path_EW_2.dds</File>
+    <File>UI/Textures/Tree_Path_NE_2.dds</File>
+    <File>UI/Textures/Tree_Path_NS_2.dds</File>
+    <File>UI/Textures/Tree_Path_SE_2.dds</File>
     
     <!-- [前台散图测试] 选人界面的散图物理文件声明 (若出错直接删此行) -->
     <File>Textures/herrscher_of_the_void_xuanren.dds</File>
