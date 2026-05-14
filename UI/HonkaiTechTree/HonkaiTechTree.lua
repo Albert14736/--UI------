@@ -235,7 +235,13 @@ end
 function SetCurrentNode( hash:number, item )
 	if hash ~= nil then
 		local pPlayer = Players[Game.GetLocalPlayer()]
-		if pPlayer:GetProperty("UNLOCKED_" .. item.Type) == 1 then
+		local isUnlocked = false
+		if ExposedMembers.Honkai and ExposedMembers.Honkai.IsUnlocked then
+			isUnlocked = ExposedMembers.Honkai.IsUnlocked(Game.GetLocalPlayer(), item.Type)
+		else
+			isUnlocked = (pPlayer:GetProperty("UNLOCKED_" .. item.Type) == 1)
+		end
+		if isUnlocked then
 			print("【崩坏指挥终端】科技已解锁！")
 			return
 		end
@@ -243,7 +249,13 @@ function SetCurrentNode( hash:number, item )
 		for _, prereqId in pairs(item.Prereqs) do
 			if prereqId ~= PREREQ_ID_TREE_START then
 				local prereqType = g_kItemDefaults[prereqId].Type
-				if pPlayer:GetProperty("UNLOCKED_" .. prereqType) ~= 1 then
+				local prereqUnlocked = false
+				if ExposedMembers.Honkai and ExposedMembers.Honkai.IsUnlocked then
+					prereqUnlocked = ExposedMembers.Honkai.IsUnlocked(Game.GetLocalPlayer(), prereqType)
+				else
+					prereqUnlocked = (pPlayer:GetProperty("UNLOCKED_" .. prereqType) == 1)
+				end
+				if not prereqUnlocked then
 					hasAllPrereqs = false
 					break
 				end
@@ -253,10 +265,12 @@ function SetCurrentNode( hash:number, item )
 			UI.PlaySound("Play_UI_Click_False");
 			return
 		end
-		-- 无论钱够不够，全部交给底层挂载排队或秒解
-		if ExposedMembers.Honkai and ExposedMembers.Honkai.SetResearchTarget then
-			ExposedMembers.Honkai.SetResearchTarget(Game.GetLocalPlayer(), item.Type, item.Cost)
-		end
+		-- 无论钱够不够，通过网络同步指令提交给真正底层
+		local tParameters = {}
+		tParameters.OnStart = "HonkaiSetResearchTarget"
+		tParameters.TechType = item.Type
+		tParameters.TechCost = item.Cost
+		UI.RequestPlayerOperation(Game.GetLocalPlayer(), PlayerOperations.EXECUTE_SCRIPT, tParameters)
 		UI.PlaySound("Confirm_Tech_TechTree");
 	else
 		UI.DataError("Attempt to change current tree item with NIL hash!");
@@ -279,27 +293,25 @@ function RealizePathMarkers()
 	local localPlayer	:number = Game.GetLocalPlayer();
 	if localPlayer==PlayerTypes.NONE or localPlayer==PlayerTypes.OBSERVER then return; end
 
-	local pTechs		:table = Players[localPlayer]:GetTechs();
-	local kNodeIds		:table = pTechs:GetResearchQueue();		-- table: index, IDs
-	
+	local currentResearch = nil
+	if ExposedMembers.Honkai and ExposedMembers.Honkai.GetCurrentResearch then
+		currentResearch = ExposedMembers.Honkai.GetCurrentResearch(localPlayer)
+	else
+		local pPlayer = Players[localPlayer];
+		currentResearch = pPlayer:GetProperty("HONKAI_CURRENT_RESEARCH");
+	end
+
 	m_kPathMarkerIM:ResetInstances();
 
-	for i,nodeNumber in pairs(kNodeIds) do
+	if currentResearch then
 		local pathPin = m_kPathMarkerIM:GetInstance();
-
-		if(i < 10) then
-			pathPin.NodeNumber:SetOffsetX(PATH_MARKER_NUMBER_0_9_OFFSET);
-		else
-			pathPin.NodeNumber:SetOffsetX(PATH_MARKER_NUMBER_10_OFFSET);
-		end
-		pathPin.NodeNumber:SetText(tostring(i));
-		for j,node in pairs(g_kItemDefaults) do
-			if node.Index == nodeNumber then
-				local x:number = g_uiNodes[node.Type].x;
-				local y:number = g_uiNodes[node.Type].y;
-				pathPin.Top:SetOffsetX(x-PATH_MARKER_OFFSET_X);
-				pathPin.Top:SetOffsetY(y-PATH_MARKER_OFFSET_Y);
-			end
+		pathPin.NodeNumber:SetOffsetX(PATH_MARKER_NUMBER_0_9_OFFSET);
+		pathPin.NodeNumber:SetText("1");
+		
+		local node = g_uiNodes[currentResearch];
+		if node then
+			pathPin.Top:SetOffsetX(node.x - PATH_MARKER_OFFSET_X);
+			pathPin.Top:SetOffsetY(node.y - PATH_MARKER_OFFSET_Y);
 		end
 	end
 end
@@ -1608,8 +1620,13 @@ function Initialize()
     
     Controls.ModalScreenClose:RegisterCallback(Mouse.eLClick, HideHonkaiWindow);
 
-    -- 监听底层发来的“已购买”广播，瞬间刷新 UI
-    LuaEvents.HonkaiTech_RefreshUI.Add(function(playerID)
+    -- [跨宇宙桥梁] 暴露给 Gameplay 调用的函数，通过本地广播触发刷新以保证 UI 线程安全
+    ExposedMembers.HonkaiUI = ExposedMembers.HonkaiUI or {}
+    ExposedMembers.HonkaiUI.RefreshUI = function(playerID)
+        LuaEvents.HonkaiTech_DoRefresh(playerID)
+    end
+
+    LuaEvents.HonkaiTech_DoRefresh.Add(function(playerID)
         if playerID == m_ePlayer then
             m_kCurrentData = GetCurrentData(m_ePlayer);
             if not ContextPtr:IsHidden() then View(m_kCurrentData); end

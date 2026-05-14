@@ -30,16 +30,39 @@ function OnPlayerTurnStarted(playerID)
             pPlayer:SetProperty("HONKAI_CURRENT_RESEARCH_COST", nil)
             
             print("【崩坏底层】回合结算自动解锁：" .. currentResearch)
-            LuaEvents.HonkaiTech_RefreshUI(playerID)
+            if ExposedMembers.HonkaiUI and ExposedMembers.HonkaiUI.RefreshUI then
+                ExposedMembers.HonkaiUI.RefreshUI(playerID)
+            end
         end
     end
 end
 
 ExposedMembers.Honkai = ExposedMembers.Honkai or {}
-ExposedMembers.Honkai.SetResearchTarget = function(playerID, techType, techCost)
+
+ExposedMembers.Honkai.GetPoints = function(playerID)
+    local pPlayer = Players[playerID]
+    return pPlayer and pPlayer:GetProperty("HONKAI_RESEARCH_POINTS") or 0
+end
+
+ExposedMembers.Honkai.GetCurrentResearch = function(playerID)
+    local pPlayer = Players[playerID]
+    return pPlayer and pPlayer:GetProperty("HONKAI_CURRENT_RESEARCH")
+end
+
+ExposedMembers.Honkai.IsUnlocked = function(playerID, techType)
+    local pPlayer = Players[playerID]
+    return pPlayer and (pPlayer:GetProperty("UNLOCKED_" .. techType) == 1)
+end
+
+-- ===========================================================================
+-- 【核心逻辑】处理 UI 传来的 EXECUTE_SCRIPT “设置研究目标”请求
+-- ===========================================================================
+function OnHonkaiSetResearchTarget(playerID, params)
     local pPlayer = Players[playerID]
     if not pPlayer then return end
     
+    local techType = params.TechType
+    local techCost = params.TechCost
     local currentPoints = pPlayer:GetProperty("HONKAI_RESEARCH_POINTS") or 0
     
     if currentPoints >= techCost then
@@ -56,12 +79,15 @@ ExposedMembers.Honkai.SetResearchTarget = function(playerID, techType, techCost)
         print("【崩坏底层】玩家 " .. playerID .. " 将研究目标设为：" .. techType)
     end
     
-    -- 广播 UI 更新
-    LuaEvents.HonkaiTech_RefreshUI(playerID)
+    -- 底层改完账本后，瞬间去摇醒 UI 进行实时刷新
+    if ExposedMembers.HonkaiUI and ExposedMembers.HonkaiUI.RefreshUI then
+        ExposedMembers.HonkaiUI.RefreshUI(playerID)
+    end
 end
 
 -- ===========================================================================
 function Initialize()
     GameEvents.PlayerTurnStarted.Add(OnPlayerTurnStarted)
+    GameEvents.HonkaiSetResearchTarget.Add(OnHonkaiSetResearchTarget)
 end
 Events.LoadGameViewStateDone.Add(Initialize)
