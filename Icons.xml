@@ -28,6 +28,10 @@
 
         <!-- 专为前台 UI 引擎准备的 1024 独立散图图集 -->
         <Row Name="ATLAS_HOV_FRONTDESK" IconSize="1024" IconsPerRow="1" IconsPerColumn="1" Filename="herrscher_of_the_void_frontdesk.dds"/>
+
+        <!-- 【崩坏科技树专属图集】目前先用终端小图标占位，以后你画了 42x42 的科技大图集再换掉 Filename -->
+        <Row Name="ATLAS_HONKAI_TECH" IconSize="42" IconsPerRow="1" IconsPerColumn="1" Filename="Honkai_Terminal_Icon38.dds"/>
+        <Row Name="ATLAS_HONKAI_TECH" IconSize="38" IconsPerRow="1" IconsPerColumn="1" Filename="Honkai_Terminal_Icon38.dds"/>
     </IconTextureAtlases>
 
     <IconDefinitions>
@@ -43,5 +47,21 @@
 
         <!-- 给前台大立绘专门映射的代号 -->
         <Row Name="ICON_LEADER_HOH_VOID_HERRSCHER_PORTRAIT" Atlas="ATLAS_HOV_FRONTDESK" Index="0"/>
+
+        <!-- 【崩坏科技节点图标映射】名字必须是 ICON_ + 你的科技 Type -->
+        <Row Name="ICON_HONKAI_TECH_PERCEPTION" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_ST_FREYA"   Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_SCHICKSAL"  Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+
+        <!-- 被锁死的科技需要带 _FOW 后缀的图标，否则会变回制陶术 -->
+        <Row Name="ICON_HONKAI_TECH_PERCEPTION_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_ST_FREYA_FOW"   Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_SCHICKSAL_FOW"  Atlas="ATLAS_HONKAI_TECH" Index="0"/>
     </IconDefinitions>
+
+    <!-- 【字体图标映射】让你可以在文本里使用 [ICON_HONKAI_ENERGY] -->
+    <!-- 如果你还没有自己的 .ggxml 和 .ttf 字体库，我们可以先临时借用原版的核能图标 93，或者信仰图标 -->
+    <IconFontMapping>
+        <Row IconName="ICON_HONKAI_ENERGY" FontGlyph="93" FontStyle="Base" />
+    </IconFontMapping>
 </GameData>
