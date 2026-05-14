@@ -1210,7 +1210,7 @@ function GetCurrentData( ePlayer:number, eCompletedTech:number )
 		
 		local progress = 0
 		local turnsLeft = 0
-		if status == ITEM_STATUS.CURRENT or status == ITEM_STATUS.READY then
+		if status == ITEM_STATUS.CURRENT then
 			progress = currentPoints
 			turnsLeft = math.ceil(math.max(0, item.Cost - currentPoints) / 10) -- 暂时写死每回合发 10 点，用于算剩余回合
 		end
