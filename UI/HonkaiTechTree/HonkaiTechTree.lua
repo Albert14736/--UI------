@@ -137,7 +137,7 @@ local PATH_MARKER_NUMBER_10_OFFSET	:number = 15;
 -- Other constants
 local ERA_ART						:table	= {};
 local LINE_LENGTH_BEFORE_CURVE		:number = 20;			-- How long to make a line before a node before it curves
-local PADDING_NODE_STACK_Y			:number = 40;
+local PADDING_NODE_STACK_Y			:number = 0;
 local PARALLAX_SPEED				:number = 1;			-- Speed for how much slower background moves (1.0=regular speed, 0.5=half speed)
 local PARALLAX_ART_SPEED			:number = 1;			-- Speed for how much slower background moves (1.0=regular speed, 0.5=half speed)
 local TREE_START_ROW				:number = 0;			-- Which virtual "row" does tree start on?

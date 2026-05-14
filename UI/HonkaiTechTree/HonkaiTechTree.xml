@@ -114,7 +114,7 @@
   </Instance>
  
   <Instance Name="LineImageInstance">
-    <Image ID="LineImage" Size="40,40" Texture="Tree_Path_DashEW_2.dds" Color="84,77,66,255" StretchMode="Tile"/>
+    <Image ID="LineImage" Size="40,40" Texture="Tree_Path_DashEW_2.dds" Color="180,165,120,128" StretchMode="Tile"/>
   </Instance>
   
 	<!-- Era banners -->
@@ -122,7 +122,7 @@
 		<Container ID="Top" Offset="0,-36" Size="90,768">
 			<!--Image Anchor="L,B" Offset="-20,-5" Size="128,128" Texture="Tree_EraPip"-->
 			<Image ID="EraLabel" Anchor="L,B" Offset="0,-5" Size="128,695" Texture="EraLabel_Parchment.dds" >
-				<Label ID="EraTitle" Offset="73,570" Rotate="270" Style="TreeEraBigText" Color="38,39,32,255" />
+				<Label ID="EraTitle" Offset="73,570" Rotate="270" Style="TreeEraBigText" Color="38,39,32,178" />
 				<!-- <Label	ID="Date"										Offset="85,8"		Rotate="270" Style="TreeEraSmallText" String="1000 B.C. - 500 AD (placeholder)"/> -->
 			</Image>
 			<Image ID="ArtLeft" Anchor="L,C" Offset="18,0" Size="8,parent" Texture="Parchment_Separator" Alpha="1.0"/>
