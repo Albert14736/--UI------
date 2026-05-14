@@ -1741,6 +1741,13 @@ end
 
 -- 拦截机制放行
 function HonkaiInputHandler( pInputStruct:table )
+    local uiMsg = pInputStruct:GetMessageType();
+    if uiMsg == KeyEvents.KeyUp and pInputStruct:GetKey() == Keys.VK_ESCAPE then
+        if not ContextPtr:IsHidden() then
+            HideHonkaiWindow();
+            return true;
+        end
+    end
     return false; 
 end
 
