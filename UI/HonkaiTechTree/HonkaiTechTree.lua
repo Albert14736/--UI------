@@ -1845,11 +1845,6 @@ function Initialize()
     Events.CityWorkerChanged.Add( OnUpdateResearchOnTechChanged );
     Events.CityFocusChanged.Add( OnUpdateResearchOnTechChanged );
 
-    TruncateStringWithTooltip(Controls.AvailableLabelKey, MAX_BEFORE_TRUNC_KEY_LABEL, Controls.AvailableLabelKey:GetText());
-    TruncateStringWithTooltip(Controls.UnavailableLabelKey, MAX_BEFORE_TRUNC_KEY_LABEL, Controls.UnavailableLabelKey:GetText());
-    TruncateStringWithTooltip(Controls.ResearchingLabelKey, MAX_BEFORE_TRUNC_KEY_LABEL, Controls.ResearchingLabelKey:GetText());
-    TruncateStringWithTooltip(Controls.CompletedLabelKey, MAX_BEFORE_TRUNC_KEY_LABEL, Controls.CompletedLabelKey:GetText());
-
     m_TopPanelConsideredHeight = Controls.Vignette:GetSizeY() - TOP_PANEL_OFFSET;
 
     -- 手动触发初始化，因为 LoadGameViewStateDone 触发时 UI 引擎已经错过了 Init 阶段
