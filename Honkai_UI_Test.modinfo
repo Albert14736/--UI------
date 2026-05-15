@@ -25,7 +25,7 @@
     </UpdateArt>
     <UpdateText id="HONKAI_TEXT_FRONTEND">
       <File>Honkai_Text.xml</File>
-      <File>HonkaiTechTree_Text.xml</File>
+      <File>HonkaiTechTreeData/HonkaiTechTree_Text.xml</File>
     </UpdateText>
     <UpdateDatabase id="HONKAI_CONFIG">
       <Properties>
@@ -68,6 +68,12 @@
         <!-- [前台散图测试] 单开一行导入 512x1024 选人散图 (若出错直接删此行) -->
         <File>Textures/herrscher_of_the_void_xuanren.dds</File>
       </Items>
+    </ImportFiles>
+    
+    <!-- 挂载分离的科技树 Lua 数据库 -->
+    <ImportFiles id="HONKAI_LUA_DATA">
+      <Properties><LoadOrder>999999</LoadOrder></Properties>
+      <Items><File>HonkaiTechTreeData/HonkaiTechTree_Data.lua</File></Items>
     </ImportFiles>
   </FrontEndActions>
 
@@ -129,12 +135,17 @@
     <UpdateArt id="HONKAI_ART_INGAME"><File>kongzhilvzhe.dep</File></UpdateArt>
     <UpdateText id="HONKAI_TEXT_INGAME">
       <File>Honkai_Text.xml</File>
-      <File>HonkaiTechTree_Text.xml</File>
+      <File>HonkaiTechTreeData/HonkaiTechTree_Text.xml</File>
     </UpdateText>
     <UpdateIcons id="HONKAI_ICONS_INGAME">
       <Properties><LoadOrder>999999</LoadOrder></Properties>
       <File>Icons.xml</File>
     </UpdateIcons>
+    
+    <ImportFiles id="HONKAI_LUA_DATA_INGAME">
+      <Properties><LoadOrder>999999</LoadOrder></Properties>
+      <Items><File>HonkaiTechTreeData/HonkaiTechTree_Data.lua</File></Items>
+    </ImportFiles>
     <AddGameplayScripts id="HONKAI_GAMEPLAY_SCRIPTS"><File>HonkaiEnergySystem.lua</File></AddGameplayScripts>
   </InGameActions>
 
@@ -143,7 +154,8 @@
     <File>Config.xml</File>
     <File>Icons.xml</File>
     <File>Honkai_Text.xml</File>
-    <File>HonkaiTechTree_Text.xml</File>
+    <File>HonkaiTechTreeData/HonkaiTechTree_Text.xml</File>
+    <File>HonkaiTechTreeData/HonkaiTechTree_Data.lua</File>
     <File>Honkai_Civilization.xml</File>
     <File>Honkai_Leader_HoV.xml</File>
     <File>UI/HonkaiTechTree/HonkaiTechTree.xml</File>

@@ -36,6 +36,9 @@ include( "TechAndCivicSupport");	-- (Already includes Civ6Common and InstanceMan
 include( "TechFilterFunctions" );
 include( "ModalScreen_PlayerYieldsHelper" );
 include( "GameCapabilities" );
+include( "AllianceResearchSupport" );
+include( "HonkaiTechTree_Data" );
+
 print(" --- | 6T Tech Tree Loaded! | ---")
 -- ===========================================================================
 --	DEBUG
@@ -1358,38 +1361,14 @@ end
 function PopulateItemData()
 	local kItemDefaults :table = {};		-- Table to return
 
-	local HonkaiTechTreeData = {
-		{
-			Type = "HONKAI_TECH_PERCEPTION",
-			Name = "LOC_HONKAI_TECH_PERCEPTION_NAME",
-			Description = "LOC_HONKAI_TECH_PERCEPTION_DESC",
-			Cost = 25,
-			EraType = "ERA_ANCIENT",
-			UITreeRow = 0,
-			Prereqs = {},
-			Column = 1
-		},
-		{
-			Type = "HONKAI_TECH_ST_FREYA",
-			Name = "LOC_HONKAI_TECH_ST_FREYA_NAME",
-			Description = "LOC_HONKAI_TECH_ST_FREYA_DESC",
-			Cost = 60,
-			EraType = "ERA_ANCIENT",
-			UITreeRow = 1,
-			Prereqs = {"HONKAI_TECH_PERCEPTION"},
-			Column = 2
-		},
-		{
-			Type = "HONKAI_TECH_SCHICKSAL",
-			Name = "LOC_HONKAI_TECH_SCHICKSAL_NAME",
-			Description = "LOC_HONKAI_TECH_SCHICKSAL_DESC",
-			Cost = 60,
-			EraType = "ERA_ANCIENT",
-			UITreeRow = -1,
-			Prereqs = {"HONKAI_TECH_PERCEPTION"},
-			Column = 2
-		}
-	}
+	local HonkaiTechTreeData = GetHonkaiTechTreeData();
+
+	-- 获取当前游戏速度的成本乘数 (例如：快速67%，标准100%，马拉松300%)
+	local gameSpeedType = GameConfiguration.GetGameSpeedType();
+	local speedMultiplier = 100;
+	if GameInfo.GameSpeeds[gameSpeedType] then
+		speedMultiplier = GameInfo.GameSpeeds[gameSpeedType].CostMultiplier;
+	end
 
 	for i, row in ipairs(HonkaiTechTreeData) do
 		local kEntry:table	= {};
@@ -1397,8 +1376,8 @@ function PopulateItemData()
 		kEntry.Name			= row.Name;
 		kEntry.BoostText	= "";
 		kEntry.Column		= row.Column;
-		kEntry.Cost			= row.Cost;
-		kEntry.Description	= Locale.Lookup(row.Description);
+		kEntry.Cost			= math.ceil(row.Cost * speedMultiplier / 100);
+		kEntry.Description	= Locale.Lookup(row.Description, kEntry.Cost);
 		kEntry.EraType		= row.EraType;
 		kEntry.Hash			= i; 
 		kEntry.Index		= i; 

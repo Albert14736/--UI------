@@ -51,12 +51,48 @@
         <!-- 【崩坏科技节点图标映射】名字必须是 ICON_ + 你的科技 Type -->
         <Row Name="ICON_HONKAI_TECH_PERCEPTION" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
         <Row Name="ICON_HONKAI_TECH_ST_FREYA"   Atlas="ATLAS_HONKAI_TECH" Index="0"/>
-        <Row Name="ICON_HONKAI_TECH_SCHICKSAL"  Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        
+        <Row Name="ICON_HONKAI_TECH_OMEN" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_PATHOLOGY" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_BASIC_TACTICS" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_ENERGY_CONTAINER" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_DESTINY_CLERGY" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_NUN_FORMATION" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_BASIC_ISOLATION" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_WEAPON_PROTOTYPE" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        
+        <Row Name="ICON_HONKAI_TECH_STIGMATA_PROTOTYPE" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_HONKAI_FURNACE" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_SCHICKSAL_DOCTRINE" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_PRAYER_ROOM" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_HONKAI_CONDUCTION" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_ATONEMENT_SYSTEM" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_KNIGHT_LEGACY" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_POWER_ARMOR" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_VALKYRIE_ADVANCED" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
 
         <!-- 被锁死的科技需要带 _FOW 后缀的图标，否则会变回制陶术 -->
         <Row Name="ICON_HONKAI_TECH_PERCEPTION_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
         <Row Name="ICON_HONKAI_TECH_ST_FREYA_FOW"   Atlas="ATLAS_HONKAI_TECH" Index="0"/>
-        <Row Name="ICON_HONKAI_TECH_SCHICKSAL_FOW"  Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        
+        <Row Name="ICON_HONKAI_TECH_OMEN_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_PATHOLOGY_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_BASIC_TACTICS_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_ENERGY_CONTAINER_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_DESTINY_CLERGY_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_NUN_FORMATION_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_BASIC_ISOLATION_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_WEAPON_PROTOTYPE_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        
+        <Row Name="ICON_HONKAI_TECH_STIGMATA_PROTOTYPE_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_HONKAI_FURNACE_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_SCHICKSAL_DOCTRINE_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_PRAYER_ROOM_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_HONKAI_CONDUCTION_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_ATONEMENT_SYSTEM_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_KNIGHT_LEGACY_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_POWER_ARMOR_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_VALKYRIE_ADVANCED_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
     </IconDefinitions>
 
     <!-- 【字体图标映射】让你可以在文本里使用 [ICON_HONKAI_ENERGY] -->
