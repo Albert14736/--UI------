@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GlyphSet>
+    <!-- 1. 声明包含透明通道的 22x22 字体级贴图 -->
+    <Texture Name="benghuaineng_22.dds" />
+    <Texture Name="benghuainengjiejing_22.dds" />
+    <Texture Name="benghuainengyanjiudian_22.dds" />
+    
+    <!-- 2. 将游戏内文本标签映射到贴图上 -->
+    <Glyph Name="[ICON_HONKAI_ENERGY]" Texture="benghuaineng_22.dds" U="0" V="0" SizeX="22" SizeY="22" />
+    <Glyph Name="[ICON_HONKAI_CRYSTAL]" Texture="benghuainengjiejing_22.dds" U="0" V="0" SizeX="22" SizeY="22" />
+    <Glyph Name="[ICON_HONKAI_RESEARCH]" Texture="benghuainengyanjiudian_22.dds" U="0" V="0" SizeX="22" SizeY="22" />
+</GlyphSet>

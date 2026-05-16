@@ -38,6 +38,9 @@
         <LoadOrder>999999</LoadOrder>
       </Properties>
       <File>Icons.xml</File>
+      <File>FontIcon_HonkaiEnergy.ggxml</File>
+      <File>FontIcon_HonkaiCrystal.ggxml</File>
+      <File>FontIcon_HonkaiResearch.ggxml</File>
     </UpdateIcons>
 
     <!-- 必须在 FrontEnd 也写一遍 ImportFiles，确保主菜单也能看到图片 -->
@@ -67,6 +70,46 @@
         <File>Textures/Honkai_Terminal_Icon38.dds</File>
         <!-- [前台散图测试] 单开一行导入 512x1024 选人散图 (若出错直接删此行) -->
         <File>Textures/herrscher_of_the_void_xuanren.dds</File>
+        <File>DistrictAndBuildingArt/nishang_logo_22.dds</File>
+        <File>DistrictAndBuildingArt/nishang_logo_32.dds</File>
+        <File>DistrictAndBuildingArt/nishang_logo_38.dds</File>
+        <File>DistrictAndBuildingArt/nishang_logo_50.dds</File>
+        <File>DistrictAndBuildingArt/nishang_logo_80.dds</File>
+        <File>DistrictAndBuildingArt/nishang_logo_128.dds</File>
+        <File>DistrictAndBuildingArt/nishang_logo_256.dds</File>
+        <File>DistrictAndBuildingArt/shijieshe_logo_22.dds</File>
+        <File>DistrictAndBuildingArt/shijieshe_logo_32.dds</File>
+        <File>DistrictAndBuildingArt/shijieshe_logo_38.dds</File>
+        <File>DistrictAndBuildingArt/shijieshe_logo_50.dds</File>
+        <File>DistrictAndBuildingArt/shijieshe_logo_80.dds</File>
+        <File>DistrictAndBuildingArt/shijieshe_logo_128.dds</File>
+        <File>DistrictAndBuildingArt/shijieshe_logo_256.dds</File>
+        <File>DistrictAndBuildingArt/tianming_logo_22.dds</File>
+        <File>DistrictAndBuildingArt/tianming_logo_32.dds</File>
+        <File>DistrictAndBuildingArt/tianming_logo_38.dds</File>
+        <File>DistrictAndBuildingArt/tianming_logo_50.dds</File>
+        <File>DistrictAndBuildingArt/tianming_logo_80.dds</File>
+        <File>DistrictAndBuildingArt/tianming_logo_128.dds</File>
+        <File>DistrictAndBuildingArt/tianming_logo_256.dds</File>
+        
+        <File>FontIcon_HonkaiEnergy.ggxml</File>
+        <File>FontIcon_HonkaiCrystal.ggxml</File>
+        <File>FontIcon_HonkaiResearch.ggxml</File>
+        <File>ResourceAndText_Textures/benghuaineng_22.dds</File>
+        <File>ResourceAndText_Textures/benghuaineng_38.dds</File>
+        <File>ResourceAndText_Textures/benghuaineng_50.dds</File>
+        <File>ResourceAndText_Textures/benghuaineng_64.dds</File>
+        <File>ResourceAndText_Textures/benghuaineng_256.dds</File>
+        <File>ResourceAndText_Textures/benghuainengjiejing_22.dds</File>
+        <File>ResourceAndText_Textures/benghuainengjiejing_38.dds</File>
+        <File>ResourceAndText_Textures/benghuainengjiejing_50.dds</File>
+        <File>ResourceAndText_Textures/benghuainengjiejing_64.dds</File>
+        <File>ResourceAndText_Textures/benghuainengjiejing_256.dds</File>
+        <File>ResourceAndText_Textures/benghuainengyanjiudian_22.dds</File>
+        <File>ResourceAndText_Textures/benghuainengyanjiudian_38.dds</File>
+        <File>ResourceAndText_Textures/benghuainengyanjiudian_50.dds</File>
+        <File>ResourceAndText_Textures/benghuainengyanjiudian_64.dds</File>
+        <File>ResourceAndText_Textures/benghuainengyanjiudian_256.dds</File>
       </Items>
     </ImportFiles>
     
@@ -103,6 +146,46 @@
         <File>Textures/herrscher_of_the_void_head_80.dds</File>
         <File>Textures/herrscher_of_the_void_head_256.dds</File>
         <File>Textures/Honkai_Terminal_Icon38.dds</File>
+        <File>DistrictAndBuildingArt/nishang_logo_22.dds</File>
+        <File>DistrictAndBuildingArt/nishang_logo_32.dds</File>
+        <File>DistrictAndBuildingArt/nishang_logo_38.dds</File>
+        <File>DistrictAndBuildingArt/nishang_logo_50.dds</File>
+        <File>DistrictAndBuildingArt/nishang_logo_80.dds</File>
+        <File>DistrictAndBuildingArt/nishang_logo_128.dds</File>
+        <File>DistrictAndBuildingArt/nishang_logo_256.dds</File>
+        <File>DistrictAndBuildingArt/shijieshe_logo_22.dds</File>
+        <File>DistrictAndBuildingArt/shijieshe_logo_32.dds</File>
+        <File>DistrictAndBuildingArt/shijieshe_logo_38.dds</File>
+        <File>DistrictAndBuildingArt/shijieshe_logo_50.dds</File>
+        <File>DistrictAndBuildingArt/shijieshe_logo_80.dds</File>
+        <File>DistrictAndBuildingArt/shijieshe_logo_128.dds</File>
+        <File>DistrictAndBuildingArt/shijieshe_logo_256.dds</File>
+        <File>DistrictAndBuildingArt/tianming_logo_22.dds</File>
+        <File>DistrictAndBuildingArt/tianming_logo_32.dds</File>
+        <File>DistrictAndBuildingArt/tianming_logo_38.dds</File>
+        <File>DistrictAndBuildingArt/tianming_logo_50.dds</File>
+        <File>DistrictAndBuildingArt/tianming_logo_80.dds</File>
+        <File>DistrictAndBuildingArt/tianming_logo_128.dds</File>
+        <File>DistrictAndBuildingArt/tianming_logo_256.dds</File>
+        
+        <File>FontIcon_HonkaiEnergy.ggxml</File>
+        <File>FontIcon_HonkaiCrystal.ggxml</File>
+        <File>FontIcon_HonkaiResearch.ggxml</File>
+        <File>ResourceAndText_Textures/benghuaineng_22.dds</File>
+        <File>ResourceAndText_Textures/benghuaineng_38.dds</File>
+        <File>ResourceAndText_Textures/benghuaineng_50.dds</File>
+        <File>ResourceAndText_Textures/benghuaineng_64.dds</File>
+        <File>ResourceAndText_Textures/benghuaineng_256.dds</File>
+        <File>ResourceAndText_Textures/benghuainengjiejing_22.dds</File>
+        <File>ResourceAndText_Textures/benghuainengjiejing_38.dds</File>
+        <File>ResourceAndText_Textures/benghuainengjiejing_50.dds</File>
+        <File>ResourceAndText_Textures/benghuainengjiejing_64.dds</File>
+        <File>ResourceAndText_Textures/benghuainengjiejing_256.dds</File>
+        <File>ResourceAndText_Textures/benghuainengyanjiudian_22.dds</File>
+        <File>ResourceAndText_Textures/benghuainengyanjiudian_38.dds</File>
+        <File>ResourceAndText_Textures/benghuainengyanjiudian_50.dds</File>
+        <File>ResourceAndText_Textures/benghuainengyanjiudian_64.dds</File>
+        <File>ResourceAndText_Textures/benghuainengyanjiudian_256.dds</File>
         <File>UI/Textures/Checkboxes_2.dds</File>
         <File>UI/Textures/EraBG_Empty.dds</File>
         <File>UI/Textures/EraLabel_Civic.dds</File>
@@ -129,6 +212,7 @@
       <File>UI/HonkaiTechTree/HonkaiTechTree.xml</File>
     </AddUserInterfaces>
     <UpdateDatabase id="HONKAI_INGAME_DATABASE">
+      <File>Honkai_Resources.xml</File>
       <File>Honkai_Civilization.xml</File>
       <File>Honkai_Leader_HoV.xml</File>
     </UpdateDatabase>
@@ -140,6 +224,9 @@
     <UpdateIcons id="HONKAI_ICONS_INGAME">
       <Properties><LoadOrder>999999</LoadOrder></Properties>
       <File>Icons.xml</File>
+      <File>FontIcon_HonkaiEnergy.ggxml</File>
+      <File>FontIcon_HonkaiCrystal.ggxml</File>
+      <File>FontIcon_HonkaiResearch.ggxml</File>
     </UpdateIcons>
     
     <ImportFiles id="HONKAI_LUA_DATA_INGAME">
@@ -154,6 +241,7 @@
     <File>Config.xml</File>
     <File>Icons.xml</File>
     <File>Honkai_Text.xml</File>
+    <File>Honkai_Resources.xml</File>
     <File>HonkaiTechTreeData/HonkaiTechTree_Text.xml</File>
     <File>HonkaiTechTreeData/HonkaiTechTree_Data.lua</File>
     <File>Honkai_Civilization.xml</File>
@@ -205,6 +293,46 @@
     
     <!-- [前台散图测试] 选人界面的散图物理文件声明 (若出错直接删此行) -->
     <File>Textures/herrscher_of_the_void_xuanren.dds</File>
+        <File>DistrictAndBuildingArt/nishang_logo_22.dds</File>
+        <File>DistrictAndBuildingArt/nishang_logo_32.dds</File>
+        <File>DistrictAndBuildingArt/nishang_logo_38.dds</File>
+        <File>DistrictAndBuildingArt/nishang_logo_50.dds</File>
+        <File>DistrictAndBuildingArt/nishang_logo_80.dds</File>
+        <File>DistrictAndBuildingArt/nishang_logo_128.dds</File>
+        <File>DistrictAndBuildingArt/nishang_logo_256.dds</File>
+        <File>DistrictAndBuildingArt/shijieshe_logo_22.dds</File>
+        <File>DistrictAndBuildingArt/shijieshe_logo_32.dds</File>
+        <File>DistrictAndBuildingArt/shijieshe_logo_38.dds</File>
+        <File>DistrictAndBuildingArt/shijieshe_logo_50.dds</File>
+        <File>DistrictAndBuildingArt/shijieshe_logo_80.dds</File>
+        <File>DistrictAndBuildingArt/shijieshe_logo_128.dds</File>
+        <File>DistrictAndBuildingArt/shijieshe_logo_256.dds</File>
+        <File>DistrictAndBuildingArt/tianming_logo_22.dds</File>
+        <File>DistrictAndBuildingArt/tianming_logo_32.dds</File>
+        <File>DistrictAndBuildingArt/tianming_logo_38.dds</File>
+        <File>DistrictAndBuildingArt/tianming_logo_50.dds</File>
+        <File>DistrictAndBuildingArt/tianming_logo_80.dds</File>
+        <File>DistrictAndBuildingArt/tianming_logo_128.dds</File>
+        <File>DistrictAndBuildingArt/tianming_logo_256.dds</File>
+        
+        <File>FontIcon_HonkaiEnergy.ggxml</File>
+        <File>FontIcon_HonkaiCrystal.ggxml</File>
+        <File>FontIcon_HonkaiResearch.ggxml</File>
+        <File>ResourceAndText_Textures/benghuaineng_22.dds</File>
+        <File>ResourceAndText_Textures/benghuaineng_38.dds</File>
+        <File>ResourceAndText_Textures/benghuaineng_50.dds</File>
+        <File>ResourceAndText_Textures/benghuaineng_64.dds</File>
+        <File>ResourceAndText_Textures/benghuaineng_256.dds</File>
+        <File>ResourceAndText_Textures/benghuainengjiejing_22.dds</File>
+        <File>ResourceAndText_Textures/benghuainengjiejing_38.dds</File>
+        <File>ResourceAndText_Textures/benghuainengjiejing_50.dds</File>
+        <File>ResourceAndText_Textures/benghuainengjiejing_64.dds</File>
+        <File>ResourceAndText_Textures/benghuainengjiejing_256.dds</File>
+        <File>ResourceAndText_Textures/benghuainengyanjiudian_22.dds</File>
+        <File>ResourceAndText_Textures/benghuainengyanjiudian_38.dds</File>
+        <File>ResourceAndText_Textures/benghuainengyanjiudian_50.dds</File>
+        <File>ResourceAndText_Textures/benghuainengyanjiudian_64.dds</File>
+        <File>ResourceAndText_Textures/benghuainengyanjiudian_256.dds</File>
     <!-- [前台散图测试] 挂载前台专用图纸，用于引导引擎生吃散图 (若出错直接删此行) -->
     <File>FallbackLeaders.artdef</File>
     

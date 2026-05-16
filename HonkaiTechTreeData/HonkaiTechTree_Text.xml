@@ -8,58 +8,58 @@
             <Text>崩坏能感知</Text>
         </Row>
         <Row Tag="LOC_HONKAI_TECH_PERCEPTION_DESC" Language="zh_Hans_CN">
-            <Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]一切的开始。允许开采崩坏能矿脉，并揭示基础的崩坏现象。</Text>
+            <Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]一切的开始。允许开采崩坏能矿脉，并揭示基础的崩坏现象。</Text>
         </Row>
         <Row Tag="LOC_HONKAI_TECH_OMEN_NAME" Language="zh_Hans_CN"><Text>崩坏预兆</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_OMEN_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]每回合无条件 +1 信仰值。（极速抢发万神殿）</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_OMEN_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]每回合无条件 +1 信仰值。（极速抢发万神殿）</Text></Row>
         
         <Row Tag="LOC_HONKAI_TECH_PATHOLOGY_NAME" Language="zh_Hans_CN"><Text>崩坏病理学</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_PATHOLOGY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]城市免疫部分崩坏灾难导致的宜居度惩罚。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_PATHOLOGY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]城市免疫部分崩坏灾难导致的宜居度惩罚。</Text></Row>
         
         <Row Tag="LOC_HONKAI_TECH_BASIC_TACTICS_NAME" Language="zh_Hans_CN"><Text>基础抗崩坏战术</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_BASIC_TACTICS_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]近战单位对野蛮人获得战力加成。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_BASIC_TACTICS_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]近战单位对野蛮人获得战力加成。</Text></Row>
         
         <Row Tag="LOC_HONKAI_TECH_ENERGY_CONTAINER_NAME" Language="zh_Hans_CN"><Text>能源容器雏形</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_ENERGY_CONTAINER_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]解锁初级【崩坏能存储池】建筑。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_ENERGY_CONTAINER_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]解锁初级【崩坏能存储池】建筑。</Text></Row>
         
         <Row Tag="LOC_HONKAI_TECH_DESTINY_CLERGY_NAME" Language="zh_Hans_CN"><Text>命运神职</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_DESTINY_CLERGY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]每回合无条件 +2 大预言家点数。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_DESTINY_CLERGY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]每回合无条件 +2 大预言家点数。</Text></Row>
         
         <Row Tag="LOC_HONKAI_TECH_NUN_FORMATION_NAME" Language="zh_Hans_CN"><Text>天命修女编制</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_NUN_FORMATION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]信仰值购买单位费用降低 10%。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_NUN_FORMATION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]信仰值购买单位费用降低 10%。</Text></Row>
         
         <Row Tag="LOC_HONKAI_TECH_BASIC_ISOLATION_NAME" Language="zh_Hans_CN"><Text>初级崩坏隔离</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_BASIC_ISOLATION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]建筑抗灾能力提升。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_BASIC_ISOLATION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]建筑抗灾能力提升。</Text></Row>
         
         <Row Tag="LOC_HONKAI_TECH_ST_FREYA_NAME" Language="zh_Hans_CN">
             <Text>圣芙蕾雅学园</Text>
         </Row>
         <Row Tag="LOC_HONKAI_TECH_ST_FREYA_DESC" Language="zh_Hans_CN">
-            <Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]解锁特色建筑【圣芙蕾雅学园】（所在城市局部女武神训练等级大幅提升）。</Text>
+            <Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]解锁特色建筑【圣芙蕾雅学园】（所在城市局部女武神训练等级大幅提升）。</Text>
         </Row>
         
         <Row Tag="LOC_HONKAI_TECH_WEAPON_PROTOTYPE_NAME" Language="zh_Hans_CN"><Text>崩坏能武器初设</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_WEAPON_PROTOTYPE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]解锁 T1 B级女武神。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_WEAPON_PROTOTYPE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]解锁 T1 B级女武神。</Text></Row>
 
         <!-- 古典时代 -->
         <Row Tag="LOC_HONKAI_TECH_STIGMATA_PROTOTYPE_NAME" Language="zh_Hans_CN"><Text>人工圣痕雏形</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_STIGMATA_PROTOTYPE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]解锁【基因实验室】建筑。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_STIGMATA_PROTOTYPE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]解锁【基因实验室】建筑。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_HONKAI_FURNACE_NAME" Language="zh_Hans_CN"><Text>崩坏能熔炉</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_HONKAI_FURNACE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]解锁城市项目【崩坏能转化】。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_HONKAI_FURNACE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]解锁城市项目【崩坏能转化】。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_SCHICKSAL_DOCTRINE_NAME" Language="zh_Hans_CN"><Text>天命教义</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_SCHICKSAL_DOCTRINE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]圣地相邻加成提升。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_SCHICKSAL_DOCTRINE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]圣地相邻加成提升。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_PRAYER_ROOM_NAME" Language="zh_Hans_CN"><Text>祈祷室基建</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_PRAYER_ROOM_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]解锁专属信仰建筑，提供科研。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_PRAYER_ROOM_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]解锁专属信仰建筑，提供科研。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_HONKAI_CONDUCTION_NAME" Language="zh_Hans_CN"><Text>崩坏能传导</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_HONKAI_CONDUCTION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]连接的城市提供额外产出。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_HONKAI_CONDUCTION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]连接的城市提供额外产出。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_ATONEMENT_SYSTEM_NAME" Language="zh_Hans_CN"><Text>赎罪体系</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_ATONEMENT_SYSTEM_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]驻扎女武神提供信仰和文化。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_ATONEMENT_SYSTEM_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]驻扎女武神提供信仰和文化。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_KNIGHT_LEGACY_NAME" Language="zh_Hans_CN"><Text>骑士传承</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_KNIGHT_LEGACY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]天命特色防御建筑加成。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_KNIGHT_LEGACY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]天命特色防御建筑加成。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_POWER_ARMOR_NAME" Language="zh_Hans_CN"><Text>动力装甲原理</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_POWER_ARMOR_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]减少特色单位维护费。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_POWER_ARMOR_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]减少特色单位维护费。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_VALKYRIE_ADVANCED_NAME" Language="zh_Hans_CN"><Text>女武神进阶教材</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_VALKYRIE_ADVANCED_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]帝国全局【女武神训练等级】+1。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_VALKYRIE_ADVANCED_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]帝国全局【女武神训练等级】+1。</Text></Row>
 
         <!-- ========================================================== -->
         <!-- 繁体中文 (zh_Hant_HK) -->
@@ -68,94 +68,262 @@
             <Text>崩壞能感知</Text>
         </Row>
         <Row Tag="LOC_HONKAI_TECH_PERCEPTION_DESC" Language="zh_Hant_HK">
-            <Text>消耗 {1_Amount} [ICON_Faith] 崩壞能[NEWLINE][NEWLINE]一切的開始。允許開採崩壞能礦脈，並揭示基礎的崩壞現象。</Text>
+            <Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]一切的開始。允許開採崩壞能礦脈，並揭示基礎的崩壞現象。</Text>
         </Row>
         <Row Tag="LOC_HONKAI_TECH_ST_FREYA_NAME" Language="zh_Hant_HK">
             <Text>聖芙蕾雅學園</Text>
         </Row>
         <Row Tag="LOC_HONKAI_TECH_ST_FREYA_DESC" Language="zh_Hant_HK">
-            <Text>消耗 {1_Amount} [ICON_Faith] 崩壞能[NEWLINE][NEWLINE]解鎖特色建築【聖芙蕾雅學園】，允許訓練初級女武神。</Text>
+            <Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]解鎖特色建築【聖芙蕾雅學園】，允許訓練初級女武神。</Text>
         </Row>
         <Row Tag="LOC_HONKAI_TECH_SCHICKSAL_NAME" Language="zh_Hant_HK">
             <Text>天命武裝</Text>
         </Row>
         <Row Tag="LOC_HONKAI_TECH_SCHICKSAL_DESC" Language="zh_Hant_HK">
-            <Text>消耗 {1_Amount} [ICON_Faith] 崩壞能[NEWLINE][NEWLINE]解鎖天命陣營的特色近戰機甲與防禦戰術。</Text>
+            <Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]解鎖天命陣營的特色近戰機甲與防禦戰術。</Text>
         </Row>
 
         <!-- 中世纪 -->
         <Row Tag="LOC_HONKAI_TECH_STIGMATA_PRINCIPLE_NAME" Language="zh_Hans_CN"><Text>圣痕刻印原理</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_STIGMATA_PRINCIPLE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]友方领土内的单位恢复额外生命值。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_STIGMATA_PRINCIPLE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]友方领土内的单位恢复额外生命值。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_SOULLIQUOR_SMELTING_NAME" Language="zh_Hans_CN"><Text>魂钢冶炼</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_SOULLIQUOR_SMELTING_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]解锁隐藏战略资源【魂钢】。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_SOULLIQUOR_SMELTING_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]解锁隐藏战略资源【魂钢】。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_GREAT_ERUPTION_HYPOTHESIS_NAME" Language="zh_Hans_CN"><Text>大崩坏假说</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_GREAT_ERUPTION_HYPOTHESIS_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]帝国抗压能力增强，大幅缓解宜居度压力。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_GREAT_ERUPTION_HYPOTHESIS_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]帝国抗压能力增强，大幅缓解宜居度压力。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_HONKAI_CRYSTAL_EXTRACTION_NAME" Language="zh_Hans_CN"><Text>崩坏能结晶提取</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_HONKAI_CRYSTAL_EXTRACTION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]大幅提高战略资源储备上限。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_HONKAI_CRYSTAL_EXTRACTION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]大幅提高战略资源储备上限。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_VALKYRIE_BLOODLINE_PURIFICATION_NAME" Language="zh_Hans_CN"><Text>女武神血脉提纯</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_VALKYRIE_BLOODLINE_PURIFICATION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]帝国全局【女武神训练等级】+1，并解锁更高等级卡池上限。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_VALKYRIE_BLOODLINE_PURIFICATION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]帝国全局【女武神训练等级】+1，并解锁更高等级卡池上限。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_SCHICKSAL_ARMED_FORMATION_NAME" Language="zh_Hans_CN"><Text>天命武装编队</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_SCHICKSAL_ARMED_FORMATION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]女武神获得强力的协同作战夹击加成。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_SCHICKSAL_ARMED_FORMATION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]女武神获得强力的协同作战夹击加成。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_CLERGY_PRIVILEGE_NAME" Language="zh_Hans_CN"><Text>圣职特权</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_CLERGY_PRIVILEGE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]天命核心城市忠诚度大幅稳固。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_CLERGY_PRIVILEGE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]天命核心城市忠诚度大幅稳固。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_PROTOTYPE_NAME" Language="zh_Hans_CN"><Text>弑神装甲原型</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_PROTOTYPE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]消耗【魂钢】，解锁 T3 S级女武神雏形。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_PROTOTYPE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]消耗【魂钢】，解锁 T3 S级女武神雏形。</Text></Row>
 
         <!-- 文艺复兴时代 -->
         <Row Tag="LOC_HONKAI_TECH_IMAGINARY_INTERFERENCE_THEORY_NAME" Language="zh_Hans_CN"><Text>虚数干涉理论</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_IMAGINARY_INTERFERENCE_THEORY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]光环维持所需的战术崩坏能降低。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_IMAGINARY_INTERFERENCE_THEORY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]光环维持所需的战术崩坏能降低。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_FISSION_REACTOR_NAME" Language="zh_Hans_CN"><Text>裂变反应堆</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_FISSION_REACTOR_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]解锁隐藏战略资源【崩坏反应炉】。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_FISSION_REACTOR_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]解锁隐藏战略资源【崩坏反应炉】。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_STIGMATA_GENE_COMPLETION_NAME" Language="zh_Hans_CN"><Text>圣痕基因补完</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_STIGMATA_GENE_COMPLETION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]帝国人口增长可暂时无视崩坏惩罚。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_STIGMATA_GENE_COMPLETION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]帝国人口增长可暂时无视崩坏惩罚。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_HONKAI_ISOLATION_DOME_NAME" Language="zh_Hans_CN"><Text>崩坏隔离穹顶</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_HONKAI_ISOLATION_DOME_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]解锁专属防御性世界奇观图纸。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_HONKAI_ISOLATION_DOME_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]解锁专属防御性世界奇观图纸。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_ABSOLUTE_THEOCRACY_NAME" Language="zh_Hans_CN"><Text>绝对神权统治</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_ABSOLUTE_THEOCRACY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]宗教扩散压力与距离不再衰减。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_ABSOLUTE_THEOCRACY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]宗教扩散压力与距离不再衰减。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_DEPLOYMENT_NAME" Language="zh_Hans_CN"><Text>弑神装甲列装</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_DEPLOYMENT_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]正式版 T3 S级女武神全面列装。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_DEPLOYMENT_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]正式版 T3 S级女武神全面列装。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_FLOATING_ISLAND_TECH_NAME" Language="zh_Hans_CN"><Text>浮空岛技术</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_FLOATING_ISLAND_TECH_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]解锁空中支援要塞【天命浮空岛】。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_FLOATING_ISLAND_TECH_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]解锁空中支援要塞【天命浮空岛】。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_GRAY_SERPENT_NETWORK_NAME" Language="zh_Hans_CN"><Text>灰蛇情报网</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_GRAY_SERPENT_NETWORK_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]世界蛇在暗中诞生！获得间谍名额上限 +1，并提供一名免费间谍。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_GRAY_SERPENT_NETWORK_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]世界蛇在暗中诞生！获得间谍名额上限 +1，并提供一名免费间谍。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_FANG_IN_THE_SHADOWS_NAME" Language="zh_Hans_CN"><Text>阴影中的毒牙</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_FANG_IN_THE_SHADOWS_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_Faith] 崩坏能[NEWLINE][NEWLINE]所有间谍执行进攻行动的等级额外 +2。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_FANG_IN_THE_SHADOWS_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]所有间谍执行进攻行动的等级额外 +2。</Text></Row>
 
         <Row Tag="LOC_HONKAI_TECH_STIGMATA_PRINCIPLE_NAME" Language="zh_Hant_HK"><Text>聖痕刻印原理</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_STIGMATA_PRINCIPLE_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_Faith] 崩壞能[NEWLINE][NEWLINE]友方領土內的單位恢復額外生命值。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_STIGMATA_PRINCIPLE_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]友方領土內的單位恢復額外生命值。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_SOULLIQUOR_SMELTING_NAME" Language="zh_Hant_HK"><Text>魂鋼冶煉</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_SOULLIQUOR_SMELTING_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_Faith] 崩壞能[NEWLINE][NEWLINE]解鎖隱藏戰略資源【魂鋼】。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_SOULLIQUOR_SMELTING_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]解鎖隱藏戰略資源【魂鋼】。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_GREAT_ERUPTION_HYPOTHESIS_NAME" Language="zh_Hant_HK"><Text>大崩壞假說</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_GREAT_ERUPTION_HYPOTHESIS_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_Faith] 崩壞能[NEWLINE][NEWLINE]帝國抗壓能力增強，大幅緩解宜居度壓力。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_GREAT_ERUPTION_HYPOTHESIS_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]帝國抗壓能力增強，大幅緩解宜居度壓力。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_HONKAI_CRYSTAL_EXTRACTION_NAME" Language="zh_Hant_HK"><Text>崩壞能結晶提取</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_HONKAI_CRYSTAL_EXTRACTION_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_Faith] 崩壞能[NEWLINE][NEWLINE]大幅提高戰略資源儲備上限。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_HONKAI_CRYSTAL_EXTRACTION_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]大幅提高戰略資源儲備上限。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_VALKYRIE_BLOODLINE_PURIFICATION_NAME" Language="zh_Hant_HK"><Text>女武神血脈提純</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_VALKYRIE_BLOODLINE_PURIFICATION_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_Faith] 崩壞能[NEWLINE][NEWLINE]帝國全局【女武神訓練等級】+1，並解鎖更高等級卡池上限。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_VALKYRIE_BLOODLINE_PURIFICATION_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]帝國全局【女武神訓練等級】+1，並解鎖更高等級卡池上限。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_SCHICKSAL_ARMED_FORMATION_NAME" Language="zh_Hant_HK"><Text>天命武裝編隊</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_SCHICKSAL_ARMED_FORMATION_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_Faith] 崩壞能[NEWLINE][NEWLINE]女武神獲得強力的協同作戰夾擊加成。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_SCHICKSAL_ARMED_FORMATION_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]女武神獲得強力的協同作戰夾擊加成。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_CLERGY_PRIVILEGE_NAME" Language="zh_Hant_HK"><Text>聖職特權</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_CLERGY_PRIVILEGE_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_Faith] 崩壞能[NEWLINE][NEWLINE]天命核心城市忠誠度大幅穩固。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_CLERGY_PRIVILEGE_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]天命核心城市忠誠度大幅穩固。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_PROTOTYPE_NAME" Language="zh_Hant_HK"><Text>弒神裝甲原型</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_PROTOTYPE_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_Faith] 崩壞能[NEWLINE][NEWLINE]消耗【魂鋼】，解鎖 T3 S級女武神雛形。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_PROTOTYPE_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]消耗【魂鋼】，解鎖 T3 S級女武神雛形。</Text></Row>
 
         <Row Tag="LOC_HONKAI_TECH_IMAGINARY_INTERFERENCE_THEORY_NAME" Language="zh_Hant_HK"><Text>虛數干涉理論</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_IMAGINARY_INTERFERENCE_THEORY_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_Faith] 崩壞能[NEWLINE][NEWLINE]光環維持所需的戰術崩壞能降低。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_IMAGINARY_INTERFERENCE_THEORY_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]光環維持所需的戰術崩壞能降低。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_FISSION_REACTOR_NAME" Language="zh_Hant_HK"><Text>裂變反應堆</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_FISSION_REACTOR_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_Faith] 崩壞能[NEWLINE][NEWLINE]解鎖隱藏戰略資源【崩壞反應爐】。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_FISSION_REACTOR_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]解鎖隱藏戰略資源【崩壞反應爐】。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_STIGMATA_GENE_COMPLETION_NAME" Language="zh_Hant_HK"><Text>聖痕基因補完</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_STIGMATA_GENE_COMPLETION_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_Faith] 崩壞能[NEWLINE][NEWLINE]帝國人口增長可暫時無視崩壞懲罰。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_STIGMATA_GENE_COMPLETION_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]帝國人口增長可暫時無視崩壞懲罰。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_HONKAI_ISOLATION_DOME_NAME" Language="zh_Hant_HK"><Text>崩壞隔離穹頂</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_HONKAI_ISOLATION_DOME_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_Faith] 崩壞能[NEWLINE][NEWLINE]解鎖專屬防禦性世界奇觀圖紙。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_HONKAI_ISOLATION_DOME_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]解鎖專屬防禦性世界奇觀圖紙。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_ABSOLUTE_THEOCRACY_NAME" Language="zh_Hant_HK"><Text>絕對神權統治</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_ABSOLUTE_THEOCRACY_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_Faith] 崩壞能[NEWLINE][NEWLINE]宗教擴散壓力與距離不再衰減。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_ABSOLUTE_THEOCRACY_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]宗教擴散壓力與距離不再衰減。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_DEPLOYMENT_NAME" Language="zh_Hant_HK"><Text>弒神裝甲列裝</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_DEPLOYMENT_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_Faith] 崩壞能[NEWLINE][NEWLINE]正式版 T3 S級女武神全面列裝。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_DEPLOYMENT_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]正式版 T3 S級女武神全面列裝。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_FLOATING_ISLAND_TECH_NAME" Language="zh_Hant_HK"><Text>浮空島技術</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_FLOATING_ISLAND_TECH_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_Faith] 崩壞能[NEWLINE][NEWLINE]解鎖空中支援要塞【天命浮空島】。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_FLOATING_ISLAND_TECH_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]解鎖空中支援要塞【天命浮空島】。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_GRAY_SERPENT_NETWORK_NAME" Language="zh_Hant_HK"><Text>灰蛇情報網</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_GRAY_SERPENT_NETWORK_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_Faith] 崩壞能[NEWLINE][NEWLINE]世界蛇在暗中誕生！獲得間諜名額上限 +1，並提供一名免費間諜。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_GRAY_SERPENT_NETWORK_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]世界蛇在暗中誕生！獲得間諜名額上限 +1，並提供一名免費間諜。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_FANG_IN_THE_SHADOWS_NAME" Language="zh_Hant_HK"><Text>陰影中的毒牙</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_FANG_IN_THE_SHADOWS_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_Faith] 崩壞能[NEWLINE][NEWLINE]所有間諜執行進攻行動的等級額外 +2。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_FANG_IN_THE_SHADOWS_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]所有間諜執行進攻行動的等級額外 +2。</Text></Row>
+
+        <!-- 工业时代 -->
+        <Row Tag="LOC_HONKAI_TECH_STIGMATA_SCREENING_NAME" Language="zh_Hans_CN"><Text>圣痕初筛计划</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_STIGMATA_SCREENING_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]解锁建筑【祭坛】(超高产出但扣除人口)。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_GENE_TOXIN_NAME" Language="zh_Hans_CN"><Text>基因毒素</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_GENE_TOXIN_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]降低周边敌军战力。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_TACTICAL_TITAN_NAME" Language="zh_Hans_CN"><Text>战术泰坦工程</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_TACTICAL_TITAN_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]逆熵自此独立爆发！机甲免疫崩坏减益。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_AE_MANUFACTURING_NAME" Language="zh_Hans_CN"><Text>逆熵制造域</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_AE_MANUFACTURING_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]工业区建造速度大幅提升。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_SCHICKSAL_GEN4_NAME" Language="zh_Hans_CN"><Text>第四代装甲计划</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_SCHICKSAL_GEN4_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]单向通道。提升天命面板战力。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_MANTIS_EXPERIMENT_NAME" Language="zh_Hans_CN"><Text>融合战士实验</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_MANTIS_EXPERIMENT_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]解锁特殊狂暴单位。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_TITAN_PRODUCTION_LINE_NAME" Language="zh_Hans_CN"><Text>泰坦量产线</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_TITAN_PRODUCTION_LINE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]机甲造价显著降低。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_HONKAI_REVERSE_ENGINEERING_NAME" Language="zh_Hans_CN"><Text>崩坏能逆向解析</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_HONKAI_REVERSE_ENGINEERING_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]科研转化效率大幅提升。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_HEAVY_ARTILLERY_MECHA_NAME" Language="zh_Hans_CN"><Text>重装火炮机甲</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_HEAVY_ARTILLERY_MECHA_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]解锁 T1 教父泰坦。</Text></Row>
+
+        <!-- 现代 -->
+        <Row Tag="LOC_HONKAI_TECH_MANTIS_SURGERY_NAME" Language="zh_Hans_CN"><Text>融合战士手术</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_MANTIS_SURGERY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]全军战力突破时代限制+10。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_ELYSIAN_REALM_NAME" Language="zh_Hans_CN"><Text>往世乐土</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_ELYSIAN_REALM_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]解锁奇观【往世乐土】。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_STEALTH_ARMOR_NAME" Language="zh_Hans_CN"><Text>隐形装甲科技</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_STEALTH_ARMOR_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]解锁 T2 御雷/隐形机甲。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_DEEP_SEA_BLUEPRINT_NAME" Language="zh_Hans_CN"><Text>海渊城蓝图</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_DEEP_SEA_BLUEPRINT_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]解锁奇观【海渊城】。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_VALKYRIE_LIMIT_NAME" Language="zh_Hans_CN"><Text>女武神极限界限</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_VALKYRIE_LIMIT_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]单向通道。解锁 T4 女武神。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_MEMORY_EXTRACTION_NAME" Language="zh_Hans_CN"><Text>记忆体提取</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_MEMORY_EXTRACTION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]击杀敌军获得高额科研。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_EXTREME_BIO_WEAPON_NAME" Language="zh_Hans_CN"><Text>极端生化武器</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_EXTREME_BIO_WEAPON_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]远程单位附加持续掉血。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_AUTO_REPAIR_MATRIX_NAME" Language="zh_Hans_CN"><Text>自动修复矩阵</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_AUTO_REPAIR_MATRIX_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]机甲每回合自动回血。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_SALT_LAKE_CORE_NAME" Language="zh_Hans_CN"><Text>盐湖基地核心</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_SALT_LAKE_CORE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]为逆熵阵营提供极高工业加成。</Text></Row>
+
+        <!-- 原子能时代 -->
+        <Row Tag="LOC_HONKAI_TECH_STIGMATA_PLAN_EXECUTION_NAME" Language="zh_Hans_CN"><Text>圣痕计划·执行</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_STIGMATA_PLAN_EXECUTION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]献祭帝国30%人口，换取永久科研文化翻倍。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_DIMENSIONAL_STRIKE_PREP_NAME" Language="zh_Hans_CN"><Text>降维打击准备</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_DIMENSIONAL_STRIKE_PREP_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]间谍破坏城市直接削减人口。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_ARAHATO_PROJECT_NAME" Language="zh_Hans_CN"><Text>阿拉哈托工程</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_ARAHATO_PROJECT_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]解锁 T3 末日机甲。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_HONKAI_FURNACE_OVERLOAD_NAME" Language="zh_Hans_CN"><Text>崩坏炉过载</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_HONKAI_FURNACE_OVERLOAD_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]所有机甲移动力提升。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_IMAGINARY_TREE_SIMULATION_NAME" Language="zh_Hans_CN"><Text>虚数神骸模拟</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_IMAGINARY_TREE_SIMULATION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]单向通道。天命最终形态。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_IMAGINARY_CORRUPTION_NAME" Language="zh_Hans_CN"><Text>虚数浸染</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_IMAGINARY_CORRUPTION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]大幅增加虚数伤害。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_GLOBAL_SATURATION_STRIKE_NAME" Language="zh_Hans_CN"><Text>全图饱和打击</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_GLOBAL_SATURATION_STRIKE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]解锁区域轰炸技能。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_AE_AUTONOMOUS_DEFENSE_NAME" Language="zh_Hans_CN"><Text>逆熵自律防线</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_AE_AUTONOMOUS_DEFENSE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]城市防御力暴增。</Text></Row>
+
+        <!-- 信息时代 -->
+        <Row Tag="LOC_HONKAI_TECH_SEA_OF_QUANTA_ROAMING_NAME" Language="zh_Hans_CN"><Text>量子之海漫游</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_SEA_OF_QUANTA_ROAMING_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]单位无视地形阻碍。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_HUMAN_STIGMATIZATION_NAME" Language="zh_Hans_CN"><Text>全人类圣痕化</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_HUMAN_STIGMATIZATION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]彻底消除崩坏负面效果。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_SELENA_NAME" Language="zh_Hans_CN"><Text>月光王座</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_SELENA_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]终极奇观/逆熵权能。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_MECHA_AUTONOMOUS_AWAKENING_NAME" Language="zh_Hans_CN"><Text>机甲自律觉醒</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_MECHA_AUTONOMOUS_AWAKENING_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]所有机甲战力二次暴增。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_MARK_OF_THE_SERPENT_NAME" Language="zh_Hans_CN"><Text>蛇之印记</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_MARK_OF_THE_SERPENT_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]世界蛇路线终点。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_CORE_OF_REASON_RESONANCE_NAME" Language="zh_Hans_CN"><Text>理之核心共鸣</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_CORE_OF_REASON_RESONANCE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]逆熵路线终点。</Text></Row>
+
+        <!-- 未来时代 -->
+        <Row Tag="LOC_HONKAI_TECH_KEY_OF_FINALITY_NAME" Language="zh_Hans_CN"><Text>终焉之钥</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_KEY_OF_FINALITY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]三极归一。解锁律者最高权限！</Text></Row>
+
+        <!-- 繁体中文 (从简，确保引擎不报错) -->
+        <Row Tag="LOC_HONKAI_TECH_STIGMATA_SCREENING_NAME" Language="zh_Hant_HK"><Text>聖痕初篩計畫</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_STIGMATA_SCREENING_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]解鎖建築【祭壇】(超高產出但扣除人口)。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_GENE_TOXIN_NAME" Language="zh_Hant_HK"><Text>基因毒素</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_GENE_TOXIN_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]降低周邊敵軍戰力。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_TACTICAL_TITAN_NAME" Language="zh_Hant_HK"><Text>戰術泰坦工程</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_TACTICAL_TITAN_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]逆熵自此獨立爆發！機甲免疫崩壞減益。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_AE_MANUFACTURING_NAME" Language="zh_Hant_HK"><Text>逆熵製造域</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_AE_MANUFACTURING_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]工業區建造速度大幅提升。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_SCHICKSAL_GEN4_NAME" Language="zh_Hant_HK"><Text>第四代裝甲計畫</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_SCHICKSAL_GEN4_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]單向通道。提升天命面板戰力。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_MANTIS_EXPERIMENT_NAME" Language="zh_Hant_HK"><Text>融合戰士實驗</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_MANTIS_EXPERIMENT_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]解鎖特殊狂暴單位。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_TITAN_PRODUCTION_LINE_NAME" Language="zh_Hant_HK"><Text>泰坦量產線</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_TITAN_PRODUCTION_LINE_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]機甲造價顯著降低。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_HONKAI_REVERSE_ENGINEERING_NAME" Language="zh_Hant_HK"><Text>崩壞能逆向解析</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_HONKAI_REVERSE_ENGINEERING_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]科研轉化效率大幅提升。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_HEAVY_ARTILLERY_MECHA_NAME" Language="zh_Hant_HK"><Text>重裝火炮機甲</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_HEAVY_ARTILLERY_MECHA_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]解鎖 T1 教父泰坦。</Text></Row>
+
+        <Row Tag="LOC_HONKAI_TECH_MANTIS_SURGERY_NAME" Language="zh_Hant_HK"><Text>融合戰士手術</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_MANTIS_SURGERY_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]全軍戰力突破時代限制+10。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_ELYSIAN_REALM_NAME" Language="zh_Hant_HK"><Text>往世樂土</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_ELYSIAN_REALM_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]解鎖奇觀【往世樂土】。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_STEALTH_ARMOR_NAME" Language="zh_Hant_HK"><Text>隱形裝甲科技</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_STEALTH_ARMOR_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]解鎖 T2 御雷/隱形機甲。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_DEEP_SEA_BLUEPRINT_NAME" Language="zh_Hant_HK"><Text>海淵城藍圖</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_DEEP_SEA_BLUEPRINT_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]解鎖奇觀【海渊城】。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_VALKYRIE_LIMIT_NAME" Language="zh_Hant_HK"><Text>女武神極限界限</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_VALKYRIE_LIMIT_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]單向通道。解鎖 T4 女武神。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_MEMORY_EXTRACTION_NAME" Language="zh_Hant_HK"><Text>記憶體提取</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_MEMORY_EXTRACTION_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]擊殺敵軍獲得高額科研。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_EXTREME_BIO_WEAPON_NAME" Language="zh_Hant_HK"><Text>極端生化武器</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_EXTREME_BIO_WEAPON_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]遠程單位附加持續掉血。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_AUTO_REPAIR_MATRIX_NAME" Language="zh_Hant_HK"><Text>自動修復矩陣</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_AUTO_REPAIR_MATRIX_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]機甲每回合自動回血。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_SALT_LAKE_CORE_NAME" Language="zh_Hant_HK"><Text>鹽湖基地核心</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_SALT_LAKE_CORE_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]為逆熵陣營提供極高工業加成。</Text></Row>
+
+        <Row Tag="LOC_HONKAI_TECH_STIGMATA_PLAN_EXECUTION_NAME" Language="zh_Hant_HK"><Text>聖痕計畫·執行</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_STIGMATA_PLAN_EXECUTION_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]獻祭帝國30%人口，換取永久科研文化翻倍。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_DIMENSIONAL_STRIKE_PREP_NAME" Language="zh_Hant_HK"><Text>降維打擊準備</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_DIMENSIONAL_STRIKE_PREP_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]間諜破壞城市直接削減人口。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_ARAHATO_PROJECT_NAME" Language="zh_Hant_HK"><Text>阿拉哈托工程</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_ARAHATO_PROJECT_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]解鎖 T3 末日機甲。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_HONKAI_FURNACE_OVERLOAD_NAME" Language="zh_Hant_HK"><Text>崩壞爐過載</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_HONKAI_FURNACE_OVERLOAD_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]所有機甲移動力提升。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_IMAGINARY_TREE_SIMULATION_NAME" Language="zh_Hant_HK"><Text>虛數神骸模擬</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_IMAGINARY_TREE_SIMULATION_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]單向通道。天命最終形態。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_IMAGINARY_CORRUPTION_NAME" Language="zh_Hant_HK"><Text>虛數浸染</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_IMAGINARY_CORRUPTION_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]大幅增加虛數傷害。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_GLOBAL_SATURATION_STRIKE_NAME" Language="zh_Hant_HK"><Text>全圖飽和打擊</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_GLOBAL_SATURATION_STRIKE_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]解鎖區域轟炸技能。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_AE_AUTONOMOUS_DEFENSE_NAME" Language="zh_Hant_HK"><Text>逆熵自律防線</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_AE_AUTONOMOUS_DEFENSE_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]城市防禦力暴增。</Text></Row>
+
+        <Row Tag="LOC_HONKAI_TECH_SEA_OF_QUANTA_ROAMING_NAME" Language="zh_Hant_HK"><Text>量子之海漫遊</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_SEA_OF_QUANTA_ROAMING_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]單位無視地形阻礙。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_HUMAN_STIGMATIZATION_NAME" Language="zh_Hant_HK"><Text>全人類聖痕化</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_HUMAN_STIGMATIZATION_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]徹底消除崩壞負面效果。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_SELENA_NAME" Language="zh_Hant_HK"><Text>月光王座</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_SELENA_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]終極奇觀/逆熵權能。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_MECHA_AUTONOMOUS_AWAKENING_NAME" Language="zh_Hant_HK"><Text>機甲自律覺醒</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_MECHA_AUTONOMOUS_AWAKENING_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]所有機甲戰力二次暴增。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_MARK_OF_THE_SERPENT_NAME" Language="zh_Hant_HK"><Text>蛇之印記</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_MARK_OF_THE_SERPENT_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]世界蛇路線終點。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_CORE_OF_REASON_RESONANCE_NAME" Language="zh_Hant_HK"><Text>理之核心共鳴</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_CORE_OF_REASON_RESONANCE_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]逆熵路線終點。</Text></Row>
+
+        <!-- ========================================================== -->
+        <!-- 六大特色区域文本 -->
+        <!-- ========================================================== -->
+        <Row Tag="LOC_DISTRICT_SCHICKSAL_HQ_NAME" Language="zh_Hans_CN"><Text>天命总部</Text></Row>
+        <Row Tag="LOC_DISTRICT_SCHICKSAL_HQ_DESC" Language="zh_Hans_CN"><Text>崩坏文明特色区域，限造一个且不占用人口。拥有极其强大的神权辐射加成。</Text></Row>
+        <Row Tag="LOC_DISTRICT_ANTI_ENTROPY_HQ_NAME" Language="zh_Hans_CN"><Text>逆熵总部</Text></Row>
+        <Row Tag="LOC_DISTRICT_ANTI_ENTROPY_HQ_DESC" Language="zh_Hans_CN"><Text>崩坏文明特色区域，限造一个且不占用人口。为周围提供极其强大的重工业辐射加成。</Text></Row>
+        <Row Tag="LOC_DISTRICT_WORLD_SERPENT_HQ_NAME" Language="zh_Hans_CN"><Text>世界蛇总部</Text></Row>
+        <Row Tag="LOC_DISTRICT_WORLD_SERPENT_HQ_DESC" Language="zh_Hans_CN"><Text>崩坏文明特色区域，限造一个且不占用人口。潜伏于暗网之中，提供高额科研与谍报辐射。</Text></Row>
+        <Row Tag="LOC_DISTRICT_SCHICKSAL_BRANCH_NAME" Language="zh_Hans_CN"><Text>天命支部</Text></Row>
+        <Row Tag="LOC_DISTRICT_SCHICKSAL_BRANCH_DESC" Language="zh_Hans_CN"><Text>崩坏文明特色区域，替代【圣地】。提供 [ICON_RESOURCE_HONKAI_ENERGY] 战术崩坏能，是女武神部队降生的摇篮。</Text></Row>
+        <Row Tag="LOC_DISTRICT_ARMED_INDUSTRY_NAME" Language="zh_Hans_CN"><Text>武装工造区</Text></Row>
+        <Row Tag="LOC_DISTRICT_ARMED_INDUSTRY_DESC" Language="zh_Hans_CN"><Text>崩坏文明特色区域，替代【工业区】。提供高额生产力，是逆熵机甲量产的温床。</Text></Row>
+        <Row Tag="LOC_DISTRICT_HIDDEN_RESEARCH_NAME" Language="zh_Hans_CN"><Text>隐秘研究站</Text></Row>
+        <Row Tag="LOC_DISTRICT_HIDDEN_RESEARCH_DESC" Language="zh_Hans_CN"><Text>崩坏文明特色区域，替代【学院】。提供高额科技值，解锁世界蛇极端的生化与基因实验。</Text></Row>
+        
+        <Row Tag="LOC_PROMOTION_CLASS_HONKAI_VALKYRIE_NAME" Language="zh_Hans_CN"><Text>女武神</Text></Row>
+        <Row Tag="LOC_UNIT_HONKAI_VALKYRIE_NAME" Language="zh_Hans_CN"><Text>女武神中队</Text></Row>
+        <Row Tag="LOC_UNIT_HONKAI_VALKYRIE_DESC" Language="zh_Hans_CN"><Text>天命阵营核心特色近战单位。造价与维护费随着装甲代数的提升而增加，且每回合需消耗【圣痕活化剂】。具有极强的生存与绞肉能力。</Text></Row>
+
+        <Row Tag="LOC_HONKAI_TECH_KEY_OF_FINALITY_NAME" Language="zh_Hant_HK"><Text>終焉之鑰</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_KEY_OF_FINALITY_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]三極歸一。解鎖律者最高權限！</Text></Row>
 
         <!-- ========================================================== -->
         <!-- 英语 (en_US) 涵盖所有英语国家默认读取 -->
@@ -164,19 +332,19 @@
             <Text>Honkai Perception</Text>
         </Row>
         <Row Tag="LOC_HONKAI_TECH_PERCEPTION_DESC" Language="en_US">
-            <Text>Cost {1_Amount} [ICON_Faith] Honkai Energy[NEWLINE][NEWLINE]The beginning of everything. Allows the extraction of Honkai Energy veins and reveals basic Honkai phenomena.</Text>
+            <Text>Cost {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] Honkai Energy[NEWLINE][NEWLINE]The beginning of everything. Allows the extraction of Honkai Energy veins and reveals basic Honkai phenomena.</Text>
         </Row>
         <Row Tag="LOC_HONKAI_TECH_ST_FREYA_NAME" Language="en_US">
             <Text>St. Freya Academy</Text>
         </Row>
         <Row Tag="LOC_HONKAI_TECH_ST_FREYA_DESC" Language="en_US">
-            <Text>Cost {1_Amount} [ICON_Faith] Honkai Energy[NEWLINE][NEWLINE]Unlocks the unique building [St. Freya Academy], allowing the training of novice Valkyries.</Text>
+            <Text>Cost {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] Honkai Energy[NEWLINE][NEWLINE]Unlocks the unique building [St. Freya Academy], allowing the training of novice Valkyries.</Text>
         </Row>
         <Row Tag="LOC_HONKAI_TECH_SCHICKSAL_NAME" Language="en_US">
             <Text>Schicksal Armament</Text>
         </Row>
         <Row Tag="LOC_HONKAI_TECH_SCHICKSAL_DESC" Language="en_US">
-            <Text>Cost {1_Amount} [ICON_Faith] Honkai Energy[NEWLINE][NEWLINE]Unlocks unique Schicksal mechas and defensive tactics.</Text>
+            <Text>Cost {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] Honkai Energy[NEWLINE][NEWLINE]Unlocks unique Schicksal mechas and defensive tactics.</Text>
         </Row>
     </LocalizedText>
 </GameData>

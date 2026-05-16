@@ -32,9 +32,71 @@
         <!-- 【崩坏科技树专属图集】目前先用终端小图标占位，以后你画了 42x42 的科技大图集再换掉 Filename -->
         <Row Name="ATLAS_HONKAI_TECH" IconSize="42" IconsPerRow="1" IconsPerColumn="1" Filename="Honkai_Terminal_Icon38.dds"/>
         <Row Name="ATLAS_HONKAI_TECH" IconSize="38" IconsPerRow="1" IconsPerColumn="1" Filename="Honkai_Terminal_Icon38.dds"/>
+        
+        <!-- 三大组织标志图集 -->
+        <Row Name="ATLAS_HONKAI_SCHICKSAL" IconSize="22" IconsPerRow="1" IconsPerColumn="1" Filename="tianming_logo_22.dds"/>
+        <Row Name="ATLAS_HONKAI_SCHICKSAL" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="tianming_logo_32.dds"/>
+        <Row Name="ATLAS_HONKAI_SCHICKSAL" IconSize="38" IconsPerRow="1" IconsPerColumn="1" Filename="tianming_logo_38.dds"/>
+        <Row Name="ATLAS_HONKAI_SCHICKSAL" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="tianming_logo_50.dds"/>
+        <Row Name="ATLAS_HONKAI_SCHICKSAL" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="tianming_logo_80.dds"/>
+        <Row Name="ATLAS_HONKAI_SCHICKSAL" IconSize="128" IconsPerRow="1" IconsPerColumn="1" Filename="tianming_logo_128.dds"/>
+        <Row Name="ATLAS_HONKAI_SCHICKSAL" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="tianming_logo_256.dds"/>
+
+        <Row Name="ATLAS_HONKAI_ANTI_ENTROPY" IconSize="22" IconsPerRow="1" IconsPerColumn="1" Filename="nishang_logo_22.dds"/>
+        <Row Name="ATLAS_HONKAI_ANTI_ENTROPY" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="nishang_logo_32.dds"/>
+        <Row Name="ATLAS_HONKAI_ANTI_ENTROPY" IconSize="38" IconsPerRow="1" IconsPerColumn="1" Filename="nishang_logo_38.dds"/>
+        <Row Name="ATLAS_HONKAI_ANTI_ENTROPY" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="nishang_logo_50.dds"/>
+        <Row Name="ATLAS_HONKAI_ANTI_ENTROPY" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="nishang_logo_80.dds"/>
+        <Row Name="ATLAS_HONKAI_ANTI_ENTROPY" IconSize="128" IconsPerRow="1" IconsPerColumn="1" Filename="nishang_logo_128.dds"/>
+        <Row Name="ATLAS_HONKAI_ANTI_ENTROPY" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="nishang_logo_256.dds"/>
+
+        <Row Name="ATLAS_HONKAI_WORLD_SERPENT" IconSize="22" IconsPerRow="1" IconsPerColumn="1" Filename="shijieshe_logo_22.dds"/>
+        <Row Name="ATLAS_HONKAI_WORLD_SERPENT" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="shijieshe_logo_32.dds"/>
+        <Row Name="ATLAS_HONKAI_WORLD_SERPENT" IconSize="38" IconsPerRow="1" IconsPerColumn="1" Filename="shijieshe_logo_38.dds"/>
+        <Row Name="ATLAS_HONKAI_WORLD_SERPENT" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="shijieshe_logo_50.dds"/>
+        <Row Name="ATLAS_HONKAI_WORLD_SERPENT" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="shijieshe_logo_80.dds"/>
+        <Row Name="ATLAS_HONKAI_WORLD_SERPENT" IconSize="128" IconsPerRow="1" IconsPerColumn="1" Filename="shijieshe_logo_128.dds"/>
+        <Row Name="ATLAS_HONKAI_WORLD_SERPENT" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="shijieshe_logo_256.dds"/>
+
+        <!-- 崩坏能/结晶/研究点 图集 -->
+        <Row Name="ATLAS_HONKAI_ENERGY" IconSize="22" IconsPerRow="1" IconsPerColumn="1" Filename="benghuaineng_22.dds"/>
+        <Row Name="ATLAS_HONKAI_ENERGY" IconSize="38" IconsPerRow="1" IconsPerColumn="1" Filename="benghuaineng_38.dds"/>
+        <Row Name="ATLAS_HONKAI_ENERGY" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="benghuaineng_50.dds"/>
+        <Row Name="ATLAS_HONKAI_ENERGY" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="benghuaineng_64.dds"/>
+        <Row Name="ATLAS_HONKAI_ENERGY" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="benghuaineng_256.dds"/>
+
+        <Row Name="ATLAS_HONKAI_CRYSTAL" IconSize="22" IconsPerRow="1" IconsPerColumn="1" Filename="benghuainengjiejing_22.dds"/>
+        <Row Name="ATLAS_HONKAI_CRYSTAL" IconSize="38" IconsPerRow="1" IconsPerColumn="1" Filename="benghuainengjiejing_38.dds"/>
+        <Row Name="ATLAS_HONKAI_CRYSTAL" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="benghuainengjiejing_50.dds"/>
+        <Row Name="ATLAS_HONKAI_CRYSTAL" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="benghuainengjiejing_64.dds"/>
+        <Row Name="ATLAS_HONKAI_CRYSTAL" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="benghuainengjiejing_256.dds"/>
+
+        <Row Name="ATLAS_HONKAI_RESEARCH" IconSize="22" IconsPerRow="1" IconsPerColumn="1" Filename="benghuainengyanjiudian_22.dds"/>
+        <Row Name="ATLAS_HONKAI_RESEARCH" IconSize="38" IconsPerRow="1" IconsPerColumn="1" Filename="benghuainengyanjiudian_38.dds"/>
+        <Row Name="ATLAS_HONKAI_RESEARCH" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="benghuainengyanjiudian_50.dds"/>
+        <Row Name="ATLAS_HONKAI_RESEARCH" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="benghuainengyanjiudian_64.dds"/>
+        <Row Name="ATLAS_HONKAI_RESEARCH" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="benghuainengyanjiudian_256.dds"/>
     </IconTextureAtlases>
 
     <IconDefinitions>
+        <!-- 六大区域的图标映射 -->
+        <Row Name="ICON_DISTRICT_SCHICKSAL_HQ" Atlas="ATLAS_HONKAI_SCHICKSAL" Index="0"/>
+        <Row Name="ICON_DISTRICT_SCHICKSAL_BRANCH" Atlas="ATLAS_HONKAI_SCHICKSAL" Index="0"/>
+        <Row Name="ICON_DISTRICT_ANTI_ENTROPY_HQ" Atlas="ATLAS_HONKAI_ANTI_ENTROPY" Index="0"/>
+        <Row Name="ICON_DISTRICT_ARMED_INDUSTRY" Atlas="ATLAS_HONKAI_ANTI_ENTROPY" Index="0"/>
+        <Row Name="ICON_DISTRICT_WORLD_SERPENT_HQ" Atlas="ATLAS_HONKAI_WORLD_SERPENT" Index="0"/>
+        <Row Name="ICON_DISTRICT_HIDDEN_RESEARCH" Atlas="ATLAS_HONKAI_WORLD_SERPENT" Index="0"/>
+
+        <!-- 资源与机制专属图标映射 -->
+        <Row Name="ICON_RESOURCE_HONKAI_CRYSTAL" Atlas="ATLAS_HONKAI_CRYSTAL" Index="0"/>
+        <Row Name="RESOURCE_HONKAI_CRYSTAL" Atlas="ATLAS_HONKAI_CRYSTAL" Index="0"/>
+        <Row Name="ICON_RESOURCE_HONKAI_ENERGY" Atlas="ATLAS_HONKAI_ENERGY" Index="0"/>
+        <Row Name="RESOURCE_HONKAI_ENERGY" Atlas="ATLAS_HONKAI_ENERGY" Index="0"/>
+        <Row Name="ICON_RESOURCE_HONKAI_RESEARCH" Atlas="ATLAS_HONKAI_RESEARCH" Index="0"/>
+        <Row Name="RESOURCE_HONKAI_RESEARCH" Atlas="ATLAS_HONKAI_RESEARCH" Index="0"/>
+        <Row Name="ICON_RESOURCE_STIGMATA_ACTIVATOR" Atlas="ATLAS_HONKAI_TECH" Index="0"/> <!-- 活化剂暂时用科技终端图标占位 -->
+
+
         <!-- 领袖与文明的主图标 -->
         <Row Name="ICON_LEADER_HOH_VOID_HERRSCHER" Atlas="ATLAS_herrscher_of_the_void_head" Index="0"/>
         <Row Name="ICON_CIVILIZATION_HONKAI"       Atlas="ATLAS_HonkaiCiv256" Index="0"/>
@@ -91,6 +153,44 @@
         <Row Name="ICON_HONKAI_TECH_HONKAI_ISOLATION_DOME" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
         <Row Name="ICON_HONKAI_TECH_FLOATING_ISLAND_TECH" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
 
+        <!-- 工业时代 -->
+        <Row Name="ICON_HONKAI_TECH_STIGMATA_SCREENING" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_GENE_TOXIN" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_TACTICAL_TITAN" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_AE_MANUFACTURING" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_SCHICKSAL_GEN4" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_MANTIS_EXPERIMENT" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_TITAN_PRODUCTION_LINE" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_HONKAI_REVERSE_ENGINEERING" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_HEAVY_ARTILLERY_MECHA" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <!-- 现代 -->
+        <Row Name="ICON_HONKAI_TECH_MANTIS_SURGERY" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_ELYSIAN_REALM" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_STEALTH_ARMOR" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_DEEP_SEA_BLUEPRINT" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_VALKYRIE_LIMIT" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_MEMORY_EXTRACTION" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_EXTREME_BIO_WEAPON" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_AUTO_REPAIR_MATRIX" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_SALT_LAKE_CORE" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <!-- 原子能时代 -->
+        <Row Name="ICON_HONKAI_TECH_STIGMATA_PLAN_EXECUTION" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_DIMENSIONAL_STRIKE_PREP" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_ARAHATO_PROJECT" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_HONKAI_FURNACE_OVERLOAD" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_IMAGINARY_TREE_SIMULATION" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_IMAGINARY_CORRUPTION" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_GLOBAL_SATURATION_STRIKE" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_AE_AUTONOMOUS_DEFENSE" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <!-- 信息与未来 -->
+        <Row Name="ICON_HONKAI_TECH_SEA_OF_QUANTA_ROAMING" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_HUMAN_STIGMATIZATION" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_SELENA" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_MECHA_AUTONOMOUS_AWAKENING" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_MARK_OF_THE_SERPENT" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_CORE_OF_REASON_RESONANCE" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_KEY_OF_FINALITY" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+
         <!-- 被锁死的科技需要带 _FOW 后缀的图标，否则会变回制陶术 -->
         <Row Name="ICON_HONKAI_TECH_PERCEPTION_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
         <Row Name="ICON_HONKAI_TECH_ST_FREYA_FOW"   Atlas="ATLAS_HONKAI_TECH" Index="0"/>
@@ -131,11 +231,39 @@
         <Row Name="ICON_HONKAI_TECH_GOD_SLAYER_ARMOR_DEPLOYMENT_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
         <Row Name="ICON_HONKAI_TECH_HONKAI_ISOLATION_DOME_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
         <Row Name="ICON_HONKAI_TECH_FLOATING_ISLAND_TECH_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        
+        <Row Name="ICON_HONKAI_TECH_STIGMATA_SCREENING_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_GENE_TOXIN_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_TACTICAL_TITAN_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_AE_MANUFACTURING_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_SCHICKSAL_GEN4_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_MANTIS_EXPERIMENT_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_TITAN_PRODUCTION_LINE_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_HONKAI_REVERSE_ENGINEERING_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_HEAVY_ARTILLERY_MECHA_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_MANTIS_SURGERY_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_ELYSIAN_REALM_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_STEALTH_ARMOR_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_DEEP_SEA_BLUEPRINT_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_VALKYRIE_LIMIT_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_MEMORY_EXTRACTION_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_EXTREME_BIO_WEAPON_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_AUTO_REPAIR_MATRIX_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_SALT_LAKE_CORE_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_STIGMATA_PLAN_EXECUTION_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_DIMENSIONAL_STRIKE_PREP_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_ARAHATO_PROJECT_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_HONKAI_FURNACE_OVERLOAD_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_IMAGINARY_TREE_SIMULATION_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_IMAGINARY_CORRUPTION_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_GLOBAL_SATURATION_STRIKE_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_AE_AUTONOMOUS_DEFENSE_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_SEA_OF_QUANTA_ROAMING_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_HUMAN_STIGMATIZATION_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_SELENA_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_MECHA_AUTONOMOUS_AWAKENING_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_MARK_OF_THE_SERPENT_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_CORE_OF_REASON_RESONANCE_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+        <Row Name="ICON_HONKAI_TECH_KEY_OF_FINALITY_FOW" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
     </IconDefinitions>
-
-    <!-- 【字体图标映射】让你可以在文本里使用 [ICON_HONKAI_ENERGY] -->
-    <!-- 如果你还没有自己的 .ggxml 和 .ttf 字体库，我们可以先临时借用原版的核能图标 93，或者信仰图标 -->
-    <IconFontMapping>
-        <Row IconName="ICON_HONKAI_ENERGY" FontGlyph="93" FontStyle="Base" />
-    </IconFontMapping>
 </GameData>

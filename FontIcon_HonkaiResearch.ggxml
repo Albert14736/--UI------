@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<fontTextureAtlas>
+    <name>HonkaiResearch_FontIcon</name>
+    <texture>benghuainengyanjiudian_22</texture>
+    <height>22</height>
+    <width>22</width>
+    <mapping>
+        <name>ICON_RESOURCE_HONKAI_RESEARCH</name>
+        <tx>0</tx><ty>0</ty><tw>22</tw><th>22</th>
+    </mapping>
+</fontTextureAtlas>
