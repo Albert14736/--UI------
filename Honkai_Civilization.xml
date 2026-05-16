@@ -2,59 +2,315 @@
 <GameData>
     <Types>
         <Row Type="CIVILIZATION_HONKAI" Kind="KIND_CIVILIZATION"/>
-        <Row Type="TRAIT_CIVILIZATION_HONKAI_DUMMY" Kind="KIND_TRAIT"/>
+        <Row Type="TRAIT_CIVILIZATION_HONKAI" Kind="KIND_TRAIT"/>
         
-        <!-- 注册区域特质 -->
-        <Row Type="TRAIT_CIVILIZATION_DISTRICT_SCHICKSAL_HQ" Kind="KIND_TRAIT"/>
-        <Row Type="TRAIT_CIVILIZATION_DISTRICT_ANTI_ENTROPY_HQ" Kind="KIND_TRAIT"/>
-        <Row Type="TRAIT_CIVILIZATION_DISTRICT_WORLD_SERPENT_HQ" Kind="KIND_TRAIT"/>
-        <Row Type="TRAIT_CIVILIZATION_DISTRICT_SCHICKSAL_BRANCH" Kind="KIND_TRAIT"/>
-        <Row Type="TRAIT_CIVILIZATION_DISTRICT_ARMED_INDUSTRY" Kind="KIND_TRAIT"/>
-        <Row Type="TRAIT_CIVILIZATION_DISTRICT_HIDDEN_RESEARCH" Kind="KIND_TRAIT"/>
-        
-        <!-- 注册区域本身 -->
         <Row Type="DISTRICT_SCHICKSAL_HQ" Kind="KIND_DISTRICT"/>
         <Row Type="DISTRICT_ANTI_ENTROPY_HQ" Kind="KIND_DISTRICT"/>
         <Row Type="DISTRICT_WORLD_SERPENT_HQ" Kind="KIND_DISTRICT"/>
         <Row Type="DISTRICT_SCHICKSAL_BRANCH" Kind="KIND_DISTRICT"/>
         <Row Type="DISTRICT_ARMED_INDUSTRY" Kind="KIND_DISTRICT"/>
         <Row Type="DISTRICT_HIDDEN_RESEARCH" Kind="KIND_DISTRICT"/>
+
+        <!-- 隐形锁与幽灵时代测试 -->
+        <Row Type="ERA_HOH_HIDDEN" Kind="KIND_ERA"/>
+        <Row Type="CIVIC_HOH_LOCKED_VALKYRIE" Kind="KIND_CIVIC"/>
     </Types>
+
     <Traits>
-        <Row TraitType="TRAIT_CIVILIZATION_HONKAI_DUMMY" Name="LOC_TRAIT_CIVILIZATION_HONKAI_DUMMY_NAME" Description="LOC_TRAIT_CIVILIZATION_HONKAI_DUMMY_DESC"/>
-        <Row TraitType="TRAIT_CIVILIZATION_DISTRICT_SCHICKSAL_HQ" Name="LOC_DISTRICT_SCHICKSAL_HQ_NAME"/>
-        <Row TraitType="TRAIT_CIVILIZATION_DISTRICT_ANTI_ENTROPY_HQ" Name="LOC_DISTRICT_ANTI_ENTROPY_HQ_NAME"/>
-        <Row TraitType="TRAIT_CIVILIZATION_DISTRICT_WORLD_SERPENT_HQ" Name="LOC_DISTRICT_WORLD_SERPENT_HQ_NAME"/>
-        <Row TraitType="TRAIT_CIVILIZATION_DISTRICT_SCHICKSAL_BRANCH" Name="LOC_DISTRICT_SCHICKSAL_BRANCH_NAME"/>
-        <Row TraitType="TRAIT_CIVILIZATION_DISTRICT_ARMED_INDUSTRY" Name="LOC_DISTRICT_ARMED_INDUSTRY_NAME"/>
-        <Row TraitType="TRAIT_CIVILIZATION_DISTRICT_HIDDEN_RESEARCH" Name="LOC_DISTRICT_HIDDEN_RESEARCH_NAME"/>
+        <Row TraitType="TRAIT_CIVILIZATION_HONKAI" Name="LOC_CIVILIZATION_HONKAI_NAME" Description="LOC_CIVILIZATION_HONKAI_DESC"/>
     </Traits>
 
+    <Civilizations>
+        <Row CivilizationType="CIVILIZATION_HONKAI" Name="LOC_CIVILIZATION_HONKAI_NAME" Description="LOC_CIVILIZATION_HONKAI_DESC" Adjective="LOC_CIVILIZATION_HONKAI_NAME" StartingCivilizationLevelType="CIVILIZATION_LEVEL_FULL_CIV" RandomCityNameDepth="10" Ethnicity="ETHNICITY_ASIAN"/>
+    </Civilizations>
+
     <CivilizationTraits>
-        <Row CivilizationType="CIVILIZATION_HONKAI" TraitType="TRAIT_CIVILIZATION_HONKAI_DUMMY"/>
-        
-        <!-- 将这 6 个区域特性绑定给崩坏文明 -->
-        <Row CivilizationType="CIVILIZATION_HONKAI" TraitType="TRAIT_CIVILIZATION_DISTRICT_SCHICKSAL_HQ"/>
-        <Row CivilizationType="CIVILIZATION_HONKAI" TraitType="TRAIT_CIVILIZATION_DISTRICT_ANTI_ENTROPY_HQ"/>
-        <Row CivilizationType="CIVILIZATION_HONKAI" TraitType="TRAIT_CIVILIZATION_DISTRICT_WORLD_SERPENT_HQ"/>
-        <Row CivilizationType="CIVILIZATION_HONKAI" TraitType="TRAIT_CIVILIZATION_DISTRICT_SCHICKSAL_BRANCH"/>
-        <Row CivilizationType="CIVILIZATION_HONKAI" TraitType="TRAIT_CIVILIZATION_DISTRICT_ARMED_INDUSTRY"/>
-        <Row CivilizationType="CIVILIZATION_HONKAI" TraitType="TRAIT_CIVILIZATION_DISTRICT_HIDDEN_RESEARCH"/>
+        <Row CivilizationType="CIVILIZATION_HONKAI" TraitType="TRAIT_CIVILIZATION_HONKAI"/>
     </CivilizationTraits>
 
-    <Civilizations>
-        <Row CivilizationType="CIVILIZATION_HONKAI" Name="LOC_CIVILIZATION_HONKAI_NAME" Description="LOC_CIVILIZATION_HONKAI_DESCRIPTION" Adjective="LOC_CIVILIZATION_HONKAI_ADJECTIVE" StartingCivilizationLevelType="CIVILIZATION_LEVEL_FULL_CIV" RandomCityNameDepth="1" Ethnicity="ETHNICITY_ASIAN"/>
-    </Civilizations>
-    <CityNames>
-        <!-- 必须有至少一个城市名，否则进游戏会卡死 -->
-        <Row CivilizationType="CIVILIZATION_HONKAI" CityName="虚数枢纽"/>
-        <Row CivilizationType="CIVILIZATION_HONKAI" CityName="天命总部"/>
-    </CityNames>
     <CivilizationCitizenNames>
-        <!-- 必须有平民名字，否则人口增长时引擎必定闪退 -->
-        <Row CivilizationType="CIVILIZATION_HONKAI" CitizenName="西琳" Female="1"/>
-        <Row CivilizationType="CIVILIZATION_HONKAI" CitizenName="贝拉" Female="1"/>
-        <Row CivilizationType="CIVILIZATION_HONKAI" CitizenName="琪亚娜" Female="1"/>
-        <Row CivilizationType="CIVILIZATION_HONKAI" CitizenName="奥托" Female="0"/>
+        <Row CivilizationType="CIVILIZATION_HONKAI" CitizenName="LOC_CITIZEN_HONKAI_MALE_1" Female="false"/>
+        <Row CivilizationType="CIVILIZATION_HONKAI" CitizenName="LOC_CITIZEN_HONKAI_FEMALE_1" Female="true"/>
     </CivilizationCitizenNames>
+
+    <Districts>
+        <Row DistrictType="DISTRICT_SCHICKSAL_HQ" Name="LOC_DISTRICT_SCHICKSAL_HQ_NAME" Description="LOC_DISTRICT_SCHICKSAL_HQ_DESC" TraitType="TRAIT_CIVILIZATION_HONKAI" Cost="27" Maintenance="1" RequiresPlacement="true" RequiresPopulation="false" MaxPerPlayer="1" PlunderType="PLUNDER_FAITH" AdvisorType="ADVISOR_RELIGION" CityStrengthModifier="2" NoAdjacentCity="false" InternalOnly="false" ZOC="false" CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" MilitaryDomain="NO_DOMAIN" Aqueduct="false"/>
+        <Row DistrictType="DISTRICT_ANTI_ENTROPY_HQ" Name="LOC_DISTRICT_ANTI_ENTROPY_HQ_NAME" Description="LOC_DISTRICT_ANTI_ENTROPY_HQ_DESC" TraitType="TRAIT_CIVILIZATION_HONKAI" Cost="54" Maintenance="1" RequiresPlacement="true" RequiresPopulation="false" MaxPerPlayer="1" PlunderType="PLUNDER_GOLD" AdvisorType="ADVISOR_GENERIC" CityStrengthModifier="2" NoAdjacentCity="false" InternalOnly="false" ZOC="false" CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" MilitaryDomain="NO_DOMAIN" Aqueduct="false"/>
+        <Row DistrictType="DISTRICT_WORLD_SERPENT_HQ" Name="LOC_DISTRICT_WORLD_SERPENT_HQ_NAME" Description="LOC_DISTRICT_WORLD_SERPENT_HQ_DESC" TraitType="TRAIT_CIVILIZATION_HONKAI" Cost="54" Maintenance="1" RequiresPlacement="true" RequiresPopulation="false" MaxPerPlayer="1" PlunderType="PLUNDER_SCIENCE" AdvisorType="ADVISOR_TECHNOLOGY" CityStrengthModifier="2" NoAdjacentCity="false" InternalOnly="false" ZOC="false" CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" MilitaryDomain="NO_DOMAIN" Aqueduct="false"/>
+
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" Name="LOC_DISTRICT_SCHICKSAL_BRANCH_NAME" Description="LOC_DISTRICT_SCHICKSAL_BRANCH_DESC" PrereqTech="TECH_ASTROLOGY" TraitType="TRAIT_CIVILIZATION_HONKAI" Cost="54" CostProgressionModel="COST_PROGRESSION_NUM_UNDER_AVG_PLUS_TECH" CostProgressionParam1="25" Maintenance="1" RequiresPlacement="true" RequiresPopulation="true" PlunderType="PLUNDER_FAITH" AdvisorType="ADVISOR_RELIGION" CityStrengthModifier="0" NoAdjacentCity="false" InternalOnly="false" ZOC="false" CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" MilitaryDomain="NO_DOMAIN" Aqueduct="false"/>
+        <Row DistrictType="DISTRICT_ARMED_INDUSTRY" Name="LOC_DISTRICT_ARMED_INDUSTRY_NAME" Description="LOC_DISTRICT_ARMED_INDUSTRY_DESC" PrereqTech="TECH_APPRENTICESHIP" TraitType="TRAIT_CIVILIZATION_HONKAI" Cost="54" CostProgressionModel="COST_PROGRESSION_NUM_UNDER_AVG_PLUS_TECH" CostProgressionParam1="25" Maintenance="1" RequiresPlacement="true" RequiresPopulation="true" PlunderType="PLUNDER_GOLD" AdvisorType="ADVISOR_GENERIC" CityStrengthModifier="0" NoAdjacentCity="false" InternalOnly="false" ZOC="false" CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" MilitaryDomain="NO_DOMAIN" Aqueduct="false"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" Name="LOC_DISTRICT_HIDDEN_RESEARCH_NAME" Description="LOC_DISTRICT_HIDDEN_RESEARCH_DESC" PrereqTech="TECH_WRITING" TraitType="TRAIT_CIVILIZATION_HONKAI" Cost="54" CostProgressionModel="COST_PROGRESSION_NUM_UNDER_AVG_PLUS_TECH" CostProgressionParam1="25" Maintenance="1" RequiresPlacement="true" RequiresPopulation="true" PlunderType="PLUNDER_SCIENCE" AdvisorType="ADVISOR_TECHNOLOGY" CityStrengthModifier="0" NoAdjacentCity="false" InternalOnly="false" ZOC="false" CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" MilitaryDomain="NO_DOMAIN" Aqueduct="false"/>
+    </Districts>
+
+    <DistrictReplaces>
+        <Row CivUniqueDistrictType="DISTRICT_SCHICKSAL_BRANCH" ReplacesDistrictType="DISTRICT_HOLY_SITE"/>
+        <Row CivUniqueDistrictType="DISTRICT_ARMED_INDUSTRY" ReplacesDistrictType="DISTRICT_INDUSTRIAL_ZONE"/>
+        <Row CivUniqueDistrictType="DISTRICT_HIDDEN_RESEARCH" ReplacesDistrictType="DISTRICT_CAMPUS"/>
+    </DistrictReplaces>
+
+    <!-- ========================================================== -->
+    <!-- 六大特色区域的相邻加成 (Adjacency Yields) -->
+    <!-- ========================================================== -->
+    <Adjacency_YieldChanges>
+        <!-- 三大总部：相邻河流提供 +2 生产力 -->
+        <Row ID="RIVER_PROD_HQ" Description="LOC_RIVER_PROD_HQ" YieldType="YIELD_PRODUCTION" YieldChange="2" TilesRequired="1" AdjacentRiver="true"/>
+
+        <!-- 天命支部：紧贴【天命总部】时，提供全产出 +1 -->
+        <Row ID="HQ_SCHICKSAL_FAITH" Description="LOC_HQ_SCHICKSAL_FAITH" YieldType="YIELD_FAITH" YieldChange="1" TilesRequired="1" AdjacentDistrict="DISTRICT_SCHICKSAL_HQ"/>
+        <Row ID="HQ_SCHICKSAL_PROD" Description="LOC_HQ_SCHICKSAL_PROD" YieldType="YIELD_PRODUCTION" YieldChange="1" TilesRequired="1" AdjacentDistrict="DISTRICT_SCHICKSAL_HQ"/>
+        <Row ID="HQ_SCHICKSAL_SCI" Description="LOC_HQ_SCHICKSAL_SCI" YieldType="YIELD_SCIENCE" YieldChange="1" TilesRequired="1" AdjacentDistrict="DISTRICT_SCHICKSAL_HQ"/>
+        <Row ID="HQ_SCHICKSAL_CULT" Description="LOC_HQ_SCHICKSAL_CULT" YieldType="YIELD_CULTURE" YieldChange="1" TilesRequired="1" AdjacentDistrict="DISTRICT_SCHICKSAL_HQ"/>
+        <Row ID="HQ_SCHICKSAL_GOLD" Description="LOC_HQ_SCHICKSAL_GOLD" YieldType="YIELD_GOLD" YieldChange="1" TilesRequired="1" AdjacentDistrict="DISTRICT_SCHICKSAL_HQ"/>
+        <Row ID="HQ_SCHICKSAL_FOOD" Description="LOC_HQ_SCHICKSAL_FOOD" YieldType="YIELD_FOOD" YieldChange="1" TilesRequired="1" AdjacentDistrict="DISTRICT_SCHICKSAL_HQ"/>
+
+        <!-- ================= 三大总部辐射加成定义 ================= -->
+        <!-- 1. 天命总部向外辐射：+2 信仰 -->
+        <Row ID="HQ_RADIATE_SCHICKSAL_FAITH" Description="LOC_HQ_RADIATE_SCHICKSAL_FAITH" YieldType="YIELD_FAITH" YieldChange="2" TilesRequired="1" AdjacentDistrict="DISTRICT_SCHICKSAL_HQ"/>
+        <!-- 天命总部市中心特化：+2生产力, +2食物, +3金币, 额外+2信仰 -->
+        <Row ID="HQ_CC_SCHICKSAL_PROD" Description="LOC_HQ_CC_SCHICKSAL_PROD" YieldType="YIELD_PRODUCTION" YieldChange="2" TilesRequired="1" AdjacentDistrict="DISTRICT_SCHICKSAL_HQ"/>
+        <Row ID="HQ_CC_SCHICKSAL_FOOD" Description="LOC_HQ_CC_SCHICKSAL_FOOD" YieldType="YIELD_FOOD" YieldChange="2" TilesRequired="1" AdjacentDistrict="DISTRICT_SCHICKSAL_HQ"/>
+        <Row ID="HQ_CC_SCHICKSAL_GOLD" Description="LOC_HQ_CC_SCHICKSAL_GOLD" YieldType="YIELD_GOLD" YieldChange="3" TilesRequired="1" AdjacentDistrict="DISTRICT_SCHICKSAL_HQ"/>
+        <Row ID="HQ_CC_SCHICKSAL_FAITH_EXTRA" Description="LOC_HQ_CC_SCHICKSAL_FAITH_EXTRA" YieldType="YIELD_FAITH" YieldChange="2" TilesRequired="1" AdjacentDistrict="DISTRICT_SCHICKSAL_HQ"/>
+
+        <!-- 2. 逆熵总部向外辐射：+1 科技, +2 生产力 -->
+        <Row ID="HQ_RADIATE_AE_SCI" Description="LOC_HQ_RADIATE_AE_SCI" YieldType="YIELD_SCIENCE" YieldChange="1" TilesRequired="1" AdjacentDistrict="DISTRICT_ANTI_ENTROPY_HQ"/>
+        <Row ID="HQ_RADIATE_AE_PROD" Description="LOC_HQ_RADIATE_AE_PROD" YieldType="YIELD_PRODUCTION" YieldChange="2" TilesRequired="1" AdjacentDistrict="DISTRICT_ANTI_ENTROPY_HQ"/>
+        <!-- 逆熵总部市中心特化：+2生产力, +2食物, +3金币, 额外+2科技 -->
+        <Row ID="HQ_CC_AE_PROD" Description="LOC_HQ_CC_AE_PROD" YieldType="YIELD_PRODUCTION" YieldChange="2" TilesRequired="1" AdjacentDistrict="DISTRICT_ANTI_ENTROPY_HQ"/>
+        <Row ID="HQ_CC_AE_FOOD" Description="LOC_HQ_CC_AE_FOOD" YieldType="YIELD_FOOD" YieldChange="2" TilesRequired="1" AdjacentDistrict="DISTRICT_ANTI_ENTROPY_HQ"/>
+        <Row ID="HQ_CC_AE_GOLD" Description="LOC_HQ_CC_AE_GOLD" YieldType="YIELD_GOLD" YieldChange="3" TilesRequired="1" AdjacentDistrict="DISTRICT_ANTI_ENTROPY_HQ"/>
+        <Row ID="HQ_CC_AE_SCI_EXTRA" Description="LOC_HQ_CC_AE_SCI_EXTRA" YieldType="YIELD_SCIENCE" YieldChange="2" TilesRequired="1" AdjacentDistrict="DISTRICT_ANTI_ENTROPY_HQ"/>
+
+        <!-- 3. 世界蛇总部向外辐射：+1 科技, +1 文化 -->
+        <Row ID="HQ_RADIATE_WS_SCI" Description="LOC_HQ_RADIATE_WS_SCI" YieldType="YIELD_SCIENCE" YieldChange="1" TilesRequired="1" AdjacentDistrict="DISTRICT_WORLD_SERPENT_HQ"/>
+        <Row ID="HQ_RADIATE_WS_CULT" Description="LOC_HQ_RADIATE_WS_CULT" YieldType="YIELD_CULTURE" YieldChange="1" TilesRequired="1" AdjacentDistrict="DISTRICT_WORLD_SERPENT_HQ"/>
+        <!-- 世界蛇总部市中心特化：+2生产力, +2食物, +3金币, 额外+2生产力 -->
+        <Row ID="HQ_CC_WS_PROD" Description="LOC_HQ_CC_WS_PROD" YieldType="YIELD_PRODUCTION" YieldChange="2" TilesRequired="1" AdjacentDistrict="DISTRICT_WORLD_SERPENT_HQ"/>
+        <Row ID="HQ_CC_WS_FOOD" Description="LOC_HQ_CC_WS_FOOD" YieldType="YIELD_FOOD" YieldChange="2" TilesRequired="1" AdjacentDistrict="DISTRICT_WORLD_SERPENT_HQ"/>
+        <Row ID="HQ_CC_WS_GOLD" Description="LOC_HQ_CC_WS_GOLD" YieldType="YIELD_GOLD" YieldChange="3" TilesRequired="1" AdjacentDistrict="DISTRICT_WORLD_SERPENT_HQ"/>
+        <Row ID="HQ_CC_WS_PROD_EXTRA" Description="LOC_HQ_CC_WS_PROD_EXTRA" YieldType="YIELD_PRODUCTION" YieldChange="2" TilesRequired="1" AdjacentDistrict="DISTRICT_WORLD_SERPENT_HQ"/>
+
+        <!-- 自建原版相邻加成，彻底防爆，再也不看官方脸色 -->
+        <Row ID="HOH_Lumbermill_Production" Description="LOC_DISTRICT_LUMBER_MILL_PRODUCTION" YieldType="YIELD_PRODUCTION" YieldChange="1" TilesRequired="2" AdjacentImprovement="IMPROVEMENT_LUMBER_MILL"/>
+        <Row ID="HOH_StrategicResource_Production" Description="LOC_DISTRICT_STRATEGIC_RESOURCE_PRODUCTION" YieldType="YIELD_PRODUCTION" YieldChange="1" TilesRequired="1" AdjacentResourceClass="RESOURCECLASS_STRATEGIC"/>
+        <Row ID="HOH_Mountain_Science_1" Description="LOC_DISTRICT_MOUNTAIN_SCIENCE" YieldType="YIELD_SCIENCE" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_GRASS_MOUNTAIN"/>
+        <Row ID="HOH_Mountain_Science_2" Description="LOC_DISTRICT_MOUNTAIN_SCIENCE" YieldType="YIELD_SCIENCE" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_PLAINS_MOUNTAIN"/>
+        <Row ID="HOH_Mountain_Science_3" Description="LOC_DISTRICT_MOUNTAIN_SCIENCE" YieldType="YIELD_SCIENCE" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_DESERT_MOUNTAIN"/>
+        <Row ID="HOH_Mountain_Science_4" Description="LOC_DISTRICT_MOUNTAIN_SCIENCE" YieldType="YIELD_SCIENCE" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_TUNDRA_MOUNTAIN"/>
+        <Row ID="HOH_Mountain_Science_5" Description="LOC_DISTRICT_MOUNTAIN_SCIENCE" YieldType="YIELD_SCIENCE" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_SNOW_MOUNTAIN"/>
+        <Row ID="HOH_Mountain_Faith_1" Description="LOC_DISTRICT_MOUNTAIN_FAITH" YieldType="YIELD_FAITH" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_GRASS_MOUNTAIN"/>
+        <Row ID="HOH_Mountain_Faith_2" Description="LOC_DISTRICT_MOUNTAIN_FAITH" YieldType="YIELD_FAITH" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_PLAINS_MOUNTAIN"/>
+        <Row ID="HOH_Mountain_Faith_3" Description="LOC_DISTRICT_MOUNTAIN_FAITH" YieldType="YIELD_FAITH" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_DESERT_MOUNTAIN"/>
+        <Row ID="HOH_Mountain_Faith_4" Description="LOC_DISTRICT_MOUNTAIN_FAITH" YieldType="YIELD_FAITH" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_TUNDRA_MOUNTAIN"/>
+        <Row ID="HOH_Mountain_Faith_5" Description="LOC_DISTRICT_MOUNTAIN_FAITH" YieldType="YIELD_FAITH" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_SNOW_MOUNTAIN"/>
+    </Adjacency_YieldChanges>
+
+    <District_Adjacencies>
+        <!-- 三大总部吃河流 -->
+        <Row DistrictType="DISTRICT_SCHICKSAL_HQ" YieldChangeId="RIVER_PROD_HQ"/>
+        <Row DistrictType="DISTRICT_ANTI_ENTROPY_HQ" YieldChangeId="RIVER_PROD_HQ"/>
+        <Row DistrictType="DISTRICT_WORLD_SERPENT_HQ" YieldChangeId="RIVER_PROD_HQ"/>
+
+        <!-- 天命支部绑定全产出爆发 -->
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_SCHICKSAL_PROD"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_SCHICKSAL_SCI"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_SCHICKSAL_CULT"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_SCHICKSAL_GOLD"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_SCHICKSAL_FOOD"/>
+
+        <!-- ================= 为三大支部挂载原版的标准相邻加成 ================= -->
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="NaturalWonder_Faith"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HOH_Mountain_Faith_1"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HOH_Mountain_Faith_2"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HOH_Mountain_Faith_3"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HOH_Mountain_Faith_4"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HOH_Mountain_Faith_5"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="Forest_Faith"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="District_Faith"/>
+
+        <Row DistrictType="DISTRICT_ARMED_INDUSTRY" YieldChangeId="Mine_Production"/>
+        <Row DistrictType="DISTRICT_ARMED_INDUSTRY" YieldChangeId="Quarry_Production"/>
+        <Row DistrictType="DISTRICT_ARMED_INDUSTRY" YieldChangeId="HOH_Lumbermill_Production"/>
+        <Row DistrictType="DISTRICT_ARMED_INDUSTRY" YieldChangeId="District_Production"/>
+        <Row DistrictType="DISTRICT_ARMED_INDUSTRY" YieldChangeId="HOH_StrategicResource_Production"/>
+        <Row DistrictType="DISTRICT_ARMED_INDUSTRY" YieldChangeId="Aqueduct_Production"/>
+        <Row DistrictType="DISTRICT_ARMED_INDUSTRY" YieldChangeId="Canal_Production"/>
+        <Row DistrictType="DISTRICT_ARMED_INDUSTRY" YieldChangeId="Dam_Production"/>
+
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="HOH_Mountain_Science_1"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="HOH_Mountain_Science_2"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="HOH_Mountain_Science_3"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="HOH_Mountain_Science_4"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="HOH_Mountain_Science_5"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="Jungle_Science"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="District_Science"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="Geothermal_Science"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="Reef_Science"/>
+
+        <!-- ================= 核心！挂载向外辐射加成 (遍历所有常规区域) ================= -->
+        <!-- 天命总部：辐射 +2 信仰 -->
+        <Row DistrictType="DISTRICT_CITY_CENTER" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_HOLY_SITE" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_CAMPUS" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_ENCAMPMENT" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_COMMERCIAL_HUB" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_THEATER" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_INDUSTRIAL_ZONE" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_HARBOR" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_AERODROME" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_ENTERTAINMENT_COMPLEX" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_GOVERNMENT" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_WATER_ENTERTAINMENT_COMPLEX" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_AQUEDUCT" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_CANAL" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_DAM" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_NEIGHBORHOOD" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_SPACEPORT" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_ARMED_INDUSTRY" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+
+        <!-- 逆熵总部：辐射 +1 科技，+2 生产力 -->
+        <Row DistrictType="DISTRICT_CITY_CENTER" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_CITY_CENTER" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_HOLY_SITE" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_HOLY_SITE" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_CAMPUS" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_CAMPUS" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_ENCAMPMENT" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_ENCAMPMENT" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_COMMERCIAL_HUB" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_COMMERCIAL_HUB" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_THEATER" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_THEATER" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_INDUSTRIAL_ZONE" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_INDUSTRIAL_ZONE" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_HARBOR" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_HARBOR" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_AERODROME" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_AERODROME" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_ENTERTAINMENT_COMPLEX" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_ENTERTAINMENT_COMPLEX" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_GOVERNMENT" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_GOVERNMENT" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_WATER_ENTERTAINMENT_COMPLEX" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_WATER_ENTERTAINMENT_COMPLEX" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_AQUEDUCT" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_AQUEDUCT" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_CANAL" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_CANAL" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_DAM" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_DAM" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_NEIGHBORHOOD" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_NEIGHBORHOOD" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_SPACEPORT" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_SPACEPORT" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_ARMED_INDUSTRY" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_ARMED_INDUSTRY" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+
+        <!-- 世界蛇总部：辐射 +1 科技, +1 文化 -->
+        <Row DistrictType="DISTRICT_CITY_CENTER" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_CITY_CENTER" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+        <Row DistrictType="DISTRICT_HOLY_SITE" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_HOLY_SITE" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+        <Row DistrictType="DISTRICT_CAMPUS" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_CAMPUS" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+        <Row DistrictType="DISTRICT_ENCAMPMENT" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_ENCAMPMENT" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+        <Row DistrictType="DISTRICT_COMMERCIAL_HUB" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_COMMERCIAL_HUB" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+        <Row DistrictType="DISTRICT_THEATER" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_THEATER" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+        <Row DistrictType="DISTRICT_INDUSTRIAL_ZONE" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_INDUSTRIAL_ZONE" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+        <Row DistrictType="DISTRICT_HARBOR" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_HARBOR" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+        <Row DistrictType="DISTRICT_AERODROME" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_AERODROME" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+        <Row DistrictType="DISTRICT_ENTERTAINMENT_COMPLEX" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_ENTERTAINMENT_COMPLEX" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+        <Row DistrictType="DISTRICT_GOVERNMENT" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_GOVERNMENT" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+        <Row DistrictType="DISTRICT_WATER_ENTERTAINMENT_COMPLEX" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_WATER_ENTERTAINMENT_COMPLEX" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+        <Row DistrictType="DISTRICT_AQUEDUCT" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_AQUEDUCT" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+        <Row DistrictType="DISTRICT_CANAL" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_CANAL" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+        <Row DistrictType="DISTRICT_DAM" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_DAM" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+        <Row DistrictType="DISTRICT_NEIGHBORHOOD" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_NEIGHBORHOOD" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+        <Row DistrictType="DISTRICT_SPACEPORT" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_SPACEPORT" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+        <Row DistrictType="DISTRICT_ARMED_INDUSTRY" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_ARMED_INDUSTRY" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+
+        <!-- ================= 为市中心挂载“特化”额外爆发产出 ================= -->
+        <Row DistrictType="DISTRICT_CITY_CENTER" YieldChangeId="HQ_CC_SCHICKSAL_PROD"/>
+        <Row DistrictType="DISTRICT_CITY_CENTER" YieldChangeId="HQ_CC_SCHICKSAL_FOOD"/>
+        <Row DistrictType="DISTRICT_CITY_CENTER" YieldChangeId="HQ_CC_SCHICKSAL_GOLD"/>
+        <Row DistrictType="DISTRICT_CITY_CENTER" YieldChangeId="HQ_CC_SCHICKSAL_FAITH_EXTRA"/>
+
+        <Row DistrictType="DISTRICT_CITY_CENTER" YieldChangeId="HQ_CC_AE_PROD"/>
+        <Row DistrictType="DISTRICT_CITY_CENTER" YieldChangeId="HQ_CC_AE_FOOD"/>
+        <Row DistrictType="DISTRICT_CITY_CENTER" YieldChangeId="HQ_CC_AE_GOLD"/>
+        <Row DistrictType="DISTRICT_CITY_CENTER" YieldChangeId="HQ_CC_AE_SCI_EXTRA"/>
+
+        <Row DistrictType="DISTRICT_CITY_CENTER" YieldChangeId="HQ_CC_WS_PROD"/>
+        <Row DistrictType="DISTRICT_CITY_CENTER" YieldChangeId="HQ_CC_WS_FOOD"/>
+        <Row DistrictType="DISTRICT_CITY_CENTER" YieldChangeId="HQ_CC_WS_GOLD"/>
+        <Row DistrictType="DISTRICT_CITY_CENTER" YieldChangeId="HQ_CC_WS_PROD_EXTRA"/>
+    </District_Adjacencies>
+
+    <!-- ========================================================== -->
+    <!-- 总部特色机制：建成且相邻市中心时送使者 -->
+    <!-- ========================================================== -->
+    <DistrictModifiers>
+        <Row DistrictType="DISTRICT_SCHICKSAL_HQ" ModifierId="MOD_HOH_HQ_GRANT_ENVOY"/>
+        <Row DistrictType="DISTRICT_ANTI_ENTROPY_HQ" ModifierId="MOD_HOH_HQ_GRANT_ENVOY"/>
+        <Row DistrictType="DISTRICT_WORLD_SERPENT_HQ" ModifierId="MOD_HOH_HQ_GRANT_ENVOY"/>
+    </DistrictModifiers>
+
+    <Modifiers>
+        <!-- 授予使者 (Influence Token)，且必须满足 OwnerRequirementSetId (自身地块条件)，RunOnce="true" 保证只发一次 -->
+        <Row ModifierId="MOD_HOH_HQ_GRANT_ENVOY" ModifierType="MODIFIER_PLAYER_GRANT_INFLUENCE_TOKEN" RunOnce="true" Permanent="true" OwnerRequirementSetId="REQSET_HOH_ADJACENT_TO_CITY_CENTER"/>
+    </Modifiers>
+
+    <ModifierArguments>
+        <Row ModifierId="MOD_HOH_HQ_GRANT_ENVOY" Name="Amount" Value="1"/>
+    </ModifierArguments>
+
+    <RequirementSets>
+        <Row RequirementSetId="REQSET_HOH_ADJACENT_TO_CITY_CENTER" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+    </RequirementSets>
+    <RequirementSetRequirements>
+        <Row RequirementSetId="REQSET_HOH_ADJACENT_TO_CITY_CENTER" RequirementId="REQ_HOH_PLOT_ADJACENT_TO_CITY_CENTER"/>
+    </RequirementSetRequirements>
+    <Requirements>
+        <Row RequirementId="REQ_HOH_PLOT_ADJACENT_TO_CITY_CENTER" RequirementType="REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES"/>
+    </Requirements>
+    <RequirementArguments>
+        <Row RequirementId="REQ_HOH_PLOT_ADJACENT_TO_CITY_CENTER" Name="DistrictType" Value="DISTRICT_CITY_CENTER"/>
+    </RequirementArguments>
+
+    <!-- ========================================================== -->
+    <!-- 隐形锁测试：幽灵时代与隐形市政 -->
+    <!-- ========================================================== -->
+    <Eras>
+        <Row EraType="ERA_HOH_HIDDEN" Name="LOC_ERA_HOH_HIDDEN"/>
+    </Eras>
+    <Civics>
+        <Row CivicType="CIVIC_HOH_LOCKED_VALKYRIE" Name="LOC_CIVIC_HOH_LOCKED_VALKYRIE_NAME" Cost="1" EraType="ERA_HOH_HIDDEN"/>
+    </Civics>
 </GameData>

@@ -85,7 +85,6 @@ function OnHonkaiSetResearchTarget(playerID, params)
     end
 end
 
--- ===========================================================================
 function Initialize()
     GameEvents.PlayerTurnStarted.Add(OnPlayerTurnStarted)
     GameEvents.HonkaiSetResearchTarget.Add(OnHonkaiSetResearchTarget)

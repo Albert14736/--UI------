@@ -212,6 +212,9 @@
       <File>UI/HonkaiTechTree/HonkaiTechTree.xml</File>
     </AddUserInterfaces>
     <UpdateDatabase id="HONKAI_INGAME_DATABASE">
+      <Properties>
+        <LoadOrder>999999</LoadOrder>
+      </Properties>
       <File>Honkai_Resources.xml</File>
       <File>Honkai_Civilization.xml</File>
       <File>Honkai_Leader_HoV.xml</File>
@@ -339,6 +342,7 @@
     <!-- 挂载美术中枢与打包文件 (请确保这三个文件已经复制到模组下) -->
     <File>kongzhilvzhe.dep</File>
     <File>ArtDefs/herrscher_of_the_void_leader.artdef</File>
+    <File>ArtDefs/Districts.artdef</File>
     <File>Platforms/Windows/BLPs/leader_herrscher_of_the_void.blp</File>
   </Files>
 </Mod>
