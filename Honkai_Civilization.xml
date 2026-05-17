@@ -11,9 +11,6 @@
         <Row Type="DISTRICT_ARMED_INDUSTRY" Kind="KIND_DISTRICT"/>
         <Row Type="DISTRICT_HIDDEN_RESEARCH" Kind="KIND_DISTRICT"/>
 
-        <!-- 隐形锁与幽灵时代测试 -->
-        <Row Type="ERA_HOH_HIDDEN" Kind="KIND_ERA"/>
-        <Row Type="CIVIC_HOH_LOCKED_VALKYRIE" Kind="KIND_CIVIC"/>
     </Types>
 
     <Traits>
@@ -304,13 +301,4 @@
         <Row RequirementId="REQ_HOH_PLOT_ADJACENT_TO_CITY_CENTER" Name="DistrictType" Value="DISTRICT_CITY_CENTER"/>
     </RequirementArguments>
 
-    <!-- ========================================================== -->
-    <!-- 隐形锁测试：幽灵时代与隐形市政 -->
-    <!-- ========================================================== -->
-    <Eras>
-        <Row EraType="ERA_HOH_HIDDEN" Name="LOC_ERA_HOH_HIDDEN"/>
-    </Eras>
-    <Civics>
-        <Row CivicType="CIVIC_HOH_LOCKED_VALKYRIE" Name="LOC_CIVIC_HOH_LOCKED_VALKYRIE_NAME" Cost="1" EraType="ERA_HOH_HIDDEN"/>
-    </Civics>
 </GameData>

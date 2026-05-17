@@ -71,6 +71,9 @@ function OnHonkaiSetResearchTarget(playerID, params)
         pPlayer:SetProperty("UNLOCKED_" .. techType, 1)
         pPlayer:SetProperty("HONKAI_CURRENT_RESEARCH", nil)
         pPlayer:SetProperty("HONKAI_CURRENT_RESEARCH_COST", nil)
+        
+        -- ★ 触发科技解锁
+        GrantTechModifiers(playerID, techType)
         print("【崩坏底层】玩家 " .. playerID .. " 秒解了：" .. techType)
     else
         -- 钱不够，挂入排队队列
