@@ -17,7 +17,8 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_ANCIENT",
 			UITreeRow = 0,
 			Prereqs = {},
-			Column = 1
+			Column = 1,
+			ShadowCivic = "CIVIC_SHADOW_PERCEPTION"
 		},
 		{
 			Type = "HONKAI_TECH_OMEN",
@@ -27,7 +28,8 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_ANCIENT",
 			UITreeRow = 3,
 			Prereqs = {},
-			Column = 1
+			Column = 1,
+			ShadowCivic = "CIVIC_SHADOW_OMEN"
 		},
 		-- 第 2 列
 		{
@@ -38,7 +40,8 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_ANCIENT",
 			UITreeRow = -2,
 			Prereqs = {"HONKAI_TECH_PERCEPTION"},
-			Column = 2
+			Column = 2,
+			ShadowCivic = "CIVIC_SHADOW_PATHOLOGY"
 		},
 		{
 			Type = "HONKAI_TECH_BASIC_TACTICS",
@@ -48,7 +51,8 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_ANCIENT",
 			UITreeRow = -1,
 			Prereqs = {"HONKAI_TECH_PERCEPTION"},
-			Column = 2
+			Column = 2,
+			ShadowCivic = "CIVIC_SHADOW_BASIC_TACTICS"
 		},
 		{
 			Type = "HONKAI_TECH_ENERGY_CONTAINER",
@@ -58,7 +62,8 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_ANCIENT",
 			UITreeRow = 1,
 			Prereqs = {"HONKAI_TECH_PERCEPTION"},
-			Column = 2
+			Column = 2,
+			ShadowCivic = "CIVIC_SHADOW_ENERGY_CONTAINER"
 		},
 		{
 			Type = "HONKAI_TECH_DESTINY_CLERGY",
@@ -68,7 +73,8 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_ANCIENT",
 			UITreeRow = 2,
 			Prereqs = {"HONKAI_TECH_OMEN"},
-			Column = 2
+			Column = 2,
+			ShadowCivic = "CIVIC_SHADOW_DESTINY_CLERGY"
 		},
 		{
 			Type = "HONKAI_TECH_NUN_FORMATION",
@@ -78,7 +84,8 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_ANCIENT",
 			UITreeRow = 4,
 			Prereqs = {"HONKAI_TECH_OMEN"},
-			Column = 2
+			Column = 2,
+			ShadowCivic = "CIVIC_SHADOW_NUN_FORMATION"
 		},
 		-- 第 3 列
 		{
@@ -89,7 +96,8 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_ANCIENT",
 			UITreeRow = -1,
 			Prereqs = {"HONKAI_TECH_PATHOLOGY", "HONKAI_TECH_ENERGY_CONTAINER"},
-			Column = 3
+			Column = 3,
+			ShadowCivic = "CIVIC_SHADOW_BASIC_ISOLATION"
 		},
 		{
 			Type = "HONKAI_TECH_ST_FREYA",
@@ -99,7 +107,8 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_ANCIENT",
 			UITreeRow = 3,
 			Prereqs = {"HONKAI_TECH_PERCEPTION", "HONKAI_TECH_OMEN"},
-			Column = 3
+			Column = 3,
+			ShadowCivic = "CIVIC_SHADOW_ST_FREYA"
 		},
 		-- 第 4 列
 		{
@@ -110,7 +119,8 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_ANCIENT",
 			UITreeRow = 3,
 			Prereqs = {"HONKAI_TECH_ST_FREYA"},
-			Column = 4
+			Column = 4,
+			ShadowCivic = "CIVIC_SHADOW_WEAPON_PROTOTYPE"
 		},
 		-- ==============================================
 		-- 古典时代 (ERA_CLASSICAL)

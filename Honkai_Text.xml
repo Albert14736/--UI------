@@ -1,20 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
     <LocalizedText>
-        <!-- 文明 -->
-        <Row Tag="LOC_CIVILIZATION_HONKAI_NAME" Language="zh_Hans_CN"><Text>崩坏</Text></Row>
-        <Row Tag="LOC_CIVILIZATION_HONKAI_DESCRIPTION" Language="zh_Hans_CN"><Text>崩坏</Text></Row>
-        <Row Tag="LOC_CIVILIZATION_HONKAI_ADJECTIVE" Language="zh_Hans_CN"><Text>崩坏的</Text></Row>
+        <!--影子系统-->
+        <Replace Tag="LOC_CIVIC_HOH_LOCK_NAME" Language="zh_Hans_CN" Text="崩坏能屏蔽场 [不可解锁]"/>
+        <Replace Tag="LOC_CIVIC_HOH_LOCK_NAME" Language="zh_Hant_HK" Text="崩坏能屏蔽場 [不可解鎖]"/>
+        <Replace Tag="LOC_CIVIC_HOH_LOCK_NAME" Language="en_US" Text="Honkai Energy Shield [Locked]"/>
+        <Replace Tag="LOC_CIVIC_SHADOW_OMEN_NAME" Language="zh_Hans_CN" Text="权限指令：崩坏预兆"/>
+        <Replace Tag="LOC_CIVIC_SHADOW_OMEN_NAME" Language="zh_Hant_HK" Text="權限指令：崩壞預兆"/>
+        <Replace Tag="LOC_CIVIC_SHADOW_OMEN_NAME" Language="en_US" Text="Auth Command: Honkai Omen"/>
+        <Replace Tag="LOC_CIVIC_SHADOW_NUN_FORMATION_NAME" Language="zh_Hans_CN" Text="权限指令：修女方阵"/>
+        <Replace Tag="LOC_CIVIC_SHADOW_NUN_FORMATION_NAME" Language="zh_Hant_HK" Text="權限指令：修女方陣"/>
+        <Replace Tag="LOC_CIVIC_SHADOW_NUN_FORMATION_NAME" Language="en_US" Text="Auth Command: Nun Formation"/>
+        <Replace Tag="LOC_BOOST_TRIGGER_LUA_ONLY" Language="zh_Hans_CN" Text="通过指挥终端解锁。"/>
+        <Replace Tag="LOC_BOOST_TRIGGER_LUA_ONLY" Language="zh_Hant_HK" Text="通過指揮終端解鎖。"/>
+        <Replace Tag="LOC_BOOST_TRIGGER_LUA_ONLY" Language="en_US" Text="Unlocked via the Command Terminal."/>
+        
+        <!--文明-->
+        <Replace Tag="LOC_CIVILIZATION_HONKAI_NAME" Language="zh_Hans_CN" Text="崩坏"/>
+        <Replace Tag="LOC_CIVILIZATION_HONKAI_NAME" Language="zh_Hant_HK" Text="崩壞"/>
+        <Replace Tag="LOC_CIVILIZATION_HONKAI_NAME" Language="en_US" Text="Honkai"/>
+        <Replace Tag="LOC_CIVILIZATION_HONKAI_DESC" Language="zh_Hans_CN" Text="崩坏文明"/>
+        <Replace Tag="LOC_CIVILIZATION_HONKAI_DESC" Language="zh_Hant_HK" Text="崩壞文明"/>
+        <Replace Tag="LOC_CIVILIZATION_HONKAI_DESC" Language="en_US" Text="Honkai Civilization"/>
+        <Replace Tag="LOC_CIVILIZATION_HONKAI_ADJECTIVE" Language="zh_Hans_CN" Text="崩坏的"/>
+        <Replace Tag="LOC_CIVILIZATION_HONKAI_ADJECTIVE" Language="zh_Hant_HK" Text="崩壞的"/>
+        <Replace Tag="LOC_CIVILIZATION_HONKAI_ADJECTIVE" Language="en_US" Text="Honkai"/>
+        <Replace Tag="LOC_TRAIT_CIVILIZATION_HONKAI_NAME" Language="zh_Hans_CN" Text="崩坏灾难"/>
+        <Replace Tag="LOC_TRAIT_CIVILIZATION_HONKAI_NAME" Language="zh_Hant_HK" Text="崩壞災難"/>
+        <Replace Tag="LOC_TRAIT_CIVILIZATION_HONKAI_NAME" Language="en_US" Text="Honkai Disaster"/>
+        <Replace Tag="LOC_TRAIT_CIVILIZATION_HONKAI_DESC" Language="zh_Hans_CN" Text="崩坏文明受到崩坏能的加持。"/>
+        <Replace Tag="LOC_TRAIT_CIVILIZATION_HONKAI_DESC" Language="zh_Hant_HK" Text="崩壞文明受到崩壞能的加持。"/>
+        <Replace Tag="LOC_TRAIT_CIVILIZATION_HONKAI_DESC" Language="en_US" Text="Honkai civilization is blessed by Honkai energy."/>
+        <Replace Tag="LOC_TRAIT_CIVILIZATION_HONKAI_DUMMY_NAME" Language="zh_Hans_CN" Text="崩坏起源"/>
+        <Replace Tag="LOC_TRAIT_CIVILIZATION_HONKAI_DUMMY_NAME" Language="zh_Hant_HK" Text="崩壞起源"/>
+        <Replace Tag="LOC_TRAIT_CIVILIZATION_HONKAI_DUMMY_NAME" Language="en_US" Text="Honkai Origin"/>
+        <Replace Tag="LOC_TRAIT_CIVILIZATION_HONKAI_DUMMY_DESC" Language="zh_Hans_CN" Text="来自虚数之树的筛选机制。拥有独特的指挥终端 UI 系统。"/>
+        <Replace Tag="LOC_TRAIT_CIVILIZATION_HONKAI_DUMMY_DESC" Language="zh_Hant_HK" Text="來自虛數之樹的篩選機制。擁有獨特的指揮終端 UI 系統。"/>
+        <Replace Tag="LOC_TRAIT_CIVILIZATION_HONKAI_DUMMY_DESC" Language="en_US" Text="A screening mechanism from the Imaginary Tree."/>
+        
+        <!--领袖-->
+        <Replace Tag="LOC_LEADER_HOH_VOID_HERRSCHER_NAME" Language="zh_Hans_CN" Text="空之律者"/>
+        <Replace Tag="LOC_LEADER_HOH_VOID_HERRSCHER_NAME" Language="zh_Hant_HK" Text="空之律者"/>
+        <Replace Tag="LOC_LEADER_HOH_VOID_HERRSCHER_NAME" Language="en_US" Text="Herrscher of the Void"/>
+        <Replace Tag="LOC_LOADING_INFO_LEADER_HOH_VOID_HERRSCHER" Language="zh_Hans_CN" Text="人类，不过是虫子罢了……"/>
+        <Replace Tag="LOC_LOADING_INFO_LEADER_HOH_VOID_HERRSCHER" Language="zh_Hant_HK" Text="人類，不過是蟲子罢了……"/>
+        <Replace Tag="LOC_LOADING_INFO_LEADER_HOH_VOID_HERRSCHER" Language="en_US" Text="Humans... nothing more than insects..."/>
+        <Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_HOH_VOID_HERRSCHER_QUOTE" Language="zh_Hans_CN" Text="这就是……神明的力量。"/>
+        <Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_HOH_VOID_HERRSCHER_QUOTE" Language="zh_Hant_HK" Text="這就是……神明的力量。"/>
+        <Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_HOH_VOID_HERRSCHER_QUOTE" Language="en_US" Text="This is... the power of a god."/>
+        <Replace Tag="LOC_TRAIT_LEADER_HOV_DUMMY_NAME" Language="zh_Hans_CN" Text="虚数权能"/>
+        <Replace Tag="LOC_TRAIT_LEADER_HOV_DUMMY_NAME" Language="zh_Hant_HK" Text="虛數權能"/>
+        <Replace Tag="LOC_TRAIT_LEADER_HOV_DUMMY_NAME" Language="en_US" Text="Authority of Void"/>
+        <Replace Tag="LOC_TRAIT_LEADER_HOV_DUMMY_DESC" Language="zh_Hans_CN" Text="掌控空间 with 虚数的律者。"/>
+        <Replace Tag="LOC_TRAIT_LEADER_HOV_DUMMY_DESC" Language="zh_Hant_HK" Text="掌控空間與虛數的律者。"/>
+        <Replace Tag="LOC_TRAIT_LEADER_HOV_DUMMY_DESC" Language="en_US" Text="The Herrscher who controls space and the imaginary."/>
+        
+        <!--区域 (Districts) -->
+        <Replace Tag="LOC_DISTRICT_SCHICKSAL_HQ_NAME" Language="zh_Hans_CN" Text="天命总部"/>
+        <Replace Tag="LOC_DISTRICT_SCHICKSAL_HQ_NAME" Language="zh_Hant_HK" Text="天命總部"/>
+        <Replace Tag="LOC_DISTRICT_SCHICKSAL_HQ_NAME" Language="en_US" Text="Schicksal Headquarters"/>
+        <Replace Tag="LOC_DISTRICT_SCHICKSAL_HQ_DESC" Language="zh_Hans_CN" Text="天命组织的核心控制中心。提供高额信仰产出，并对相邻区域产生神权辐射。"/>
+        <Replace Tag="LOC_DISTRICT_SCHICKSAL_HQ_DESC" Language="zh_Hant_HK" Text="天命組織的核心控制中心。提供高額信仰產出，並對相邻區域產生神權輻射。"/>
+        <Replace Tag="LOC_DISTRICT_SCHICKSAL_HQ_DESC" Language="en_US" Text="The core control center of Schicksal. Provides high Faith and radiates theocratic influence to adjacent districts."/>
 
-        <!-- 领袖 -->
-        <Row Tag="LOC_LEADER_HOH_VOID_HERRSCHER_NAME" Language="zh_Hans_CN"><Text>空之律者</Text></Row>
-        <Row Tag="LOC_LOADING_INFO_LEADER_HOH_VOID_HERRSCHER" Language="zh_Hans_CN"><Text>人类，不过是虫子罢了……</Text></Row>
-        <Row Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_HOH_VOID_HERRSCHER_QUOTE" Language="zh_Hans_CN"><Text>这就是……神明的力量。</Text></Row>
+        <Replace Tag="LOC_DISTRICT_ANTI_ENTROPY_HQ_NAME" Language="zh_Hans_CN" Text="逆熵总部"/>
+        <Replace Tag="LOC_DISTRICT_ANTI_ENTROPY_HQ_NAME" Language="zh_Hant_HK" Text="逆熵總部"/>
+        <Replace Tag="LOC_DISTRICT_ANTI_ENTROPY_HQ_NAME" Language="en_US" Text="Anti-Entropy Headquarters"/>
+        <Replace Tag="LOC_DISTRICT_ANTI_ENTROPY_HQ_DESC" Language="zh_Hans_CN" Text="逆熵组织的指挥中枢。提供高额工业产出，并对相邻区域产生重工业辐射。"/>
+        <Replace Tag="LOC_DISTRICT_ANTI_ENTROPY_HQ_DESC" Language="zh_Hant_HK" Text="逆熵組織的指揮中樞。提供高額工業產出，並對相邻區域產生重工業輻射。"/>
+        <Replace Tag="LOC_DISTRICT_ANTI_ENTROPY_HQ_DESC" Language="en_US" Text="The command hub of Anti-Entropy. Provides high Production and radiates industrial influence to adjacent districts."/>
 
-        <!-- 特质 -->
-        <Row Tag="LOC_TRAIT_CIVILIZATION_HONKAI_DUMMY_NAME" Language="zh_Hans_CN"><Text>崩坏灾难</Text></Row>
-        <Row Tag="LOC_TRAIT_CIVILIZATION_HONKAI_DUMMY_DESC" Language="zh_Hans_CN"><Text>（此为占位符，后续将填充时代惩罚的具体描述）</Text></Row>
-        <Row Tag="LOC_TRAIT_LEADER_HOV_DUMMY_NAME" Language="zh_Hans_CN"><Text>虚数权能</Text></Row>
-        <Row Tag="LOC_TRAIT_LEADER_HOV_DUMMY_DESC" Language="zh_Hans_CN"><Text>降临之神使。（此为占位符，后续将填充免疫惩罚的具体描述）</Text></Row>
+        <Replace Tag="LOC_DISTRICT_WORLD_SERPENT_HQ_NAME" Language="zh_Hans_CN" Text="世界蛇总部"/>
+        <Replace Tag="LOC_DISTRICT_WORLD_SERPENT_HQ_NAME" Language="zh_Hant_HK" Text="世界蛇總部"/>
+        <Replace Tag="LOC_DISTRICT_WORLD_SERPENT_HQ_NAME" Language="en_US" Text="World Serpent Headquarters" />
+        <Replace Tag="LOC_DISTRICT_WORLD_SERPENT_HQ_DESC" Language="zh_Hans_CN" Text="世界蛇组织极其隐秘的据点。提供高额科研与文化产出，并对相邻区域产生科研辐射。"/>
+        <Replace Tag="LOC_DISTRICT_WORLD_SERPENT_HQ_DESC" Language="zh_Hant_HK" Text="世界蛇組織極其隱秘的據點。提供高額科研與文化產出，並對相邻區域產生科研輻射。"/>
+        <Replace Tag="LOC_DISTRICT_WORLD_SERPENT_HQ_DESC" Language="en_US" Text="The highly secretive base of World Serpent. Provides high Science and Culture, radiating scientific influence to adjacent districts."/>
+
+        <!--分支区域 (Branches) -->
+        <Replace Tag="LOC_DISTRICT_SCHICKSAL_BRANCH_NAME" Language="zh_Hans_CN" Text="天命支部"/>
+        <Replace Tag="LOC_DISTRICT_SCHICKSAL_BRANCH_NAME" Language="zh_Hant_HK" Text="天命支部"/>
+        <Replace Tag="LOC_DISTRICT_SCHICKSAL_BRANCH_NAME" Language="en_US" Text="Schicksal Branch"/>
+        <Replace Tag="LOC_DISTRICT_SCHICKSAL_BRANCH_DESC" Language="zh_Hans_CN" Text="天命组织的地区分支机构。提供基础的崩坏能研究支持并代替圣地。"/>
+        <Replace Tag="LOC_DISTRICT_SCHICKSAL_BRANCH_DESC" Language="zh_Hant_HK" Text="天命組織的地區分支機構。提供基礎的崩壞能研究支持並代替聖地。"/>
+        <Replace Tag="LOC_DISTRICT_SCHICKSAL_BRANCH_DESC" Language="en_US" Text="A local branch of Schicksal. Provides basic Honkai research and replaces Holy Site."/>
+
+        <Replace Tag="LOC_DISTRICT_ARMED_INDUSTRY_NAME" Language="zh_Hans_CN" Text="武装工造区"/>
+        <Replace Tag="LOC_DISTRICT_ARMED_INDUSTRY_NAME" Language="zh_Hant_HK" Text="武裝工造區"/>
+        <Replace Tag="LOC_DISTRICT_ARMED_INDUSTRY_NAME" Language="en_US" Text="Armed Industry"/>
+        <Replace Tag="LOC_DISTRICT_ARMED_INDUSTRY_DESC" Language="zh_Hans_CN" Text="逆熵的大型机甲量产基地。提供极高的工业产出并代替工业区。"/>
+        <Replace Tag="LOC_DISTRICT_ARMED_INDUSTRY_DESC" Language="zh_Hant_HK" Text="逆熵的大型機甲量產基地。提供極高的工業產出並代替工業區。"/>
+        <Replace Tag="LOC_DISTRICT_ARMED_INDUSTRY_DESC" Language="en_US" Text="A mass-production base for Anti-Entropy mechs. Provides high production and replaces Industrial Zone."/>
+
+        <Replace Tag="LOC_DISTRICT_HIDDEN_RESEARCH_NAME" Language="zh_Hans_CN" Text="隐秘研究站"/>
+        <Replace Tag="LOC_DISTRICT_HIDDEN_RESEARCH_NAME" Language="zh_Hant_HK" Text="隱秘研究站"/>
+        <Replace Tag="LOC_DISTRICT_HIDDEN_RESEARCH_NAME" Language="en_US" Text="Hidden Research Station"/>
+        <Replace Tag="LOC_DISTRICT_HIDDEN_RESEARCH_DESC" Language="zh_Hans_CN" Text="世界蛇的地下实验场。负责解析崩坏能的终极奥秘并代替学院。"/>
+        <Replace Tag="LOC_DISTRICT_HIDDEN_RESEARCH_DESC" Language="zh_Hant_HK" Text="世界蛇的地下實驗場。負責解析崩壞能的終極奧秘並代替學院。"/>
+        <Replace Tag="LOC_DISTRICT_HIDDEN_RESEARCH_DESC" Language="en_US" Text="World Serpent's underground lab. Responsible for analyzing the ultimate mysteries of Honkai and replaces Campus."/>
+
+        <!--单位-->
+        <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_NAME" Language="zh_Hans_CN" Text="女武神中队"/>
+        <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_NAME" Language="zh_Hant_HK" Text="女武神中隊"/>
+        <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_NAME" Language="en_US" Text="Valkyrie Squadron"/>
+        <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_MK1_DESC" Language="zh_Hans_CN" Text="天命组织的初级女武神。拥有较强的近战能力。"/>
+        <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_MK1_DESC" Language="zh_Hant_HK" Text="天命組織的初級女武神。擁有較強的近戰能力。"/>
+        <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_MK1_DESC" Language="en_US" Text="Initial Valkyrie unit of Schicksal."/>
+        <Replace Tag="LOC_PROMOTION_CLASS_HOH_VALKYRIE_NAME" Language="zh_Hans_CN" Text="女武神"/>
+        <Replace Tag="LOC_PROMOTION_CLASS_HOH_VALKYRIE_NAME" Language="zh_Hant_HK" Text="女武神"/>
+        <Replace Tag="LOC_PROMOTION_CLASS_HOH_VALKYRIE_NAME" Language="en_US" Text="Valkyrie"/>
+        
+        <!--晋升-->
+        <Replace Tag="LOC_PROMOTION_HOH_VALKYRIE_1_L_NAME" Language="zh_Hans_CN" Text="远程防护"/>
+        <Replace Tag="LOC_PROMOTION_HOH_VALKYRIE_1_L_DESC" Language="zh_Hans_CN" Text="防御远程攻击时 +10 战斗力。"/>
+        <Replace Tag="LOC_PROMOTION_HOH_VALKYRIE_1_R_NAME" Language="zh_Hans_CN" Text="战术突击"/>
+        <Replace Tag="LOC_PROMOTION_HOH_VALKYRIE_1_R_DESC" Language="zh_Hans_CN" Text="对抗近战和远程单位时 +7 战斗力。"/>
+        <Replace Tag="LOC_PROMOTION_HOH_VALKYRIE_2_L_NAME" Language="zh_Hans_CN" Text="干扰力场"/>
+        <Replace Tag="LOC_PROMOTION_HOH_VALKYRIE_2_L_DESC" Language="zh_Hans_CN" Text="相邻的敌方单位 -4 战斗力。"/>
+        <Replace Tag="LOC_PROMOTION_HOH_VALKYRIE_2_R_NAME" Language="zh_Hans_CN" Text="战场侦察"/>
+        <Replace Tag="LOC_PROMOTION_HOH_VALKYRIE_2_R_DESC" Language="zh_Hans_CN" Text="+1 视野，且能看穿森林和丛林。"/>
+        <Replace Tag="LOC_PROMOTION_HOH_VALKYRIE_3_L_NAME" Language="zh_Hans_CN" Text="圣光治愈"/>
+        <Replace Tag="LOC_PROMOTION_HOH_VALKYRIE_3_L_DESC" Language="zh_Hans_CN" Text="每回合恢复生命值。"/>
+        <Replace Tag="LOC_PROMOTION_HOH_VALKYRIE_3_R_NAME" Language="zh_Hans_CN" Text="攻城锤"/>
+        <Replace Tag="LOC_PROMOTION_HOH_VALKYRIE_3_R_DESC" Language="zh_Hans_CN" Text="攻击区域时 +10 战斗力。"/>
+        <Replace Tag="LOC_PROMOTION_HOH_VALKYRIE_4_NAME" Language="zh_Hans_CN" Text="终极武装"/>
+        <Replace Tag="LOC_PROMOTION_HOH_VALKYRIE_4_DESC" Language="zh_Hans_CN" Text="+1 移动力，且每回合可进行额外攻击。"/>
+        <Replace Tag="LOC_MOD_HOH_VALK_1L_RANGED_DEF_PREVIEW" Language="zh_Hans_CN" Text="+10 远程防护"/>
+        <Replace Tag="LOC_MOD_HOH_VALK_1R_VS_MELEE_RANGED_PREVIEW" Language="zh_Hans_CN" Text="+7 战术突击"/>
+        <Replace Tag="LOC_MOD_HOH_VALK_2L_HARASS_PREVIEW" Language="zh_Hans_CN" Text="-4 干扰力场"/>
+        <Replace Tag="LOC_MOD_HOH_VALK_3R_CITY_ATTACK_PREVIEW" Language="zh_Hans_CN" Text="+10 攻城加成"/>
     </LocalizedText>
 </GameData>

@@ -102,6 +102,20 @@
             <m_EntryID text="herrscher_of_the_void_head_256"/>
             <m_ObjectName text="herrscher_of_the_void_head_256"/>
         </Element>
+        
+        <!-- 散图UI注册 (读条界面/选人界面大图) -->
+        <Element>
+            <m_EntryID text="herrscher_of_the_void_xuanren"/>
+            <m_ObjectName text="herrscher_of_the_void_xuanren"/>
+        </Element>
+        <Element>
+            <m_EntryID text="herrscher_of_the_void_foreground"/>
+            <m_ObjectName text="herrscher_of_the_void_foreground"/>
+        </Element>
+        <Element>
+            <m_EntryID text="herrscher_of_the_void_select"/>
+            <m_ObjectName text="herrscher_of_the_void_select"/>
+        </Element>
     </m_Entries>
     <m_AllowedPlatforms>
         <Element>WINDOWS</Element>

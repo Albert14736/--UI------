@@ -675,6 +675,12 @@ function AllocateUI( kNodeGrid:table, kPaths:table )
 	
 		if tech ~= nil then
 			PopulateUnlockablesForTech(playerId, tech.Index, node["unlockIM"], function() SetCurrentNode(item.Hash, item); end);
+		elseif item.ShadowCivic ~= nil then
+			-- 【崩坏桥接】如果不是原版科技，但绑定了影子市政，则通过市政系统渲染解锁图标
+			local shadowCivic = GameInfo.Civics[item.ShadowCivic];
+			if shadowCivic ~= nil then
+				PopulateUnlockablesForCivic(playerId, shadowCivic.Index, node["unlockIM"], node["unlockGOV"], function() SetCurrentNode(item.Hash, item); end);
+			end
 		end
 
 		node.NodeButton:RegisterCallback( Mouse.eLClick, function() SetCurrentNode(item.Hash, item); end);
@@ -1384,6 +1390,7 @@ function PopulateItemData()
 		kEntry.IsBoostable	= false;
 		kEntry.Prereqs		= row.Prereqs;
 		kEntry.UITreeRow	= row.UITreeRow;
+		kEntry.ShadowCivic	= row.ShadowCivic;
 		kEntry.Unlocks		= {};
 
 		if table.count(kEntry.Prereqs) == 0 then
@@ -1498,11 +1505,15 @@ function SetupLaunchBarButton()
     if ctrl == nil then return end
     if EntryButtonInstance == nil then
         EntryButtonInstance = m_LaunchItemManager:GetInstance(ctrl)
-        EntryButtonInstance.LaunchItemHonkaiButton:RegisterCallback(Mouse.eLClick, ToggleHonkaiWindow)
+        if ToggleHonkaiWindow then
+            EntryButtonInstance.LaunchItemHonkaiButton:RegisterCallback(Mouse.eLClick, ToggleHonkaiWindow)
+        else
+            print("ERROR: ToggleHonkaiWindow is nil during SetupLaunchBarButton!")
+        end
         ctrl:CalculateSize()
         ctrl:ReprocessAnchoring()
         local launchBar = ContextPtr:LookUpControl("/InGame/LaunchBar")
-        if launchBar then
+        if launchBar and launchBar.CalculateSize then
             launchBar:CalculateSize()
             launchBar:ReprocessAnchoring()
         end

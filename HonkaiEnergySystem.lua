@@ -1,8 +1,52 @@
 -- ===========================================================================
--- 崩坏能系统 - 核心逻辑控制 (Gameplay Context)
+-- 崩坏能 system - 核心逻辑控制 (Gameplay Context)
 -- 负责：存储崩坏能、处理扣除请求、保存已解锁的科技节点
 -- ===========================================================================
 print(" --- | Honkai Energy System (Gameplay) Loaded! | ---")
+
+-- ===========================================================================
+-- 崩坏科技与 影子市政 映射表
+-- ===========================================================================
+local ShadowCivicMap = {
+    ["HONKAI_TECH_PERCEPTION"] = "CIVIC_SHADOW_PERCEPTION",
+    ["HONKAI_TECH_OMEN"] = "CIVIC_SHADOW_OMEN",
+    ["HONKAI_TECH_PATHOLOGY"] = "CIVIC_SHADOW_PATHOLOGY",
+    ["HONKAI_TECH_BASIC_TACTICS"] = "CIVIC_SHADOW_BASIC_TACTICS",
+    ["HONKAI_TECH_ENERGY_CONTAINER"] = "CIVIC_SHADOW_ENERGY_CONTAINER",
+    ["HONKAI_TECH_DESTINY_CLERGY"] = "CIVIC_SHADOW_DESTINY_CLERGY",
+    ["HONKAI_TECH_NUN_FORMATION"] = "CIVIC_SHADOW_NUN_FORMATION",
+    ["HONKAI_TECH_BASIC_ISOLATION"] = "CIVIC_SHADOW_BASIC_ISOLATION",
+    ["HONKAI_TECH_ST_FREYA"] = "CIVIC_SHADOW_ST_FREYA",
+    ["HONKAI_TECH_WEAPON_PROTOTYPE"] = "CIVIC_SHADOW_WEAPON_PROTOTYPE",
+}
+
+function GrantTechModifiers(playerID, techType)
+    local pPlayer = Players[playerID]
+    if not pPlayer then return end
+    
+    local shadowCivicType = ShadowCivicMap[techType]
+    if shadowCivicType then
+        local civicEntry = GameInfo.Civics[shadowCivicType]
+        if civicEntry then
+            local pCulture = pPlayer:GetCulture()
+            if not pCulture:HasCivic(civicEntry.Index) then
+                -- 【核心核心核心】终极核武：直接赋予市政，无视进度、无视前置、瞬间激活权限
+                pCulture:SetCivic(civicEntry.Index, true)
+                print("【崩坏桥接】已通过 SetCivic 强制激活影子市政权限：" .. shadowCivicType)
+            end
+        end
+    end
+end
+
+-- 【安全加固】检查并补发所有已解锁的影子市政
+function RestoreUnlockedTechs(playerID)
+    print("【崩坏自检】正在为玩家 " .. playerID .. " 检查影子市政完整性...")
+    for honkaiTech, shadowCivic in pairs(ShadowCivicMap) do
+        if ExposedMembers.Honkai.IsUnlocked(playerID, honkaiTech) then
+            GrantTechModifiers(playerID, honkaiTech)
+        end
+    end
+end
 
 -- 【测试用】每回合自动发放崩坏能，方便咱们买科技测试
 function OnPlayerTurnStarted(playerID)
@@ -24,6 +68,9 @@ function OnPlayerTurnStarted(playerID)
             -- 钱存够了，回合开始时自动解锁！
             pPlayer:SetProperty("HONKAI_RESEARCH_POINTS", currentPoints - techCost)
             pPlayer:SetProperty("UNLOCKED_" .. currentResearch, 1)
+            
+            -- ★ 触发能力发放
+            GrantTechModifiers(playerID, currentResearch)
             
             -- 清空当前研究目标
             pPlayer:SetProperty("HONKAI_CURRENT_RESEARCH", nil)
@@ -79,6 +126,8 @@ function OnHonkaiSetResearchTarget(playerID, params)
         -- 钱不够，挂入排队队列
         pPlayer:SetProperty("HONKAI_CURRENT_RESEARCH", techType)
         pPlayer:SetProperty("HONKAI_CURRENT_RESEARCH_COST", techCost)
+        
+        -- ★ 注意：此处不调用 GrantTechModifiers，等到钱够了才发
         print("【崩坏底层】玩家 " .. playerID .. " 将研究目标设为：" .. techType)
     end
     
@@ -92,4 +141,12 @@ function Initialize()
     GameEvents.PlayerTurnStarted.Add(OnPlayerTurnStarted)
     GameEvents.HonkaiSetResearchTarget.Add(OnHonkaiSetResearchTarget)
 end
-Events.LoadGameViewStateDone.Add(Initialize)
+
+Events.LoadGameViewStateDone.Add(function()
+    Initialize()
+    -- 初次加载时，为本地玩家恢复一次影子科技
+    local localPlayer = Game.GetLocalPlayer()
+    if localPlayer ~= -1 then
+        RestoreUnlockedTechs(localPlayer)
+    end
+end)

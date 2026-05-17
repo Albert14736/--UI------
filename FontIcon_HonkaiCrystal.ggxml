@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <fontTextureAtlas>
-    <name>HonkaiCrystal_FontIcon</name>
-    <texture>benghuainengjiejing_22</texture>
+    <name>Honkai_FontIcons_Crystal</name>
+    <texture>ResourceAndText_Textures/benghuainengjiejing_22</texture>
     <height>22</height>
     <width>22</width>
     <mapping>
         <name>ICON_RESOURCE_HONKAI_CRYSTAL</name>
+        <tx>0</tx><ty>0</ty><tw>22</tw><th>22</th>
+    </mapping>
+    <mapping>
+        <name>ICON_HONKAI_CRYSTAL</name>
         <tx>0</tx><ty>0</ty><tw>22</tw><th>22</th>
     </mapping>
 </fontTextureAtlas>
