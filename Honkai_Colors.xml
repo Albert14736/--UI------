@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Colors>
+		<!-- 崩坏文明 专属配色库 - 颜色定义 -->
+		<!-- 海蓝色方案 (RGBA) - 最后的 102 代表 40% 透明度 -->
+		<Row Type="COLOR_HONKAI_SEA_PRIMARY"   Color="0,105,148,102"/>
+		<Row Type="COLOR_HONKAI_SEA_SECONDARY" Color="255,255,255,255"/>
+	</Colors>
+
+	<PlayerColors>
+		<Row Type="LEADER_HOH_VOID_HERRSCHER" Usage="Unique" PrimaryColor="COLOR_HONKAI_SEA_PRIMARY" SecondaryColor="COLOR_HONKAI_SEA_SECONDARY" TextColor="COLOR_PLAYER_WHITE_TEXT"/>
+	</PlayerColors>
+</GameData>

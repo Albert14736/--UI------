@@ -17,21 +17,21 @@
         <Row CivilizationType="CIVILIZATION_HONKAI" LeaderType="LEADER_HOH_VOID_HERRSCHER" CapitalName="虚数枢纽"/>
     </CivilizationLeaders>
     <Colors>
-        <Row Type="COLOR_HOH_VOID_PRIMARY" Color="225,230,235,255"/>
-        <Row Type="COLOR_HOH_VOID_SECONDARY" Color="45,50,55,255"/>
+        <Row Type="COLOR_HONKAI_SEA_PRIMARY"   Color="180,140,230,38"/>
+        <Row Type="COLOR_HONKAI_SEA_SECONDARY" Color="255,255,255,255"/>
     </Colors>
     <PlayerColors>
-        <Row Type="LEADER_HOH_VOID_HERRSCHER" Usage="Unique" PrimaryColor="COLOR_HOH_VOID_PRIMARY" SecondaryColor="COLOR_HOH_VOID_SECONDARY"/>
+        <Row Type="LEADER_HOH_VOID_HERRSCHER" Usage="Unique" PrimaryColor="COLOR_HONKAI_SEA_PRIMARY" SecondaryColor="COLOR_HONKAI_SEA_SECONDARY" TextColor="COLOR_PLAYER_WHITE_TEXT"/>
     </PlayerColors>
     
     <LoadingInfo>
-        <!-- 修正：使用 1024x1024 的大图 -->
-        <Row LeaderType="LEADER_HOH_VOID_HERRSCHER" ForegroundImage="herrscher_of_the_void_foreground.dds" BackgroundImage="background.dds" PlayDawnOfManAudio="0" LeaderText="LOC_LOADING_INFO_LEADER_HOH_VOID_HERRSCHER"/>
+        <!-- 修正：补全 Textures/ 路径前缀 -->
+        <Row LeaderType="LEADER_HOH_VOID_HERRSCHER" ForegroundImage="Textures/herrscher_of_the_void_foreground.dds" BackgroundImage="Textures/background.dds" PlayDawnOfManAudio="0" LeaderText="LOC_LOADING_INFO_LEADER_HOH_VOID_HERRSCHER"/>
     </LoadingInfo>
     
     <DiplomacyInfo>
-        <!-- 修正：外交散图背景也必须带 .dds 后缀 -->
-        <Row Type="LEADER_HOH_VOID_HERRSCHER" BackgroundImage="background.dds"/>
+        <!-- 修正：补全 Textures/ 路径前缀 -->
+        <Row Type="LEADER_HOH_VOID_HERRSCHER" BackgroundImage="Textures/background.dds"/>
     </DiplomacyInfo>
     
     <LeaderQuotes>
