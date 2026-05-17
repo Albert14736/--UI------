@@ -168,18 +168,53 @@
         <Row ID="HQ_CC_WS_FOOD" Description="LOC_HQ_CC_WS_FOOD" YieldType="YIELD_FOOD" YieldChange="2" TilesRequired="1" AdjacentDistrict="DISTRICT_WORLD_SERPENT_HQ"/>
         <Row ID="HQ_CC_WS_GOLD" Description="LOC_HQ_CC_WS_GOLD" YieldType="YIELD_GOLD" YieldChange="3" TilesRequired="1" AdjacentDistrict="DISTRICT_WORLD_SERPENT_HQ"/>
         <Row ID="HQ_CC_WS_PROD_EXTRA" Description="LOC_HQ_CC_WS_PROD_EXTRA" YieldType="YIELD_PRODUCTION" YieldChange="2" TilesRequired="1" AdjacentDistrict="DISTRICT_WORLD_SERPENT_HQ"/>
+
+        <!-- 定义全地形山脉兼容规则 (补全 Description 字段以符合数据库硬约束) -->
+        <Row ID="HOH_ADJ_GRASS_MTN_FAITH" Description="LOC_HOH_ADJ_GRASS_MTN_FAITH" YieldType="YIELD_FAITH" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_GRASS_MOUNTAIN"/>
+        <Row ID="HOH_ADJ_PLAIN_MTN_FAITH" Description="LOC_HOH_ADJ_PLAIN_MTN_FAITH" YieldType="YIELD_FAITH" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_PLAINS_MOUNTAIN"/>
+        <Row ID="HOH_ADJ_DESERT_MTN_FAITH" Description="LOC_HOH_ADJ_DESERT_MTN_FAITH" YieldType="YIELD_FAITH" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_DESERT_MOUNTAIN"/>
+        <Row ID="HOH_ADJ_TUNDRA_MTN_FAITH" Description="LOC_HOH_ADJ_TUNDRA_MTN_FAITH" YieldType="YIELD_FAITH" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_TUNDRA_MOUNTAIN"/>
+        <Row ID="HOH_ADJ_SNOW_MTN_FAITH" Description="LOC_HOH_ADJ_SNOW_MTN_FAITH" YieldType="YIELD_FAITH" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_SNOW_MOUNTAIN"/>
+        
+        <Row ID="HOH_ADJ_GRASS_MTN_SCI" Description="LOC_HOH_ADJ_GRASS_MTN_SCI" YieldType="YIELD_SCIENCE" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_GRASS_MOUNTAIN"/>
+        <Row ID="HOH_ADJ_PLAIN_MTN_SCI" Description="LOC_HOH_ADJ_PLAIN_MTN_SCI" YieldType="YIELD_SCIENCE" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_PLAINS_MOUNTAIN"/>
+        <Row ID="HOH_ADJ_DESERT_MTN_SCI" Description="LOC_HOH_ADJ_DESERT_MTN_SCI" YieldType="YIELD_SCIENCE" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_DESERT_MOUNTAIN"/>
+        <Row ID="HOH_ADJ_TUNDRA_MTN_SCI" Description="LOC_HOH_ADJ_TUNDRA_MTN_SCI" YieldType="YIELD_SCIENCE" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_TUNDRA_MOUNTAIN"/>
+        <Row ID="HOH_ADJ_SNOW_MTN_SCI" Description="LOC_HOH_ADJ_SNOW_MTN_SCI" YieldType="YIELD_SCIENCE" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_SNOW_MOUNTAIN"/>
+
+        <Row ID="HOH_ADJ_REEF_SCIENCE" Description="LOC_HOH_ADJ_REEF_SCIENCE" YieldType="YIELD_SCIENCE" YieldChange="2" TilesRequired="1" AdjacentFeature="FEATURE_REEF"/>
+        <Row ID="HOH_ADJ_JUNGLE_SCIENCE" Description="LOC_HOH_ADJ_JUNGLE_SCIENCE" YieldType="YIELD_SCIENCE" YieldChange="1" TilesRequired="2" AdjacentFeature="FEATURE_JUNGLE"/>
+        <Row ID="HOH_ADJ_FOREST_FAITH" Description="LOC_HOH_ADJ_FOREST_FAITH" YieldType="YIELD_FAITH" YieldChange="1" TilesRequired="2" AdjacentFeature="FEATURE_FOREST"/>
     </Adjacency_YieldChanges>
 
     <District_Adjacencies>
         <Row DistrictType="DISTRICT_SCHICKSAL_HQ" YieldChangeId="RIVER_PROD_HQ"/>
         <Row DistrictType="DISTRICT_ANTI_ENTROPY_HQ" YieldChangeId="RIVER_PROD_HQ"/>
         <Row DistrictType="DISTRICT_WORLD_SERPENT_HQ" YieldChangeId="RIVER_PROD_HQ"/>
+        
         <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_SCHICKSAL_FAITH"/>
-        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_SCHICKSAL_PROD"/>
-        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_SCHICKSAL_SCI"/>
-        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_SCHICKSAL_CULT"/>
-        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_SCHICKSAL_GOLD"/>
-        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_SCHICKSAL_FOOD"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HOH_ADJ_GRASS_MTN_FAITH"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HOH_ADJ_PLAIN_MTN_FAITH"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HOH_ADJ_DESERT_MTN_FAITH"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HOH_ADJ_TUNDRA_MTN_FAITH"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HOH_ADJ_SNOW_MTN_FAITH"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HOH_ADJ_FOREST_FAITH"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="NaturalWonder_Faith"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="District_Faith"/>
+        
+        <Row DistrictType="DISTRICT_ARMED_INDUSTRY" YieldChangeId="Mine_Production"/>
+        <Row DistrictType="DISTRICT_ARMED_INDUSTRY" YieldChangeId="Quarry_Production"/>
+        <Row DistrictType="DISTRICT_ARMED_INDUSTRY" YieldChangeId="District_Production"/>
+        
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="HOH_ADJ_GRASS_MTN_SCI"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="HOH_ADJ_PLAIN_MTN_SCI"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="HOH_ADJ_DESERT_MTN_SCI"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="HOH_ADJ_TUNDRA_MTN_SCI"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="HOH_ADJ_SNOW_MTN_SCI"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="HOH_ADJ_JUNGLE_SCIENCE"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="HOH_ADJ_REEF_SCIENCE"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="District_Science"/>
+
         <Row DistrictType="DISTRICT_CITY_CENTER" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
         <Row DistrictType="DISTRICT_CITY_CENTER" YieldChangeId="HQ_RADIATE_AE_SCI"/>
         <Row DistrictType="DISTRICT_CITY_CENTER" YieldChangeId="HQ_RADIATE_AE_PROD"/>
@@ -197,6 +232,107 @@
         <Row DistrictType="DISTRICT_CITY_CENTER" YieldChangeId="HQ_CC_WS_FOOD"/>
         <Row DistrictType="DISTRICT_CITY_CENTER" YieldChangeId="HQ_CC_WS_GOLD"/>
         <Row DistrictType="DISTRICT_CITY_CENTER" YieldChangeId="HQ_CC_WS_PROD_EXTRA"/>
+
+        <!-- ================= 全局辐射加成映射 ================= -->
+        <!-- 将三大总部的专属辐射赋予游戏内所有可接受加成的常规区域与特色支部 -->
+        
+        <!-- 特色支部 -->
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+        
+        <Row DistrictType="DISTRICT_ARMED_INDUSTRY" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_ARMED_INDUSTRY" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_ARMED_INDUSTRY" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_ARMED_INDUSTRY" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_ARMED_INDUSTRY" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_HIDDEN_RESEARCH" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+
+        <!-- 原版核心区域 -->
+        <Row DistrictType="DISTRICT_HOLY_SITE" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_HOLY_SITE" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_HOLY_SITE" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_HOLY_SITE" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_HOLY_SITE" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+        
+        <Row DistrictType="DISTRICT_CAMPUS" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_CAMPUS" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_CAMPUS" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_CAMPUS" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_CAMPUS" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+        
+        <Row DistrictType="DISTRICT_COMMERCIAL_HUB" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_COMMERCIAL_HUB" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_COMMERCIAL_HUB" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_COMMERCIAL_HUB" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_COMMERCIAL_HUB" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+        
+        <Row DistrictType="DISTRICT_INDUSTRIAL_ZONE" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_INDUSTRIAL_ZONE" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_INDUSTRIAL_ZONE" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_INDUSTRIAL_ZONE" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_INDUSTRIAL_ZONE" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+        
+        <Row DistrictType="DISTRICT_THEATER" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_THEATER" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_THEATER" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_THEATER" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_THEATER" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+
+        <Row DistrictType="DISTRICT_HARBOR" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_HARBOR" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_HARBOR" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_HARBOR" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_HARBOR" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+
+        <Row DistrictType="DISTRICT_ENCAMPMENT" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_ENCAMPMENT" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_ENCAMPMENT" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_ENCAMPMENT" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_ENCAMPMENT" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+
+        <Row DistrictType="DISTRICT_AERODROME" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_AERODROME" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_AERODROME" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_AERODROME" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_AERODROME" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+
+        <Row DistrictType="DISTRICT_GOVERNMENT" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_GOVERNMENT" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_GOVERNMENT" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_GOVERNMENT" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_GOVERNMENT" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+
+        <Row DistrictType="DISTRICT_DIPLOMATIC_QUARTER" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_DIPLOMATIC_QUARTER" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_DIPLOMATIC_QUARTER" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_DIPLOMATIC_QUARTER" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_DIPLOMATIC_QUARTER" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+
+        <Row DistrictType="DISTRICT_AQUEDUCT" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_AQUEDUCT" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_AQUEDUCT" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_AQUEDUCT" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_AQUEDUCT" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+
+        <Row DistrictType="DISTRICT_DAM" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_DAM" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_DAM" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_DAM" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_DAM" YieldChangeId="HQ_RADIATE_WS_CULT"/>
+
+        <Row DistrictType="DISTRICT_CANAL" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
+        <Row DistrictType="DISTRICT_CANAL" YieldChangeId="HQ_RADIATE_AE_SCI"/>
+        <Row DistrictType="DISTRICT_CANAL" YieldChangeId="HQ_RADIATE_AE_PROD"/>
+        <Row DistrictType="DISTRICT_CANAL" YieldChangeId="HQ_RADIATE_WS_SCI"/>
+        <Row DistrictType="DISTRICT_CANAL" YieldChangeId="HQ_RADIATE_WS_CULT"/>
     </District_Adjacencies>
 
     <Buildings>
