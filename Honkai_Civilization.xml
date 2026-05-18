@@ -66,6 +66,7 @@
     </CivicPrereqs>
 
     <CivicModifiers>
+        <Row CivicType="CIVIC_SHADOW_PERCEPTION" ModifierId="MOD_HOH_PERCEPTION_REVEAL_ENERGY"/>
         <Row CivicType="CIVIC_SHADOW_OMEN" ModifierId="MOD_HOH_OMEN_FAITH"/>
         <Row CivicType="CIVIC_SHADOW_PATHOLOGY" ModifierId="MOD_HOH_PATHOLOGY_AMENITY"/>
         <Row CivicType="CIVIC_SHADOW_BASIC_TACTICS" ModifierId="MOD_HOH_TACTICS_BARB_COMBAT"/>
@@ -169,7 +170,7 @@
         <Row ID="HQ_CC_WS_GOLD" Description="LOC_HQ_CC_WS_GOLD" YieldType="YIELD_GOLD" YieldChange="3" TilesRequired="1" AdjacentDistrict="DISTRICT_WORLD_SERPENT_HQ"/>
         <Row ID="HQ_CC_WS_PROD_EXTRA" Description="LOC_HQ_CC_WS_PROD_EXTRA" YieldType="YIELD_PRODUCTION" YieldChange="2" TilesRequired="1" AdjacentDistrict="DISTRICT_WORLD_SERPENT_HQ"/>
 
-        <!-- 定义全地形山脉兼容规则 (补全 Description 字段以符合数据库硬约束) -->
+        <!-- 定义全地形山脉兼容规则 -->
         <Row ID="HOH_ADJ_GRASS_MTN_FAITH" Description="LOC_HOH_ADJ_GRASS_MTN_FAITH" YieldType="YIELD_FAITH" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_GRASS_MOUNTAIN"/>
         <Row ID="HOH_ADJ_PLAIN_MTN_FAITH" Description="LOC_HOH_ADJ_PLAIN_MTN_FAITH" YieldType="YIELD_FAITH" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_PLAINS_MOUNTAIN"/>
         <Row ID="HOH_ADJ_DESERT_MTN_FAITH" Description="LOC_HOH_ADJ_DESERT_MTN_FAITH" YieldType="YIELD_FAITH" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_DESERT_MOUNTAIN"/>
@@ -234,9 +235,6 @@
         <Row DistrictType="DISTRICT_CITY_CENTER" YieldChangeId="HQ_CC_WS_PROD_EXTRA"/>
 
         <!-- ================= 全局辐射加成映射 ================= -->
-        <!-- 将三大总部的专属辐射赋予游戏内所有可接受加成的常规区域与特色支部 -->
-        
-        <!-- 特色支部 -->
         <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_RADIATE_SCHICKSAL_FAITH"/>
         <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_RADIATE_AE_SCI"/>
         <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" YieldChangeId="HQ_RADIATE_AE_PROD"/>
@@ -351,11 +349,13 @@
         <Row ModifierId="MOD_HOH_EXTRA_MOVEMENT" ModifierType="MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT"/>
 
         <!-- 远古科技Modifiers -->
+        <Row ModifierId="MOD_HOH_PERCEPTION_REVEAL_ENERGY" ModifierType="MODIFIER_PLAYER_REVEAL_RESOURCE"/>
         <Row ModifierId="MOD_HOH_OMEN_FAITH" ModifierType="MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE" SubjectRequirementSetId="REQSET_HOH_DISTRICT_IS_CITY_CENTER"/>
         <Row ModifierId="MOD_HOH_PATHOLOGY_AMENITY" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_POLICY_AMENITY"/>
         <Row ModifierId="MOD_HOH_TACTICS_BARB_COMBAT" ModifierType="MODIFIER_PLAYER_UNITS_ADJUST_BARBARIAN_COMBAT"/>
         <Row ModifierId="MOD_HOH_CLERGY_PROPHET_POINTS" ModifierType="MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS"/>
         <Row ModifierId="MOD_HOH_NUN_FORMATION_DISCOUNT" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PURCHASE_COST"/>
+        <Row ModifierId="MOD_HOH_IS_NUN_FORMATION_FAITH_PURCHASE" ModifierType="MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE"/>
         <Row ModifierId="MOD_HOH_ISOLATION_HOUSING" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING"/>
     </Modifiers>
 
@@ -370,6 +370,7 @@
         <Row ModifierId="MOD_HOH_EXTRA_MOVEMENT" Name="Amount" Value="1"/>
 
         <!-- 远古科技Modifiers -->
+        <Row ModifierId="MOD_HOH_PERCEPTION_REVEAL_ENERGY" Name="ResourceType" Value="RESOURCE_HONKAI_ENERGY"/>
         <Row ModifierId="MOD_HOH_OMEN_FAITH" Name="YieldType" Value="YIELD_FAITH"/>
         <Row ModifierId="MOD_HOH_OMEN_FAITH" Name="Amount" Value="1"/>
         <Row ModifierId="MOD_HOH_PATHOLOGY_AMENITY" Name="Amount" Value="1"/>
@@ -378,6 +379,7 @@
         <Row ModifierId="MOD_HOH_CLERGY_PROPHET_POINTS" Name="Amount" Value="2"/>
         <Row ModifierId="MOD_HOH_NUN_FORMATION_DISCOUNT" Name="UnitType" Value="UNIT_HOH_VALKYRIE_MK1"/>
         <Row ModifierId="MOD_HOH_NUN_FORMATION_DISCOUNT" Name="Amount" Value="20"/>
+        <Row ModifierId="MOD_HOH_IS_NUN_FORMATION_FAITH_PURCHASE" Name="Tag" Value="CLASS_HOH_VALKYRIE"/>
         <Row ModifierId="MOD_HOH_ISOLATION_HOUSING" Name="Amount" Value="1"/>
     </ModifierArguments>
 
