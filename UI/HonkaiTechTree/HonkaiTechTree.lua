@@ -1253,11 +1253,17 @@ end
 function OnLocalPlayerTurnBegin()
 	local ePlayer :number = Game.GetLocalPlayer();
 	if ePlayer ~= -1 then
-	    --local kPlayer :table = Players[ePlayer];
 	    if m_ePlayer ~= ePlayer then
 		    m_ePlayer = ePlayer;
-		    m_kCurrentData = GetCurrentData( ePlayer );		    
 	    end
+        m_kCurrentData = GetCurrentData( ePlayer );
+
+        -- 【阶段一：自动弹出】如果是玩家回合开始且没有选科技，强制弹出
+        local pPlayer = Players[ePlayer]
+        local currentResearch = pPlayer:GetProperty("HONKAI_CURRENT_RESEARCH")
+        if currentResearch == nil then
+            ShowHonkaiWindow()
+        end
     end
 end
 
@@ -1471,12 +1477,28 @@ function ShowHonkaiWindow()
     end
     Controls.ScreenAnimIn:SetToBeginning();
     Controls.ScreenAnimIn:Play();
+
+    -- 检查是否因为未选科技被强制打开
+    local pPlayer = Players[Game.GetLocalPlayer()]
+    local currentResearch = pPlayer:GetProperty("HONKAI_CURRENT_RESEARCH")
+    if currentResearch == nil then
+        Controls.ModalScreenTitle:SetText("[COLOR_RED]请先选择一项崩坏研究项目！[ENDCOLOR]");
+    end
 end
 
 function HideHonkaiWindow()
-    if not ContextPtr:IsHidden() then
-        UI.PlaySound("UI_Screen_Close");
+    if ContextPtr:IsHidden() then return end
+
+    -- 【阶段一：强制阻断】如果当前没有正在研究的项目，则不允许关闭
+    local pPlayer = Players[Game.GetLocalPlayer()]
+    local currentResearch = pPlayer:GetProperty("HONKAI_CURRENT_RESEARCH")
+    if currentResearch == nil then
+        UI.PlaySound("Play_UI_Click_False");
+        Controls.ModalScreenTitle:SetText("[COLOR_RED]警告：必须选择研究目标后才能关闭！[ENDCOLOR]");
+        return 
     end
+
+    UI.PlaySound("UI_Screen_Close");
     ContextPtr:SetHide(true);
 end
 
@@ -1493,6 +1515,7 @@ function HonkaiInputHandler( pInputStruct:table )
     local uiMsg = pInputStruct:GetMessageType();
     if uiMsg == KeyEvents.KeyUp and pInputStruct:GetKey() == Keys.VK_ESCAPE then
         if not ContextPtr:IsHidden() then
+            -- 此处 HideHonkaiWindow 内部自带了拦截逻辑
             HideHonkaiWindow();
             return true;
         end
