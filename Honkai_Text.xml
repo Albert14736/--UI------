@@ -129,5 +129,7 @@
         <Replace Tag="LOC_MOD_HOH_VALK_1R_VS_MELEE_RANGED_PREVIEW" Language="zh_Hans_CN" Text="+7 战术突击"/>
         <Replace Tag="LOC_MOD_HOH_VALK_2L_HARASS_PREVIEW" Language="zh_Hans_CN" Text="-4 干扰力场"/>
         <Replace Tag="LOC_MOD_HOH_VALK_3R_CITY_ATTACK_PREVIEW" Language="zh_Hans_CN" Text="+10 攻城加成"/>
+        <Replace Tag="LOC_WORLD_TRACKER_HONKAI_RESEARCH" Language="zh_Hans_CN" Text="崩坏能研究点 [ICON_RESOURCE_HONKAI_RESEARCH]: {1_Num} (每回合 +{2_Yield} [ICON_RESOURCE_HONKAI_RESEARCH])"/>
+        <Replace Tag="LOC_WORLD_TRACKER_HONKAI_ENERGY" Language="zh_Hans_CN" Text="战术崩坏能 [ICON_RESOURCE_HONKAI_ENERGY]: {1_Num}/{2_Cap} (每回合 +{3_Yield} [ICON_RESOURCE_HONKAI_ENERGY])"/>
     </LocalizedText>
 </GameData>
