@@ -1202,6 +1202,15 @@ function GetCurrentData( ePlayer:number, eCompletedTech:number )
 	local currentPoints = pPlayer:GetProperty("HONKAI_RESEARCH_POINTS") or 0
 	local currentResearch = pPlayer:GetProperty("HONKAI_CURRENT_RESEARCH")
 
+    -- 【阶段二】获取实时研究点产出
+    local researchYield = 0
+    if ExposedMembers.Honkai and ExposedMembers.Honkai.CalculateHonkaiResearchBreakdown then
+        local breakdown = ExposedMembers.Honkai.CalculateHonkaiResearchBreakdown(ePlayer)
+        researchYield = breakdown and breakdown.TotalYield or 1 -- 兜底至少为1，避免除以0
+    else
+        researchYield = 10 --  fallback
+    end
+
 	for type,item in pairs(g_kItemDefaults) do
 		local isUnlocked = (pPlayer:GetProperty("UNLOCKED_" .. type) == 1)
 		local status = ITEM_STATUS.BLOCKED
@@ -1228,10 +1237,20 @@ function GetCurrentData( ePlayer:number, eCompletedTech:number )
 		
 		local progress = 0
 		local turnsLeft = 0
-		if status == ITEM_STATUS.CURRENT then
-			progress = currentPoints
-			turnsLeft = math.ceil(math.max(0, item.Cost - currentPoints) / 10) -- 暂时写死每回合发 10 点，用于算剩余回合
-		end
+		if status == ITEM_STATUS.RESEARCHED then
+            turnsLeft = 0
+        else
+            -- 所有未完成的科技都计算预计回合
+            local cost = item.Cost
+            local currentSaved = (status == ITEM_STATUS.CURRENT) and currentPoints or 0
+            if researchYield > 0 then
+                turnsLeft = math.ceil(math.max(0, cost - currentSaved) / researchYield)
+            else
+                turnsLeft = 999 -- 产出为0时显示 999
+            end
+            progress = currentSaved
+        end
+
 		data[DATA_FIELD_LIVEDATA][type] = {
 			Cost		= item.Cost,
 			IsBoosted	= false,
