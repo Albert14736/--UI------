@@ -245,42 +245,76 @@ function SetCurrentNode( hash:number, item )
 			print("【崩坏指挥终端】科技已解锁！")
 			return
 		end
-		local hasAllPrereqs = true
-		for _, prereqId in pairs(item.Prereqs) do
-			if prereqId ~= PREREQ_ID_TREE_START then
-				local prereqType = g_kItemDefaults[prereqId].Type
-				local prereqUnlocked = false
-				if ExposedMembers.Honkai and ExposedMembers.Honkai.IsUnlocked then
-					prereqUnlocked = ExposedMembers.Honkai.IsUnlocked(Game.GetLocalPlayer(), prereqType)
-				else
-					prereqUnlocked = (pPlayer:GetProperty("UNLOCKED_" .. prereqType) == 1)
-				end
-				if not prereqUnlocked then
-					hasAllPrereqs = false
-					break
-				end
-			end
-		end
-		if not hasAllPrereqs then
-			UI.PlaySound("Play_UI_Click_False");
-			return
-		end
-		-- 无论钱够不够，通过网络同步指令提交给真正底层
+
+        -- 【阶段三】获取寻路路径
+        local path = GetAllTechPathPrereqs(item)
+        if #path == 0 then
+            UI.PlaySound("Play_UI_Click_False")
+            return
+        end
+
+		-- 组装指令参数
 		local tParameters = {}
 		tParameters.OnStart = "HonkaiSetResearchTarget"
-		tParameters.TechType = item.Type
-		tParameters.TechCost = item.Cost
+        
+        -- 构造队列字符串和成本映射
+        local queueTypes = {}
+        local costs = {}
+        for _, tech in ipairs(path) do
+            table.insert(queueTypes, tech.Type)
+            costs[tech.Type] = tech.Cost
+        end
+
+		tParameters.QueueStr = table.concat(queueTypes, ",")
+		tParameters.Costs = costs
+
 		UI.RequestPlayerOperation(Game.GetLocalPlayer(), PlayerOperations.EXECUTE_SCRIPT, tParameters)
-		UI.PlaySound("Confirm_Tech_TechTree");
+		UI.PlaySound("Confirm_Tech_TechTree")
 	else
-		UI.DataError("Attempt to change current tree item with NIL hash!");
+		UI.DataError("Attempt to change current tree item with NIL hash!")
 	end
 end
 
 ------------------------------------------------------------------------------
 ------------------------------------------------------------------------------
+-- 【阶段三】广度优先搜索 (BFS) 寻找所有未解锁的前置路径
 function GetAllTechPathPrereqs(item)
-	return {}
+    local localPlayer = Game.GetLocalPlayer()
+    local path = {}
+    local visited = {}
+    
+    -- 内部递归寻路：为了保证解锁顺序，我们需要从目标倒推回最源头
+    function BuildPath(targetItem)
+        if visited[targetItem.Type] then return end
+        
+        -- 检查当前科技是否已解锁
+        local isUnlocked = false
+        if ExposedMembers.Honkai and ExposedMembers.Honkai.IsUnlocked then
+            isUnlocked = ExposedMembers.Honkai.IsUnlocked(localPlayer, targetItem.Type)
+        else
+            isUnlocked = (Players[localPlayer]:GetProperty("UNLOCKED_" .. targetItem.Type) == 1)
+        end
+        
+        if isUnlocked then return end
+        
+        visited[targetItem.Type] = true
+        
+        -- 先递归处理所有前置科技
+        for _, prereqId in pairs(targetItem.Prereqs) do
+            if prereqId ~= PREREQ_ID_TREE_START then
+                local prereqItem = g_kItemDefaults[prereqId]
+                if prereqItem then
+                    BuildPath(prereqItem)
+                end
+            end
+        end
+        
+        -- 最后把自己加入路径（确保前置都在自己前面）
+        table.insert(path, targetItem)
+    end
+
+    BuildPath(item)
+    return path
 end
 
 
@@ -293,26 +327,28 @@ function RealizePathMarkers()
 	local localPlayer	:number = Game.GetLocalPlayer();
 	if localPlayer==PlayerTypes.NONE or localPlayer==PlayerTypes.OBSERVER then return; end
 
-	local currentResearch = nil
-	if ExposedMembers.Honkai and ExposedMembers.Honkai.GetCurrentResearch then
-		currentResearch = ExposedMembers.Honkai.GetCurrentResearch(localPlayer)
-	else
-		local pPlayer = Players[localPlayer];
-		currentResearch = pPlayer:GetProperty("HONKAI_CURRENT_RESEARCH");
+	local queue = nil
+	if ExposedMembers.Honkai and ExposedMembers.Honkai.GetResearchQueue then
+		queue = ExposedMembers.Honkai.GetResearchQueue(localPlayer)
 	end
 
 	m_kPathMarkerIM:ResetInstances();
 
-	if currentResearch then
-		local pathPin = m_kPathMarkerIM:GetInstance();
-		pathPin.NodeNumber:SetOffsetX(PATH_MARKER_NUMBER_0_9_OFFSET);
-		pathPin.NodeNumber:SetText("1");
-		
-		local node = g_uiNodes[currentResearch];
-		if node then
-			pathPin.Top:SetOffsetX(node.x - PATH_MARKER_OFFSET_X);
-			pathPin.Top:SetOffsetY(node.y - PATH_MARKER_OFFSET_Y);
-		end
+	if queue and #queue > 0 then
+        for i, techType in ipairs(queue) do
+            local node = g_uiNodes[techType];
+            if node then
+                local pathPin = m_kPathMarkerIM:GetInstance();
+                if i < 10 then
+                    pathPin.NodeNumber:SetOffsetX(PATH_MARKER_NUMBER_0_9_OFFSET);
+                else
+                    pathPin.NodeNumber:SetOffsetX(PATH_MARKER_NUMBER_10_OFFSET);
+                end
+                pathPin.NodeNumber:SetText(tostring(i));
+                pathPin.Top:SetOffsetX(node.x - PATH_MARKER_OFFSET_X);
+                pathPin.Top:SetOffsetY(node.y - PATH_MARKER_OFFSET_Y);
+            end
+        end
 	end
 end
 

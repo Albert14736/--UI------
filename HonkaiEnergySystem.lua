@@ -166,6 +166,55 @@ function CalculateHonkaiResearchBreakdown(playerID)
     return breakdown
 end
 
+-- 【核心逻辑】处理科研队列的扣费与解锁
+function ProcessResearchQueue(playerID)
+    local pPlayer = Players[playerID]
+    if not pPlayer then return end
+
+    local queueStr = pPlayer:GetProperty("HONKAI_RESEARCH_QUEUE")
+    if not queueStr or queueStr == "" then
+        pPlayer:SetProperty("HONKAI_CURRENT_RESEARCH", nil)
+        return
+    end
+
+    local queue = {}
+    for s in string.gmatch(queueStr, '([^,]+)') do
+        table.insert(queue, s)
+    end
+
+    local currentPoints = pPlayer:GetProperty("HONKAI_RESEARCH_POINTS") or 0
+    local stillProcessing = true
+
+    while stillProcessing and #queue > 0 do
+        local currentTarget = queue[1]
+        local techCost = pPlayer:GetProperty("COST_" .. currentTarget) or 99999
+        
+        if currentPoints >= techCost then
+            -- 钱够了，解锁！
+            currentPoints = currentPoints - techCost
+            pPlayer:SetProperty("UNLOCKED_" .. currentTarget, 1)
+            GrantTechModifiers(playerID, currentTarget)
+            
+            print("【崩坏底层】自动解锁：" .. currentTarget)
+            
+            table.remove(queue, 1)
+            pPlayer:SetProperty("HONKAI_RESEARCH_POINTS", currentPoints)
+        else
+            stillProcessing = false
+        end
+    end
+
+    -- 写回队列并同步状态
+    local newQueueStr = table.concat(queue, ",")
+    pPlayer:SetProperty("HONKAI_RESEARCH_QUEUE", newQueueStr)
+    pPlayer:SetProperty("HONKAI_CURRENT_RESEARCH", queue[1])
+
+    -- 摇醒 UI
+    if ExposedMembers.HonkaiUI and ExposedMembers.HonkaiUI.RefreshUI then
+        ExposedMembers.HonkaiUI.RefreshUI(playerID)
+    end
+end
+
 -- 【核心逻辑】每回合自动发放资源
 function OnPlayerTurnStarted(playerID)
     local pPlayer = Players[playerID]
@@ -183,86 +232,49 @@ function OnPlayerTurnStarted(playerID)
     
     local newEnergy = math.min(energyCap, currentEnergy + energyBreakdown.TotalYield)
     pPlayer:SetProperty("HONKAI_ENERGY", newEnergy)
-    pPlayer:SetProperty("HONKAI_ENERGY_YIELD", energyBreakdown.TotalYield) -- 保存当前产出供 UI 直接读取
+    pPlayer:SetProperty("HONKAI_ENERGY_YIELD", energyBreakdown.TotalYield)
 
-    -- 3. 自动扣除逻辑：检查当前是否正在排队研究科技
-    local currentResearch = pPlayer:GetProperty("HONKAI_CURRENT_RESEARCH")
-    if currentResearch then
-        local currentPoints = pPlayer:GetProperty("HONKAI_RESEARCH_POINTS") or 0
-        local techCost = pPlayer:GetProperty("HONKAI_CURRENT_RESEARCH_COST") or 99999
-        if currentPoints >= techCost then
-            -- 钱存够了，回合开始时自动解锁！
-            pPlayer:SetProperty("HONKAI_RESEARCH_POINTS", currentPoints - techCost)
-            pPlayer:SetProperty("UNLOCKED_" .. currentResearch, 1)
-            
-            -- ★ 触发能力发放
-            GrantTechModifiers(playerID, currentResearch)
-            
-            -- 清空当前研究目标
-            pPlayer:SetProperty("HONKAI_CURRENT_RESEARCH", nil)
-            pPlayer:SetProperty("HONKAI_CURRENT_RESEARCH_COST", nil)
-            
-            print("【崩坏底层】回合结算自动解锁：" .. currentResearch)
-            if ExposedMembers.HonkaiUI and ExposedMembers.HonkaiUI.RefreshUI then
-                ExposedMembers.HonkaiUI.RefreshUI(playerID)
-            end
-        end
+    -- 3. 处理队列结算
+    ProcessResearchQueue(playerID)
+end
+
+-- 指令：由 UI 触发，设定新的研究路径（队列）
+function OnHonkaiSetResearchTarget(playerID, parameters)
+    local pPlayer = Players[playerID]
+    if not pPlayer then return end
+    
+    local queueStr = parameters.QueueStr or ""
+    local costs = parameters.Costs or {}
+
+    pPlayer:SetProperty("HONKAI_RESEARCH_QUEUE", queueStr)
+    
+    for techType, cost in pairs(costs) do
+        pPlayer:SetProperty("COST_" .. techType, cost)
     end
+
+    print("【崩坏底层】接收到新科研路径：" .. queueStr)
+
+    -- 立即尝试结算（但不增加资源产出）
+    ProcessResearchQueue(playerID)
 end
 
 ExposedMembers.Honkai = ExposedMembers.Honkai or {}
 ExposedMembers.Honkai.CalculateHonkaiEnergyBreakdown = CalculateHonkaiEnergyBreakdown
 ExposedMembers.Honkai.CalculateHonkaiResearchBreakdown = CalculateHonkaiResearchBreakdown
-
-ExposedMembers.Honkai.GetPoints = function(playerID)
-    local pPlayer = Players[playerID]
-    return pPlayer and pPlayer:GetProperty("HONKAI_RESEARCH_POINTS") or 0
-end
-
-ExposedMembers.Honkai.GetCurrentResearch = function(playerID)
-    local pPlayer = Players[playerID]
-    return pPlayer and pPlayer:GetProperty("HONKAI_CURRENT_RESEARCH")
-end
-
 ExposedMembers.Honkai.IsUnlocked = function(playerID, techType)
     local pPlayer = Players[playerID]
     return pPlayer and (pPlayer:GetProperty("UNLOCKED_" .. techType) == 1)
 end
-
--- ===========================================================================
--- 【核心逻辑】处理 UI 传来的 EXECUTE_SCRIPT “设置研究目标”请求
--- ===========================================================================
-function OnHonkaiSetResearchTarget(playerID, params)
+ExposedMembers.Honkai.GetResearchQueue = function(playerID)
     local pPlayer = Players[playerID]
-    if not pPlayer then return end
-    
-    local techType = params.TechType
-    local techCost = params.TechCost
-    local currentPoints = pPlayer:GetProperty("HONKAI_RESEARCH_POINTS") or 0
-    
-    if currentPoints >= techCost then
-        -- 钱够，大款直接秒解锁！
-        pPlayer:SetProperty("HONKAI_RESEARCH_POINTS", currentPoints - techCost)
-        pPlayer:SetProperty("UNLOCKED_" .. techType, 1)
-        pPlayer:SetProperty("HONKAI_CURRENT_RESEARCH", nil)
-        pPlayer:SetProperty("HONKAI_CURRENT_RESEARCH_COST", nil)
-        
-        -- ★ 触发科技解锁
-        GrantTechModifiers(playerID, techType)
-        print("【崩坏底层】玩家 " .. playerID .. " 秒解了：" .. techType)
-    else
-        -- 钱不够，挂入排队队列
-        pPlayer:SetProperty("HONKAI_CURRENT_RESEARCH", techType)
-        pPlayer:SetProperty("HONKAI_CURRENT_RESEARCH_COST", techCost)
-        
-        -- ★ 注意：此处不调用 GrantTechModifiers，等到钱够了才发
-        print("【崩坏底层】玩家 " .. playerID .. " 将研究目标设为：" .. techType)
+    local queueStr = pPlayer:GetProperty("HONKAI_RESEARCH_QUEUE") or ""
+    local queue = {}
+    if queueStr ~= "" then
+        for s in string.gmatch(queueStr, '([^,]+)') do
+            table.insert(queue, s)
+        end
     end
-    
-    -- 底层改完账本后，瞬间去摇醒 UI 进行实时刷新
-    if ExposedMembers.HonkaiUI and ExposedMembers.HonkaiUI.RefreshUI then
-        ExposedMembers.HonkaiUI.RefreshUI(playerID)
-    end
+    return queue
 end
 
 function Initialize()
