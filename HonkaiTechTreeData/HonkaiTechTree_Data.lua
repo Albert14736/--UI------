@@ -18,7 +18,10 @@ function GetHonkaiTechTreeData()
 			UITreeRow = 0,
 			Prereqs = {},
 			Column = 1,
-			ShadowCivic = "CIVIC_SHADOW_PERCEPTION"
+			ShadowCivic = "CIVIC_SHADOW_PERCEPTION",
+			Unlocks = {
+				{ Type = "RESOURCE", ID = "RESOURCE_HONKAI_ENERGY" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_OMEN",
@@ -29,7 +32,10 @@ function GetHonkaiTechTreeData()
 			UITreeRow = 3,
 			Prereqs = {},
 			Column = 1,
-			ShadowCivic = "CIVIC_SHADOW_OMEN"
+			ShadowCivic = "CIVIC_SHADOW_OMEN",
+			Unlocks = {
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_OMEN_EFFECT_TOOLTIP" }
+			}
 		},
 		-- 第 2 列
 		{
@@ -41,7 +47,10 @@ function GetHonkaiTechTreeData()
 			UITreeRow = -2,
 			Prereqs = {"HONKAI_TECH_PERCEPTION"},
 			Column = 2,
-			ShadowCivic = "CIVIC_SHADOW_PATHOLOGY"
+			ShadowCivic = "CIVIC_SHADOW_PATHOLOGY",
+			Unlocks = {
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_PATHOLOGY_EFFECT_TOOLTIP" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_BASIC_TACTICS",
@@ -52,7 +61,10 @@ function GetHonkaiTechTreeData()
 			UITreeRow = -1,
 			Prereqs = {"HONKAI_TECH_PERCEPTION"},
 			Column = 2,
-			ShadowCivic = "CIVIC_SHADOW_BASIC_TACTICS"
+			ShadowCivic = "CIVIC_SHADOW_BASIC_TACTICS",
+			Unlocks = {
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_BASIC_TACTICS_EFFECT_TOOLTIP" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_ENERGY_CONTAINER",
@@ -63,7 +75,10 @@ function GetHonkaiTechTreeData()
 			UITreeRow = 1,
 			Prereqs = {"HONKAI_TECH_PERCEPTION"},
 			Column = 2,
-			ShadowCivic = "CIVIC_SHADOW_ENERGY_CONTAINER"
+			ShadowCivic = "CIVIC_SHADOW_ENERGY_CONTAINER",
+			Unlocks = {
+				{ Type = "BUILDING", ID = "BUILDING_HOH_ENERGY_POOL" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_DESTINY_CLERGY",
@@ -74,7 +89,10 @@ function GetHonkaiTechTreeData()
 			UITreeRow = 2,
 			Prereqs = {"HONKAI_TECH_OMEN"},
 			Column = 2,
-			ShadowCivic = "CIVIC_SHADOW_DESTINY_CLERGY"
+			ShadowCivic = "CIVIC_SHADOW_DESTINY_CLERGY",
+			Unlocks = {
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_DESTINY_CLERGY_EFFECT_TOOLTIP" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_NUN_FORMATION",
@@ -85,7 +103,10 @@ function GetHonkaiTechTreeData()
 			UITreeRow = 4,
 			Prereqs = {"HONKAI_TECH_OMEN"},
 			Column = 2,
-			ShadowCivic = "CIVIC_SHADOW_NUN_FORMATION"
+			ShadowCivic = "CIVIC_SHADOW_NUN_FORMATION",
+			Unlocks = {
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_NUN_FORMATION_EFFECT_TOOLTIP" }
+			}
 		},
 		-- 第 3 列
 		{
@@ -97,7 +118,10 @@ function GetHonkaiTechTreeData()
 			UITreeRow = -1,
 			Prereqs = {"HONKAI_TECH_PATHOLOGY", "HONKAI_TECH_ENERGY_CONTAINER"},
 			Column = 3,
-			ShadowCivic = "CIVIC_SHADOW_BASIC_ISOLATION"
+			ShadowCivic = "CIVIC_SHADOW_BASIC_ISOLATION",
+			Unlocks = {
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_BASIC_ISOLATION_EFFECT_TOOLTIP" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_ST_FREYA",
@@ -108,7 +132,10 @@ function GetHonkaiTechTreeData()
 			UITreeRow = 3,
 			Prereqs = {"HONKAI_TECH_PERCEPTION", "HONKAI_TECH_OMEN"},
 			Column = 3,
-			ShadowCivic = "CIVIC_SHADOW_ST_FREYA"
+			ShadowCivic = "CIVIC_SHADOW_ST_FREYA",
+			Unlocks = {
+				{ Type = "BUILDING", ID = "BUILDING_HOH_ST_FREYA" }
+			}
 		},
 		-- 第 4 列
 		{
@@ -120,7 +147,10 @@ function GetHonkaiTechTreeData()
 			UITreeRow = 3,
 			Prereqs = {"HONKAI_TECH_ST_FREYA"},
 			Column = 4,
-			ShadowCivic = "CIVIC_SHADOW_WEAPON_PROTOTYPE"
+			ShadowCivic = "CIVIC_SHADOW_WEAPON_PROTOTYPE",
+			Unlocks = {
+				{ Type = "UNIT", ID = "UNIT_HOH_VALKYRIE_MK1" }
+			}
 		},
 		-- ==============================================
 		-- 古典时代 (ERA_CLASSICAL)

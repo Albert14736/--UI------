@@ -70,5 +70,9 @@
         <Row Name="ICON_UNIT_HOH_VALKYRIE_MK1_PORTRAIT" Atlas="ATLAS_HOH_VALKYRIE_PORTRAIT" Index="0"/>
         <Row Name="ICON_ETHNIC_UNIT_HOH_VALKYRIE_MK1_PORTRAIT" Atlas="ATLAS_HOH_VALKYRIE_PORTRAIT" Index="0"/>
         <Row Name="ICON_HONKAI_TECH_PERCEPTION" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+
+        <!-- 补全建筑图标映射 -->
+        <Row Name="ICON_BUILDING_HOH_ENERGY_POOL" Atlas="ATLAS_HonkaiCiv256" Index="0"/>
+        <Row Name="ICON_BUILDING_HOH_ST_FREYA"    Atlas="ATLAS_HonkaiCiv256" Index="0"/>
     </IconDefinitions>
 </GameData>

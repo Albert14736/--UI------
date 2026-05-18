@@ -699,23 +699,54 @@ function AllocateUI( kNodeGrid:table, kPaths:table )
 		node.x		= horizontal;					-- Granted x,y can be looked up via GetOffset() but caching the values here for
 		node.y		= vertical - VERTICAL_CENTER;	-- other LUA functions to use removes the necessity of a slow C++ roundtrip.
 
-		if node["unlockIM"] ~= nil then
-			node["unlockIM"]:DestroyInstances()
+		-- 为了修复 Bug，我们在每次渲染前手动重置实例管理器
+		if node["unlockIM"] == nil then
+			node["unlockIM"] = InstanceManager:new( "UnlockInstance", "UnlockIcon", node.UnlockStack );
 		end
-		node["unlockIM"] = InstanceManager:new( "UnlockInstance", "UnlockIcon", node.UnlockStack );
+		node["unlockIM"]:ResetInstances();
 		
-		if node["unlockGOV"] ~= nil then
-			node["unlockGOV"]:DestroyInstances()
+		if node["unlockGOV"] == nil then
+			node["unlockGOV"] = InstanceManager:new( "GovernmentIcon", "GovernmentInstanceGrid", node.UnlockStack );
 		end
-		node["unlockGOV"] = InstanceManager:new( "GovernmentIcon", "GovernmentInstanceGrid", node.UnlockStack );
+		node["unlockGOV"]:ResetInstances();
 	
 		if tech ~= nil then
 			PopulateUnlockablesForTech(playerId, tech.Index, node["unlockIM"], function() SetCurrentNode(item.Hash, item); end);
-		elseif item.ShadowCivic ~= nil then
-			-- 【崩坏桥接】如果不是原版科技，但绑定了影子市政，则通过市政系统渲染解锁图标
-			local shadowCivic = GameInfo.Civics[item.ShadowCivic];
-			if shadowCivic ~= nil then
-				PopulateUnlockablesForCivic(playerId, shadowCivic.Index, node["unlockIM"], node["unlockGOV"], function() SetCurrentNode(item.Hash, item); end);
+		end
+
+		-- 【阶段四：手动渲染解锁项目】
+		-- 完全接管渲染逻辑，移除 PopulateUnlockablesForCivic 带来的冗余和错误图标
+		if item.Unlocks and #item.Unlocks > 0 then
+			for _, unlock in ipairs(item.Unlocks) do
+				local instance = node["unlockIM"]:GetInstance();
+				-- 默认使用 ICON_TECH_MAP_REVEAL (原版中带星的八角形图标，完美匹配 expect.png)
+				local icon = unlock.Icon or "ICON_TECH_MAP_REVEAL";
+				
+				if unlock.Type == "UNIT" then
+					icon = "ICON_" .. unlock.ID;
+				elseif unlock.Type == "BUILDING" then
+					icon = "ICON_" .. unlock.ID;
+				elseif unlock.Type == "RESOURCE" then
+					icon = "ICON_" .. unlock.ID;
+				elseif unlock.Type == "DISTRICT" then
+					icon = "ICON_" .. unlock.ID;
+				end
+
+				-- 尝试寻找图标
+				local textureOffsetX, textureOffsetY, textureSheet = IconManager:FindIconAtlas(icon, 38);
+				if textureOffsetX == nil then
+					-- 回退：如果专用图标找不到，使用标准星号八角形
+					textureOffsetX, textureOffsetY, textureSheet = IconManager:FindIconAtlas("ICON_TECH_MAP_REVEAL", 38);
+				end
+
+				if textureOffsetX ~= nil then
+					instance.Icon:SetTexture( textureOffsetX, textureOffsetY, textureSheet );
+				else
+					instance.Icon:SetIcon("ICON_GENERIC_STAR");
+				end
+
+				instance.UnlockIcon:SetToolTipString(Locale.Lookup(unlock.ID));
+				instance.UnlockIcon:RegisterCallback(Mouse.eLClick, function() SetCurrentNode(item.Hash, item); end);
 			end
 		end
 
@@ -918,9 +949,9 @@ function OnScroll( control:table, percent:number )
         if m_lastPercent == percent then
             return;
         end
-        UI.PlaySound("UI_TechTree_ScrollTick_End"); 
+        UI.PlaySound("UI_Screen_Open"); 
 	else 
-		UI.PlaySound("UI_TechTree_ScrollTick"); 
+		UI.PlaySound("UI_Screen_Close"); 
 	end
     
     m_lastPercent = percent; 
@@ -1452,7 +1483,7 @@ function PopulateItemData()
 		kEntry.Prereqs		= row.Prereqs;
 		kEntry.UITreeRow	= row.UITreeRow;
 		kEntry.ShadowCivic	= row.ShadowCivic;
-		kEntry.Unlocks		= {};
+		kEntry.Unlocks		= row.Unlocks or {};
 
 		if table.count(kEntry.Prereqs) == 0 then
 			table.insert(kEntry.Prereqs, PREREQ_ID_TREE_START);
@@ -1685,7 +1716,7 @@ function Initialize()
     
     Controls.ModalScreenClose:RegisterCallback(Mouse.eLClick, HideHonkaiWindow);
 
-    -- [跨宇宙桥梁] 暴露给 Gameplay 调用的函数，通过本地广播触发刷新以保证 UI 线程安全
+    -- [跨宇宙桥梁] 暴露给 Gameplay 调用
     ExposedMembers.HonkaiUI = ExposedMembers.HonkaiUI or {}
     ExposedMembers.HonkaiUI.RefreshUI = function(playerID)
         LuaEvents.HonkaiTech_DoRefresh(playerID)
@@ -1698,7 +1729,7 @@ function Initialize()
         end
     end)
 
-    -- 手动触发初始化，因为 LoadGameViewStateDone 触发时 UI 引擎已经错过了 Init 阶段
+    -- 手动触发初始化
     HonkaiInitHandler(false)
 end
 
