@@ -48,21 +48,147 @@ function RestoreUnlockedTechs(playerID)
     end
 end
 
--- 【测试用】每回合自动发放崩坏能，方便咱们买科技测试
+-- ===========================================================================
+-- 产出核心算法 (Calculations)
+-- ===========================================================================
+
+local HonkaiDistricts = {
+    ["DISTRICT_SCHICKSAL_HQ"] = true, 
+    ["DISTRICT_ANTI_ENTROPY_HQ"] = true, 
+    ["DISTRICT_WORLD_SERPENT_HQ"] = true,
+    ["DISTRICT_SCHICKSAL_BRANCH"] = true, 
+    ["DISTRICT_ARMED_INDUSTRY"] = true, 
+    ["DISTRICT_HIDDEN_RESEARCH"] = true
+}
+
+function CalculateHonkaiEnergyBreakdown(playerID)
+    local pPlayer = Players[playerID]
+    if not pPlayer then return nil end
+
+    local breakdown = {
+        CityDetails = {},
+        TechModifier = 0,
+        TechCount = 0,
+        CoreBonus = 0,
+        TotalYield = 0,
+        SubtotalFromCities = 0
+    }
+
+    -- 1. 遍历城市计算基础产出
+    local pCities = pPlayer:GetCities()
+    for _, pCity in pCities:Members() do
+        local cityName = Locale.Lookup(pCity:GetName())
+        
+        -- 获取城市地格总数
+        local cityPlots = Map.GetCityPlots():GetPlotsInCity(pCity)
+        local plotCount = #cityPlots
+        local population = pCity:GetPopulation()
+        
+        -- 计算 改良设施 + 区域 + 建筑总数
+        local districtCount = pCity:GetDistricts():GetCount()
+        local buildingCount = 0
+        local pCityBuildings = pCity:GetBuildings()
+        for row in GameInfo.Buildings() do
+            if pCityBuildings:HasBuilding(row.Index) then
+                buildingCount = buildingCount + 1
+            end
+        end
+
+        local improvementCount = 0
+        for _, plotIndex in ipairs(cityPlots) do
+            local pPlot = Map.GetPlotByIndex(plotIndex)
+            if pPlot and pPlot:GetImprovementType() ~= -1 then
+                improvementCount = improvementCount + 1
+            end
+        end
+
+        local cityBase = plotCount * 0.1
+        local popMultiplier = 1 + (population * 0.05)
+        local infrastructureMultiplier = 1 + ((districtCount + buildingCount + improvementCount) * 0.02)
+        
+        local cityTotal = cityBase * popMultiplier * infrastructureMultiplier
+        breakdown.CityDetails[cityName] = cityTotal
+        breakdown.SubtotalFromCities = breakdown.SubtotalFromCities + cityTotal
+    end
+
+    -- 2. 科技加成 (每个科技 +5%)
+    local techCount = 0
+    for honkaiTech, _ in pairs(ShadowCivicMap) do
+        if pPlayer:GetProperty("UNLOCKED_" .. honkaiTech) == 1 then
+            techCount = techCount + 1
+        end
+    end
+    breakdown.TechCount = techCount
+    breakdown.TechModifier = techCount * 0.05
+    
+    -- 3. 律者核心加成
+    breakdown.CoreBonus = pPlayer:GetProperty("HONKAI_CORE_YIELD_BONUS") or 0
+
+    -- 最终计算：(城市总和 * (1 + 科技加成)) + 核心加成
+    breakdown.TotalYield = (breakdown.SubtotalFromCities * (1 + breakdown.TechModifier)) + breakdown.CoreBonus
+
+    return breakdown
+end
+
+function CalculateHonkaiResearchBreakdown(playerID)
+    local pPlayer = Players[playerID]
+    if not pPlayer then return nil end
+
+    local breakdown = {
+        CityDetails = {},
+        TotalYield = 0,
+        BaseYield = 10 -- 基础还是给 10 点，保证前期能跑动
+    }
+
+    local pCities = pPlayer:GetCities()
+    for _, pCity in pCities:Members() do
+        local cityName = Locale.Lookup(pCity:GetName())
+        local cityResearch = 0
+        
+        -- 扫描建筑产出：凡是属于崩坏特色区域的建筑，每个提供 2 点研究点
+        local pCityBuildings = pCity:GetBuildings()
+        for row in GameInfo.Buildings() do
+            if pCityBuildings:HasBuilding(row.Index) then
+                local districtType = row.PrereqDistrict
+                if districtType and HonkaiDistricts[districtType] then
+                    cityResearch = cityResearch + 2
+                end
+            end
+        end
+        
+        if cityResearch > 0 then
+            breakdown.CityDetails[cityName] = cityResearch
+            breakdown.TotalYield = breakdown.TotalYield + cityResearch
+        end
+    end
+
+    breakdown.TotalYield = breakdown.TotalYield + breakdown.BaseYield
+    return breakdown
+end
+
+-- 【核心逻辑】每回合自动发放资源
 function OnPlayerTurnStarted(playerID)
     local pPlayer = Players[playerID]
     if not pPlayer then return end
     
-    -- 获取当前的崩坏能，没有则默认为0
-    local currentPoints = pPlayer:GetProperty("HONKAI_RESEARCH_POINTS") or 0
-    
-    local yield = 10 -- 每回合给玩家发 10 点！
-    currentPoints = currentPoints + yield
-    pPlayer:SetProperty("HONKAI_RESEARCH_POINTS", currentPoints)
+    -- 1. 计算并增加崩坏研究点
+    local researchBreakdown = CalculateHonkaiResearchBreakdown(playerID)
+    local currentResearchPoints = pPlayer:GetProperty("HONKAI_RESEARCH_POINTS") or 0
+    pPlayer:SetProperty("HONKAI_RESEARCH_POINTS", currentResearchPoints + researchBreakdown.TotalYield)
 
-    -- 自动扣除逻辑：检查当前是否正在排队研究科技
+    -- 2. 计算并增加战术崩坏能
+    local energyBreakdown = CalculateHonkaiEnergyBreakdown(playerID)
+    local currentEnergy = pPlayer:GetProperty("HONKAI_ENERGY") or 0
+    local energyCap = pPlayer:GetProperty("HONKAI_ENERGY_CAPACITY") or 1000
+    
+    local newEnergy = math.min(energyCap, currentEnergy + energyBreakdown.TotalYield)
+    pPlayer:SetProperty("HONKAI_ENERGY", newEnergy)
+    pPlayer:SetProperty("HONKAI_ENERGY_YIELD", energyBreakdown.TotalYield) -- 保存当前产出供 UI 直接读取
+
+    -- 3. 自动扣除逻辑：检查当前是否正在排队研究科技
     local currentResearch = pPlayer:GetProperty("HONKAI_CURRENT_RESEARCH")
     if currentResearch then
+        local currentPoints = pPlayer:GetProperty("HONKAI_RESEARCH_POINTS") or 0
         local techCost = pPlayer:GetProperty("HONKAI_CURRENT_RESEARCH_COST") or 99999
         if currentPoints >= techCost then
             -- 钱存够了，回合开始时自动解锁！
@@ -85,6 +211,8 @@ function OnPlayerTurnStarted(playerID)
 end
 
 ExposedMembers.Honkai = ExposedMembers.Honkai or {}
+ExposedMembers.Honkai.CalculateHonkaiEnergyBreakdown = CalculateHonkaiEnergyBreakdown
+ExposedMembers.Honkai.CalculateHonkaiResearchBreakdown = CalculateHonkaiResearchBreakdown
 
 ExposedMembers.Honkai.GetPoints = function(playerID)
     local pPlayer = Players[playerID]

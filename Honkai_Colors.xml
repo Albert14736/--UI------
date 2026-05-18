@@ -5,7 +5,23 @@
 		<!-- 海蓝色方案 (RGBA) - 最后的 102 代表 40% 透明度 -->
 		<Row Type="COLOR_HONKAI_SEA_PRIMARY"   Color="0,105,148,102"/>
 		<Row Type="COLOR_HONKAI_SEA_SECONDARY" Color="255,255,255,255"/>
+
+		<!-- 资源配色 -->
+		<!-- 崩坏能：暗紫色 (虚数空间感) -->
+		<Row Type="COLOR_HONKAI_ENERGY" Color="110,30,180,255"/>
+		<!-- 研究点：亮蓝色 (逆熵机甲纹路感) -->
+		<Row Type="COLOR_HONKAI_RESEARCH" Color="0,240,255,255"/>
 	</Colors>
+
+	<ColorSets>
+		<!-- UI 标签使用的 ColorSet -->
+		<Row Type="COLORSET_HONKAI_ENERGY">
+			<Color0 Type="COLOR_HONKAI_ENERGY"/>
+		</Row>
+		<Row Type="COLORSET_HONKAI_RESEARCH">
+			<Color0 Type="COLOR_HONKAI_RESEARCH"/>
+		</Row>
+	</ColorSets>
 
 	<PlayerColors>
 		<Row Type="LEADER_HOH_VOID_HERRSCHER" Usage="Unique" PrimaryColor="COLOR_HONKAI_SEA_PRIMARY" SecondaryColor="COLOR_HONKAI_SEA_SECONDARY" TextColor="COLOR_PLAYER_WHITE_TEXT"/>

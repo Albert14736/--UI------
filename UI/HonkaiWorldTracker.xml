@@ -2,22 +2,22 @@
 <Context>
     <!-- 使用 Size="...,Auto" 让容器根据内容自动撑开高度 -->
     <!-- 使用 Texture="Controls_DropdownPanel" 保持与原版风格一致 -->
-    <Grid ID="HonkaiTrackerGrid" Size="350,Auto" AutoSizePadding="0,8" Texture="Controls_DropdownPanel" Color="40,40,40,200" Anchor="L,T" Hidden="0">
+    <!-- 宽度调整为 296，像素级最终对齐 -->
+    <Grid ID="HonkaiTrackerGrid" Size="296,Auto" AutoSizePadding="0,5" Texture="Controls_DropdownPanel" Color="40,40,40,200" Anchor="L,T" Hidden="0">
         
-        <!-- 主堆栈改为垂直生长 (Down)，实现真正的“两行” -->
-        <Stack ID="HonkaiResourceStack" Anchor="L,T" Offset="15,8" StackGrowth="Down" StackPadding="20">
+        <!-- 内部容器 -->
+        <Stack ID="HonkaiResourceStack" Anchor="L,T" Offset="15,5" StackGrowth="Down" StackPadding="4">
             
-            <!-- 第一行：崩坏研究点 (图标已整合进文本) -->
-            <Label ID="HonkaiResearchLabel" String="0" Style="FontNormal14" ColorSet="ResFaithLabelCS" />
+            <!-- 第一行：崩坏研究点 -->
+            <Label ID="HonkaiResearchLabel" String="0" Style="FontNormal14" ColorSet="COLORSET_HONKAI_RESEARCH" />
             
-            <!-- 第二行：战术崩坏能 (图标已整合进文本) -->
-            <Label ID="HonkaiEnergyLabel" String="0" Style="FontNormal14" ColorSet="ResFaithLabelCS" />
+            <!-- 第二行：战术崩坏能 -->
+            <Label ID="HonkaiEnergyLabel" String="0" Style="FontNormal14" ColorSet="COLORSET_HONKAI_ENERGY" />
             
         </Stack>
 
-        <!-- 装饰线：参考侵蚀模组，增加视觉层级感 -->
-        <Box ID="TopLine" Color="255,255,255,30" Anchor="C,T" Size="parent,1" Offset="0,0" />
-        <Box ID="BottomLine" Color="255,255,255,30" Anchor="C,B" Size="parent,1" Offset="0,0" />
+        <!-- 装饰底线，调低透明度 -->
+        <Box ID="BottomLine" Color="255,255,255,20" Anchor="L,B" Size="parent,1" Offset="0,0" />
         
     </Grid>
 </Context>

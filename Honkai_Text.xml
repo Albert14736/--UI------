@@ -131,5 +131,14 @@
         <Replace Tag="LOC_MOD_HOH_VALK_3R_CITY_ATTACK_PREVIEW" Language="zh_Hans_CN" Text="+10 攻城加成"/>
         <Replace Tag="LOC_WORLD_TRACKER_HONKAI_RESEARCH" Language="zh_Hans_CN" Text="崩坏能研究点 [ICON_RESOURCE_HONKAI_RESEARCH]: {1_Num} (每回合 +{2_Yield} [ICON_RESOURCE_HONKAI_RESEARCH])"/>
         <Replace Tag="LOC_WORLD_TRACKER_HONKAI_ENERGY" Language="zh_Hans_CN" Text="战术崩坏能 [ICON_RESOURCE_HONKAI_ENERGY]: {1_Num}/{2_Cap} (每回合 +{3_Yield} [ICON_RESOURCE_HONKAI_ENERGY])"/>
+        
+        <!-- Tooltips -->
+        <Replace Tag="LOC_HONKAI_TOOLTIP_ENERGY_HEADER" Language="zh_Hans_CN" Text="[COLOR:110,30,180,255]战术崩坏能每回合产出：[ENDCOLOR]"/>
+        <Replace Tag="LOC_HONKAI_TOOLTIP_RESEARCH_HEADER" Language="zh_Hans_CN" Text="[COLOR:0,240,255,255]崩坏研究点每回合产出：[ENDCOLOR]"/>
+        <Replace Tag="LOC_HONKAI_TOOLTIP_CITY_SOURCE" Language="zh_Hans_CN" Text="[ICON_Bullet] {1_Amount} 来自 {2_CityName}"/>
+        <Replace Tag="LOC_HONKAI_TOOLTIP_TECH_MODIFIER" Language="zh_Hans_CN" Text="[ICON_Bullet] +{1_Percent}% 来自已解锁的崩坏科技 ({2_Count}个)"/>
+        <Replace Tag="LOC_HONKAI_TOOLTIP_CORE_BONUS" Language="zh_Hans_CN" Text="[ICON_Bullet] +{1_Amount} 来自律者核心"/>
+        <Replace Tag="LOC_HONKAI_TOOLTIP_BASE_YIELD" Language="zh_Hans_CN" Text="[ICON_Bullet] +{1_Amount} 基础产出"/>
+        <Replace Tag="LOC_HONKAI_TOOLTIP_TOTAL" Language="zh_Hans_CN" Text="[NEWLINE]每回合总计：{1_Amount}"/>
     </LocalizedText>
 </GameData>

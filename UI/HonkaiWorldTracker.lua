@@ -9,19 +9,54 @@ function RefreshHonkaiResources()
     local pPlayer = Players[localPlayerID]
     if pPlayer == nil then return end
 
-    -- 读取研究点
+    -- 1. 获取研究点明细与总产出
     local researchPoints = pPlayer:GetProperty("HONKAI_RESEARCH_POINTS") or 0
-    local researchYield = 10 -- 当前测试阶段代码中固定给10
+    local researchBreakdown = ExposedMembers.Honkai.CalculateHonkaiResearchBreakdown(localPlayerID)
+    local researchYield = researchBreakdown and researchBreakdown.TotalYield or 0
 
-    -- 读取战术崩坏能 (蓝条)
+    -- 2. 获取战术崩坏能明细与总产出
     local honkaiEnergy = pPlayer:GetProperty("HONKAI_ENERGY") or 0
-    local honkaiEnergyCap = pPlayer:GetProperty("HONKAI_ENERGY_CAPACITY") or 1000 -- 默认给个1000上限
-    local honkaiEnergyYield = pPlayer:GetProperty("HONKAI_ENERGY_YIELD") or 0
+    local honkaiEnergyCap = pPlayer:GetProperty("HONKAI_ENERGY_CAPACITY") or 1000
+    local energyBreakdown = ExposedMembers.Honkai.CalculateHonkaiEnergyBreakdown(localPlayerID)
+    local honkaiEnergyYield = energyBreakdown and energyBreakdown.TotalYield or 0
 
-    -- 更新 UI (通过本地化字符串注入图标和数值)
-    Controls.HonkaiResearchLabel:SetText(Locale.Lookup("LOC_WORLD_TRACKER_HONKAI_RESEARCH", math.floor(researchPoints), researchYield))
+    -- 3. 更新 UI 主文本
+    Controls.HonkaiResearchLabel:SetText(Locale.Lookup("LOC_WORLD_TRACKER_HONKAI_RESEARCH", math.floor(researchPoints), math.floor(researchYield)))
     Controls.HonkaiEnergyLabel:SetText(Locale.Lookup("LOC_WORLD_TRACKER_HONKAI_ENERGY", math.floor(honkaiEnergy), math.floor(honkaiEnergyCap), math.floor(honkaiEnergyYield)))
 
+    -- 4. 构建战术崩坏能 Tooltip
+    if energyBreakdown then
+        local energyTT = Locale.Lookup("LOC_HONKAI_TOOLTIP_ENERGY_HEADER")
+        -- 城市产出
+        for cityName, cityYield in pairs(energyBreakdown.CityDetails) do
+            energyTT = energyTT .. "[NEWLINE]" .. Locale.Lookup("LOC_HONKAI_TOOLTIP_CITY_SOURCE", math.floor(cityYield * 10)/10, cityName)
+        end
+        -- 科技加成
+        if energyBreakdown.TechModifier > 0 then
+            energyTT = energyTT .. "[NEWLINE]" .. Locale.Lookup("LOC_HONKAI_TOOLTIP_TECH_MODIFIER", energyBreakdown.TechModifier * 100, energyBreakdown.TechCount)
+        end
+        -- 律者核心
+        if energyBreakdown.CoreBonus > 0 then
+            energyTT = energyTT .. "[NEWLINE]" .. Locale.Lookup("LOC_HONKAI_TOOLTIP_CORE_BONUS", energyBreakdown.CoreBonus)
+        end
+        -- 总计
+        energyTT = energyTT .. "[NEWLINE]" .. Locale.Lookup("LOC_HONKAI_TOOLTIP_TOTAL", math.floor(honkaiEnergyYield * 10)/10)
+        Controls.HonkaiEnergyLabel:SetToolTipString(energyTT)
+    end
+
+    -- 5. 构建崩坏研究点 Tooltip
+    if researchBreakdown then
+        local researchTT = Locale.Lookup("LOC_HONKAI_TOOLTIP_RESEARCH_HEADER")
+        -- 基础产出
+        researchTT = researchTT .. "[NEWLINE]" .. Locale.Lookup("LOC_HONKAI_TOOLTIP_BASE_YIELD", researchBreakdown.BaseYield)
+        -- 城市产出 (来自特色区域建筑)
+        for cityName, cityYield in pairs(researchBreakdown.CityDetails) do
+            researchTT = researchTT .. "[NEWLINE]" .. Locale.Lookup("LOC_HONKAI_TOOLTIP_CITY_SOURCE", cityYield, cityName)
+        end
+        -- 总计
+        researchTT = researchTT .. "[NEWLINE]" .. Locale.Lookup("LOC_HONKAI_TOOLTIP_TOTAL", researchBreakdown.TotalYield)
+        Controls.HonkaiResearchLabel:SetToolTipString(researchTT)
+    end
     
     -- 强制刷新容器尺寸，确保 PanelStack 重新排版
     Controls.HonkaiTrackerGrid:CalculateSize()
