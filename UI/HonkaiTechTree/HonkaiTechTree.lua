@@ -1401,9 +1401,7 @@ function OnLocalPlayerTurnEnd()
 		end
 	end
 
-	if(GameConfiguration.IsHotseat()) then
-		HideHonkaiWindow();
-	end
+	HideHonkaiWindow();
 end
 
 -- ===========================================================================
@@ -1623,6 +1621,16 @@ function HideHonkaiWindow()
 end
 
 function ToggleHonkaiWindow()
+    local ePlayer = Game.GetLocalPlayer()
+    if ePlayer ~= -1 then
+        local pPlayer = Players[ePlayer]
+        if not pPlayer:IsTurnActive() and ContextPtr:IsHidden() then
+            -- 拦截：在 AI 回合（非玩家回合）禁止手动打开面板，防止死锁卡死
+            UI.PlaySound("Play_UI_Click_False")
+            return
+        end
+    end
+
     if ContextPtr:IsHidden() then
         ShowHonkaiWindow()
     else

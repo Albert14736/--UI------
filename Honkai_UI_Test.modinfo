@@ -33,7 +33,6 @@
     <UpdateIcons id="HONKAI_ICONS_FRONT">
       <Properties><LoadOrder>999999</LoadOrder></Properties>
       <File>Icons.xml</File>
-      <File>Honkai_FontIcons.ggxml</File>
     </UpdateIcons>
     <ImportFiles id="HONKAI_TEXTURES_FRONT">
       <Items>
@@ -80,7 +79,6 @@
     <UpdateIcons id="HONKAI_ICONS_INGAME">
       <Properties><LoadOrder>999999</LoadOrder></Properties>
       <File>Icons.xml</File>
-      <File>Honkai_FontIcons.ggxml</File>
     </UpdateIcons>
     <ImportFiles id="HONKAI_TEXTURES_INGAME">
       <Items>

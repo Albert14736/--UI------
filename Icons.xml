@@ -19,13 +19,13 @@
 
         <!-- 资源图标 (标准图集) -->
         <Row Name="ATLAS_HONKAI_ENERGY" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="benghuaineng_256.dds"/>
-        <Row Name="ATLAS_HONKAI_ENERGY" IconSize="22"  IconsPerRow="1" IconsPerColumn="1" Filename="ResourceAndText_Textures/benghuaineng_22.dds"/>
+        <Row Name="ATLAS_HONKAI_ENERGY" Baseline="5" IconSize="22" IconsPerRow="1" IconsPerColumn="1" Filename="benghuaineng_22.dds"/>
 
         <Row Name="ATLAS_HONKAI_CRYSTAL" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="benghuainengjiejing_256.dds"/>
-        <Row Name="ATLAS_HONKAI_CRYSTAL" IconSize="22"  IconsPerRow="1" IconsPerColumn="1" Filename="ResourceAndText_Textures/benghuainengjiejing_22.dds"/>
+        <Row Name="ATLAS_HONKAI_CRYSTAL" Baseline="5" IconSize="22" IconsPerRow="1" IconsPerColumn="1" Filename="benghuainengjiejing_22.dds"/>
 
         <Row Name="ATLAS_HONKAI_RESEARCH" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="benghuainengyanjiudian_256.dds"/>
-        <Row Name="ATLAS_HONKAI_RESEARCH" IconSize="22"  IconsPerRow="1" IconsPerColumn="1" Filename="ResourceAndText_Textures/benghuainengyanjiudian_22.dds"/>
+        <Row Name="ATLAS_HONKAI_RESEARCH" Baseline="5" IconSize="22" IconsPerRow="1" IconsPerColumn="1" Filename="benghuainengyanjiudian_22.dds"/>
 
         <!-- 女武神单位图集 -->
         <Row Name="ATLAS_HOH_VALKYRIE" IconSize="22" Filename="nvwushen_22.dds"/>
@@ -60,10 +60,16 @@
 
         <Row Name="ICON_RESOURCE_HONKAI_CRYSTAL" Atlas="ATLAS_HONKAI_CRYSTAL" Index="0"/>
         <Row Name="RESOURCE_HONKAI_CRYSTAL"      Atlas="ATLAS_HONKAI_CRYSTAL" Index="0"/>
+        <Row Name="HONKAI_CRYSTAL"               Atlas="ATLAS_HONKAI_CRYSTAL" Index="0"/>
         <Row Name="ICON_RESOURCE_HONKAI_ENERGY"  Atlas="ATLAS_HONKAI_ENERGY" Index="0"/>
         <Row Name="RESOURCE_HONKAI_ENERGY"       Atlas="ATLAS_HONKAI_ENERGY" Index="0"/>
+        <Row Name="HONKAI_ENERGY"                Atlas="ATLAS_HONKAI_ENERGY" Index="0"/>
         <Row Name="ICON_RESOURCE_HONKAI_RESEARCH" Atlas="ATLAS_HONKAI_RESEARCH" Index="0"/>
         <Row Name="RESOURCE_HONKAI_RESEARCH"      Atlas="ATLAS_HONKAI_RESEARCH" Index="0"/>
+        <Row Name="HONKAI_RESEARCH"               Atlas="ATLAS_HONKAI_RESEARCH" Index="0"/>
+        <Row Name="ICON_HONKAI_CRYSTAL" Atlas="ATLAS_HONKAI_CRYSTAL" Index="0"/>
+        <Row Name="ICON_HONKAI_ENERGY"  Atlas="ATLAS_HONKAI_ENERGY" Index="0"/>
+        <Row Name="ICON_HONKAI_RESEARCH" Atlas="ATLAS_HONKAI_RESEARCH" Index="0"/>
         <Row Name="ICON_RESOURCE_STIGMATA_ACTIVATOR" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
 
         <Row Name="ICON_UNIT_HOH_VALKYRIE_MK1" Atlas="ATLAS_HOH_VALKYRIE" Index="0"/>

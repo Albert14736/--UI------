@@ -16,13 +16,6 @@
     <CivilizationLeaders>
         <Row CivilizationType="CIVILIZATION_HONKAI" LeaderType="LEADER_HOH_VOID_HERRSCHER" CapitalName="虚数枢纽"/>
     </CivilizationLeaders>
-    <Colors>
-        <Row Type="COLOR_HONKAI_SEA_PRIMARY"   Color="180,140,230,38"/>
-        <Row Type="COLOR_HONKAI_SEA_SECONDARY" Color="255,255,255,255"/>
-    </Colors>
-    <PlayerColors>
-        <Row Type="LEADER_HOH_VOID_HERRSCHER" Usage="Unique" PrimaryColor="COLOR_HONKAI_SEA_PRIMARY" SecondaryColor="COLOR_HONKAI_SEA_SECONDARY" TextColor="COLOR_PLAYER_WHITE_TEXT"/>
-    </PlayerColors>
     
     <LoadingInfo>
         <!-- 修正：补全 Textures/ 路径前缀 -->

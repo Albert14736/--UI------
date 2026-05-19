@@ -13,17 +13,7 @@
 		<Row Type="COLOR_HONKAI_RESEARCH" Color="0,240,255,255"/>
 	</Colors>
 
-	<ColorSets>
-		<!-- UI 标签使用的 ColorSet -->
-		<Row Type="COLORSET_HONKAI_ENERGY">
-			<Color0 Type="COLOR_HONKAI_ENERGY"/>
-		</Row>
-		<Row Type="COLORSET_HONKAI_RESEARCH">
-			<Color0 Type="COLOR_HONKAI_RESEARCH"/>
-		</Row>
-	</ColorSets>
-
 	<PlayerColors>
-		<Row Type="LEADER_HOH_VOID_HERRSCHER" Usage="Unique" PrimaryColor="COLOR_HONKAI_SEA_PRIMARY" SecondaryColor="COLOR_HONKAI_SEA_SECONDARY" TextColor="COLOR_PLAYER_WHITE_TEXT"/>
+	        <Row Type="LEADER_HOH_VOID_HERRSCHER" Usage="Unique" PrimaryColor="COLOR_HONKAI_SEA_PRIMARY" SecondaryColor="COLOR_HONKAI_SEA_SECONDARY" TextColor="COLOR_PLAYER_WHITE_TEXT"/>
 	</PlayerColors>
 </GameData>

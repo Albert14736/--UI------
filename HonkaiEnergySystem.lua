@@ -10,9 +10,14 @@ local HonkaiTechCostCache = nil
 function GetHonkaiTechCost(techType)
     if HonkaiTechCostCache == nil then
         HonkaiTechCostCache = {}
+        local speedMultiplier = 100
+        local gameSpeedType = GameConfiguration.GetGameSpeedType()
+        if GameInfo.GameSpeeds[gameSpeedType] then
+            speedMultiplier = GameInfo.GameSpeeds[gameSpeedType].CostMultiplier
+        end
         if GetHonkaiTechTreeData ~= nil then
             for _, tech in ipairs(GetHonkaiTechTreeData()) do
-                HonkaiTechCostCache[tech.Type] = tech.Cost
+                HonkaiTechCostCache[tech.Type] = math.ceil(tech.Cost * speedMultiplier / 100)
             end
         end
     end
@@ -82,18 +87,29 @@ local HonkaiDistricts = {
     ["DISTRICT_HIDDEN_RESEARCH"] = true
 }
 
+local EncampmentBuildingCache = nil
+local WallBuildingCache = nil
+
 function CalculateHonkaiEnergyCapacity(playerID)
     local pPlayer = Players[playerID]
     if not pPlayer then return 0 end
 
+    if EncampmentBuildingCache == nil then
+        EncampmentBuildingCache = {}
+        WallBuildingCache = {}
+        for building in GameInfo.Buildings() do
+            if building.PrereqDistrict == "DISTRICT_ENCAMPMENT" then
+                EncampmentBuildingCache[building.Index] = true
+            end
+            if building.BuildingType == "BUILDING_WALLS" or building.BuildingType == "BUILDING_CASTLE" or building.BuildingType == "BUILDING_STAR_FORT" then
+                WallBuildingCache[building.Index] = true
+            end
+        end
+    end
+
     local capacity = 0
     local encampment = GameInfo.Districts["DISTRICT_ENCAMPMENT"]
     local energyPool = GameInfo.Buildings["BUILDING_HOH_ENERGY_POOL"]
-    local wallBuildings = {
-        ["BUILDING_WALLS"] = true,
-        ["BUILDING_CASTLE"] = true,
-        ["BUILDING_STAR_FORT"] = true
-    }
 
     local pCities = pPlayer:GetCities()
     for _, pCity in pCities:Members() do
@@ -104,14 +120,14 @@ function CalculateHonkaiEnergyCapacity(playerID)
         end
 
         local pCityBuildings = pCity:GetBuildings()
-        for building in GameInfo.Buildings() do
-            if pCityBuildings:HasBuilding(building.Index) then
-                if building.PrereqDistrict == "DISTRICT_ENCAMPMENT" then
-                    capacity = capacity + 100
-                end
-                if wallBuildings[building.BuildingType] then
-                    capacity = capacity + 50
-                end
+        for buildingIndex, _ in pairs(EncampmentBuildingCache) do
+            if pCityBuildings:HasBuilding(buildingIndex) then
+                capacity = capacity + 100
+            end
+        end
+        for buildingIndex, _ in pairs(WallBuildingCache) do
+            if pCityBuildings:HasBuilding(buildingIndex) then
+                capacity = capacity + 50
             end
         end
 
@@ -146,26 +162,34 @@ function CalculateHonkaiEnergyBreakdown(playerID)
     for _, pCity in pCities:Members() do
         local cityName = Locale.Lookup(pCity:GetName())
         
-        -- 获取城市地格总数
-        local cityPlots = Map.GetCityPlots():GetPlotsInCity(pCity)
-        local plotCount = #cityPlots
+        -- 获取城市地格总数 (Safe calculation for Gameplay Context)
+        local plotCount = 0
+        local improvementCount = 0
+        local cityX = pCity:GetX()
+        local cityY = pCity:GetY()
+        for dx = -3, 3 do
+            for dy = -3, 3 do
+                local pPlot = Map.GetPlotXYWithRangeCheck(cityX, cityY, dx, dy, 3)
+                if pPlot and pPlot:GetOwner() == playerID then
+                    -- 简单归属判断：只计算玩家的格子
+                    plotCount = plotCount + 1
+                    if pPlot:GetImprovementType() ~= -1 then
+                        improvementCount = improvementCount + 1
+                    end
+                end
+            end
+        end
+
         local population = pCity:GetPopulation()
-        
-        -- 计算 改良设施 + 区域 + 建筑总数
-        local districtCount = pCity:GetDistricts():GetCount()
+        local districtCount = 0
+        for _ in pCity:GetDistricts():Members() do
+            districtCount = districtCount + 1
+        end
         local buildingCount = 0
         local pCityBuildings = pCity:GetBuildings()
         for row in GameInfo.Buildings() do
             if pCityBuildings:HasBuilding(row.Index) then
                 buildingCount = buildingCount + 1
-            end
-        end
-
-        local improvementCount = 0
-        for _, plotIndex in ipairs(cityPlots) do
-            local pPlot = Map.GetPlotByIndex(plotIndex)
-            if pPlot and pPlot:GetImprovementType() ~= -1 then
-                improvementCount = improvementCount + 1
             end
         end
 
@@ -263,7 +287,7 @@ function ProcessResearchQueue(playerID)
     while stillProcessing and #queue > 0 do
         local currentTarget = queue[1]
         local techCost = pPlayer:GetProperty("COST_" .. currentTarget)
-        if techCost == nil then
+        if techCost == nil or techCost <= 0 then
             techCost = GetHonkaiTechCost(currentTarget)
             pPlayer:SetProperty("COST_" .. currentTarget, techCost)
         end
@@ -325,21 +349,11 @@ function OnHonkaiSetResearchTarget(playerID, parameters)
     parameters = parameters or {}
     
     local queueStr = parameters.QueueStr or ""
-    local costs = parameters.Costs
-    if type(costs) ~= "table" then
-        costs = {}
-    end
 
     pPlayer:SetProperty("HONKAI_RESEARCH_QUEUE", queueStr)
     
-    for techType, cost in pairs(costs) do
-        pPlayer:SetProperty("COST_" .. techType, cost)
-    end
-
     for techType in string.gmatch(queueStr, '([^,]+)') do
-        if pPlayer:GetProperty("COST_" .. techType) == nil then
-            pPlayer:SetProperty("COST_" .. techType, GetHonkaiTechCost(techType))
-        end
+        pPlayer:SetProperty("COST_" .. techType, GetHonkaiTechCost(techType))
     end
 
     print("【崩坏底层】接收到新科研路径：" .. queueStr)

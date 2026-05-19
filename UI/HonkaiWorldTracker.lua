@@ -66,7 +66,11 @@ function RefreshHonkaiResources()
     end
     
     -- 强制刷新容器尺寸，确保 PanelStack 重新排版
-    Controls.HonkaiTrackerGrid:CalculateSize()
+    local pTrackerStack = ContextPtr:LookUpControl("/InGame/WorldTracker/PanelStack")
+    if pTrackerStack then
+        pTrackerStack:CalculateSize()
+        pTrackerStack:ReprocessAnchoring()
+    end
 end
 
 function OnInitialize()
@@ -98,12 +102,8 @@ Events.PlayerTurnActivated.Add(function(playerID)
     end
 end)
 
-Events.GamePropertyChanged.Add(function(key, value)
-    if key == "HONKAI_RESEARCH_POINTS"
-        or key == "HONKAI_ENERGY"
-        or key == "HONKAI_ENERGY_CAPACITY"
-        or key == "HONKAI_ENERGY_YIELD"
-        or (type(key) == "string" and string.sub(key, 1, 9) == "UNLOCKED_") then
+LuaEvents.HonkaiTech_DoRefresh.Add(function(playerID)
+    if playerID == Game.GetLocalPlayer() then
         RefreshHonkaiResources()
     end
 end)
