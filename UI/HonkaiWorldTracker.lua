@@ -8,6 +8,9 @@ function RefreshHonkaiResources()
     
     local pPlayer = Players[localPlayerID]
     if pPlayer == nil then return end
+    if ExposedMembers.Honkai == nil then return end
+    if ExposedMembers.Honkai.CalculateHonkaiResearchBreakdown == nil then return end
+    if ExposedMembers.Honkai.CalculateHonkaiEnergyBreakdown == nil then return end
 
     -- 1. 获取研究点明细与总产出
     local researchPoints = pPlayer:GetProperty("HONKAI_RESEARCH_POINTS") or 0
@@ -16,7 +19,11 @@ function RefreshHonkaiResources()
 
     -- 2. 获取战术崩坏能明细与总产出
     local honkaiEnergy = pPlayer:GetProperty("HONKAI_ENERGY") or 0
-    local honkaiEnergyCap = pPlayer:GetProperty("HONKAI_ENERGY_CAPACITY") or 1000
+    local honkaiEnergyCap = pPlayer:GetProperty("HONKAI_ENERGY_CAPACITY")
+    if honkaiEnergyCap == nil and ExposedMembers.Honkai.CalculateHonkaiEnergyCapacity then
+        honkaiEnergyCap = ExposedMembers.Honkai.CalculateHonkaiEnergyCapacity(localPlayerID)
+    end
+    honkaiEnergyCap = honkaiEnergyCap or 0
     local energyBreakdown = ExposedMembers.Honkai.CalculateHonkaiEnergyBreakdown(localPlayerID)
     local honkaiEnergyYield = energyBreakdown and energyBreakdown.TotalYield or 0
 
@@ -92,7 +99,11 @@ Events.PlayerTurnActivated.Add(function(playerID)
 end)
 
 Events.GamePropertyChanged.Add(function(key, value)
-    if key == "HONKAI_RESEARCH_POINTS" or key == "HONKAI_ENERGY" then
+    if key == "HONKAI_RESEARCH_POINTS"
+        or key == "HONKAI_ENERGY"
+        or key == "HONKAI_ENERGY_CAPACITY"
+        or key == "HONKAI_ENERGY_YIELD"
+        or (type(key) == "string" and string.sub(key, 1, 9) == "UNLOCKED_") then
         RefreshHonkaiResources()
     end
 end)

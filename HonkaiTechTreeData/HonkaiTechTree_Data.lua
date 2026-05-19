@@ -20,7 +20,7 @@ function GetHonkaiTechTreeData()
 			Column = 1,
 			ShadowCivic = "CIVIC_SHADOW_PERCEPTION",
 			Unlocks = {
-				{ Type = "RESOURCE", ID = "RESOURCE_HONKAI_ENERGY" }
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_PERCEPTION_EFFECT_TOOLTIP" }
 			}
 		},
 		{
@@ -63,7 +63,7 @@ function GetHonkaiTechTreeData()
 			Column = 2,
 			ShadowCivic = "CIVIC_SHADOW_BASIC_TACTICS",
 			Unlocks = {
-				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_BASIC_TACTICS_EFFECT_TOOLTIP" }
+				{ Type = "POLICY", ID = "POLICY_HOH_ANTI_HONKAI_MANUAL", Icon = "ICON_POLICY_DISCIPLINE" }
 			}
 		},
 		{
@@ -91,6 +91,8 @@ function GetHonkaiTechTreeData()
 			Column = 2,
 			ShadowCivic = "CIVIC_SHADOW_DESTINY_CLERGY",
 			Unlocks = {
+				{ Type = "DISTRICT", ID = "DISTRICT_SCHICKSAL_HQ" },
+				{ Type = "BUILDING", ID = "BUILDING_HOH_SCHICKSAL_CATHEDRAL", Icon = "ICON_BUILDING_HOH_ST_FREYA" },
 				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_DESTINY_CLERGY_EFFECT_TOOLTIP" }
 			}
 		},
@@ -119,9 +121,7 @@ function GetHonkaiTechTreeData()
 			Prereqs = {"HONKAI_TECH_PATHOLOGY", "HONKAI_TECH_ENERGY_CONTAINER"},
 			Column = 3,
 			ShadowCivic = "CIVIC_SHADOW_BASIC_ISOLATION",
-			Unlocks = {
-				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_BASIC_ISOLATION_EFFECT_TOOLTIP" }
-			}
+			Unlocks = {}
 		},
 		{
 			Type = "HONKAI_TECH_ST_FREYA",

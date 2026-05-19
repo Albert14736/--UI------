@@ -4,32 +4,22 @@
         <!-- 注册两种全新的要素 -->
         <Row Type="RESOURCE_STIGMATA_ACTIVATOR" Kind="KIND_RESOURCE"/>
         <Row Type="RESOURCE_HONKAI_CRYSTAL" Kind="KIND_RESOURCE"/>
-        <Row Type="RESOURCE_HONKAI_ENERGY" Kind="KIND_RESOURCE"/>
-        <Row Type="RESOURCE_HONKAI_RESEARCH" Kind="KIND_RESOURCE"/>
     </Types>
     <Resources>
         <!-- 全面照搬老模组：频率0，必须带 RevealedEra 否则崩溃 -->
         <Row ResourceType="RESOURCE_STIGMATA_ACTIVATOR" Name="LOC_RESOURCE_STIGMATA_ACTIVATOR_NAME" ResourceClassType="RESOURCECLASS_STRATEGIC" Frequency="0" SeaFrequency="0" RevealedEra="1"/>
         <Row ResourceType="RESOURCE_HONKAI_CRYSTAL" Name="LOC_RESOURCE_HONKAI_CRYSTAL_NAME" ResourceClassType="RESOURCECLASS_STRATEGIC" Frequency="0" SeaFrequency="0" RevealedEra="1"/>
-        <Row ResourceType="RESOURCE_HONKAI_ENERGY" Name="LOC_RESOURCE_HONKAI_ENERGY_NAME" ResourceClassType="RESOURCECLASS_STRATEGIC" Frequency="0" SeaFrequency="0" RevealedEra="1"/>
-        <Row ResourceType="RESOURCE_HONKAI_RESEARCH" Name="LOC_RESOURCE_HONKAI_RESEARCH_NAME" ResourceClassType="RESOURCECLASS_STRATEGIC" Frequency="0" SeaFrequency="0" RevealedEra="1"/>
     </Resources>
     <Resource_ValidTerrains>
         <Row ResourceType="RESOURCE_STIGMATA_ACTIVATOR" TerrainType="TERRAIN_GRASS"/>
         <Row ResourceType="RESOURCE_HONKAI_CRYSTAL" TerrainType="TERRAIN_GRASS"/>
-        <Row ResourceType="RESOURCE_HONKAI_ENERGY" TerrainType="TERRAIN_GRASS"/>
-        <Row ResourceType="RESOURCE_HONKAI_RESEARCH" TerrainType="TERRAIN_GRASS"/>
     </Resource_ValidTerrains>
     <Improvement_ValidResources>
         <Row ImprovementType="IMPROVEMENT_MINE" ResourceType="RESOURCE_STIGMATA_ACTIVATOR" MustRemoveFeature="false"/>
         <Row ImprovementType="IMPROVEMENT_MINE" ResourceType="RESOURCE_HONKAI_CRYSTAL" MustRemoveFeature="false"/>
-        <Row ImprovementType="IMPROVEMENT_MINE" ResourceType="RESOURCE_HONKAI_ENERGY" MustRemoveFeature="false"/>
-        <Row ImprovementType="IMPROVEMENT_MINE" ResourceType="RESOURCE_HONKAI_RESEARCH" MustRemoveFeature="false"/>
     </Improvement_ValidResources>
     <Resource_Consumption>
         <Row ResourceType="RESOURCE_STIGMATA_ACTIVATOR" Accumulate="true" BaseExtractionRate="0" ImprovedExtractionRate="1" StockpileCap="50"/>
         <Row ResourceType="RESOURCE_HONKAI_CRYSTAL" Accumulate="true" BaseExtractionRate="0" ImprovedExtractionRate="1" StockpileCap="50"/>
-        <Row ResourceType="RESOURCE_HONKAI_ENERGY" Accumulate="true" BaseExtractionRate="0" ImprovedExtractionRate="1" StockpileCap="50"/>
-        <Row ResourceType="RESOURCE_HONKAI_RESEARCH" Accumulate="true" BaseExtractionRate="0" ImprovedExtractionRate="1" StockpileCap="50"/>
     </Resource_Consumption>
 </GameData>

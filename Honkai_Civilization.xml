@@ -12,9 +12,11 @@
         <Row Type="DISTRICT_HIDDEN_RESEARCH" Kind="KIND_DISTRICT"/>
 
         <Row Type="BUILDING_HOH_ENERGY_POOL" Kind="KIND_BUILDING"/>
+        <Row Type="BUILDING_HOH_SCHICKSAL_CATHEDRAL" Kind="KIND_BUILDING"/>
         <Row Type="BUILDING_HOH_ST_FREYA" Kind="KIND_BUILDING"/>
 
         <Row Type="UNIT_HOH_VALKYRIE_MK1" Kind="KIND_UNIT"/>
+        <Row Type="POLICY_HOH_ANTI_HONKAI_MANUAL" Kind="KIND_POLICY"/>
         
         <Row Type="CIVIC_HOH_LOCK" Kind="KIND_CIVIC"/>
         <Row Type="CIVIC_SHADOW_PERCEPTION" Kind="KIND_CIVIC"/>
@@ -66,14 +68,20 @@
     </CivicPrereqs>
 
     <CivicModifiers>
-        <Row CivicType="CIVIC_SHADOW_PERCEPTION" ModifierId="MOD_HOH_PERCEPTION_REVEAL_ENERGY"/>
         <Row CivicType="CIVIC_SHADOW_OMEN" ModifierId="MOD_HOH_OMEN_FAITH"/>
         <Row CivicType="CIVIC_SHADOW_PATHOLOGY" ModifierId="MOD_HOH_PATHOLOGY_AMENITY"/>
-        <Row CivicType="CIVIC_SHADOW_BASIC_TACTICS" ModifierId="MOD_HOH_TACTICS_BARB_COMBAT"/>
-        <Row CivicType="CIVIC_SHADOW_DESTINY_CLERGY" ModifierId="MOD_HOH_CLERGY_PROPHET_POINTS"/>
+        <Row CivicType="CIVIC_SHADOW_DESTINY_CLERGY" ModifierId="MOD_HOH_CLERGY_HOLY_SITE_PRODUCTION"/>
         <Row CivicType="CIVIC_SHADOW_NUN_FORMATION" ModifierId="MOD_HOH_NUN_FORMATION_DISCOUNT"/>
-        <Row CivicType="CIVIC_SHADOW_BASIC_ISOLATION" ModifierId="MOD_HOH_ISOLATION_HOUSING"/>
+        <Row CivicType="CIVIC_SHADOW_NUN_FORMATION" ModifierId="MOD_HOH_IS_NUN_FORMATION_FAITH_PURCHASE"/>
     </CivicModifiers>
+
+    <Policies>
+        <Row PolicyType="POLICY_HOH_ANTI_HONKAI_MANUAL" Name="LOC_POLICY_HOH_ANTI_HONKAI_MANUAL_NAME" Description="LOC_POLICY_HOH_ANTI_HONKAI_MANUAL_DESC" PrereqCivic="CIVIC_SHADOW_BASIC_TACTICS" GovernmentSlotType="SLOT_MILITARY"/>
+    </Policies>
+
+    <PolicyModifiers>
+        <Row PolicyType="POLICY_HOH_ANTI_HONKAI_MANUAL" ModifierId="MOD_HOH_TACTICS_BARB_COMBAT"/>
+    </PolicyModifiers>
 
     <UnitPromotionClasses>
         <Row PromotionClassType="PROMOTION_CLASS_HOH_VALKYRIE" Name="LOC_PROMOTION_CLASS_HOH_VALKYRIE_NAME"/>
@@ -130,7 +138,7 @@
     </CivilizationCitizenNames>
 
     <Districts>
-        <Row DistrictType="DISTRICT_SCHICKSAL_HQ" Name="LOC_DISTRICT_SCHICKSAL_HQ_NAME" Description="LOC_DISTRICT_SCHICKSAL_HQ_DESC" TraitType="TRAIT_CIVILIZATION_HONKAI" Cost="27" Maintenance="1" RequiresPlacement="true" RequiresPopulation="false" MaxPerPlayer="1" PlunderType="PLUNDER_FAITH" AdvisorType="ADVISOR_RELIGION" CityStrengthModifier="2" NoAdjacentCity="false" InternalOnly="false" ZOC="true" HitPoints="100" CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" MilitaryDomain="NO_DOMAIN" Aqueduct="false" PrereqCivic="CIVIC_SHADOW_OMEN"/>
+        <Row DistrictType="DISTRICT_SCHICKSAL_HQ" Name="LOC_DISTRICT_SCHICKSAL_HQ_NAME" Description="LOC_DISTRICT_SCHICKSAL_HQ_DESC" TraitType="TRAIT_CIVILIZATION_HONKAI" Cost="27" Maintenance="1" RequiresPlacement="true" RequiresPopulation="false" MaxPerPlayer="1" PlunderType="PLUNDER_FAITH" AdvisorType="ADVISOR_RELIGION" CityStrengthModifier="2" NoAdjacentCity="false" InternalOnly="false" ZOC="true" HitPoints="100" CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" MilitaryDomain="NO_DOMAIN" Aqueduct="false" PrereqCivic="CIVIC_SHADOW_DESTINY_CLERGY"/>
         <Row DistrictType="DISTRICT_ANTI_ENTROPY_HQ" Name="LOC_DISTRICT_ANTI_ENTROPY_HQ_NAME" Description="LOC_DISTRICT_ANTI_ENTROPY_HQ_DESC" TraitType="TRAIT_CIVILIZATION_HONKAI" Cost="54" Maintenance="1" RequiresPlacement="true" RequiresPopulation="false" MaxPerPlayer="1" PlunderType="PLUNDER_GOLD" AdvisorType="ADVISOR_GENERIC" CityStrengthModifier="2" NoAdjacentCity="false" InternalOnly="false" ZOC="true" HitPoints="100" CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" MilitaryDomain="NO_DOMAIN" Aqueduct="false"/>
         <Row DistrictType="DISTRICT_WORLD_SERPENT_HQ" Name="LOC_DISTRICT_WORLD_SERPENT_HQ_NAME" Description="LOC_DISTRICT_WORLD_SERPENT_HQ_DESC" TraitType="TRAIT_CIVILIZATION_HONKAI" Cost="54" Maintenance="1" RequiresPlacement="true" RequiresPopulation="false" MaxPerPlayer="1" PlunderType="PLUNDER_SCIENCE" AdvisorType="ADVISOR_TECHNOLOGY" CityStrengthModifier="2" NoAdjacentCity="false" InternalOnly="false" ZOC="true" HitPoints="100" CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" MilitaryDomain="NO_DOMAIN" Aqueduct="false"/>
         <Row DistrictType="DISTRICT_SCHICKSAL_BRANCH" Name="LOC_DISTRICT_SCHICKSAL_BRANCH_NAME" Description="LOC_DISTRICT_SCHICKSAL_BRANCH_DESC" PrereqTech="TECH_ASTROLOGY" TraitType="TRAIT_CIVILIZATION_HONKAI" Cost="54" CostProgressionModel="COST_PROGRESSION_NUM_UNDER_AVG_PLUS_TECH" CostProgressionParam1="25" Maintenance="1" RequiresPlacement="true" RequiresPopulation="true" PlunderType="PLUNDER_FAITH" AdvisorType="ADVISOR_RELIGION" CityStrengthModifier="0" NoAdjacentCity="false" InternalOnly="false" ZOC="false" CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" MilitaryDomain="NO_DOMAIN" Aqueduct="false"/>
@@ -334,9 +342,18 @@
     </District_Adjacencies>
 
     <Buildings>
-        <Row BuildingType="BUILDING_HOH_ENERGY_POOL" Name="LOC_BUILDING_HOH_ENERGY_POOL_NAME" Description="LOC_BUILDING_HOH_ENERGY_POOL_DESC" PrereqDistrict="DISTRICT_CITY_CENTER" Cost="60" AdvisorType="ADVISOR_GENERIC" PrereqCivic="CIVIC_SHADOW_ENERGY_CONTAINER" PurchaseYield="YIELD_GOLD"/>
-        <Row BuildingType="BUILDING_HOH_ST_FREYA" Name="LOC_BUILDING_HOH_ST_FREYA_NAME" Description="LOC_BUILDING_HOH_ST_FREYA_DESC" PrereqDistrict="DISTRICT_SCHICKSAL_BRANCH" Cost="120" AdvisorType="ADVISOR_GENERIC" PrereqCivic="CIVIC_SHADOW_ST_FREYA" PurchaseYield="YIELD_GOLD"/>
+        <Row BuildingType="BUILDING_HOH_ENERGY_POOL" Name="LOC_BUILDING_HOH_ENERGY_POOL_NAME" Description="LOC_BUILDING_HOH_ENERGY_POOL_DESC" PrereqDistrict="DISTRICT_CITY_CENTER" Cost="60" AdvisorType="ADVISOR_GENERIC" PrereqCivic="CIVIC_SHADOW_ENERGY_CONTAINER" PurchaseYield="YIELD_GOLD" MaxPlayerInstances="1"/>
+        <Row BuildingType="BUILDING_HOH_SCHICKSAL_CATHEDRAL" Name="LOC_BUILDING_HOH_SCHICKSAL_CATHEDRAL_NAME" Description="LOC_BUILDING_HOH_SCHICKSAL_CATHEDRAL_DESC" PrereqDistrict="DISTRICT_SCHICKSAL_HQ" Cost="70" AdvisorType="ADVISOR_RELIGION" PrereqCivic="CIVIC_SHADOW_DESTINY_CLERGY" PurchaseYield="YIELD_GOLD"/>
+        <Row BuildingType="BUILDING_HOH_ST_FREYA" Name="LOC_BUILDING_HOH_ST_FREYA_NAME" Description="LOC_BUILDING_HOH_ST_FREYA_DESC" Cost="120" AdvisorType="ADVISOR_RELIGION" PrereqCivic="CIVIC_SHADOW_ST_FREYA" AdjacentDistrict="DISTRICT_SCHICKSAL_BRANCH" MaxWorldInstances="1" IsWonder="true" RequiresPlacement="true"/>
     </Buildings>
+
+    <Building_YieldChanges>
+        <Row BuildingType="BUILDING_HOH_SCHICKSAL_CATHEDRAL" YieldType="YIELD_FAITH" YieldChange="3"/>
+    </Building_YieldChanges>
+
+    <Building_GreatPersonPoints>
+        <Row BuildingType="BUILDING_HOH_SCHICKSAL_CATHEDRAL" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" PointsPerTurn="1"/>
+    </Building_GreatPersonPoints>
 
     <Modifiers>
         <Row ModifierId="MOD_HOH_HQ_GRANT_ENVOY" ModifierType="MODIFIER_PLAYER_GRANT_INFLUENCE_TOKEN" RunOnce="true" Permanent="true" OwnerRequirementSetId="REQSET_HOH_ADJACENT_TO_CITY_CENTER"/>
@@ -349,11 +366,12 @@
         <Row ModifierId="MOD_HOH_EXTRA_MOVEMENT" ModifierType="MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT"/>
 
         <!-- 远古科技Modifiers -->
-        <Row ModifierId="MOD_HOH_PERCEPTION_REVEAL_ENERGY" ModifierType="MODIFIER_PLAYER_REVEAL_RESOURCE"/>
         <Row ModifierId="MOD_HOH_OMEN_FAITH" ModifierType="MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE" SubjectRequirementSetId="REQSET_HOH_DISTRICT_IS_CITY_CENTER"/>
         <Row ModifierId="MOD_HOH_PATHOLOGY_AMENITY" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_POLICY_AMENITY"/>
         <Row ModifierId="MOD_HOH_TACTICS_BARB_COMBAT" ModifierType="MODIFIER_PLAYER_UNITS_ADJUST_BARBARIAN_COMBAT"/>
         <Row ModifierId="MOD_HOH_CLERGY_PROPHET_POINTS" ModifierType="MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS"/>
+        <Row ModifierId="MOD_HOH_CLERGY_HOLY_SITE_PRODUCTION" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION"/>
+        <Row ModifierId="MOD_HOH_CATHEDRAL_GRANT_VALKYRIE" ModifierType="MODIFIER_SINGLE_CITY_GRANT_UNIT_IN_CITY" RunOnce="true" Permanent="true"/>
         <Row ModifierId="MOD_HOH_NUN_FORMATION_DISCOUNT" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PURCHASE_COST"/>
         <Row ModifierId="MOD_HOH_IS_NUN_FORMATION_FAITH_PURCHASE" ModifierType="MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE"/>
         <Row ModifierId="MOD_HOH_ISOLATION_HOUSING" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING"/>
@@ -370,15 +388,18 @@
         <Row ModifierId="MOD_HOH_EXTRA_MOVEMENT" Name="Amount" Value="1"/>
 
         <!-- 远古科技Modifiers -->
-        <Row ModifierId="MOD_HOH_PERCEPTION_REVEAL_ENERGY" Name="ResourceType" Value="RESOURCE_HONKAI_ENERGY"/>
         <Row ModifierId="MOD_HOH_OMEN_FAITH" Name="YieldType" Value="YIELD_FAITH"/>
         <Row ModifierId="MOD_HOH_OMEN_FAITH" Name="Amount" Value="1"/>
         <Row ModifierId="MOD_HOH_PATHOLOGY_AMENITY" Name="Amount" Value="1"/>
-        <Row ModifierId="MOD_HOH_TACTICS_BARB_COMBAT" Name="Amount" Value="5"/>
+        <Row ModifierId="MOD_HOH_TACTICS_BARB_COMBAT" Name="Amount" Value="10"/>
         <Row ModifierId="MOD_HOH_CLERGY_PROPHET_POINTS" Name="GreatPersonClassType" Value="GREAT_PERSON_CLASS_PROPHET"/>
         <Row ModifierId="MOD_HOH_CLERGY_PROPHET_POINTS" Name="Amount" Value="2"/>
+        <Row ModifierId="MOD_HOH_CLERGY_HOLY_SITE_PRODUCTION" Name="DistrictType" Value="DISTRICT_SCHICKSAL_BRANCH"/>
+        <Row ModifierId="MOD_HOH_CLERGY_HOLY_SITE_PRODUCTION" Name="Amount" Value="25"/>
+        <Row ModifierId="MOD_HOH_CATHEDRAL_GRANT_VALKYRIE" Name="UnitType" Value="UNIT_HOH_VALKYRIE_MK1"/>
+        <Row ModifierId="MOD_HOH_CATHEDRAL_GRANT_VALKYRIE" Name="Amount" Value="1"/>
         <Row ModifierId="MOD_HOH_NUN_FORMATION_DISCOUNT" Name="UnitType" Value="UNIT_HOH_VALKYRIE_MK1"/>
-        <Row ModifierId="MOD_HOH_NUN_FORMATION_DISCOUNT" Name="Amount" Value="20"/>
+        <Row ModifierId="MOD_HOH_NUN_FORMATION_DISCOUNT" Name="Amount" Value="10"/>
         <Row ModifierId="MOD_HOH_IS_NUN_FORMATION_FAITH_PURCHASE" Name="Tag" Value="CLASS_HOH_VALKYRIE"/>
         <Row ModifierId="MOD_HOH_ISOLATION_HOUSING" Name="Amount" Value="1"/>
     </ModifierArguments>
@@ -423,6 +444,10 @@
         <Row RequirementId="HARASS_ADJACENT_UNIT_AT_WAR" Name="MaxDistance" Value="1"/>
         <Row RequirementId="REQ_HOH_DISTRICT_IS_CITY_CENTER_REQ" Name="DistrictType" Value="DISTRICT_CITY_CENTER"/>
     </RequirementArguments>
+
+    <BuildingModifiers>
+        <Row BuildingType="BUILDING_HOH_SCHICKSAL_CATHEDRAL" ModifierId="MOD_HOH_CATHEDRAL_GRANT_VALKYRIE"/>
+    </BuildingModifiers>
 
     <DistrictModifiers>
         <Row DistrictType="DISTRICT_SCHICKSAL_HQ" ModifierId="MOD_HOH_HQ_GRANT_ENVOY"/>

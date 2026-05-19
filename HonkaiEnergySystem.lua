@@ -3,6 +3,27 @@
 -- 负责：存储崩坏能、处理扣除请求、保存已解锁的科技节点
 -- ===========================================================================
 print(" --- | Honkai Energy System (Gameplay) Loaded! | ---")
+include("HonkaiTechTree_Data")
+
+local HonkaiTechCostCache = nil
+
+function GetHonkaiTechCost(techType)
+    if HonkaiTechCostCache == nil then
+        HonkaiTechCostCache = {}
+        if GetHonkaiTechTreeData ~= nil then
+            for _, tech in ipairs(GetHonkaiTechTreeData()) do
+                HonkaiTechCostCache[tech.Type] = tech.Cost
+            end
+        end
+    end
+
+    return HonkaiTechCostCache[techType] or 99999
+end
+
+function IsHonkaiTechUnlocked(playerID, techType)
+    local pPlayer = Players[playerID]
+    return pPlayer and (pPlayer:GetProperty("UNLOCKED_" .. techType) == 1)
+end
 
 -- ===========================================================================
 -- 崩坏科技与 影子市政 映射表
@@ -61,6 +82,47 @@ local HonkaiDistricts = {
     ["DISTRICT_HIDDEN_RESEARCH"] = true
 }
 
+function CalculateHonkaiEnergyCapacity(playerID)
+    local pPlayer = Players[playerID]
+    if not pPlayer then return 0 end
+
+    local capacity = 0
+    local encampment = GameInfo.Districts["DISTRICT_ENCAMPMENT"]
+    local energyPool = GameInfo.Buildings["BUILDING_HOH_ENERGY_POOL"]
+    local wallBuildings = {
+        ["BUILDING_WALLS"] = true,
+        ["BUILDING_CASTLE"] = true,
+        ["BUILDING_STAR_FORT"] = true
+    }
+
+    local pCities = pPlayer:GetCities()
+    for _, pCity in pCities:Members() do
+        capacity = capacity + 50
+
+        if encampment and pCity:GetDistricts():HasDistrict(encampment.Index) then
+            capacity = capacity + 100
+        end
+
+        local pCityBuildings = pCity:GetBuildings()
+        for building in GameInfo.Buildings() do
+            if pCityBuildings:HasBuilding(building.Index) then
+                if building.PrereqDistrict == "DISTRICT_ENCAMPMENT" then
+                    capacity = capacity + 100
+                end
+                if wallBuildings[building.BuildingType] then
+                    capacity = capacity + 50
+                end
+            end
+        end
+
+        if energyPool and pCityBuildings:HasBuilding(energyPool.Index) then
+            capacity = capacity + 1000
+        end
+    end
+
+    return capacity
+end
+
 function CalculateHonkaiEnergyBreakdown(playerID)
     local pPlayer = Players[playerID]
     if not pPlayer then return nil end
@@ -69,10 +131,15 @@ function CalculateHonkaiEnergyBreakdown(playerID)
         CityDetails = {},
         TechModifier = 0,
         TechCount = 0,
+        ActivationBonus = 0,
         CoreBonus = 0,
         TotalYield = 0,
         SubtotalFromCities = 0
     }
+
+    if not IsHonkaiTechUnlocked(playerID, "HONKAI_TECH_PERCEPTION") then
+        return breakdown
+    end
 
     -- 1. 遍历城市计算基础产出
     local pCities = pPlayer:GetCities()
@@ -112,9 +179,17 @@ function CalculateHonkaiEnergyBreakdown(playerID)
     end
 
     -- 2. 科技加成 (每个科技 +5%)
+    local pCapital = pCities:GetCapitalCity()
+    if pCapital then
+        local capitalName = Locale.Lookup(pCapital:GetName())
+        breakdown.ActivationBonus = 2
+        breakdown.CityDetails[capitalName] = (breakdown.CityDetails[capitalName] or 0) + breakdown.ActivationBonus
+        breakdown.SubtotalFromCities = breakdown.SubtotalFromCities + breakdown.ActivationBonus
+    end
+
     local techCount = 0
     for honkaiTech, _ in pairs(ShadowCivicMap) do
-        if pPlayer:GetProperty("UNLOCKED_" .. honkaiTech) == 1 then
+        if IsHonkaiTechUnlocked(playerID, honkaiTech) then
             techCount = techCount + 1
         end
     end
@@ -187,7 +262,11 @@ function ProcessResearchQueue(playerID)
 
     while stillProcessing and #queue > 0 do
         local currentTarget = queue[1]
-        local techCost = pPlayer:GetProperty("COST_" .. currentTarget) or 99999
+        local techCost = pPlayer:GetProperty("COST_" .. currentTarget)
+        if techCost == nil then
+            techCost = GetHonkaiTechCost(currentTarget)
+            pPlayer:SetProperty("COST_" .. currentTarget, techCost)
+        end
         
         if currentPoints >= techCost then
             -- 钱够了，解锁！
@@ -228,10 +307,11 @@ function OnPlayerTurnStarted(playerID)
     -- 2. 计算并增加战术崩坏能
     local energyBreakdown = CalculateHonkaiEnergyBreakdown(playerID)
     local currentEnergy = pPlayer:GetProperty("HONKAI_ENERGY") or 0
-    local energyCap = pPlayer:GetProperty("HONKAI_ENERGY_CAPACITY") or 1000
+    local energyCap = CalculateHonkaiEnergyCapacity(playerID)
     
     local newEnergy = math.min(energyCap, currentEnergy + energyBreakdown.TotalYield)
     pPlayer:SetProperty("HONKAI_ENERGY", newEnergy)
+    pPlayer:SetProperty("HONKAI_ENERGY_CAPACITY", energyCap)
     pPlayer:SetProperty("HONKAI_ENERGY_YIELD", energyBreakdown.TotalYield)
 
     -- 3. 处理队列结算
@@ -242,14 +322,24 @@ end
 function OnHonkaiSetResearchTarget(playerID, parameters)
     local pPlayer = Players[playerID]
     if not pPlayer then return end
+    parameters = parameters or {}
     
     local queueStr = parameters.QueueStr or ""
-    local costs = parameters.Costs or {}
+    local costs = parameters.Costs
+    if type(costs) ~= "table" then
+        costs = {}
+    end
 
     pPlayer:SetProperty("HONKAI_RESEARCH_QUEUE", queueStr)
     
     for techType, cost in pairs(costs) do
         pPlayer:SetProperty("COST_" .. techType, cost)
+    end
+
+    for techType in string.gmatch(queueStr, '([^,]+)') do
+        if pPlayer:GetProperty("COST_" .. techType) == nil then
+            pPlayer:SetProperty("COST_" .. techType, GetHonkaiTechCost(techType))
+        end
     end
 
     print("【崩坏底层】接收到新科研路径：" .. queueStr)
@@ -260,10 +350,10 @@ end
 
 ExposedMembers.Honkai = ExposedMembers.Honkai or {}
 ExposedMembers.Honkai.CalculateHonkaiEnergyBreakdown = CalculateHonkaiEnergyBreakdown
+ExposedMembers.Honkai.CalculateHonkaiEnergyCapacity = CalculateHonkaiEnergyCapacity
 ExposedMembers.Honkai.CalculateHonkaiResearchBreakdown = CalculateHonkaiResearchBreakdown
 ExposedMembers.Honkai.IsUnlocked = function(playerID, techType)
-    local pPlayer = Players[playerID]
-    return pPlayer and (pPlayer:GetProperty("UNLOCKED_" .. techType) == 1)
+    return IsHonkaiTechUnlocked(playerID, techType)
 end
 ExposedMembers.Honkai.GetResearchQueue = function(playerID)
     local pPlayer = Players[playerID]

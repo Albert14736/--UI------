@@ -71,6 +71,7 @@
       <File>Honkai_Resources.xml</File>
       <File>Honkai_Civilization.xml</File>
       <File>Honkai_Leader_HoV.xml</File>
+      <File>Honkai_Colors.xml</File>
     </UpdateDatabase>
     <UpdateText id="HONKAI_TEXT_INGAME">
       <File>Honkai_Text.xml</File>
@@ -146,6 +147,7 @@
     <File>Honkai_Resources.xml</File>
     <File>Honkai_Civilization.xml</File>
     <File>Honkai_Leader_HoV.xml</File>
+    <File>Honkai_Colors.xml</File>
     <File>HonkaiEnergySystem.lua</File>
     <File>HonkaiTechTreeData/HonkaiTechTree_Text.xml</File>
     <File>HonkaiTechTreeData/HonkaiTechTree_Data.lua</File>

@@ -129,8 +129,18 @@
         <Replace Tag="LOC_MOD_HOH_VALK_1R_VS_MELEE_RANGED_PREVIEW" Language="zh_Hans_CN" Text="+7 战术突击"/>
         <Replace Tag="LOC_MOD_HOH_VALK_2L_HARASS_PREVIEW" Language="zh_Hans_CN" Text="-4 干扰力场"/>
         <Replace Tag="LOC_MOD_HOH_VALK_3R_CITY_ATTACK_PREVIEW" Language="zh_Hans_CN" Text="+10 攻城加成"/>
-        <Replace Tag="LOC_WORLD_TRACKER_HONKAI_RESEARCH" Language="zh_Hans_CN" Text="崩坏能研究点 [ICON_RESOURCE_HONKAI_RESEARCH]: {1_Num} (每回合 +{2_Yield} [ICON_RESOURCE_HONKAI_RESEARCH])"/>
-        <Replace Tag="LOC_WORLD_TRACKER_HONKAI_ENERGY" Language="zh_Hans_CN" Text="战术崩坏能 [ICON_RESOURCE_HONKAI_ENERGY]: {1_Num}/{2_Cap} (每回合 +{3_Yield} [ICON_RESOURCE_HONKAI_ENERGY])"/>
+        <Replace Tag="LOC_WORLD_TRACKER_HONKAI_RESEARCH" Language="zh_Hans_CN" Text="崩坏能研究点 [ICON_HONKAI_RESEARCH]: {1_Num} (每回合 +{2_Yield} [ICON_HONKAI_RESEARCH])"/>
+        <Replace Tag="LOC_WORLD_TRACKER_HONKAI_ENERGY" Language="zh_Hans_CN" Text="战术崩坏能 [ICON_HONKAI_ENERGY]: {1_Num}/{2_Cap} (每回合 +{3_Yield} [ICON_HONKAI_ENERGY])"/>
+
+        <!-- Ancient Honkai unlock names -->
+        <Replace Tag="LOC_POLICY_HOH_ANTI_HONKAI_MANUAL_NAME" Language="zh_Hans_CN" Text="崩坏抗击操典"/>
+        <Replace Tag="LOC_POLICY_HOH_ANTI_HONKAI_MANUAL_DESC" Language="zh_Hans_CN" Text="对抗野蛮人时 +10 [ICON_Strength] 战斗力。"/>
+        <Replace Tag="LOC_BUILDING_HOH_ENERGY_POOL_NAME" Language="zh_Hans_CN" Text="能源容器雏形"/>
+        <Replace Tag="LOC_BUILDING_HOH_ENERGY_POOL_DESC" Language="zh_Hans_CN" Text="+1000 战术崩坏能容量。"/>
+        <Replace Tag="LOC_BUILDING_HOH_SCHICKSAL_CATHEDRAL_NAME" Language="zh_Hans_CN" Text="天命大教堂"/>
+        <Replace Tag="LOC_BUILDING_HOH_SCHICKSAL_CATHEDRAL_DESC" Language="zh_Hans_CN" Text="+3 [ICON_Faith] 信仰值，+1 大预言家点数。建成时获得 1 支女武神中队。"/>
+        <Replace Tag="LOC_BUILDING_HOH_ST_FREYA_NAME" Language="zh_Hans_CN" Text="圣芙蕾雅学园"/>
+        <Replace Tag="LOC_BUILDING_HOH_ST_FREYA_DESC" Language="zh_Hans_CN" Text="天命体系下的训练与教育奇观。"/>
         
         <!-- Tooltips -->
         <Replace Tag="LOC_HONKAI_TOOLTIP_ENERGY_HEADER" Language="zh_Hans_CN" Text="[COLOR:110,30,180,255]战术崩坏能每回合产出：[ENDCOLOR]"/>
@@ -140,5 +150,14 @@
         <Replace Tag="LOC_HONKAI_TOOLTIP_CORE_BONUS" Language="zh_Hans_CN" Text="[ICON_Bullet] +{1_Amount} 来自律者核心"/>
         <Replace Tag="LOC_HONKAI_TOOLTIP_BASE_YIELD" Language="zh_Hans_CN" Text="[ICON_Bullet] +{1_Amount} 基础产出"/>
         <Replace Tag="LOC_HONKAI_TOOLTIP_TOTAL" Language="zh_Hans_CN" Text="[NEWLINE]每回合总计：{1_Amount}"/>
+
+        <!-- Tech Tree Unlock Tooltips -->
+        <Replace Tag="LOC_HONKAI_TECH_PERCEPTION_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="崩坏能感知：解锁战术崩坏能产出，首都每回合 +2 [ICON_HONKAI_ENERGY] 战术崩坏能。"/>
+        <Replace Tag="LOC_HONKAI_TECH_OMEN_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="崩坏预兆：城市中心每回合 +1 信仰值。"/>
+        <Replace Tag="LOC_HONKAI_TECH_PATHOLOGY_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="崩坏病理学：所有城市 +1 宜居度。"/>
+        <Replace Tag="LOC_HONKAI_TECH_BASIC_TACTICS_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="抗崩坏战术：解锁军事政策卡【崩坏抗击操典】。"/>
+        <Replace Tag="LOC_HONKAI_TECH_DESTINY_CLERGY_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="命运神职：建造天命支部时 +25% [ICON_Production] 生产力。"/>
+        <Replace Tag="LOC_HONKAI_TECH_NUN_FORMATION_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="修女编制：允许使用信仰值购买女武神单位，且购买费用 -10%。"/>
+        <Replace Tag="LOC_HONKAI_TECH_BASIC_ISOLATION_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="崩坏隔离：当前不提供直接解锁。"/>
     </LocalizedText>
 </GameData>

@@ -257,16 +257,13 @@ function SetCurrentNode( hash:number, item )
 		local tParameters = {}
 		tParameters.OnStart = "HonkaiSetResearchTarget"
         
-        -- 构造队列字符串和成本映射
+        -- 构造队列字符串；费用由 Gameplay 侧从科技树数据表读取
         local queueTypes = {}
-        local costs = {}
         for _, tech in ipairs(path) do
             table.insert(queueTypes, tech.Type)
-            costs[tech.Type] = tech.Cost
         end
 
 		tParameters.QueueStr = table.concat(queueTypes, ",")
-		tParameters.Costs = costs
 
 		UI.RequestPlayerOperation(Game.GetLocalPlayer(), PlayerOperations.EXECUTE_SCRIPT, tParameters)
 		UI.PlaySound("Confirm_Tech_TechTree")
@@ -383,6 +380,68 @@ function GetEraArtXOffset(instArt, eraData)
 	return (centerx);
 end
 
+function GetHonkaiUnlockFrameIcon(unlock:table)
+	if unlock.Type == "GENERIC" then
+		return "ICON_TECHUNLOCK_13";
+	end
+
+	if unlock.ID ~= nil and GameInfo.Types[unlock.ID] ~= nil then
+		return GetUnlockIcon(unlock.ID);
+	end
+
+	if unlock.Type == "BUILDING" then
+		return "ICON_TECHUNLOCK_1";
+	elseif unlock.Type == "DISTRICT" then
+		return "ICON_TECHUNLOCK_2";
+	elseif unlock.Type == "UNIT" then
+		return "ICON_TECHUNLOCK_4";
+	elseif unlock.Type == "RESOURCE" then
+		return "ICON_TECHUNLOCK_5";
+	elseif unlock.Type == "POLICY" then
+		return "ICON_TECHUNLOCK_9";
+	end
+
+	return "ICON_TECHUNLOCK_13";
+end
+
+function PopulateHonkaiManualUnlock(unlock:table, instance:table, playerId:number, callback)
+	local frameIcon:string = GetHonkaiUnlockFrameIcon(unlock);
+	local textureOffsetX, textureOffsetY, textureSheet = IconManager:FindIconAtlas(frameIcon, 38);
+	if textureSheet ~= nil then
+		instance.UnlockIcon:SetTexture(textureOffsetX, textureOffsetY, textureSheet);
+	end
+
+	if unlock.Type == "GENERIC" or unlock.ID == nil then
+		instance.Icon:SetHide(true);
+	else
+		local foregroundIcon:string = unlock.Icon or ("ICON_" .. unlock.ID);
+		instance.Icon:SetIcon(foregroundIcon);
+		instance.Icon:SetHide(false);
+	end
+
+	local toolTip:string = "";
+	if unlock.ToolTip ~= nil then
+		toolTip = Locale.Lookup(unlock.ToolTip);
+	elseif unlock.Type == "GENERIC" then
+		toolTip = Locale.Lookup(unlock.ID);
+	elseif unlock.ID ~= nil then
+		toolTip = ToolTipHelper.GetToolTip(unlock.ID, playerId, nil);
+		if toolTip == nil or toolTip == "" then
+			toolTip = Locale.Lookup(unlock.ID);
+		end
+	end
+
+	instance.UnlockIcon:SetToolTipString(toolTip);
+	instance.UnlockIcon:RegisterCallback(Mouse.eLClick, callback);
+
+	if unlock.ID ~= nil and not IsTutorialRunning() then
+		instance.UnlockIcon:RegisterCallback(Mouse.eRClick, function()
+			LuaEvents.OpenCivilopedia(unlock.Civilopedia or unlock.ID);
+		end);
+	else
+		instance.UnlockIcon:ClearCallback(Mouse.eRClick);
+	end
+end
 
 -- ===========================================================================
 --	The rules to determine how nodes are placed on an invisible grid.
@@ -719,36 +778,11 @@ function AllocateUI( kNodeGrid:table, kPaths:table )
 		if item.Unlocks and #item.Unlocks > 0 then
 			for _, unlock in ipairs(item.Unlocks) do
 				local instance = node["unlockIM"]:GetInstance();
-				-- 默认使用 ICON_TECH_MAP_REVEAL (原版中带星的八角形图标，完美匹配 expect.png)
-				local icon = unlock.Icon or "ICON_TECH_MAP_REVEAL";
-				
-				if unlock.Type == "UNIT" then
-					icon = "ICON_" .. unlock.ID;
-				elseif unlock.Type == "BUILDING" then
-					icon = "ICON_" .. unlock.ID;
-				elseif unlock.Type == "RESOURCE" then
-					icon = "ICON_" .. unlock.ID;
-				elseif unlock.Type == "DISTRICT" then
-					icon = "ICON_" .. unlock.ID;
-				end
-
-				-- 尝试寻找图标
-				local textureOffsetX, textureOffsetY, textureSheet = IconManager:FindIconAtlas(icon, 38);
-				if textureOffsetX == nil then
-					-- 回退：如果专用图标找不到，使用标准星号八角形
-					textureOffsetX, textureOffsetY, textureSheet = IconManager:FindIconAtlas("ICON_TECH_MAP_REVEAL", 38);
-				end
-
-				if textureOffsetX ~= nil then
-					instance.Icon:SetTexture( textureOffsetX, textureOffsetY, textureSheet );
-				else
-					instance.Icon:SetIcon("ICON_GENERIC_STAR");
-				end
-
-				instance.UnlockIcon:SetToolTipString(Locale.Lookup(unlock.ID));
-				instance.UnlockIcon:RegisterCallback(Mouse.eLClick, function() SetCurrentNode(item.Hash, item); end);
+				PopulateHonkaiManualUnlock(unlock, instance, playerId, function() SetCurrentNode(item.Hash, item); end);
 			end
 		end
+		node.UnlockStack:CalculateSize();
+		node.UnlockStack:ReprocessAnchoring();
 
 		node.NodeButton:RegisterCallback( Mouse.eLClick, function() SetCurrentNode(item.Hash, item); end);
 		node.OtherStates:RegisterCallback( Mouse.eLClick, function() SetCurrentNode(item.Hash, item); end);
@@ -1170,7 +1204,7 @@ end
 function View( playerTechData:table )
 	
 	local pts = Players[m_ePlayer]:GetProperty("HONKAI_RESEARCH_POINTS") or 0
-	Controls.ModalScreenTitle:SetText(Locale.ToUpper("崩坏指挥终端 / 当前崩坏能: " .. pts .. " 点"));
+	Controls.ModalScreenTitle:SetText(Locale.ToUpper("崩坏指挥终端 / 当前研究点: " .. pts .. " 点"));
 	
 	-- Output the node states for the tree
 	for _,uiNode in pairs(g_uiNodes) do

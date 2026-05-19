@@ -5,40 +5,40 @@
         <!-- 简体中文 (zh_Hans_CN) -->
         <!-- ========================================================== -->
         <Row Tag="LOC_HONKAI_TECH_PERCEPTION_NAME" Language="zh_Hans_CN"><Text>崩坏能感知</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_PERCEPTION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]一切的开始。允许开采崩坏能矿脉，并揭示基础的崩坏现象。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_PERCEPTION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]一切的开始。解锁战术崩坏能产出。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_OMEN_NAME" Language="zh_Hans_CN"><Text>崩坏预兆</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_OMEN_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]每回合无条件 +1 信仰值。（极速抢发万神殿）</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_OMEN_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]每回合无条件 +1 信仰值。（极速抢发万神殿）</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_PATHOLOGY_NAME" Language="zh_Hans_CN"><Text>崩坏病理学</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_PATHOLOGY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]城市免疫部分崩坏灾难导致的宜居度惩罚。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_PATHOLOGY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]城市免疫部分崩坏灾难导致的宜居度惩罚。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_BASIC_TACTICS_NAME" Language="zh_Hans_CN"><Text>基础抗崩坏战术</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_BASIC_TACTICS_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]近战单位对野蛮人获得战力加成。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_BASIC_TACTICS_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁军事政策卡【崩坏抗击操典】。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_ENERGY_CONTAINER_NAME" Language="zh_Hans_CN"><Text>能源容器雏形</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_ENERGY_CONTAINER_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]解锁初级【崩坏能存储池】建筑。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_ENERGY_CONTAINER_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁初级【崩坏能存储池】建筑。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_DESTINY_CLERGY_NAME" Language="zh_Hans_CN"><Text>命运神职</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_DESTINY_CLERGY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]每回合无条件 +2 大预言家点数。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_DESTINY_CLERGY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁【天命总部】和【天命大教堂】，并提升天命支部建设速度。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_NUN_FORMATION_NAME" Language="zh_Hans_CN"><Text>天命修女编制</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_NUN_FORMATION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]解锁女武神单位并降低其购买费用。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_NUN_FORMATION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]允许使用信仰值购买女武神单位，并降低其购买费用。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_BASIC_ISOLATION_NAME" Language="zh_Hans_CN"><Text>初级崩坏隔离</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_BASIC_ISOLATION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]建筑抗灾能力提升。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_BASIC_ISOLATION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]建立初级崩坏隔离理论，为后续研究提供基础。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_ST_FREYA_NAME" Language="zh_Hans_CN"><Text>圣芙蕾雅学园</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_ST_FREYA_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]解锁特色建筑【圣芙蕾雅学园】。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_ST_FREYA_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁世界奇观【圣芙蕾雅学园】。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_WEAPON_PROTOTYPE_NAME" Language="zh_Hans_CN"><Text>崩坏能武器初设</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_WEAPON_PROTOTYPE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]解锁 T1 B级女武神。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_WEAPON_PROTOTYPE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁 T1 B级女武神。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_KEY_OF_FINALITY_NAME" Language="zh_Hans_CN"><Text>终焉之钥</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_KEY_OF_FINALITY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩坏能[NEWLINE][NEWLINE]最终权限。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_KEY_OF_FINALITY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]最终权限。</Text></Row>
 
         <!-- ========================================================== -->
         <!-- 繁体中文 (zh_Hant_HK) -->
         <!-- ========================================================== -->
         <Row Tag="LOC_HONKAI_TECH_PERCEPTION_NAME" Language="zh_Hant_HK"><Text>崩壞能感知</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_PERCEPTION_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]一切的開始。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_PERCEPTION_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩壞能研究點[NEWLINE][NEWLINE]一切的開始。</Text></Row>
         <Row Tag="LOC_HONKAI_TECH_KEY_OF_FINALITY_NAME" Language="zh_Hant_HK"><Text>終焉之鑰</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_KEY_OF_FINALITY_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] 崩壞能[NEWLINE][NEWLINE]最終權限。</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_KEY_OF_FINALITY_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩壞能研究點[NEWLINE][NEWLINE]最終權限。</Text></Row>
 
         <!-- ========================================================== -->
         <!-- 英语 (en_US) -->
         <!-- ========================================================== -->
         <Row Tag="LOC_HONKAI_TECH_PERCEPTION_NAME" Language="en_US"><Text>Honkai Perception</Text></Row>
-        <Row Tag="LOC_HONKAI_TECH_PERCEPTION_DESC" Language="en_US"><Text>Cost {1_Amount} [ICON_RESOURCE_HONKAI_ENERGY] Honkai Energy[NEWLINE][NEWLINE]The beginning.</Text></Row>
+        <Row Tag="LOC_HONKAI_TECH_PERCEPTION_DESC" Language="en_US"><Text>Cost {1_Amount} [ICON_HONKAI_RESEARCH] Honkai Research[NEWLINE][NEWLINE]The beginning.</Text></Row>
     </LocalizedText>
 </GameData>
