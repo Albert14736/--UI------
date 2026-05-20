@@ -369,6 +369,14 @@ ExposedMembers.Honkai.CalculateHonkaiResearchBreakdown = CalculateHonkaiResearch
 ExposedMembers.Honkai.IsUnlocked = function(playerID, techType)
     return IsHonkaiTechUnlocked(playerID, techType)
 end
+ExposedMembers.Honkai.GetResearchPoints = function(playerID)
+    local pPlayer = Players[playerID]
+    return pPlayer and (pPlayer:GetProperty("HONKAI_RESEARCH_POINTS") or 0) or 0
+end
+ExposedMembers.Honkai.GetCurrentResearch = function(playerID)
+    local pPlayer = Players[playerID]
+    return pPlayer and pPlayer:GetProperty("HONKAI_CURRENT_RESEARCH") or nil
+end
 ExposedMembers.Honkai.GetResearchQueue = function(playerID)
     local pPlayer = Players[playerID]
     local queueStr = pPlayer:GetProperty("HONKAI_RESEARCH_QUEUE") or ""

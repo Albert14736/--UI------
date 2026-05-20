@@ -1300,8 +1300,16 @@ function GetCurrentData( ePlayer:number, eCompletedTech:number )
 	end	
 
 	local pPlayer = Players[ePlayer]
-	local currentPoints = pPlayer:GetProperty("HONKAI_RESEARCH_POINTS") or 0
-	local currentResearch = pPlayer:GetProperty("HONKAI_CURRENT_RESEARCH")
+	
+	local currentPoints = 0
+	local currentResearch = nil
+	if ExposedMembers.Honkai and ExposedMembers.Honkai.GetResearchPoints then
+		currentPoints = ExposedMembers.Honkai.GetResearchPoints(ePlayer)
+		currentResearch = ExposedMembers.Honkai.GetCurrentResearch(ePlayer)
+	else
+		currentPoints = pPlayer:GetProperty("HONKAI_RESEARCH_POINTS") or 0
+		currentResearch = pPlayer:GetProperty("HONKAI_CURRENT_RESEARCH")
+	end
 
     -- 【阶段二】获取实时研究点产出
     local researchYield = 0
@@ -1313,7 +1321,13 @@ function GetCurrentData( ePlayer:number, eCompletedTech:number )
     end
 
 	for type,item in pairs(g_kItemDefaults) do
-		local isUnlocked = (pPlayer:GetProperty("UNLOCKED_" .. type) == 1)
+		local isUnlocked = false
+		if ExposedMembers.Honkai and ExposedMembers.Honkai.IsUnlocked then
+			isUnlocked = ExposedMembers.Honkai.IsUnlocked(ePlayer, type)
+		else
+			isUnlocked = (pPlayer:GetProperty("UNLOCKED_" .. type) == 1)
+		end
+		
 		local status = ITEM_STATUS.BLOCKED
 		if isUnlocked then
 			status = ITEM_STATUS.RESEARCHED
