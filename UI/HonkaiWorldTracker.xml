@@ -13,6 +13,9 @@
             
             <!-- 第二行：战术崩坏能 -->
             <Label ID="HonkaiEnergyLabel" String="0" Style="FontNormal14" ColorSet="COLORSET_HONKAI_ENERGY" />
+
+            <!-- 第三行：女武神训练课程等级 -->
+            <Label ID="HonkaiValkyrieTrainingLabel" String="女武神训练课程等级：1" Style="FontNormal14" Color="255,210,245,255" />
             
         </Stack>
 

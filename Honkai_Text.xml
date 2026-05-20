@@ -109,6 +109,49 @@
         <Replace Tag="LOC_PROMOTION_CLASS_HOH_VALKYRIE_NAME" Language="zh_Hans_CN" Text="女武神"/>
         <Replace Tag="LOC_PROMOTION_CLASS_HOH_VALKYRIE_NAME" Language="zh_Hant_HK" Text="女武神"/>
         <Replace Tag="LOC_PROMOTION_CLASS_HOH_VALKYRIE_NAME" Language="en_US" Text="Valkyrie"/>
+
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_F_NAME" Language="zh_Hans_CN" Text="F级女武神"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_F_DESC" Language="zh_Hans_CN" Text="动态训练评级：F级。战斗力 +0。"/>
+        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_F_PREVIEW" Language="zh_Hans_CN" Text="+0 F级训练评级"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_E_NAME" Language="zh_Hans_CN" Text="E级女武神"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_E_DESC" Language="zh_Hans_CN" Text="动态训练评级：E级。战斗力 +1。"/>
+        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_E_PREVIEW" Language="zh_Hans_CN" Text="+1 E级训练评级"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_D_NAME" Language="zh_Hans_CN" Text="D级女武神"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_D_DESC" Language="zh_Hans_CN" Text="动态训练评级：D级。战斗力 +2。"/>
+        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_D_PREVIEW" Language="zh_Hans_CN" Text="+2 D级训练评级"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_C_NAME" Language="zh_Hans_CN" Text="C级女武神"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_C_DESC" Language="zh_Hans_CN" Text="动态训练评级：C级。战斗力 +3。"/>
+        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_C_PREVIEW" Language="zh_Hans_CN" Text="+3 C级训练评级"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_B_NAME" Language="zh_Hans_CN" Text="B级女武神"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_B_DESC" Language="zh_Hans_CN" Text="动态训练评级：B级。战斗力 +5。"/>
+        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_B_PREVIEW" Language="zh_Hans_CN" Text="+5 B级训练评级"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_A_NAME" Language="zh_Hans_CN" Text="A级女武神"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_A_DESC" Language="zh_Hans_CN" Text="动态训练评级：A级。战斗力 +8。"/>
+        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_A_PREVIEW" Language="zh_Hans_CN" Text="+8 A级训练评级"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_S_NAME" Language="zh_Hans_CN" Text="S级女武神"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_S_DESC" Language="zh_Hans_CN" Text="动态训练评级：S级。战斗力 +12。"/>
+        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_S_PREVIEW" Language="zh_Hans_CN" Text="+12 S级训练评级"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_F_NAME" Language="en_US" Text="Rank F Valkyrie"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_F_DESC" Language="en_US" Text="Dynamic training rank: F. Combat Strength +0."/>
+        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_F_PREVIEW" Language="en_US" Text="+0 Rank F training"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_E_NAME" Language="en_US" Text="Rank E Valkyrie"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_E_DESC" Language="en_US" Text="Dynamic training rank: E. Combat Strength +1."/>
+        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_E_PREVIEW" Language="en_US" Text="+1 Rank E training"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_D_NAME" Language="en_US" Text="Rank D Valkyrie"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_D_DESC" Language="en_US" Text="Dynamic training rank: D. Combat Strength +2."/>
+        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_D_PREVIEW" Language="en_US" Text="+2 Rank D training"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_C_NAME" Language="en_US" Text="Rank C Valkyrie"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_C_DESC" Language="en_US" Text="Dynamic training rank: C. Combat Strength +3."/>
+        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_C_PREVIEW" Language="en_US" Text="+3 Rank C training"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_B_NAME" Language="en_US" Text="Rank B Valkyrie"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_B_DESC" Language="en_US" Text="Dynamic training rank: B. Combat Strength +5."/>
+        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_B_PREVIEW" Language="en_US" Text="+5 Rank B training"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_A_NAME" Language="en_US" Text="Rank A Valkyrie"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_A_DESC" Language="en_US" Text="Dynamic training rank: A. Combat Strength +8."/>
+        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_A_PREVIEW" Language="en_US" Text="+8 Rank A training"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_S_NAME" Language="en_US" Text="Rank S Valkyrie"/>
+        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_S_DESC" Language="en_US" Text="Dynamic training rank: S. Combat Strength +12."/>
+        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_S_PREVIEW" Language="en_US" Text="+12 Rank S training"/>
         
         <!--晋升-->
         <Replace Tag="LOC_PROMOTION_HOH_VALKYRIE_1_L_NAME" Language="zh_Hans_CN" Text="远程防护"/>

@@ -1415,7 +1415,7 @@ function OnLocalPlayerTurnEnd()
 		end
 	end
 
-	HideHonkaiWindow();
+	HideHonkaiWindow(true);
 end
 
 -- ===========================================================================
@@ -1618,13 +1618,15 @@ function ShowHonkaiWindow()
     end
 end
 
-function HideHonkaiWindow()
+function HideHonkaiWindow(forceClose:boolean)
     if ContextPtr:IsHidden() then return end
+
+    local isForcedClose = forceClose == true
 
     -- 【阶段一：强制阻断】如果当前没有正在研究的项目，则不允许关闭
     local pPlayer = Players[Game.GetLocalPlayer()]
     local currentResearch = pPlayer:GetProperty("HONKAI_CURRENT_RESEARCH")
-    if currentResearch == nil then
+    if not isForcedClose and currentResearch == nil then
         UI.PlaySound("Play_UI_Click_False");
         Controls.ModalScreenTitle:SetText("[COLOR_RED]警告：必须选择研究目标后才能关闭！[ENDCOLOR]");
         return 

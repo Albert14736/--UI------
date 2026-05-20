@@ -16,6 +16,13 @@
         <Row Type="BUILDING_HOH_ST_FREYA" Kind="KIND_BUILDING"/>
 
         <Row Type="UNIT_HOH_VALKYRIE_MK1" Kind="KIND_UNIT"/>
+        <Row Type="ABILITY_HOH_VALKYRIE_RANK_F" Kind="KIND_ABILITY"/>
+        <Row Type="ABILITY_HOH_VALKYRIE_RANK_E" Kind="KIND_ABILITY"/>
+        <Row Type="ABILITY_HOH_VALKYRIE_RANK_D" Kind="KIND_ABILITY"/>
+        <Row Type="ABILITY_HOH_VALKYRIE_RANK_C" Kind="KIND_ABILITY"/>
+        <Row Type="ABILITY_HOH_VALKYRIE_RANK_B" Kind="KIND_ABILITY"/>
+        <Row Type="ABILITY_HOH_VALKYRIE_RANK_A" Kind="KIND_ABILITY"/>
+        <Row Type="ABILITY_HOH_VALKYRIE_RANK_S" Kind="KIND_ABILITY"/>
         <Row Type="POLICY_HOH_ANTI_HONKAI_MANUAL" Kind="KIND_POLICY"/>
         
         <Row Type="CIVIC_HOH_LOCK" Kind="KIND_CIVIC"/>
@@ -119,6 +126,26 @@
         <Row UnitPromotionType="PROMOTION_HOH_VALKYRIE_4" ModifierId="HOH_VALK_EXTRA_ATTACK"/>
         <Row UnitPromotionType="PROMOTION_HOH_VALKYRIE_4" ModifierId="MOD_HOH_EXTRA_MOVEMENT"/>
     </UnitPromotionModifiers>
+
+    <UnitAbilities>
+        <Row UnitAbilityType="ABILITY_HOH_VALKYRIE_RANK_F" Name="LOC_ABILITY_HOH_VALKYRIE_RANK_F_NAME" Description="LOC_ABILITY_HOH_VALKYRIE_RANK_F_DESC" Inactive="true" ShowFloatTextWhenEarned="true"/>
+        <Row UnitAbilityType="ABILITY_HOH_VALKYRIE_RANK_E" Name="LOC_ABILITY_HOH_VALKYRIE_RANK_E_NAME" Description="LOC_ABILITY_HOH_VALKYRIE_RANK_E_DESC" Inactive="true" ShowFloatTextWhenEarned="true"/>
+        <Row UnitAbilityType="ABILITY_HOH_VALKYRIE_RANK_D" Name="LOC_ABILITY_HOH_VALKYRIE_RANK_D_NAME" Description="LOC_ABILITY_HOH_VALKYRIE_RANK_D_DESC" Inactive="true" ShowFloatTextWhenEarned="true"/>
+        <Row UnitAbilityType="ABILITY_HOH_VALKYRIE_RANK_C" Name="LOC_ABILITY_HOH_VALKYRIE_RANK_C_NAME" Description="LOC_ABILITY_HOH_VALKYRIE_RANK_C_DESC" Inactive="true" ShowFloatTextWhenEarned="true"/>
+        <Row UnitAbilityType="ABILITY_HOH_VALKYRIE_RANK_B" Name="LOC_ABILITY_HOH_VALKYRIE_RANK_B_NAME" Description="LOC_ABILITY_HOH_VALKYRIE_RANK_B_DESC" Inactive="true" ShowFloatTextWhenEarned="true"/>
+        <Row UnitAbilityType="ABILITY_HOH_VALKYRIE_RANK_A" Name="LOC_ABILITY_HOH_VALKYRIE_RANK_A_NAME" Description="LOC_ABILITY_HOH_VALKYRIE_RANK_A_DESC" Inactive="true" ShowFloatTextWhenEarned="true"/>
+        <Row UnitAbilityType="ABILITY_HOH_VALKYRIE_RANK_S" Name="LOC_ABILITY_HOH_VALKYRIE_RANK_S_NAME" Description="LOC_ABILITY_HOH_VALKYRIE_RANK_S_DESC" Inactive="true" ShowFloatTextWhenEarned="true"/>
+    </UnitAbilities>
+
+    <UnitAbilityModifiers>
+        <Row UnitAbilityType="ABILITY_HOH_VALKYRIE_RANK_F" ModifierId="MOD_HOH_VALKYRIE_RANK_F_COMBAT"/>
+        <Row UnitAbilityType="ABILITY_HOH_VALKYRIE_RANK_E" ModifierId="MOD_HOH_VALKYRIE_RANK_E_COMBAT"/>
+        <Row UnitAbilityType="ABILITY_HOH_VALKYRIE_RANK_D" ModifierId="MOD_HOH_VALKYRIE_RANK_D_COMBAT"/>
+        <Row UnitAbilityType="ABILITY_HOH_VALKYRIE_RANK_C" ModifierId="MOD_HOH_VALKYRIE_RANK_C_COMBAT"/>
+        <Row UnitAbilityType="ABILITY_HOH_VALKYRIE_RANK_B" ModifierId="MOD_HOH_VALKYRIE_RANK_B_COMBAT"/>
+        <Row UnitAbilityType="ABILITY_HOH_VALKYRIE_RANK_A" ModifierId="MOD_HOH_VALKYRIE_RANK_A_COMBAT"/>
+        <Row UnitAbilityType="ABILITY_HOH_VALKYRIE_RANK_S" ModifierId="MOD_HOH_VALKYRIE_RANK_S_COMBAT"/>
+    </UnitAbilityModifiers>
 
     <Traits>
         <Row TraitType="TRAIT_CIVILIZATION_HONKAI" Name="LOC_TRAIT_CIVILIZATION_HONKAI_NAME" Description="LOC_TRAIT_CIVILIZATION_HONKAI_DESC"/>
@@ -364,6 +391,13 @@
         <Row ModifierId="HOH_VALK_CITY_ATTACK_BONUS" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_HOH_VS_DISTRICT"/>
         <Row ModifierId="HOH_VALK_EXTRA_ATTACK" ModifierType="MODIFIER_UNIT_ADJUST_NUM_ATTACKS"/>
         <Row ModifierId="MOD_HOH_EXTRA_MOVEMENT" ModifierType="MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_F_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_E_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_D_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_C_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_B_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_A_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_S_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
 
         <!-- 远古科技Modifiers -->
         <Row ModifierId="MOD_HOH_OMEN_FAITH" ModifierType="MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE" SubjectRequirementSetId="REQSET_HOH_DISTRICT_IS_CITY_CENTER"/>
@@ -386,6 +420,13 @@
         <Row ModifierId="HOH_VALK_CITY_ATTACK_BONUS" Name="Amount" Value="10"/>
         <Row ModifierId="HOH_VALK_EXTRA_ATTACK" Name="Amount" Value="1"/>
         <Row ModifierId="MOD_HOH_EXTRA_MOVEMENT" Name="Amount" Value="1"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_F_COMBAT" Name="Amount" Value="0"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_E_COMBAT" Name="Amount" Value="1"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_D_COMBAT" Name="Amount" Value="2"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_C_COMBAT" Name="Amount" Value="3"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_B_COMBAT" Name="Amount" Value="5"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_A_COMBAT" Name="Amount" Value="8"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_S_COMBAT" Name="Amount" Value="12"/>
 
         <!-- 远古科技Modifiers -->
         <Row ModifierId="MOD_HOH_OMEN_FAITH" Name="YieldType" Value="YIELD_FAITH"/>
@@ -409,6 +450,13 @@
         <Row ModifierId="HOH_VALK_VS_MELEE_RANGED_BONUS" Context="Preview" Text="LOC_MOD_HOH_VALK_1R_VS_MELEE_RANGED_PREVIEW"/>
         <Row ModifierId="HOH_VALK_HARASS_NEGATIVE_COMBAT_MODIFIER" Context="Preview" Text="LOC_MOD_HOH_VALK_2L_HARASS_PREVIEW"/>
         <Row ModifierId="HOH_VALK_CITY_ATTACK_BONUS" Context="Preview" Text="LOC_MOD_HOH_VALK_3R_CITY_ATTACK_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_F_COMBAT" Context="Preview" Text="LOC_MOD_HOH_VALKYRIE_RANK_F_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_E_COMBAT" Context="Preview" Text="LOC_MOD_HOH_VALKYRIE_RANK_E_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_D_COMBAT" Context="Preview" Text="LOC_MOD_HOH_VALKYRIE_RANK_D_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_C_COMBAT" Context="Preview" Text="LOC_MOD_HOH_VALKYRIE_RANK_C_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_B_COMBAT" Context="Preview" Text="LOC_MOD_HOH_VALKYRIE_RANK_B_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_A_COMBAT" Context="Preview" Text="LOC_MOD_HOH_VALKYRIE_RANK_A_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_S_COMBAT" Context="Preview" Text="LOC_MOD_HOH_VALKYRIE_RANK_S_PREVIEW"/>
     </ModifierStrings>
 
     <RequirementSets>
@@ -460,6 +508,13 @@
     </Tags>
     <TypeTags>
         <Row Type="UNIT_HOH_VALKYRIE_MK1" Tag="CLASS_HOH_VALKYRIE"/>
+        <Row Type="ABILITY_HOH_VALKYRIE_RANK_F" Tag="CLASS_HOH_VALKYRIE"/>
+        <Row Type="ABILITY_HOH_VALKYRIE_RANK_E" Tag="CLASS_HOH_VALKYRIE"/>
+        <Row Type="ABILITY_HOH_VALKYRIE_RANK_D" Tag="CLASS_HOH_VALKYRIE"/>
+        <Row Type="ABILITY_HOH_VALKYRIE_RANK_C" Tag="CLASS_HOH_VALKYRIE"/>
+        <Row Type="ABILITY_HOH_VALKYRIE_RANK_B" Tag="CLASS_HOH_VALKYRIE"/>
+        <Row Type="ABILITY_HOH_VALKYRIE_RANK_A" Tag="CLASS_HOH_VALKYRIE"/>
+        <Row Type="ABILITY_HOH_VALKYRIE_RANK_S" Tag="CLASS_HOH_VALKYRIE"/>
     </TypeTags>
 
     <Units>

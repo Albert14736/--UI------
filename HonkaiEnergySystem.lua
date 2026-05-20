@@ -139,6 +139,132 @@ function CalculateHonkaiEnergyCapacity(playerID)
     return capacity
 end
 
+function CountCityDistricts(pCity)
+    local pCityDistricts = pCity:GetDistricts()
+    if not pCityDistricts then return 0 end
+
+    if type(pCityDistricts.GetNumDistricts) == "function" then
+        return pCityDistricts:GetNumDistricts()
+    end
+
+    local count = 0
+    if type(pCityDistricts.HasDistrict) == "function" then
+        for district in GameInfo.Districts() do
+            if pCityDistricts:HasDistrict(district.Index) then
+                count = count + 1
+            end
+        end
+    end
+    return count
+end
+
+function GetUnlockedHonkaiTechCount(playerID)
+    local techCount = 0
+    for honkaiTech, _ in pairs(ShadowCivicMap) do
+        if IsHonkaiTechUnlocked(playerID, honkaiTech) then
+            techCount = techCount + 1
+        end
+    end
+    return techCount
+end
+
+function AddCountedDetail(details, typeName, name)
+    for _, detail in ipairs(details) do
+        if detail.Type == typeName then
+            detail.Count = detail.Count + 1
+            return
+        end
+    end
+    table.insert(details, { Type = typeName, Name = name, Count = 1, Yield = 0 })
+end
+
+function ApplyPerItemYield(details, perItemYield)
+    for _, detail in ipairs(details) do
+        detail.Yield = detail.Count * perItemYield
+    end
+end
+
+function CalculateCityEnergyFormula(playerID, pCity)
+    local details = {
+        CityID = pCity:GetID(),
+        CityName = Locale.Lookup(pCity:GetName()),
+        PlotCount = 0,
+        Population = pCity:GetPopulation(),
+        ImprovementCount = 0,
+        DistrictCount = 0,
+        BuildingCount = 0,
+        ImprovementDetails = {},
+        DistrictDetails = {},
+        BuildingDetails = {},
+        TerritoryBase = 0,
+        PopulationMultiplier = 0,
+        BaseYield = 0,
+        PerInfrastructureYield = 0,
+        BuildingYield = 0,
+        ImprovementYield = 0,
+        DistrictYield = 0,
+        InfrastructureMultiplier = 0,
+        FormulaYield = 0
+    }
+
+    local cityX = pCity:GetX()
+    local cityY = pCity:GetY()
+    for dx = -3, 3 do
+        for dy = -3, 3 do
+            local pPlot = Map.GetPlotXYWithRangeCheck(cityX, cityY, dx, dy, 3)
+            if pPlot and pPlot:GetOwner() == playerID then
+                details.PlotCount = details.PlotCount + 1
+
+                local improvementIndex = pPlot:GetImprovementType()
+                if improvementIndex ~= -1 then
+                    details.ImprovementCount = details.ImprovementCount + 1
+                    local improvement = GameInfo.Improvements[improvementIndex]
+                    local improvementType = improvement and improvement.ImprovementType or ("IMPROVEMENT_" .. tostring(improvementIndex))
+                    local improvementName = improvement and Locale.Lookup(improvement.Name) or improvementType
+                    AddCountedDetail(details.ImprovementDetails, improvementType, improvementName)
+                end
+            end
+        end
+    end
+
+    local pCityDistricts = pCity:GetDistricts()
+    if pCityDistricts and type(pCityDistricts.HasDistrict) == "function" then
+        for district in GameInfo.Districts() do
+            if pCityDistricts:HasDistrict(district.Index) then
+                details.DistrictCount = details.DistrictCount + 1
+                AddCountedDetail(details.DistrictDetails, district.DistrictType, Locale.Lookup(district.Name))
+            end
+        end
+    else
+        details.DistrictCount = CountCityDistricts(pCity)
+    end
+
+    local pCityBuildings = pCity:GetBuildings()
+    for building in GameInfo.Buildings() do
+        if pCityBuildings:HasBuilding(building.Index) then
+            details.BuildingCount = details.BuildingCount + 1
+            AddCountedDetail(details.BuildingDetails, building.BuildingType, Locale.Lookup(building.Name))
+        end
+    end
+
+    details.TerritoryBase = details.PlotCount * 0.1
+    details.PopulationMultiplier = 1 + (details.Population * 0.05)
+    details.BaseYield = details.TerritoryBase * details.PopulationMultiplier
+    details.PerInfrastructureYield = details.BaseYield * 0.02
+
+    ApplyPerItemYield(details.BuildingDetails, details.PerInfrastructureYield)
+    ApplyPerItemYield(details.ImprovementDetails, details.PerInfrastructureYield)
+    ApplyPerItemYield(details.DistrictDetails, details.PerInfrastructureYield)
+
+    details.BuildingYield = details.PerInfrastructureYield * details.BuildingCount
+    details.ImprovementYield = details.PerInfrastructureYield * details.ImprovementCount
+    details.DistrictYield = details.PerInfrastructureYield * details.DistrictCount
+    details.InfrastructureMultiplier = 1 + ((details.DistrictCount + details.BuildingCount + details.ImprovementCount) * 0.02)
+    details.FormulaYield = details.BaseYield * details.InfrastructureMultiplier
+
+    return details
+end
+
 function CalculateHonkaiEnergyBreakdown(playerID)
     local pPlayer = Players[playerID]
     if not pPlayer then return nil end
@@ -160,46 +286,9 @@ function CalculateHonkaiEnergyBreakdown(playerID)
     -- 1. 遍历城市计算基础产出
     local pCities = pPlayer:GetCities()
     for _, pCity in pCities:Members() do
-        local cityName = Locale.Lookup(pCity:GetName())
-        
-        -- 获取城市地格总数 (Safe calculation for Gameplay Context)
-        local plotCount = 0
-        local improvementCount = 0
-        local cityX = pCity:GetX()
-        local cityY = pCity:GetY()
-        for dx = -3, 3 do
-            for dy = -3, 3 do
-                local pPlot = Map.GetPlotXYWithRangeCheck(cityX, cityY, dx, dy, 3)
-                if pPlot and pPlot:GetOwner() == playerID then
-                    -- 简单归属判断：只计算玩家的格子
-                    plotCount = plotCount + 1
-                    if pPlot:GetImprovementType() ~= -1 then
-                        improvementCount = improvementCount + 1
-                    end
-                end
-            end
-        end
-
-        local population = pCity:GetPopulation()
-        local districtCount = 0
-        for _ in pCity:GetDistricts():Members() do
-            districtCount = districtCount + 1
-        end
-        local buildingCount = 0
-        local pCityBuildings = pCity:GetBuildings()
-        for row in GameInfo.Buildings() do
-            if pCityBuildings:HasBuilding(row.Index) then
-                buildingCount = buildingCount + 1
-            end
-        end
-
-        local cityBase = plotCount * 0.1
-        local popMultiplier = 1 + (population * 0.05)
-        local infrastructureMultiplier = 1 + ((districtCount + buildingCount + improvementCount) * 0.02)
-        
-        local cityTotal = cityBase * popMultiplier * infrastructureMultiplier
-        breakdown.CityDetails[cityName] = cityTotal
-        breakdown.SubtotalFromCities = breakdown.SubtotalFromCities + cityTotal
+        local cityDetails = CalculateCityEnergyFormula(playerID, pCity)
+        breakdown.CityDetails[cityDetails.CityName] = cityDetails.FormulaYield
+        breakdown.SubtotalFromCities = breakdown.SubtotalFromCities + cityDetails.FormulaYield
     end
 
     -- 2. 科技加成 (每个科技 +5%)
@@ -211,12 +300,7 @@ function CalculateHonkaiEnergyBreakdown(playerID)
         breakdown.SubtotalFromCities = breakdown.SubtotalFromCities + breakdown.ActivationBonus
     end
 
-    local techCount = 0
-    for honkaiTech, _ in pairs(ShadowCivicMap) do
-        if IsHonkaiTechUnlocked(playerID, honkaiTech) then
-            techCount = techCount + 1
-        end
-    end
+    local techCount = GetUnlockedHonkaiTechCount(playerID)
     breakdown.TechCount = techCount
     breakdown.TechModifier = techCount * 0.05
     
@@ -227,6 +311,36 @@ function CalculateHonkaiEnergyBreakdown(playerID)
     breakdown.TotalYield = (breakdown.SubtotalFromCities * (1 + breakdown.TechModifier)) + breakdown.CoreBonus
 
     return breakdown
+end
+
+function CalculateHonkaiCityEnergyBreakdown(playerID, cityID)
+    local pPlayer = Players[playerID]
+    if not pPlayer then return nil end
+
+    local pCity = pPlayer:GetCities():FindID(cityID)
+    if not pCity then return nil end
+
+    local details = CalculateCityEnergyFormula(playerID, pCity)
+    details.IsUnlocked = IsHonkaiTechUnlocked(playerID, "HONKAI_TECH_PERCEPTION")
+    if not details.IsUnlocked then
+        details.ActivationBonus = 0
+        details.TechCount = 0
+        details.TechModifier = 0
+        details.CoreBonus = pPlayer:GetProperty("HONKAI_CORE_YIELD_BONUS") or 0
+        details.TotalBeforeTech = 0
+        details.TotalYield = 0
+        return details
+    end
+
+    local pCapital = pPlayer:GetCities():GetCapitalCity()
+    details.ActivationBonus = (pCapital and pCapital:GetID() == cityID) and 2 or 0
+    details.TechCount = GetUnlockedHonkaiTechCount(playerID)
+    details.TechModifier = details.TechCount * 0.05
+    details.CoreBonus = pPlayer:GetProperty("HONKAI_CORE_YIELD_BONUS") or 0
+    details.TotalBeforeTech = details.FormulaYield + details.ActivationBonus
+    details.TotalYield = details.TotalBeforeTech * (1 + details.TechModifier)
+
+    return details
 end
 
 function CalculateHonkaiResearchBreakdown(playerID)
@@ -265,14 +379,395 @@ function CalculateHonkaiResearchBreakdown(playerID)
     return breakdown
 end
 
+local VALKYRIE_TRAINING_BASE_LEVEL = 1
+local VALKYRIE_TRAINING_MAX_LEVEL = 10
+
+local ValkyrieEmpireTrainingTechSources = {
+    { TechType = "HONKAI_TECH_VALKYRIE_ADVANCED", Amount = 1, NameTag = "LOC_HONKAI_TECH_VALKYRIE_ADVANCED_NAME", FallbackName = "女武神进阶教材" },
+    { TechType = "HONKAI_TECH_VALKYRIE_BLOODLINE_PURIFICATION", Amount = 1, NameTag = "LOC_HONKAI_TECH_VALKYRIE_BLOODLINE_PURIFICATION_NAME", FallbackName = "女武神血脉提纯" },
+}
+
+local ValkyrieCityTrainingBuildingSources = {
+    { BuildingType = "BUILDING_HOH_ST_FREYA", EmpireAmount = 2, CityAmount = 2, FallbackName = "圣芙蕾雅学园" },
+}
+
+function ClampValkyrieTrainingLevel(level)
+    if level < VALKYRIE_TRAINING_BASE_LEVEL then
+        return VALKYRIE_TRAINING_BASE_LEVEL
+    end
+    if level > VALKYRIE_TRAINING_MAX_LEVEL then
+        return VALKYRIE_TRAINING_MAX_LEVEL
+    end
+    return level
+end
+
+function LookupHonkaiText(tag, fallback)
+    if tag ~= nil then
+        local localized = Locale.Lookup(tag)
+        if localized ~= nil and localized ~= "" and localized ~= tag then
+            return localized
+        end
+    end
+    return fallback or tag or ""
+end
+
+function GetBuildingDisplayName(buildingType, fallback)
+    local building = GameInfo.Buildings[buildingType]
+    if building and building.Name then
+        return LookupHonkaiText(building.Name, fallback or buildingType)
+    end
+    return fallback or buildingType
+end
+
+function AddValkyrieTrainingSource(sourceList, sourceType, name, amount)
+    table.insert(sourceList, {
+        SourceType = sourceType,
+        Name = name,
+        Amount = amount
+    })
+end
+
+function CalculateValkyrieTrainingBreakdown(playerID)
+    local pPlayer = Players[playerID]
+    if not pPlayer then return nil end
+
+    local breakdown = {
+        BaseLevel = VALKYRIE_TRAINING_BASE_LEVEL,
+        MaxLevel = VALKYRIE_TRAINING_MAX_LEVEL,
+        EmpireBonus = 0,
+        EmpireRawLevel = VALKYRIE_TRAINING_BASE_LEVEL,
+        EmpireLevel = VALKYRIE_TRAINING_BASE_LEVEL,
+        EmpireSources = {},
+        CityDetails = {}
+    }
+
+    for _, source in ipairs(ValkyrieEmpireTrainingTechSources) do
+        if IsHonkaiTechUnlocked(playerID, source.TechType) then
+            local sourceName = LookupHonkaiText(source.NameTag, source.FallbackName)
+            breakdown.EmpireBonus = breakdown.EmpireBonus + source.Amount
+            AddValkyrieTrainingSource(breakdown.EmpireSources, "TECH", sourceName, source.Amount)
+        end
+    end
+
+    local globalBuildingSourcesApplied = {}
+    local pCities = pPlayer:GetCities()
+    for _, pCity in pCities:Members() do
+        local cityDetail = {
+            CityID = pCity:GetID(),
+            CityName = Locale.Lookup(pCity:GetName()),
+            CityBonus = 0,
+            RawFinalLevel = VALKYRIE_TRAINING_BASE_LEVEL,
+            FinalLevel = VALKYRIE_TRAINING_BASE_LEVEL,
+            Sources = {}
+        }
+
+        local pCityBuildings = pCity:GetBuildings()
+        for _, source in ipairs(ValkyrieCityTrainingBuildingSources) do
+            local building = GameInfo.Buildings[source.BuildingType]
+            if building and pCityBuildings:HasBuilding(building.Index) then
+                local sourceName = GetBuildingDisplayName(source.BuildingType, source.FallbackName)
+
+                if source.EmpireAmount and source.EmpireAmount ~= 0 and not globalBuildingSourcesApplied[source.BuildingType] then
+                    globalBuildingSourcesApplied[source.BuildingType] = true
+                    breakdown.EmpireBonus = breakdown.EmpireBonus + source.EmpireAmount
+                    AddValkyrieTrainingSource(breakdown.EmpireSources, "BUILDING_EMPIRE", sourceName, source.EmpireAmount)
+                end
+
+                if source.CityAmount and source.CityAmount ~= 0 then
+                    cityDetail.CityBonus = cityDetail.CityBonus + source.CityAmount
+                    AddValkyrieTrainingSource(cityDetail.Sources, "BUILDING_CITY", sourceName, source.CityAmount)
+                end
+            end
+        end
+
+        table.insert(breakdown.CityDetails, cityDetail)
+    end
+
+    breakdown.EmpireRawLevel = breakdown.BaseLevel + breakdown.EmpireBonus
+    breakdown.EmpireLevel = ClampValkyrieTrainingLevel(breakdown.EmpireRawLevel)
+
+    for _, cityDetail in ipairs(breakdown.CityDetails) do
+        cityDetail.EmpireLevel = breakdown.EmpireLevel
+        cityDetail.RawFinalLevel = breakdown.EmpireLevel + cityDetail.CityBonus
+        cityDetail.FinalLevel = ClampValkyrieTrainingLevel(cityDetail.RawFinalLevel)
+    end
+
+    return breakdown
+end
+
+local VALKYRIE_UNIT_TYPES = {
+    ["UNIT_HOH_VALKYRIE_MK1"] = true,
+}
+
+local ValkyrieRankOrder = {
+    { Rank = "F", Name = "F级", AbilityType = "ABILITY_HOH_VALKYRIE_RANK_F", CombatBonus = 0 },
+    { Rank = "E", Name = "E级", AbilityType = "ABILITY_HOH_VALKYRIE_RANK_E", CombatBonus = 1 },
+    { Rank = "D", Name = "D级", AbilityType = "ABILITY_HOH_VALKYRIE_RANK_D", CombatBonus = 2 },
+    { Rank = "C", Name = "C级", AbilityType = "ABILITY_HOH_VALKYRIE_RANK_C", CombatBonus = 3 },
+    { Rank = "B", Name = "B级", AbilityType = "ABILITY_HOH_VALKYRIE_RANK_B", CombatBonus = 5 },
+    { Rank = "A", Name = "A级", AbilityType = "ABILITY_HOH_VALKYRIE_RANK_A", CombatBonus = 8 },
+    { Rank = "S", Name = "S级", AbilityType = "ABILITY_HOH_VALKYRIE_RANK_S", CombatBonus = 12 },
+}
+
+local ValkyrieRankByID = {}
+for _, rankInfo in ipairs(ValkyrieRankOrder) do
+    ValkyrieRankByID[rankInfo.Rank] = rankInfo
+end
+
+-- 概率以 1000 为总权重，方便表达 0.1% 这类小概率。
+local ValkyrieRankProbabilityByTrainingLevel = {
+    [1] = { F = 400, E = 300, D = 150, C = 100, B = 40, A = 9, S = 1 },
+    [2] = { F = 250, E = 300, D = 200, C = 150, B = 80, A = 18, S = 2 },
+    [3] = { F = 150, E = 250, D = 250, C = 200, B = 110, A = 35, S = 5 },
+    [4] = { F = 80, E = 180, D = 270, C = 250, B = 160, A = 50, S = 10 },
+    [5] = { F = 30, E = 120, D = 250, C = 280, B = 220, A = 80, S = 20 },
+    [6] = { F = 0, E = 80, D = 180, C = 300, B = 280, A = 120, S = 40 },
+    [7] = { F = 0, E = 0, D = 100, C = 300, B = 350, A = 180, S = 70 },
+    [8] = { F = 0, E = 0, D = 0, C = 0, B = 300, A = 500, S = 200 },
+    [9] = { F = 0, E = 0, D = 0, C = 0, B = 150, A = 550, S = 300 },
+    [10] = { F = 0, E = 0, D = 0, C = 0, B = 0, A = 600, S = 400 },
+}
+
+function CopyValkyrieRankInfo(rankInfo, weight, totalWeight)
+    if rankInfo == nil then return nil end
+
+    local percent = 0
+    if totalWeight and totalWeight > 0 and weight ~= nil then
+        percent = (weight * 100) / totalWeight
+    end
+
+    return {
+        Rank = rankInfo.Rank,
+        Name = rankInfo.Name,
+        AbilityType = rankInfo.AbilityType,
+        CombatBonus = rankInfo.CombatBonus,
+        Weight = weight or 0,
+        Percent = percent
+    }
+end
+
+function GetValkyrieRankProbabilityTable(trainingLevel)
+    local level = ClampValkyrieTrainingLevel(trainingLevel or VALKYRIE_TRAINING_BASE_LEVEL)
+    local weights = ValkyrieRankProbabilityByTrainingLevel[level] or ValkyrieRankProbabilityByTrainingLevel[VALKYRIE_TRAINING_BASE_LEVEL]
+    local totalWeight = 0
+
+    for _, rankInfo in ipairs(ValkyrieRankOrder) do
+        totalWeight = totalWeight + (weights[rankInfo.Rank] or 0)
+    end
+
+    local probabilities = {}
+    for _, rankInfo in ipairs(ValkyrieRankOrder) do
+        local weight = weights[rankInfo.Rank] or 0
+        table.insert(probabilities, CopyValkyrieRankInfo(rankInfo, weight, totalWeight))
+    end
+
+    return probabilities, totalWeight, level
+end
+
+function FindValkyrieTrainingCity(playerID, pUnit)
+    local pPlayer = Players[playerID]
+    if pPlayer == nil or pUnit == nil then return nil end
+
+    local unitX = pUnit:GetX()
+    local unitY = pUnit:GetY()
+    if unitX == nil or unitY == nil then
+        return pPlayer:GetCities():GetCapitalCity()
+    end
+
+    local closestCity = nil
+    local closestDistance = nil
+
+    for _, pCity in pPlayer:GetCities():Members() do
+        if pCity:GetX() == unitX and pCity:GetY() == unitY then
+            return pCity
+        end
+
+        local dx = pCity:GetX() - unitX
+        local dy = pCity:GetY() - unitY
+        local distance = (dx * dx) + (dy * dy)
+        if closestDistance == nil or distance < closestDistance then
+            closestDistance = distance
+            closestCity = pCity
+        end
+    end
+
+    return closestCity
+end
+
+function GetValkyrieCityTrainingDetail(playerID, cityID)
+    local trainingBreakdown = CalculateValkyrieTrainingBreakdown(playerID)
+    if trainingBreakdown == nil then return nil, nil end
+
+    for _, cityDetail in ipairs(trainingBreakdown.CityDetails) do
+        if cityDetail.CityID == cityID then
+            return cityDetail, trainingBreakdown
+        end
+    end
+
+    return nil, trainingBreakdown
+end
+
+function CalculateValkyrieCityRankBreakdown(playerID, cityID)
+    local cityDetail, trainingBreakdown = GetValkyrieCityTrainingDetail(playerID, cityID)
+    if cityDetail == nil or trainingBreakdown == nil then return nil end
+
+    local probabilities, totalWeight, level = GetValkyrieRankProbabilityTable(cityDetail.FinalLevel)
+    return {
+        CityID = cityDetail.CityID,
+        CityName = cityDetail.CityName,
+        TrainingLevel = level,
+        EmpireLevel = trainingBreakdown.EmpireLevel,
+        CityBonus = cityDetail.CityBonus,
+        RawFinalLevel = cityDetail.RawFinalLevel,
+        MaxLevel = trainingBreakdown.MaxLevel,
+        EmpireSources = trainingBreakdown.EmpireSources,
+        CitySources = cityDetail.Sources,
+        RankProbabilities = probabilities,
+        TotalWeight = totalWeight
+    }
+end
+
+function RollValkyrieRank(trainingLevel)
+    local probabilities, totalWeight = GetValkyrieRankProbabilityTable(trainingLevel)
+    if totalWeight <= 0 then
+        return CopyValkyrieRankInfo(ValkyrieRankByID.F, 0, 0), 0, totalWeight
+    end
+
+    local roll = Game.GetRandNum(totalWeight, "Honkai Valkyrie rank roll") + 1
+    local runningWeight = 0
+
+    for _, rankInfo in ipairs(probabilities) do
+        runningWeight = runningWeight + (rankInfo.Weight or 0)
+        if roll <= runningWeight then
+            return rankInfo, roll, totalWeight
+        end
+    end
+
+    return probabilities[#probabilities], roll, totalWeight
+end
+
+function ClearValkyrieRankAbilities(pUnit)
+    if pUnit == nil or type(pUnit.GetAbility) ~= "function" then return end
+
+    local pUnitAbility = pUnit:GetAbility()
+    if pUnitAbility == nil or type(pUnitAbility.ChangeAbilityCount) ~= "function" then return end
+
+    for _, rankInfo in ipairs(ValkyrieRankOrder) do
+        local currentCount = 0
+        if type(pUnitAbility.GetAbilityCount) == "function" then
+            currentCount = pUnitAbility:GetAbilityCount(rankInfo.AbilityType) or 0
+        end
+
+        if currentCount > 0 then
+            pUnitAbility:ChangeAbilityCount(rankInfo.AbilityType, -currentCount)
+        end
+    end
+end
+
+function ApplyValkyrieRankToUnit(pUnit, rankInfo, trainingLevel, cityID)
+    if pUnit == nil or rankInfo == nil then return end
+
+    if type(pUnit.SetProperty) == "function" then
+        pUnit:SetProperty("HOH_VALKYRIE_RANK", rankInfo.Rank)
+        pUnit:SetProperty("HOH_VALKYRIE_RANK_NAME", rankInfo.Name)
+        pUnit:SetProperty("HOH_VALKYRIE_RANK_COMBAT_BONUS", rankInfo.CombatBonus)
+        pUnit:SetProperty("HOH_VALKYRIE_TRAINING_LEVEL_ON_CREATE", trainingLevel)
+        pUnit:SetProperty("HOH_VALKYRIE_TRAINING_CITY_ID", cityID)
+    end
+
+    if type(pUnit.GetAbility) == "function" then
+        local pUnitAbility = pUnit:GetAbility()
+        if pUnitAbility ~= nil and type(pUnitAbility.ChangeAbilityCount) == "function" then
+            ClearValkyrieRankAbilities(pUnit)
+            pUnitAbility:ChangeAbilityCount(rankInfo.AbilityType, 1)
+
+            if type(pUnitAbility.GetAbilityCount) == "function" then
+                local finalCount = pUnitAbility:GetAbilityCount(rankInfo.AbilityType) or 0
+                if finalCount <= 0 then
+                    print("【崩坏女武神】警告：评级能力未成功启用：" .. tostring(rankInfo.AbilityType))
+                end
+            end
+        end
+    end
+end
+
+function AssignValkyrieRank(playerID, unitID)
+    local pPlayer = Players[playerID]
+    if pPlayer == nil then return end
+
+    local pUnit = UnitManager.GetUnit(playerID, unitID)
+    if pUnit == nil then return end
+
+    local unitInfo = GameInfo.Units[pUnit:GetType()]
+    if unitInfo == nil or not VALKYRIE_UNIT_TYPES[unitInfo.UnitType] then return end
+
+    if type(pUnit.GetProperty) == "function" then
+        local storedRankID = pUnit:GetProperty("HOH_VALKYRIE_RANK")
+        if storedRankID ~= nil then
+            local storedRankInfo = ValkyrieRankByID[storedRankID]
+            if storedRankInfo ~= nil then
+                ApplyValkyrieRankToUnit(
+                    pUnit,
+                    storedRankInfo,
+                    pUnit:GetProperty("HOH_VALKYRIE_TRAINING_LEVEL_ON_CREATE") or VALKYRIE_TRAINING_BASE_LEVEL,
+                    pUnit:GetProperty("HOH_VALKYRIE_TRAINING_CITY_ID")
+                )
+            end
+            return
+        end
+    end
+
+    local trainingLevel = VALKYRIE_TRAINING_BASE_LEVEL
+    local cityID = nil
+    local pTrainingCity = FindValkyrieTrainingCity(playerID, pUnit)
+
+    if pTrainingCity ~= nil then
+        cityID = pTrainingCity:GetID()
+        local rankBreakdown = CalculateValkyrieCityRankBreakdown(playerID, cityID)
+        if rankBreakdown ~= nil then
+            trainingLevel = rankBreakdown.TrainingLevel
+        end
+    else
+        local trainingBreakdown = CalculateValkyrieTrainingBreakdown(playerID)
+        if trainingBreakdown ~= nil then
+            trainingLevel = trainingBreakdown.EmpireLevel
+        end
+    end
+
+    local rankInfo = RollValkyrieRank(trainingLevel)
+    ApplyValkyrieRankToUnit(pUnit, rankInfo, trainingLevel, cityID)
+
+    print("【崩坏女武神】玩家 " .. tostring(playerID) .. " 生成女武神，训练等级 Lv" .. tostring(trainingLevel) .. "，评级 " .. tostring(rankInfo.Name) .. "，战斗力 +" .. tostring(rankInfo.CombatBonus))
+end
+
+function OnHonkaiUnitCreated(playerID, unitID)
+    AssignValkyrieRank(playerID, unitID)
+end
+
+function AssignExistingValkyrieRanks()
+    if PlayerManager == nil or type(PlayerManager.GetAliveIDs) ~= "function" then return end
+
+    for _, playerID in ipairs(PlayerManager.GetAliveIDs()) do
+        local pPlayer = Players[playerID]
+        if pPlayer ~= nil then
+            for _, pUnit in pPlayer:GetUnits():Members() do
+                AssignValkyrieRank(playerID, pUnit:GetID())
+            end
+        end
+    end
+end
+
 -- 【核心逻辑】处理科研队列的扣费与解锁
-function ProcessResearchQueue(playerID)
+function ProcessResearchQueue(playerID, shouldRefreshUI)
     local pPlayer = Players[playerID]
     if not pPlayer then return end
 
     local queueStr = pPlayer:GetProperty("HONKAI_RESEARCH_QUEUE")
     if not queueStr or queueStr == "" then
         pPlayer:SetProperty("HONKAI_CURRENT_RESEARCH", nil)
+        if shouldRefreshUI and ExposedMembers.HonkaiUI and ExposedMembers.HonkaiUI.RefreshUI then
+            ExposedMembers.HonkaiUI.RefreshUI(playerID)
+        end
         return
     end
 
@@ -312,8 +807,8 @@ function ProcessResearchQueue(playerID)
     pPlayer:SetProperty("HONKAI_RESEARCH_QUEUE", newQueueStr)
     pPlayer:SetProperty("HONKAI_CURRENT_RESEARCH", queue[1])
 
-    -- 摇醒 UI
-    if ExposedMembers.HonkaiUI and ExposedMembers.HonkaiUI.RefreshUI then
+    -- 只在玩家主动改队列时摇醒 UI；回合开始结算期间跨上下文刷新 UI 容易卡住回合推进。
+    if shouldRefreshUI and ExposedMembers.HonkaiUI and ExposedMembers.HonkaiUI.RefreshUI then
         ExposedMembers.HonkaiUI.RefreshUI(playerID)
     end
 end
@@ -339,7 +834,7 @@ function OnPlayerTurnStarted(playerID)
     pPlayer:SetProperty("HONKAI_ENERGY_YIELD", energyBreakdown.TotalYield)
 
     -- 3. 处理队列结算
-    ProcessResearchQueue(playerID)
+    ProcessResearchQueue(playerID, false)
 end
 
 -- 指令：由 UI 触发，设定新的研究路径（队列）
@@ -359,13 +854,24 @@ function OnHonkaiSetResearchTarget(playerID, parameters)
     print("【崩坏底层】接收到新科研路径：" .. queueStr)
 
     -- 立即尝试结算（但不增加资源产出）
-    ProcessResearchQueue(playerID)
+    ProcessResearchQueue(playerID, true)
 end
 
 ExposedMembers.Honkai = ExposedMembers.Honkai or {}
 ExposedMembers.Honkai.CalculateHonkaiEnergyBreakdown = CalculateHonkaiEnergyBreakdown
 ExposedMembers.Honkai.CalculateHonkaiEnergyCapacity = CalculateHonkaiEnergyCapacity
+ExposedMembers.Honkai.CalculateHonkaiCityEnergyBreakdown = CalculateHonkaiCityEnergyBreakdown
 ExposedMembers.Honkai.CalculateHonkaiResearchBreakdown = CalculateHonkaiResearchBreakdown
+ExposedMembers.Honkai.CalculateValkyrieTrainingBreakdown = CalculateValkyrieTrainingBreakdown
+ExposedMembers.Honkai.CalculateValkyrieCityRankBreakdown = CalculateValkyrieCityRankBreakdown
+ExposedMembers.Honkai.GetValkyrieRankProbabilityTable = function(trainingLevel)
+    local probabilities, totalWeight, level = GetValkyrieRankProbabilityTable(trainingLevel)
+    return {
+        TrainingLevel = level,
+        RankProbabilities = probabilities,
+        TotalWeight = totalWeight
+    }
+end
 ExposedMembers.Honkai.IsUnlocked = function(playerID, techType)
     return IsHonkaiTechUnlocked(playerID, techType)
 end
@@ -392,6 +898,12 @@ end
 function Initialize()
     GameEvents.PlayerTurnStarted.Add(OnPlayerTurnStarted)
     GameEvents.HonkaiSetResearchTarget.Add(OnHonkaiSetResearchTarget)
+    if GameEvents.UnitInitialized ~= nil and type(GameEvents.UnitInitialized.Add) == "function" then
+        GameEvents.UnitInitialized.Add(OnHonkaiUnitCreated)
+    end
+    if GameEvents.UnitCreated ~= nil and type(GameEvents.UnitCreated.Add) == "function" then
+        GameEvents.UnitCreated.Add(OnHonkaiUnitCreated)
+    end
 end
 
 Events.LoadGameViewStateDone.Add(function()
@@ -401,4 +913,5 @@ Events.LoadGameViewStateDone.Add(function()
     if localPlayer ~= -1 then
         RestoreUnlockedTechs(localPlayer)
     end
+    AssignExistingValkyrieRanks()
 end)

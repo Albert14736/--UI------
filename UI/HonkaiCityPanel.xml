@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context>
+    <GridButton ID="HonkaiValkyrieRateButton" Anchor="L,C" Offset="-164,0" Size="38,38" Style="PurchaseTileButton" ToolTip="女武神评级概率" Hidden="1">
+        <Image ID="HonkaiValkyrieRateIcon" Anchor="C,C" Offset="0,0" Size="22,22" Icon="ICON_UNIT_HOH_VALKYRIE_MK1"/>
+    </GridButton>
+    <GridButton ID="HonkaiCityEnergyButton" Anchor="L,C" Offset="-120,0" Size="38,38" Style="PurchaseTileButton" ToolTip="战术崩坏能明细" Hidden="1">
+        <Image ID="HonkaiCityEnergyIcon" Anchor="C,C" Offset="0,0" Size="22,22" Icon="ICON_HONKAI_ENERGY"/>
+    </GridButton>
+</Context>

@@ -134,6 +134,7 @@
       <Properties><Context>InGame</Context></Properties>
       <File>UI/HonkaiTechTree/HonkaiTechTree.xml</File>
       <File>UI/HonkaiWorldTracker.xml</File>
+      <File>UI/HonkaiCityPanel.xml</File>
     </AddUserInterfaces>
   </InGameActions>
 
@@ -153,6 +154,8 @@
     <File>UI/HonkaiTechTree/HonkaiTechTree.lua</File>
     <File>UI/HonkaiWorldTracker.xml</File>
     <File>UI/HonkaiWorldTracker.lua</File>
+    <File>UI/HonkaiCityPanel.xml</File>
+    <File>UI/HonkaiCityPanel.lua</File>
     <File>Textures/herrscher_of_the_void_foreground.dds</File>
     <File>Textures/herrscher_of_the_void_xuanren.dds</File>
     <File>Textures/herrscher_of_the_void_head_256.dds</File>
