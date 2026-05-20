@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    单位能力挂载模板 - 适用于想给某个单位添加特殊被动技能（如加攻击、加移动）的情况。
+    
+    【核心三要素】：
+    1. UnitAbilities: 定义能力的 ID 和名称。
+    2. UnitAbilityModifiers: 给能力关联具体的数值效果（Modifier）。
+    3. TypeTags: 最重要的一步！规定这个能力“属于”哪类单位（不写这一步，单位拿不到能力）。
+-->
+<GameData>
+    <Types>
+        <!-- 注册一个新的能力类型 -->
+        <Row Type="ABILITY_MY_COOL_BUFF" Kind="KIND_ABILITY"/>
+    </Types>
+
+    <UnitAbilities>
+        <!-- 
+            UnitAbilityType: 刚才定义的类型。
+            Name/Description: 显示在单位面板上的名字和描述。
+            Inactive: 设为 true 则默认不生效，需要通过 Lua 的 ChangeAbilityCount 激活（本项目等级系统即如此）。
+                      设为 false 则只要单位属于该类别就永久生效。
+        -->
+        <Row UnitAbilityType="ABILITY_MY_COOL_BUFF" Name="LOC_ABILITY_MY_COOL_BUFF_NAME" Description="LOC_ABILITY_MY_COOL_BUFF_DESC" Inactive="false"/>
+    </UnitAbilities>
+
+    <UnitAbilityModifiers>
+        <!-- 将能力关联到一个 Modifier（Modifier 需要在其他地方定义，这里仅展示关联） -->
+        <Row UnitAbilityType="ABILITY_MY_COOL_BUFF" ModifierId="MODIFIER_MY_BUFF_COMBAT_BONUS"/>
+    </UnitAbilityModifiers>
+
+    <TypeTags>
+        <!-- 
+            【灵魂步骤】：规定谁能拿这个能力。
+            Tag: 
+                - CLASS_ALL_COMBAT_UNITS (所有战斗单位)
+                - CLASS_MELEE (近战)
+                - 或者你自己定义的类名（如本项目的 CLASS_HOH_VALKYRIE）
+        -->
+        <Row Type="ABILITY_MY_COOL_BUFF" Tag="CLASS_ALL_COMBAT_UNITS"/>
+    </TypeTags>
+
+    <!-- 
+        【进阶提示】：
+        如果你希望这个能力“默认看不见”，直到某些条件满足才显示在面板上，
+        可以在 UnitAbilities 里的 Row 添加 Inactive="true"。
+    -->
+</GameData>

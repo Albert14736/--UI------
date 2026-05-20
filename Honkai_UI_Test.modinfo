@@ -203,5 +203,7 @@
     <File>Platforms/Windows/BLPs/leader_herrscher_of_the_void.blp</File>
     <File>ArtDefs/herrscher_of_the_void_leader.artdef</File>
     <File>ArtDefs/Districts.artdef</File>
+    <File>ArtDefs/Buildings.artdef</File>
+    <File>ArtDefs/WonderMovie.artdef</File>
   </Files>
 </Mod>

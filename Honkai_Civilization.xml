@@ -374,6 +374,14 @@
         <Row BuildingType="BUILDING_HOH_ST_FREYA" Name="LOC_BUILDING_HOH_ST_FREYA_NAME" Description="LOC_BUILDING_HOH_ST_FREYA_DESC" Cost="120" AdvisorType="ADVISOR_RELIGION" PrereqCivic="CIVIC_SHADOW_ST_FREYA" AdjacentDistrict="DISTRICT_SCHICKSAL_BRANCH" MaxWorldInstances="1" IsWonder="true" RequiresPlacement="true"/>
     </Buildings>
 
+    <Building_ValidTerrains>
+        <Row BuildingType="BUILDING_HOH_ST_FREYA" TerrainType="TERRAIN_GRASS_HILLS"/>
+        <Row BuildingType="BUILDING_HOH_ST_FREYA" TerrainType="TERRAIN_PLAINS_HILLS"/>
+        <Row BuildingType="BUILDING_HOH_ST_FREYA" TerrainType="TERRAIN_TUNDRA_HILLS"/>
+        <Row BuildingType="BUILDING_HOH_ST_FREYA" TerrainType="TERRAIN_SNOW_HILLS"/>
+        <Row BuildingType="BUILDING_HOH_ST_FREYA" TerrainType="TERRAIN_DESERT_HILLS"/>
+    </Building_ValidTerrains>
+
     <Building_YieldChanges>
         <Row BuildingType="BUILDING_HOH_SCHICKSAL_CATHEDRAL" YieldType="YIELD_FAITH" YieldChange="3"/>
     </Building_YieldChanges>

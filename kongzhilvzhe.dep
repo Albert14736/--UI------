@@ -130,6 +130,8 @@
 			<ConsumerName text="Landmarks"/>
 			<ArtDefDependencyPaths>
 				<Element text="Districts.artdef"/>
+				<Element text="Buildings.artdef"/>
+				<Element text="StrategicView.artdef"/>
 			</ArtDefDependencyPaths>
 			<LibraryDependencies>
 				<Element text="CityBuildings"/>
@@ -213,7 +215,11 @@
 		</Element>
 		<Element>
 			<ConsumerName text="StrategicView_Properties"/>
-			<ArtDefDependencyPaths/>
+			<ArtDefDependencyPaths>
+				<Element text="StrategicView.artdef"/>
+				<Element text="Buildings.artdef"/>
+				<Element text="Districts.artdef"/>
+			</ArtDefDependencyPaths>
 			<LibraryDependencies/>
 			<LoadsLibraries>false</LoadsLibraries>
 		</Element>
@@ -228,7 +234,11 @@
 		</Element>
 		<Element>
 			<ConsumerName text="StrategicView_Sprite"/>
-			<ArtDefDependencyPaths/>
+			<ArtDefDependencyPaths>
+				<Element text="StrategicView.artdef"/>
+				<Element text="Buildings.artdef"/>
+				<Element text="Districts.artdef"/>
+			</ArtDefDependencyPaths>
 			<LibraryDependencies>
 				<Element text="StrategicView_Sprite"/>
 				<Element text="StrategicView_DirectedAsset"/>
@@ -268,6 +278,7 @@
 			<ConsumerName text="StrategicView_Translate"/>
 			<ArtDefDependencyPaths>
 				<Element text="Districts.artdef"/>
+				<Element text="Buildings.artdef"/>
 			</ArtDefDependencyPaths>
 			<LibraryDependencies/>
 			<LoadsLibraries>false</LoadsLibraries>
@@ -355,7 +366,9 @@
 		</Element>
 		<Element>
 			<ConsumerName text="WonderMovie"/>
-			<ArtDefDependencyPaths/>
+			<ArtDefDependencyPaths>
+				<Element text="WonderMovie.artdef"/>
+			</ArtDefDependencyPaths>
 			<LibraryDependencies>
 				<Element text="WonderMovie"/>
 				<Element text="TileBase"/>
@@ -386,6 +399,21 @@
 		<Element>
 			<ArtDefPath text="Districts.artdef"/>
 			<ArtDefDependencyPaths/>
+		</Element>
+		<Element>
+			<ArtDefPath text="Buildings.artdef"/>
+			<ArtDefDependencyPaths>
+				<Element text="StrategicView.artdef"/>
+				<Element text="Buildings.artdef"/>
+				<Element text="Districts.artdef"/>
+			</ArtDefDependencyPaths>
+		</Element>
+		<Element>
+			<ArtDefPath text="WonderMovie.artdef"/>
+			<ArtDefDependencyPaths>
+				<Element text="WonderMovie.artdef"/>
+				<Element text="GameLighting.artdef"/>
+			</ArtDefDependencyPaths>
 		</Element>
 		<Element>
 			<ArtDefPath text="Clutter.artdef"/>

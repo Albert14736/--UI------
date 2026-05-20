@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    影子市政 (Shadow Civic) 模板
+    
+    【什么是影子市政？】
+    这些市政并不出现在市政树（Civic Tree）的显眼位置，或者被故意设为极高消耗且无法自然研究。
+    它们通常作为“逻辑开关”或“能力载体”存在，通过 Lua 脚本强制赋予玩家，从而解锁某些效果。
+-->
+<GameData>
+    <Civics>
+        <!-- 
+            【一把大锁】：
+            如果你想做一个“只有通过特殊逻辑才能解锁”的市政树分支，
+            你可以先定义一个成本极高的“锁”市政。
+        -->
+        <Row CivicType="CIVIC_MY_TREE_LOCK" Name="LOC_CIVIC_MY_TREE_LOCK_NAME" Cost="999999" EraType="ERA_INFORMATION" UITreeRow="0"/>
+        
+        <!-- 
+            【逻辑市政】：
+            这类市政通常 Cost 设得很低（或者很高，取决于你怎么给它）。
+            如果你在 UITreeRow 设为 0 或者让它的前置是那个“锁”，玩家在游戏里就研究不了它。
+        -->
+        <Row CivicType="CIVIC_SHADOW_LOGIC_01" Name="LOC_SHADOW_LOGIC_NAME" Cost="10" EraType="ERA_ANCIENT" UITreeRow="0"/>
+    </Civics>
+
+    <CivicPrereqs>
+        <!-- 将逻辑市政挂在“锁”后面，确保玩家无法直接点到它 -->
+        <Row Civic="CIVIC_SHADOW_LOGIC_01" PrereqCivic="CIVIC_MY_TREE_LOCK"/>
+    </CivicPrereqs>
+
+    <CivicModifiers>
+        <!-- 
+            影子市政最强大的地方在于挂载全文明范围的 Modifier。
+            比如：一旦玩家通过 Lua 获得了这个市政，全文明的建筑产出就会增加。
+        -->
+        <Row CivicType="CIVIC_SHADOW_LOGIC_01" ModifierId="MOD_GLOBAL_YIELD_BOOST"/>
+    </CivicModifiers>
+
+    <!-- 
+        【Lua 调用示例】：
+        在 Lua 中，你可以这样给玩家强制解锁这个影子市政：
+        
+        local playerCulture = pPlayer:GetCulture()
+        playerCulture:SetCivic(GameInfo.Civics["CIVIC_SHADOW_LOGIC_01"].Index, true)
+    -->
+    
+    <!-- 
+        【进阶技巧】：
+        如果你不想让影子市政在“已完成市政”的通知栏里跳出来，
+        通常需要结合 UI 脚本（如本项目的 HonkaiTechTree）来过滤这些特定的 ID。
+    -->
+</GameData>

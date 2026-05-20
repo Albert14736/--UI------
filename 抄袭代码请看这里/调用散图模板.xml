@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    散图调用模板 - 适用于想要直接在XML中引用单张图片作为图标的情况。
+    
+    【核心逻辑】：
+    1. 在 <IconTextureAtlases> 中定义一个“图集”，如果你的图片只有一张，那么 IconsPerRow 和 IconsPerColumn 都设为 1。
+    2. 在 <IconDefinitions> 中将具体的图标名映射到这个图集。
+    3. 如果是单位、建筑、资源，通常需要多个尺寸（256, 80, 50, 38, 32, 22），这里只展示如何挂载单张。
+-->
+<GameData>
+    <IconTextureAtlases>
+        <!-- 
+            Name: 你给这个图集起的名字，后面引用时要用到。
+            IconSize: 这一行定义的图标大小（像素）。
+            IconsPerRow: 图片里横着有几个图标（单图设为1）。
+            IconsPerColumn: 图片里竖着有几个图标（单图设为1）。
+            Filename: 图片的文件名。注意：必须带文件夹前缀（如 Textures/xxx.dds），
+                      且在 .modinfo 的 Files 列表里必须包含这个路径。
+        -->
+        <Row Name="ATLAS_MY_COOL_IMAGE" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="Textures/my_image_256.dds"/>
+        <Row Name="ATLAS_MY_COOL_IMAGE" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="Textures/my_image_80.dds"/>
+    </IconTextureAtlases>
+
+    <IconDefinitions>
+        <!-- 
+            Name: 游戏逻辑引用的图标 ID（例如 ICON_UNIT_MY_UNIT）。
+            Atlas: 对应上面定义的图集 Name。
+            Index: 图片在图集中的位置，从 0 开始。单图永远写 0。
+        -->
+        <Row Name="ICON_LEADER_CUSTOM" Atlas="ATLAS_MY_COOL_IMAGE" Index="0"/>
+    </IconDefinitions>
+
+    <!-- 
+        【进阶技巧】：图标别名 (IconAliases)
+        如果你懒得画图标，想直接“白嫖”原版的图标，可以这样写：
+    -->
+    <IconAliases>
+        <!-- 将我自己的建筑图标 映射到 原版的 神谕所图标上 -->
+        <Row Name="ICON_BUILDING_MY_BUILDING" OtherName="ICON_BUILDING_ORACLE"/>
+    </IconAliases>
+</GameData>

@@ -79,6 +79,9 @@
 
         <!-- 补全建筑图标映射 -->
         <Row Name="ICON_BUILDING_HOH_ENERGY_POOL" Atlas="ATLAS_HonkaiCiv256" Index="0"/>
-        <Row Name="ICON_BUILDING_HOH_ST_FREYA"    Atlas="ATLAS_HonkaiCiv256" Index="0"/>
     </IconDefinitions>
+
+    <IconAliases>
+        <Row Name="ICON_BUILDING_HOH_ST_FREYA" OtherName="ICON_BUILDING_ORACLE"/>
+    </IconAliases>
 </GameData>

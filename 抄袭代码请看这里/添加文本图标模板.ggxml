@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 
+    文本图标 (FontIcon) 模板 - 让你能在对话框、科技树描述里使用 [ICON_XXX] 这种图标。
+    
+    【使用步骤】：
+    1. 准备一张 22x22 像素的图标（推荐 DDS 格式）。
+    2. 将此文件后缀保存为 .ggxml。
+    3. 在 .modinfo 的 UpdateIcons 部分加载这个文件（或者 UpdateText 也可以，只要包含了这个逻辑）。
+-->
+<fontTextureAtlas>
+    <!-- 图集名称，随便起，但别跟原版的重名 -->
+    <name>My_Custom_Font_Icons</name>
+    
+    <!-- 
+        图片路径：必须相对于 Mod 根目录，且不带后缀名。
+        注意：在 .modinfo 的 Files 列表里必须包含对应的 .dds 文件。
+    -->
+    <texture>Textures/my_icon_22</texture>
+    
+    <!-- 图标的基础宽高，文明6文本图标标准通常是 22x22 -->
+    <height>22</height>
+    <width>22</width>
+    
+    <mapping>
+        <!-- 
+            name: 你在游戏中引用的代码名，也就是 [ICON_MY_ICON] 里的内容。
+            tx/ty: 图标在图片中的起点坐标（单图写 0,0）。
+            tw/th: 截取的宽高（22, 22）。
+        -->
+        <name>ICON_MY_ICON</name>
+        <tx>0</tx><ty>0</ty><tw>22</tw><th>22</th>
+    </mapping>
+
+    <!-- 
+        如果你一张图里放了多个图标（比如一张 88x22 的长图放了4个图标），
+        你可以继续添加 mapping：
+    -->
+    <!--
+    <mapping>
+        <name>ICON_SECOND_ICON</name>
+        <tx>22</tx><ty>0</ty><tw>22</tw><th>22</th>
+    </mapping>
+    -->
+</fontTextureAtlas>

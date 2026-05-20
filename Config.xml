@@ -20,11 +20,6 @@
         <Row Domain="Players:StandardPlayers" LeaderType="LEADER_HOH_VOID_HERRSCHER" CivilizationType="CIVILIZATION_HONKAI" Type="CIVILIZATION_HONKAI" Icon="ICON_CIVILIZATION_HONKAI" Name="LOC_CIVILIZATION_HONKAI_NAME" Description="LOC_TRAIT_CIVILIZATION_HONKAI_DUMMY_DESC" SortIndex="20"/>
     </PlayerItems>
 
-    <Colors>
-        <Row Type="COLOR_HONKAI_SEA_PRIMARY"   Color="180,140,230,38"/>
-        <Row Type="COLOR_HONKAI_SEA_SECONDARY" Color="255,255,255,255"/>
-    </Colors>
-
     <PlayerColors>
         <Row Type="LEADER_HOH_VOID_HERRSCHER" Usage="Unique" PrimaryColor="COLOR_HONKAI_SEA_PRIMARY" SecondaryColor="COLOR_HONKAI_SEA_SECONDARY" TextColor="COLOR_PLAYER_WHITE_TEXT"/>
     </PlayerColors>
