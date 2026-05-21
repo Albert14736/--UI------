@@ -1900,6 +1900,27 @@ function Initialize()
         LuaEvents.HonkaiTech_DoRefresh(playerID)
     end
 
+    -- 崩坏能传导：统计出发城市的国内商路数（Gameplay Lua 的 GetTrade API 不可用）
+    ExposedMembers.HonkaiUI.GetCityDomesticTradeRouteCount = function(playerID, cityID)
+        local pPlayer = Players[playerID]
+        if pPlayer == nil then return 0 end
+        local pCity = pPlayer:GetCities():FindID(cityID)
+        if pCity == nil then return 0 end
+        local ok, trade = pcall(function() return pCity:GetTrade() end)
+        if not ok or trade == nil then return 0 end
+        local ok2, routes = pcall(function() return trade:GetOutgoingRoutes() end)
+        if not ok2 or routes == nil then return 0 end
+        local count = 0
+        for _, route in ipairs(routes) do
+            -- 国内商路：出发方和目的地都是同一玩家
+            local destPlayer = route.DestinationCityPlayer or route.DestinationPlayer
+            if destPlayer == playerID then
+                count = count + 1
+            end
+        end
+        return count
+    end
+
     -- Gameplay Lua 的 BuildQueue API 不可用，由此函数代为查询（UI 上下文有完整 API）
     ExposedMembers.HonkaiUI.GetCityCurrentProject = function(playerID, cityID)
         local pPlayer = Players[playerID]

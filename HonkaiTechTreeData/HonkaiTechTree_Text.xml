@@ -53,10 +53,18 @@
         <Replace Tag="LOC_HONKAI_TECH_KEY_OF_FINALITY_NAME" Language="zh_Hant_HK"><Text>終焉之鑰</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_KEY_OF_FINALITY_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩壞能研究點[NEWLINE][NEWLINE]最終權限。</Text></Replace>
 
+        <!-- 城市项目文本 -->
+        <Replace Tag="LOC_PROJECT_HOH_HONKAI_REUNION_REACTION_NAME" Language="zh_Hans_CN"><Text>崩坏能重聚反应</Text></Replace>
+        <Replace Tag="LOC_PROJECT_HOH_HONKAI_REUNION_REACTION_SHORT_NAME" Language="zh_Hans_CN"><Text>重聚反应</Text></Replace>
+        <Replace Tag="LOC_PROJECT_HOH_HONKAI_REUNION_REACTION_DESC" Language="zh_Hans_CN"><Text>将本城本回合的生产力产出转化为等量的战术崩坏能。项目持续进行中，解锁需要研究【崩坏能熔炉】科技。</Text></Replace>
+
         <!-- ========================================================== -->
         <!-- 英语 (en_US) -->
         <!-- ========================================================== -->
         <Replace Tag="LOC_HONKAI_TECH_PERCEPTION_NAME" Language="en_US"><Text>Honkai Perception</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_PERCEPTION_DESC" Language="en_US"><Text>Cost {1_Amount} [ICON_HONKAI_RESEARCH] Honkai Research[NEWLINE][NEWLINE]The beginning.</Text></Replace>
+        <Replace Tag="LOC_PROJECT_HOH_HONKAI_REUNION_REACTION_NAME" Language="en_US"><Text>Honkai Energy Reunion Reaction</Text></Replace>
+        <Replace Tag="LOC_PROJECT_HOH_HONKAI_REUNION_REACTION_SHORT_NAME" Language="en_US"><Text>Reunion Reaction</Text></Replace>
+        <Replace Tag="LOC_PROJECT_HOH_HONKAI_REUNION_REACTION_DESC" Language="en_US"><Text>Converts this city's production output into an equal amount of Tactical Honkai Energy each turn. Requires the Honkai Furnace technology.</Text></Replace>
     </LocalizedText>
 </GameData>

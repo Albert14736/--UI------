@@ -362,29 +362,16 @@ function CalculateHonkaiTradeRouteEnergyBonus(playerID, pCity)
     end
 
     local cityBase = GetCityFeatureDistrictEnergyBase(pCity)
-    if pCity == nil or type(pCity.GetTrade) ~= "function" then
-        return 0, 0, cityBase
-    end
+    if pCity == nil then return 0, 0, cityBase end
 
-    local pCityTrade = pCity:GetTrade()
-    if pCityTrade == nil or type(pCityTrade.GetOutgoingRoutes) ~= "function" then
-        return 0, 0, cityBase
-    end
-
-    local bonus = 0
+    -- Gameplay Lua 的 GetTrade API 不可用，通过 UI 上下文桥接查询国内商路数
     local domesticRouteCount = 0
-    local outgoingRoutes = pCityTrade:GetOutgoingRoutes() or {}
-    for _, route in ipairs(outgoingRoutes) do
-        local originCityID = route.OriginCityID or route.OriginCity or pCity:GetID()
-        local originPlayerID = route.OriginCityPlayer or route.OriginPlayer or playerID
-        local destinationPlayerID = route.DestinationCityPlayer or route.DestinationPlayer
-
-        if originPlayerID == playerID and originCityID == pCity:GetID() and destinationPlayerID == playerID then
-            domesticRouteCount = domesticRouteCount + 1
-            bonus = bonus + cityBase
-        end
+    if ExposedMembers.HonkaiUI and ExposedMembers.HonkaiUI.GetCityDomesticTradeRouteCount then
+        local ok, count = pcall(ExposedMembers.HonkaiUI.GetCityDomesticTradeRouteCount, playerID, pCity:GetID())
+        domesticRouteCount = (ok and count) or 0
     end
 
+    local bonus = domesticRouteCount * cityBase
     return bonus, domesticRouteCount, cityBase
 end
 
