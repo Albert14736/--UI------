@@ -53,6 +53,18 @@
         <Replace Tag="LOC_HONKAI_TECH_KEY_OF_FINALITY_NAME" Language="zh_Hant_HK"><Text>終焉之鑰</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_KEY_OF_FINALITY_DESC" Language="zh_Hant_HK"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩壞能研究點[NEWLINE][NEWLINE]最終權限。</Text></Replace>
 
+        <!-- 科技节点效果 Tooltip（GENERIC 解锁图标悬停显示） -->
+        <Replace Tag="LOC_HONKAI_TECH_PERCEPTION_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>激活战术崩坏能系统。首都每回合 +2 [ICON_ENERGY] 战术崩坏能底产。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_OMEN_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>每回合无条件 +1 [ICON_FAITH] 信仰值。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_PATHOLOGY_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>帝国所有城市 +1 [ICON_AMENITIES] 宜居度。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_DESTINY_CLERGY_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>天命支部建造速度提升；【天命大教堂】建成时免费获得一支 Mk I 女武神。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_NUN_FORMATION_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>允许使用 [ICON_FAITH] 信仰值购买女武神单位，购买费用 -10%。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_STIGMATA_PROTOTYPE_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>每位专家额外产出 +0.1 [ICON_HONKAI_RESEARCH] 崩坏能研究点/回合。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_PRAYER_ROOM_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>所有女武神自带 3 次建造次数，可直接在地块上建造【祈祷室】改良设施。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_HONKAI_CONDUCTION_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>每条国内商路为出发城市提供额外 [ICON_ENERGY] 战术崩坏能，数值等于该城特色区域（天命支部/武装工造区）的基础产出之和。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_ATONEMENT_SYSTEM_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>以战养战：击杀敌方单位时，获得等同于被击败单位当前战斗力 100% 的 [ICON_FAITH] 信仰值。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_VALKYRIE_ADVANCED_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>全帝国女武神训练等级 +1，S 级概率微幅提升。</Text></Replace>
+
         <!-- 城市项目文本 -->
         <Replace Tag="LOC_PROJECT_HOH_HONKAI_REUNION_REACTION_NAME" Language="zh_Hans_CN"><Text>崩坏能重聚反应</Text></Replace>
         <Replace Tag="LOC_PROJECT_HOH_HONKAI_REUNION_REACTION_SHORT_NAME" Language="zh_Hans_CN"><Text>重聚反应</Text></Replace>
@@ -66,5 +78,15 @@
         <Replace Tag="LOC_PROJECT_HOH_HONKAI_REUNION_REACTION_NAME" Language="en_US"><Text>Honkai Energy Reunion Reaction</Text></Replace>
         <Replace Tag="LOC_PROJECT_HOH_HONKAI_REUNION_REACTION_SHORT_NAME" Language="en_US"><Text>Reunion Reaction</Text></Replace>
         <Replace Tag="LOC_PROJECT_HOH_HONKAI_REUNION_REACTION_DESC" Language="en_US"><Text>Converts this city's production output into an equal amount of Tactical Honkai Energy each turn. Requires the Honkai Furnace technology.</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_PERCEPTION_EFFECT_TOOLTIP" Language="en_US"><Text>Activates the Tactical Honkai Energy system. Capital gains +2 [ICON_ENERGY] Honkai Energy per turn.</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_OMEN_EFFECT_TOOLTIP" Language="en_US"><Text>Grants +1 [ICON_FAITH] Faith per turn unconditionally.</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_PATHOLOGY_EFFECT_TOOLTIP" Language="en_US"><Text>All cities gain +1 [ICON_AMENITIES] Amenity.</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_DESTINY_CLERGY_EFFECT_TOOLTIP" Language="en_US"><Text>Schicksal Branch builds faster; completing the Schicksal Cathedral grants a free Mk I Valkyrie.</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_NUN_FORMATION_EFFECT_TOOLTIP" Language="en_US"><Text>Allows purchasing Valkyrie units with [ICON_FAITH] Faith at -10% cost.</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_STIGMATA_PROTOTYPE_EFFECT_TOOLTIP" Language="en_US"><Text>Each Specialist yields an additional +0.1 [ICON_HONKAI_RESEARCH] Honkai Research per turn.</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_PRAYER_ROOM_EFFECT_TOOLTIP" Language="en_US"><Text>All Valkyries gain 3 build charges to construct the Prayer Room improvement.</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_HONKAI_CONDUCTION_EFFECT_TOOLTIP" Language="en_US"><Text>Each domestic Trade Route grants bonus [ICON_ENERGY] Honkai Energy to the origin city equal to its special district base output.</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_ATONEMENT_SYSTEM_EFFECT_TOOLTIP" Language="en_US"><Text>Live off battle: defeating an enemy unit grants [ICON_FAITH] Faith equal to 100% of that unit's Combat Strength.</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_VALKYRIE_ADVANCED_EFFECT_TOOLTIP" Language="en_US"><Text>Empire-wide Valkyrie training level +1, with slightly improved S-rank odds.</Text></Replace>
     </LocalizedText>
 </GameData>
