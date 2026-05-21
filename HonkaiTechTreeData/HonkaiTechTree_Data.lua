@@ -298,7 +298,12 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_MEDIEVAL",
 			UITreeRow = -3,
 			Prereqs = {"HONKAI_TECH_POWER_ARMOR"},
-			Column = 1
+			Column = 1,
+			ShadowCivic = "CIVIC_SHADOW_STIGMATA_PRINCIPLE",
+			Unlocks = {
+				{ Type = "BUILDING", ID = "BUILDING_HOH_STIGMATA_ALCHEMY_CHAMBER", Icon = "ICON_BUILDING_UNIVERSITY" },
+				{ Type = "POLICY", ID = "POLICY_HOH_PREMODERN_MEDICAL", Icon = "ICON_POLICY_LOGISTICS" },
+			}
 		},
 		{
 			Type = "HONKAI_TECH_GREAT_ERUPTION_HYPOTHESIS",
@@ -308,7 +313,12 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_MEDIEVAL",
 			UITreeRow = -1,
 			Prereqs = {"HONKAI_TECH_POWER_ARMOR"},
-			Column = 1
+			Column = 1,
+			ShadowCivic = "CIVIC_SHADOW_GREAT_ERUPTION_HYPOTHESIS",
+			Unlocks = {
+				{ Type = "POLICY", ID = "POLICY_HOH_RESISTANCE_BARRIER", Icon = "ICON_POLICY_MANEUVER" },
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_GREAT_ERUPTION_HYPOTHESIS_EFFECT_TOOLTIP" },
+			}
 		},
 		{
 			Type = "HONKAI_TECH_VALKYRIE_BLOODLINE_PURIFICATION",
@@ -318,7 +328,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_MEDIEVAL",
 			UITreeRow = 2,
 			Prereqs = {"HONKAI_TECH_VALKYRIE_ADVANCED"},
-			Column = 1
+			Column = 1,
+			ShadowCivic = "CIVIC_SHADOW_VALKYRIE_BLOODLINE_PURIFICATION",
+			Unlocks = {
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_VALKYRIE_BLOODLINE_PURIFICATION_EFFECT_TOOLTIP" },
+			}
 		},
 		{
 			Type = "HONKAI_TECH_CLERGY_PRIVILEGE",
@@ -328,7 +342,12 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_MEDIEVAL",
 			UITreeRow = 4,
 			Prereqs = {"HONKAI_TECH_VALKYRIE_ADVANCED"},
-			Column = 1
+			Column = 1,
+			ShadowCivic = "CIVIC_SHADOW_CLERGY_PRIVILEGE",
+			Unlocks = {
+				{ Type = "POLICY", ID = "POLICY_HOH_CLERGY_PRIVILEGE", Icon = "ICON_POLICY_CITIES_FIRST" },
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_CLERGY_PRIVILEGE_EFFECT_TOOLTIP" },
+			}
 		},
 		-- 第 2 列 (Cost: 390)
 		{
@@ -339,7 +358,12 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_MEDIEVAL",
 			UITreeRow = -2,
 			Prereqs = {"HONKAI_TECH_STIGMATA_PRINCIPLE", "HONKAI_TECH_GREAT_ERUPTION_HYPOTHESIS"},
-			Column = 2
+			Column = 2,
+			ShadowCivic = "CIVIC_SHADOW_SOULLIQUOR_SMELTING",
+			Unlocks = {
+				{ Type = "BUILDING", ID = "BUILDING_HOH_HONKAI_SMELTER", Icon = "ICON_BUILDING_WORKSHOP" },
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_SOULLIQUOR_SMELTING_EFFECT_TOOLTIP" },
+			}
 		},
 		{
 			Type = "HONKAI_TECH_HONKAI_CRYSTAL_EXTRACTION",
@@ -349,7 +373,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_MEDIEVAL",
 			UITreeRow = 0,
 			Prereqs = {"HONKAI_TECH_GREAT_ERUPTION_HYPOTHESIS"},
-			Column = 2
+			Column = 2,
+			ShadowCivic = "CIVIC_SHADOW_HONKAI_CRYSTAL_EXTRACTION",
+			Unlocks = {
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_HONKAI_CRYSTAL_EXTRACTION_EFFECT_TOOLTIP" },
+			}
 		},
 		{
 			Type = "HONKAI_TECH_GOD_SLAYER_ARMOR_PROTOTYPE",
@@ -359,7 +387,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_MEDIEVAL",
 			UITreeRow = 2,
 			Prereqs = {"HONKAI_TECH_VALKYRIE_BLOODLINE_PURIFICATION"},
-			Column = 2
+			Column = 2,
+			ShadowCivic = "CIVIC_SHADOW_GOD_SLAYER_ARMOR_PROTOTYPE",
+			Unlocks = {
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_PROTOTYPE_EFFECT_TOOLTIP" },
+			}
 		},
 		{
 			Type = "HONKAI_TECH_SCHICKSAL_ARMED_FORMATION",
@@ -369,7 +401,13 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_MEDIEVAL",
 			UITreeRow = 3,
 			Prereqs = {"HONKAI_TECH_VALKYRIE_BLOODLINE_PURIFICATION", "HONKAI_TECH_CLERGY_PRIVILEGE"},
-			Column = 2
+			Column = 2,
+			ShadowCivic = "CIVIC_SHADOW_SCHICKSAL_ARMED_FORMATION",
+			Unlocks = {
+				{ Type = "POLICY", ID = "POLICY_HOH_VALK_CHARGE", Icon = "ICON_POLICY_DISCIPLINE" },
+				{ Type = "POLICY", ID = "POLICY_HOH_VALK_PHALANX", Icon = "ICON_POLICY_CONSCRIPTION" },
+				{ Type = "BUILDING", ID = "BUILDING_HOH_VALKYRIE_COMMAND_CENTER", Icon = "ICON_BUILDING_BARRACKS" },
+			}
 		},
 		-- ==============================================
 		-- 文艺复兴时代 (ERA_RENAISSANCE)

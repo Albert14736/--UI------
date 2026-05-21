@@ -70,6 +70,52 @@
         <Replace Tag="LOC_PROJECT_HOH_HONKAI_REUNION_REACTION_SHORT_NAME" Language="zh_Hans_CN"><Text>重聚反应</Text></Replace>
         <Replace Tag="LOC_PROJECT_HOH_HONKAI_REUNION_REACTION_DESC" Language="zh_Hans_CN"><Text>将本城本回合的生产力产出转化为等量的战术崩坏能。项目持续进行中，解锁需要研究【崩坏能熔炉】科技。</Text></Replace>
 
+        <!-- 中世纪科技名称和描述 -->
+        <Replace Tag="LOC_HONKAI_TECH_STIGMATA_PRINCIPLE_NAME" Language="zh_Hans_CN"><Text>圣痕刻印原理</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_STIGMATA_PRINCIPLE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁隐秘研究站 T2 建筑【圣痕炼金室】，并解锁军事政策卡【前文明医疗协议】。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GREAT_ERUPTION_HYPOTHESIS_NAME" Language="zh_Hans_CN"><Text>大崩坏假说</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GREAT_ERUPTION_HYPOTHESIS_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁经济政策卡【崩坏抗性屏障】，帝国所有城市防御力 +5 且宜居度 +1。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_VALKYRIE_BLOODLINE_PURIFICATION_NAME" Language="zh_Hans_CN"><Text>女武神血脉提纯</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_VALKYRIE_BLOODLINE_PURIFICATION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]帝国女武神训练等级 +1，剔除 F 级废卡，最低保底 E 级出战。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_CLERGY_PRIVILEGE_NAME" Language="zh_Hans_CN"><Text>圣职特权</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_CLERGY_PRIVILEGE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁经济政策卡【圣职特权】：拥有天命支部的城市每回合额外 +2 忠诚度、+2 住房、+1 宜居度。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_SOULLIQUOR_SMELTING_NAME" Language="zh_Hans_CN"><Text>魂钢冶炼</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_SOULLIQUOR_SMELTING_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁武装工造区 T1 建筑【崩坏能熔炼坊】。帝国地图上的隐藏资源【魂钢】正式显现。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_HONKAI_CRYSTAL_EXTRACTION_NAME" Language="zh_Hans_CN"><Text>崩坏贤者之石</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_HONKAI_CRYSTAL_EXTRACTION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁崩坏能结晶转化系统（独立 UI 界面，后续版本实装）。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_PROTOTYPE_NAME" Language="zh_Hans_CN"><Text>弑神装甲原型</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_PROTOTYPE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]允许将 Mk I 女武神升级为 Mk II，并解锁战术加力【装甲限制解除】(+5 战斗力)。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_SCHICKSAL_ARMED_FORMATION_NAME" Language="zh_Hans_CN"><Text>天命武装编队</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_SCHICKSAL_ARMED_FORMATION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁军事政策卡【瓦尔基里冲锋】与【瓦尔基里方阵】，以及天命总部 T2 建筑【女武神总控中枢】。</Text></Replace>
+
+        <!-- 中世纪科技效果 Tooltip -->
+        <Replace Tag="LOC_HONKAI_TECH_GREAT_ERUPTION_HYPOTHESIS_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>帝国所有城市防御力 +5，宜居度 +1。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_VALKYRIE_BLOODLINE_PURIFICATION_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>帝国女武神训练等级 +1，剔除 F 级，最低 E 级出战。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_CLERGY_PRIVILEGE_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>拥有天命支部的城市：+2 忠诚度、+2 住房、+1 宜居度/回合。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_SOULLIQUOR_SMELTING_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>【魂钢】战略资源正式显现，是后期女武神 Mk II+ 的维护材料。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_HONKAI_CRYSTAL_EXTRACTION_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>战术崩坏能→崩坏能结晶转化系统（待实装 UI）。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_PROTOTYPE_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>女武神可升级至 Mk II；解锁战术加力【装甲限制解除】(+5力)。</Text></Replace>
+
+        <!-- 中世纪建筑名称/描述 -->
+        <Replace Tag="LOC_BUILDING_HOH_STIGMATA_ALCHEMY_CHAMBER_NAME" Language="zh_Hans_CN"><Text>圣痕炼金室</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_STIGMATA_ALCHEMY_CHAMBER_DESC" Language="zh_Hans_CN"><Text>隐秘研究站 T2 建筑。+3 [ICON_SCIENCE] 科技值，+1 专家槽，+1 大科学家点数。</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_HONKAI_SMELTER_NAME" Language="zh_Hans_CN"><Text>崩坏能熔炼坊</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_HONKAI_SMELTER_DESC" Language="zh_Hans_CN"><Text>武装工造区 T1 建筑。+1 [ICON_PRODUCTION] 生产力，+1 [ICON_SCIENCE] 科技值，+1 专家槽，+1 大科学家点数。</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_VALKYRIE_COMMAND_CENTER_NAME" Language="zh_Hans_CN"><Text>女武神总控中枢</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_VALKYRIE_COMMAND_CENTER_DESC" Language="zh_Hans_CN"><Text>天命总部 T2 建筑。+2 专家槽。全帝国女武神永久 +1 战斗力，解锁支部间传送能力。</Text></Replace>
+
+        <!-- 中世纪政策卡名称/描述 -->
+        <Replace Tag="LOC_POLICY_HOH_PREMODERN_MEDICAL_NAME" Language="zh_Hans_CN"><Text>前文明医疗协议</Text></Replace>
+        <Replace Tag="LOC_POLICY_HOH_PREMODERN_MEDICAL_DESC" Language="zh_Hans_CN"><Text>【军事】帝国领土内所有单位每回合额外恢复 +5 生命值。</Text></Replace>
+        <Replace Tag="LOC_POLICY_HOH_RESISTANCE_BARRIER_NAME" Language="zh_Hans_CN"><Text>崩坏抗性屏障</Text></Replace>
+        <Replace Tag="LOC_POLICY_HOH_RESISTANCE_BARRIER_DESC" Language="zh_Hans_CN"><Text>【经济】帝国所有城市防御力 +5，宜居度 +1。</Text></Replace>
+        <Replace Tag="LOC_POLICY_HOH_VALK_CHARGE_NAME" Language="zh_Hans_CN"><Text>瓦尔基里冲锋</Text></Replace>
+        <Replace Tag="LOC_POLICY_HOH_VALK_CHARGE_DESC" Language="zh_Hans_CN"><Text>【军事】女武神单位侧翼夹击(Flanking)战斗力加成翻倍。（效果待实装）</Text></Replace>
+        <Replace Tag="LOC_POLICY_HOH_VALK_PHALANX_NAME" Language="zh_Hans_CN"><Text>瓦尔基里方阵</Text></Replace>
+        <Replace Tag="LOC_POLICY_HOH_VALK_PHALANX_DESC" Language="zh_Hans_CN"><Text>【军事】女武神单位支援加成(Support)战斗力翻倍。（效果待实装）</Text></Replace>
+        <Replace Tag="LOC_POLICY_HOH_CLERGY_PRIVILEGE_NAME" Language="zh_Hans_CN"><Text>圣职特权</Text></Replace>
+        <Replace Tag="LOC_POLICY_HOH_CLERGY_PRIVILEGE_DESC" Language="zh_Hans_CN"><Text>【经济】拥有天命支部的城市：+2 忠诚度、+2 住房、+1 宜居度/回合。</Text></Replace>
+
         <!-- ========================================================== -->
         <!-- 英语 (en_US) -->
         <!-- ========================================================== -->
@@ -88,5 +134,23 @@
         <Replace Tag="LOC_HONKAI_TECH_HONKAI_CONDUCTION_EFFECT_TOOLTIP" Language="en_US"><Text>Each domestic Trade Route grants bonus [ICON_ENERGY] Honkai Energy to the origin city equal to its special district base output.</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_ATONEMENT_SYSTEM_EFFECT_TOOLTIP" Language="en_US"><Text>Live off battle: defeating an enemy unit grants [ICON_FAITH] Faith equal to 100% of that unit's Combat Strength.</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_VALKYRIE_ADVANCED_EFFECT_TOOLTIP" Language="en_US"><Text>Empire-wide Valkyrie training level +1, with slightly improved S-rank odds.</Text></Replace>
+
+        <!-- Medieval techs EN -->
+        <Replace Tag="LOC_HONKAI_TECH_STIGMATA_PRINCIPLE_NAME" Language="en_US"><Text>Stigmata Inscription Principles</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GREAT_ERUPTION_HYPOTHESIS_NAME" Language="en_US"><Text>Great Honkai Eruption Hypothesis</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_VALKYRIE_BLOODLINE_PURIFICATION_NAME" Language="en_US"><Text>Valkyrie Bloodline Purification</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_CLERGY_PRIVILEGE_NAME" Language="en_US"><Text>Clergy Privilege</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_SOULLIQUOR_SMELTING_NAME" Language="en_US"><Text>Soulliquor Smelting</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_HONKAI_CRYSTAL_EXTRACTION_NAME" Language="en_US"><Text>Honkai Crystal Extraction</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_PROTOTYPE_NAME" Language="en_US"><Text>God-Slayer Armor Prototype</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_SCHICKSAL_ARMED_FORMATION_NAME" Language="en_US"><Text>Schicksal Armed Formation</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_STIGMATA_ALCHEMY_CHAMBER_NAME" Language="en_US"><Text>Stigmata Alchemy Chamber</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_HONKAI_SMELTER_NAME" Language="en_US"><Text>Honkai Energy Smelter</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_VALKYRIE_COMMAND_CENTER_NAME" Language="en_US"><Text>Valkyrie Command Center</Text></Replace>
+        <Replace Tag="LOC_POLICY_HOH_PREMODERN_MEDICAL_NAME" Language="en_US"><Text>Pre-Civilization Medical Protocol</Text></Replace>
+        <Replace Tag="LOC_POLICY_HOH_RESISTANCE_BARRIER_NAME" Language="en_US"><Text>Honkai Resistance Barrier</Text></Replace>
+        <Replace Tag="LOC_POLICY_HOH_VALK_CHARGE_NAME" Language="en_US"><Text>Valkyrie Charge</Text></Replace>
+        <Replace Tag="LOC_POLICY_HOH_VALK_PHALANX_NAME" Language="en_US"><Text>Valkyrie Phalanx</Text></Replace>
+        <Replace Tag="LOC_POLICY_HOH_CLERGY_PRIVILEGE_NAME" Language="en_US"><Text>Clergy Privilege</Text></Replace>
     </LocalizedText>
 </GameData>
