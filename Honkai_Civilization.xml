@@ -760,11 +760,40 @@
              Description="LOC_RESOURCE_HOH_FLUID_ALLOY_DESC"
              ResourceClassType="RESOURCECLASS_STRATEGIC"
              Happiness="0"
-             AdjacentToLand="true"
-             Frequency="5"
+             AdjacentToLand="false"
+             Frequency="6"
              Clumped="false"
+             RevealedEra="3"
+             PrereqCivic="CIVIC_SHADOW_SOULLIQUOR_SMELTING"
              Icon="ICON_RESOURCE_HOH_FLUID_ALLOY"/>
     </Resources>
+
+    <!-- 流体合金：有效地形（沙漠/平原/草原 × 平地+丘陵，共6种） -->
+    <Resource_ValidTerrains>
+        <Row ResourceType="RESOURCE_HOH_FLUID_ALLOY" TerrainType="TERRAIN_DESERT"/>
+        <Row ResourceType="RESOURCE_HOH_FLUID_ALLOY" TerrainType="TERRAIN_DESERT_HILLS"/>
+        <Row ResourceType="RESOURCE_HOH_FLUID_ALLOY" TerrainType="TERRAIN_PLAINS"/>
+        <Row ResourceType="RESOURCE_HOH_FLUID_ALLOY" TerrainType="TERRAIN_PLAINS_HILLS"/>
+        <Row ResourceType="RESOURCE_HOH_FLUID_ALLOY" TerrainType="TERRAIN_GRASS"/>
+        <Row ResourceType="RESOURCE_HOH_FLUID_ALLOY" TerrainType="TERRAIN_GRASS_HILLS"/>
+    </Resource_ValidTerrains>
+
+    <!-- 流体合金：可出现的地貌（不含泛滥平原，其余均允许） -->
+    <Resource_ValidFeatures>
+        <Row ResourceType="RESOURCE_HOH_FLUID_ALLOY" FeatureType="FEATURE_FOREST"/>
+        <Row ResourceType="RESOURCE_HOH_FLUID_ALLOY" FeatureType="FEATURE_JUNGLE"/>
+        <Row ResourceType="RESOURCE_HOH_FLUID_ALLOY" FeatureType="FEATURE_MARSH"/>
+    </Resource_ValidFeatures>
+
+    <!-- 流体合金：格子基础产出 -->
+    <Resource_YieldChanges>
+        <Row ResourceType="RESOURCE_HOH_FLUID_ALLOY" YieldType="YIELD_PRODUCTION" YieldChange="2"/>
+    </Resource_YieldChanges>
+
+    <!-- 流体合金：矿山可开采此资源 -->
+    <Improvement_ValidResources>
+        <Row ImprovementType="IMPROVEMENT_MINE" ResourceType="RESOURCE_HOH_FLUID_ALLOY"/>
+    </Improvement_ValidResources>
 
     <Units>
         <Row UnitType="UNIT_HOH_VALKYRIE_MK1" BaseMoves="2" Cost="90" ZoneOfControl="true" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" PromotionClass="PROMOTION_CLASS_HOH_VALKYRIE" AdvisorType="ADVISOR_CONQUEST" Name="LOC_UNIT_HONKAI_VALKYRIE_NAME" Description="LOC_UNIT_HONKAI_VALKYRIE_MK1_DESC" PurchaseYield="YIELD_GOLD" Combat="35" BaseSightRange="2" BuildCharges="3" Maintenance="1" TraitType="TRAIT_CIVILIZATION_HONKAI" PrereqCivic="CIVIC_SHADOW_WEAPON_PROTOTYPE"/>
