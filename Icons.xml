@@ -2,9 +2,9 @@
 <GameData>
     <IconTextureAtlases>
         <!-- 领袖与选人 -->
-        <Row Name="ATLAS_HOV_PORTRAIT" IconSize="1024" IconsPerRow="1" IconsPerColumn="1" Filename="herrscher_of_the_void_foreground.dds"/>
+        <Row Name="ATLAS_HOV_PORTRAIT" IconSize="1024" IconsPerRow="1" IconsPerColumn="1" Filename="Textures/herrscher_of_the_void_xuanren1024x1024.dds"/>
         <Row Name="ATLAS_HOV_HEAD_LARGE" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="herrscher_of_the_void_head_256.dds"/>
-        <Row Name="ATLAS_HOV_BACKGROUND" IconSize="1024" IconsPerRow="1" IconsPerColumn="1" Filename="background.dds"/>
+        <Row Name="ATLAS_HOV_BACKGROUND" IconSize="1024" IconsPerRow="1" IconsPerColumn="1" Filename="Textures/background_1024x1024.dds"/>
 
         <!-- 基础文明图标 -->
         <Row Name="ATLAS_HonkaiCiv256" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="HonkaiCiv_256.dds"/>

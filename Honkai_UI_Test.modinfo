@@ -38,9 +38,11 @@
       <Items>
         <File>Textures/herrscher_of_the_void_foreground.dds</File>
         <File>Textures/herrscher_of_the_void_xuanren.dds</File>
+        <File>Textures/herrscher_of_the_void_xuanren1024x1024.dds</File>
         <File>Textures/herrscher_of_the_void_head_256.dds</File>
         <File>Textures/HonkaiCiv_256.dds</File>
         <File>Textures/background.dds</File>
+        <File>Textures/background_1024x1024.dds</File>
         <File>Textures/Honkai_Terminal_Icon38.dds</File>
         <File>DistrictAndBuildingArt/tianming_logo_256.dds</File>
         <File>DistrictAndBuildingArt/nishang_logo_256.dds</File>
@@ -84,9 +86,11 @@
       <Items>
         <File>Textures/herrscher_of_the_void_foreground.dds</File>
         <File>Textures/herrscher_of_the_void_xuanren.dds</File>
+        <File>Textures/herrscher_of_the_void_xuanren1024x1024.dds</File>
         <File>Textures/herrscher_of_the_void_head_256.dds</File>
         <File>Textures/HonkaiCiv_256.dds</File>
         <File>Textures/background.dds</File>
+        <File>Textures/background_1024x1024.dds</File>
         <File>Textures/Honkai_Terminal_Icon38.dds</File>
         <File>DistrictAndBuildingArt/tianming_logo_256.dds</File>
         <File>DistrictAndBuildingArt/nishang_logo_256.dds</File>
@@ -158,9 +162,11 @@
     <File>UI/HonkaiCityPanel.lua</File>
     <File>Textures/herrscher_of_the_void_foreground.dds</File>
     <File>Textures/herrscher_of_the_void_xuanren.dds</File>
+    <File>Textures/herrscher_of_the_void_xuanren1024x1024.dds</File>
     <File>Textures/herrscher_of_the_void_head_256.dds</File>
     <File>Textures/HonkaiCiv_256.dds</File>
     <File>Textures/background.dds</File>
+    <File>Textures/background_1024x1024.dds</File>
     <File>Textures/Honkai_Terminal_Icon38.dds</File>
     <File>DistrictAndBuildingArt/tianming_logo_256.dds</File>
     <File>DistrictAndBuildingArt/nishang_logo_256.dds</File>
