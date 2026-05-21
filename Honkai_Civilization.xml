@@ -13,7 +13,11 @@
 
         <Row Type="BUILDING_HOH_ENERGY_POOL" Kind="KIND_BUILDING"/>
         <Row Type="BUILDING_HOH_SCHICKSAL_CATHEDRAL" Kind="KIND_BUILDING"/>
+        <Row Type="BUILDING_HOH_SCHICKSAL_CHAPEL" Kind="KIND_BUILDING"/>
         <Row Type="BUILDING_HOH_ST_FREYA" Kind="KIND_BUILDING"/>
+        <Row Type="BUILDING_HOH_ATONEMENT_COURT" Kind="KIND_BUILDING"/>
+        <Row Type="PROJECT_HOH_HONKAI_REUNION_REACTION" Kind="KIND_PROJECT"/>
+        <Row Type="IMPROVEMENT_HOH_PRAYER_ROOM" Kind="KIND_IMPROVEMENT"/>
 
         <Row Type="UNIT_HOH_VALKYRIE_MK1" Kind="KIND_UNIT"/>
         <Row Type="ABILITY_HOH_VALKYRIE_RANK_F" Kind="KIND_ABILITY"/>
@@ -23,7 +27,15 @@
         <Row Type="ABILITY_HOH_VALKYRIE_RANK_B" Kind="KIND_ABILITY"/>
         <Row Type="ABILITY_HOH_VALKYRIE_RANK_A" Kind="KIND_ABILITY"/>
         <Row Type="ABILITY_HOH_VALKYRIE_RANK_S" Kind="KIND_ABILITY"/>
+        <Row Type="ABILITY_HOH_SCHICKSAL_DOCTRINE" Kind="KIND_ABILITY"/>
+        <Row Type="ABILITY_HOH_KNIGHT_OATH_WALLS" Kind="KIND_ABILITY"/>
+        <Row Type="ABILITY_HOH_KNIGHT_OATH_CASTLE" Kind="KIND_ABILITY"/>
+        <Row Type="ABILITY_HOH_KNIGHT_OATH_STAR_FORT" Kind="KIND_ABILITY"/>
         <Row Type="POLICY_HOH_ANTI_HONKAI_MANUAL" Kind="KIND_POLICY"/>
+        <Row Type="POLICY_HOH_SANGUINE_CONSTRUCT" Kind="KIND_POLICY"/>
+        <Row Type="POLICY_HOH_SCHICKSAL_DOCTRINE" Kind="KIND_POLICY"/>
+        <Row Type="POLICY_HOH_KNIGHT_OATH" Kind="KIND_POLICY"/>
+        <Row Type="MODIFIER_HOH_PLAYER_CITIES_ENABLE_SPECIFIC_BUILDING_FAITH_PURCHASE" Kind="KIND_MODIFIER"/>
         
         <Row Type="CIVIC_HOH_LOCK" Kind="KIND_CIVIC"/>
         <Row Type="CIVIC_SHADOW_PERCEPTION" Kind="KIND_CIVIC"/>
@@ -36,6 +48,15 @@
         <Row Type="CIVIC_SHADOW_BASIC_ISOLATION" Kind="KIND_CIVIC"/>
         <Row Type="CIVIC_SHADOW_ST_FREYA" Kind="KIND_CIVIC"/>
         <Row Type="CIVIC_SHADOW_WEAPON_PROTOTYPE" Kind="KIND_CIVIC"/>
+        <Row Type="CIVIC_SHADOW_STIGMATA_PROTOTYPE" Kind="KIND_CIVIC"/>
+        <Row Type="CIVIC_SHADOW_HONKAI_FURNACE" Kind="KIND_CIVIC"/>
+        <Row Type="CIVIC_SHADOW_SCHICKSAL_DOCTRINE" Kind="KIND_CIVIC"/>
+        <Row Type="CIVIC_SHADOW_PRAYER_ROOM" Kind="KIND_CIVIC"/>
+        <Row Type="CIVIC_SHADOW_HONKAI_CONDUCTION" Kind="KIND_CIVIC"/>
+        <Row Type="CIVIC_SHADOW_ATONEMENT_SYSTEM" Kind="KIND_CIVIC"/>
+        <Row Type="CIVIC_SHADOW_KNIGHT_LEGACY" Kind="KIND_CIVIC"/>
+        <Row Type="CIVIC_SHADOW_POWER_ARMOR" Kind="KIND_CIVIC"/>
+        <Row Type="CIVIC_SHADOW_VALKYRIE_ADVANCED" Kind="KIND_CIVIC"/>
 
         <Row Type="PROMOTION_CLASS_HOH_VALKYRIE" Kind="KIND_PROMOTION_CLASS"/>
         <Row Type="PROMOTION_HOH_VALKYRIE_1_L" Kind="KIND_PROMOTION"/>
@@ -46,6 +67,10 @@
         <Row Type="PROMOTION_HOH_VALKYRIE_3_R" Kind="KIND_PROMOTION"/>
         <Row Type="PROMOTION_HOH_VALKYRIE_4" Kind="KIND_PROMOTION"/>
     </Types>
+
+    <DynamicModifiers>
+        <Row ModifierType="MODIFIER_HOH_PLAYER_CITIES_ENABLE_SPECIFIC_BUILDING_FAITH_PURCHASE" CollectionType="COLLECTION_PLAYER_CITIES" EffectType="EFFECT_ENABLE_SPECIFIC_BUILDING_FAITH_PURCHASE"/>
+    </DynamicModifiers>
 
     <Civics>
         <Row CivicType="CIVIC_HOH_LOCK" Name="LOC_CIVIC_HOH_LOCK_NAME" Cost="1000000" EraType="ERA_FUTURE" UITreeRow="0"/>
@@ -59,6 +84,15 @@
         <Row CivicType="CIVIC_SHADOW_BASIC_ISOLATION" Name="LOC_HONKAI_TECH_BASIC_ISOLATION_NAME" Cost="20" EraType="ERA_ANCIENT" UITreeRow="0"/>
         <Row CivicType="CIVIC_SHADOW_ST_FREYA" Name="LOC_HONKAI_TECH_ST_FREYA_NAME" Cost="20" EraType="ERA_ANCIENT" UITreeRow="0"/>
         <Row CivicType="CIVIC_SHADOW_WEAPON_PROTOTYPE" Name="LOC_HONKAI_TECH_WEAPON_PROTOTYPE_NAME" Cost="20" EraType="ERA_ANCIENT" UITreeRow="0"/>
+        <Row CivicType="CIVIC_SHADOW_STIGMATA_PROTOTYPE" Name="LOC_HONKAI_TECH_STIGMATA_PROTOTYPE_NAME" Cost="20" EraType="ERA_CLASSICAL" UITreeRow="0"/>
+        <Row CivicType="CIVIC_SHADOW_HONKAI_FURNACE" Name="LOC_HONKAI_TECH_HONKAI_FURNACE_NAME" Cost="20" EraType="ERA_CLASSICAL" UITreeRow="0"/>
+        <Row CivicType="CIVIC_SHADOW_SCHICKSAL_DOCTRINE" Name="LOC_HONKAI_TECH_SCHICKSAL_DOCTRINE_NAME" Cost="20" EraType="ERA_CLASSICAL" UITreeRow="0"/>
+        <Row CivicType="CIVIC_SHADOW_PRAYER_ROOM" Name="LOC_HONKAI_TECH_PRAYER_ROOM_NAME" Cost="20" EraType="ERA_CLASSICAL" UITreeRow="0"/>
+        <Row CivicType="CIVIC_SHADOW_HONKAI_CONDUCTION" Name="LOC_HONKAI_TECH_HONKAI_CONDUCTION_NAME" Cost="20" EraType="ERA_CLASSICAL" UITreeRow="0"/>
+        <Row CivicType="CIVIC_SHADOW_ATONEMENT_SYSTEM" Name="LOC_HONKAI_TECH_ATONEMENT_SYSTEM_NAME" Cost="20" EraType="ERA_CLASSICAL" UITreeRow="0"/>
+        <Row CivicType="CIVIC_SHADOW_KNIGHT_LEGACY" Name="LOC_HONKAI_TECH_KNIGHT_LEGACY_NAME" Cost="20" EraType="ERA_CLASSICAL" UITreeRow="0"/>
+        <Row CivicType="CIVIC_SHADOW_POWER_ARMOR" Name="LOC_HONKAI_TECH_POWER_ARMOR_NAME" Cost="20" EraType="ERA_CLASSICAL" UITreeRow="0"/>
+        <Row CivicType="CIVIC_SHADOW_VALKYRIE_ADVANCED" Name="LOC_HONKAI_TECH_VALKYRIE_ADVANCED_NAME" Cost="20" EraType="ERA_CLASSICAL" UITreeRow="0"/>
     </Civics>
 
     <CivicPrereqs>
@@ -72,6 +106,15 @@
         <Row Civic="CIVIC_SHADOW_BASIC_ISOLATION" PrereqCivic="CIVIC_HOH_LOCK"/>
         <Row Civic="CIVIC_SHADOW_ST_FREYA" PrereqCivic="CIVIC_HOH_LOCK"/>
         <Row Civic="CIVIC_SHADOW_WEAPON_PROTOTYPE" PrereqCivic="CIVIC_HOH_LOCK"/>
+        <Row Civic="CIVIC_SHADOW_STIGMATA_PROTOTYPE" PrereqCivic="CIVIC_HOH_LOCK"/>
+        <Row Civic="CIVIC_SHADOW_HONKAI_FURNACE" PrereqCivic="CIVIC_HOH_LOCK"/>
+        <Row Civic="CIVIC_SHADOW_SCHICKSAL_DOCTRINE" PrereqCivic="CIVIC_HOH_LOCK"/>
+        <Row Civic="CIVIC_SHADOW_PRAYER_ROOM" PrereqCivic="CIVIC_HOH_LOCK"/>
+        <Row Civic="CIVIC_SHADOW_HONKAI_CONDUCTION" PrereqCivic="CIVIC_HOH_LOCK"/>
+        <Row Civic="CIVIC_SHADOW_ATONEMENT_SYSTEM" PrereqCivic="CIVIC_HOH_LOCK"/>
+        <Row Civic="CIVIC_SHADOW_KNIGHT_LEGACY" PrereqCivic="CIVIC_HOH_LOCK"/>
+        <Row Civic="CIVIC_SHADOW_POWER_ARMOR" PrereqCivic="CIVIC_HOH_LOCK"/>
+        <Row Civic="CIVIC_SHADOW_VALKYRIE_ADVANCED" PrereqCivic="CIVIC_HOH_LOCK"/>
     </CivicPrereqs>
 
     <CivicModifiers>
@@ -80,15 +123,28 @@
         <Row CivicType="CIVIC_SHADOW_DESTINY_CLERGY" ModifierId="MOD_HOH_CLERGY_HOLY_SITE_PRODUCTION"/>
         <Row CivicType="CIVIC_SHADOW_NUN_FORMATION" ModifierId="MOD_HOH_NUN_FORMATION_DISCOUNT"/>
         <Row CivicType="CIVIC_SHADOW_NUN_FORMATION" ModifierId="MOD_HOH_IS_NUN_FORMATION_FAITH_PURCHASE"/>
+        <Row CivicType="CIVIC_SHADOW_ATONEMENT_SYSTEM" ModifierId="MOD_HOH_ATONEMENT_SYSTEM_FAITH_KILLS"/>
     </CivicModifiers>
 
     <Policies>
         <Row PolicyType="POLICY_HOH_ANTI_HONKAI_MANUAL" Name="LOC_POLICY_HOH_ANTI_HONKAI_MANUAL_NAME" Description="LOC_POLICY_HOH_ANTI_HONKAI_MANUAL_DESC" PrereqCivic="CIVIC_SHADOW_BASIC_TACTICS" GovernmentSlotType="SLOT_MILITARY"/>
+        <Row PolicyType="POLICY_HOH_SANGUINE_CONSTRUCT" Name="LOC_POLICY_HOH_SANGUINE_CONSTRUCT_NAME" Description="LOC_POLICY_HOH_SANGUINE_CONSTRUCT_DESC" PrereqCivic="CIVIC_SHADOW_POWER_ARMOR" GovernmentSlotType="SLOT_MILITARY"/>
+        <Row PolicyType="POLICY_HOH_SCHICKSAL_DOCTRINE" Name="LOC_POLICY_HOH_SCHICKSAL_DOCTRINE_NAME" Description="LOC_POLICY_HOH_SCHICKSAL_DOCTRINE_DESC" PrereqCivic="CIVIC_SHADOW_SCHICKSAL_DOCTRINE" GovernmentSlotType="SLOT_MILITARY"/>
+        <Row PolicyType="POLICY_HOH_KNIGHT_OATH" Name="LOC_POLICY_HOH_KNIGHT_OATH_NAME" Description="LOC_POLICY_HOH_KNIGHT_OATH_DESC" PrereqCivic="CIVIC_SHADOW_KNIGHT_LEGACY" GovernmentSlotType="SLOT_MILITARY"/>
     </Policies>
 
     <PolicyModifiers>
         <Row PolicyType="POLICY_HOH_ANTI_HONKAI_MANUAL" ModifierId="MOD_HOH_TACTICS_BARB_COMBAT"/>
+        <Row PolicyType="POLICY_HOH_SANGUINE_CONSTRUCT" ModifierId="MOD_HOH_SANGUINE_VALKYRIE_COMBAT"/>
+        <Row PolicyType="POLICY_HOH_SCHICKSAL_DOCTRINE" ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_GRANT_ABILITY"/>
+        <Row PolicyType="POLICY_HOH_SCHICKSAL_DOCTRINE" ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_FAITH_BUY_WALLS"/>
+        <Row PolicyType="POLICY_HOH_SCHICKSAL_DOCTRINE" ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_FAITH_BUY_CASTLE"/>
+        <Row PolicyType="POLICY_HOH_SCHICKSAL_DOCTRINE" ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_FAITH_BUY_STAR_FORT"/>
     </PolicyModifiers>
+
+    <Projects>
+        <Row ProjectType="PROJECT_HOH_HONKAI_REUNION_REACTION" Name="LOC_PROJECT_HOH_HONKAI_REUNION_REACTION_NAME" ShortName="LOC_PROJECT_HOH_HONKAI_REUNION_REACTION_SHORT_NAME" Description="LOC_PROJECT_HOH_HONKAI_REUNION_REACTION_DESC" PrereqDistrict="DISTRICT_CITY_CENTER" PrereqCivic="CIVIC_SHADOW_HONKAI_FURNACE" Cost="25" AdvisorType="ADVISOR_GENERIC" CostProgressionModel="COST_PROGRESSION_GAME_PROGRESS" CostProgressionParam1="1500"/>
+    </Projects>
 
     <UnitPromotionClasses>
         <Row PromotionClassType="PROMOTION_CLASS_HOH_VALKYRIE" Name="LOC_PROMOTION_CLASS_HOH_VALKYRIE_NAME"/>
@@ -135,6 +191,10 @@
         <Row UnitAbilityType="ABILITY_HOH_VALKYRIE_RANK_B" Name="LOC_ABILITY_HOH_VALKYRIE_RANK_B_NAME" Description="LOC_ABILITY_HOH_VALKYRIE_RANK_B_DESC" Inactive="true" ShowFloatTextWhenEarned="true"/>
         <Row UnitAbilityType="ABILITY_HOH_VALKYRIE_RANK_A" Name="LOC_ABILITY_HOH_VALKYRIE_RANK_A_NAME" Description="LOC_ABILITY_HOH_VALKYRIE_RANK_A_DESC" Inactive="true" ShowFloatTextWhenEarned="true"/>
         <Row UnitAbilityType="ABILITY_HOH_VALKYRIE_RANK_S" Name="LOC_ABILITY_HOH_VALKYRIE_RANK_S_NAME" Description="LOC_ABILITY_HOH_VALKYRIE_RANK_S_DESC" Inactive="true" ShowFloatTextWhenEarned="true"/>
+        <Row UnitAbilityType="ABILITY_HOH_SCHICKSAL_DOCTRINE" Name="LOC_ABILITY_HOH_SCHICKSAL_DOCTRINE_NAME" Description="LOC_ABILITY_HOH_SCHICKSAL_DOCTRINE_DESC" Inactive="true" ShowFloatTextWhenEarned="false"/>
+        <Row UnitAbilityType="ABILITY_HOH_KNIGHT_OATH_WALLS" Name="LOC_ABILITY_HOH_KNIGHT_OATH_WALLS_NAME" Description="LOC_ABILITY_HOH_KNIGHT_OATH_WALLS_DESC" Inactive="true" ShowFloatTextWhenEarned="false"/>
+        <Row UnitAbilityType="ABILITY_HOH_KNIGHT_OATH_CASTLE" Name="LOC_ABILITY_HOH_KNIGHT_OATH_CASTLE_NAME" Description="LOC_ABILITY_HOH_KNIGHT_OATH_CASTLE_DESC" Inactive="true" ShowFloatTextWhenEarned="false"/>
+        <Row UnitAbilityType="ABILITY_HOH_KNIGHT_OATH_STAR_FORT" Name="LOC_ABILITY_HOH_KNIGHT_OATH_STAR_FORT_NAME" Description="LOC_ABILITY_HOH_KNIGHT_OATH_STAR_FORT_DESC" Inactive="true" ShowFloatTextWhenEarned="false"/>
     </UnitAbilities>
 
     <UnitAbilityModifiers>
@@ -145,6 +205,10 @@
         <Row UnitAbilityType="ABILITY_HOH_VALKYRIE_RANK_B" ModifierId="MOD_HOH_VALKYRIE_RANK_B_COMBAT"/>
         <Row UnitAbilityType="ABILITY_HOH_VALKYRIE_RANK_A" ModifierId="MOD_HOH_VALKYRIE_RANK_A_COMBAT"/>
         <Row UnitAbilityType="ABILITY_HOH_VALKYRIE_RANK_S" ModifierId="MOD_HOH_VALKYRIE_RANK_S_COMBAT"/>
+        <Row UnitAbilityType="ABILITY_HOH_SCHICKSAL_DOCTRINE" ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_NO_WOUNDED_PENALTY"/>
+        <Row UnitAbilityType="ABILITY_HOH_KNIGHT_OATH_WALLS" ModifierId="MOD_HOH_KNIGHT_OATH_WALLS_COMBAT"/>
+        <Row UnitAbilityType="ABILITY_HOH_KNIGHT_OATH_CASTLE" ModifierId="MOD_HOH_KNIGHT_OATH_CASTLE_COMBAT"/>
+        <Row UnitAbilityType="ABILITY_HOH_KNIGHT_OATH_STAR_FORT" ModifierId="MOD_HOH_KNIGHT_OATH_STAR_FORT_COMBAT"/>
     </UnitAbilityModifiers>
 
     <Traits>
@@ -371,8 +435,19 @@
     <Buildings>
         <Row BuildingType="BUILDING_HOH_ENERGY_POOL" Name="LOC_BUILDING_HOH_ENERGY_POOL_NAME" Description="LOC_BUILDING_HOH_ENERGY_POOL_DESC" PrereqDistrict="DISTRICT_CITY_CENTER" Cost="60" AdvisorType="ADVISOR_GENERIC" PrereqCivic="CIVIC_SHADOW_ENERGY_CONTAINER" PurchaseYield="YIELD_GOLD" MaxPlayerInstances="1"/>
         <Row BuildingType="BUILDING_HOH_SCHICKSAL_CATHEDRAL" Name="LOC_BUILDING_HOH_SCHICKSAL_CATHEDRAL_NAME" Description="LOC_BUILDING_HOH_SCHICKSAL_CATHEDRAL_DESC" PrereqDistrict="DISTRICT_SCHICKSAL_HQ" Cost="70" AdvisorType="ADVISOR_RELIGION" PrereqCivic="CIVIC_SHADOW_DESTINY_CLERGY" PurchaseYield="YIELD_GOLD"/>
+        <Row BuildingType="BUILDING_HOH_SCHICKSAL_CHAPEL" Name="LOC_BUILDING_HOH_SCHICKSAL_CHAPEL_NAME" Description="LOC_BUILDING_HOH_SCHICKSAL_CHAPEL_DESC" PrereqDistrict="DISTRICT_HOLY_SITE" Cost="70" AdvisorType="ADVISOR_RELIGION" PrereqCivic="CIVIC_SHADOW_DESTINY_CLERGY" PurchaseYield="YIELD_GOLD" Housing="1" TraitType="TRAIT_CIVILIZATION_HONKAI"/>
+        <Row BuildingType="BUILDING_HOH_ATONEMENT_COURT" Name="LOC_BUILDING_HOH_ATONEMENT_COURT_NAME" Description="LOC_BUILDING_HOH_ATONEMENT_COURT_DESC" PrereqDistrict="DISTRICT_HOLY_SITE" Cost="120" Maintenance="2" AdvisorType="ADVISOR_RELIGION" PrereqCivic="CIVIC_SHADOW_SCHICKSAL_DOCTRINE" PurchaseYield="YIELD_GOLD" CitizenSlots="1" TraitType="TRAIT_CIVILIZATION_HONKAI"/>
         <Row BuildingType="BUILDING_HOH_ST_FREYA" Name="LOC_BUILDING_HOH_ST_FREYA_NAME" Description="LOC_BUILDING_HOH_ST_FREYA_DESC" Cost="120" AdvisorType="ADVISOR_RELIGION" PrereqCivic="CIVIC_SHADOW_ST_FREYA" AdjacentDistrict="DISTRICT_SCHICKSAL_BRANCH" MaxWorldInstances="1" IsWonder="true" RequiresPlacement="true"/>
     </Buildings>
+
+    <BuildingReplaces>
+        <Row CivUniqueBuildingType="BUILDING_HOH_SCHICKSAL_CHAPEL" ReplacesBuildingType="BUILDING_SHRINE"/>
+        <Row CivUniqueBuildingType="BUILDING_HOH_ATONEMENT_COURT" ReplacesBuildingType="BUILDING_TEMPLE"/>
+    </BuildingReplaces>
+
+    <BuildingPrereqs>
+        <Row Building="BUILDING_HOH_ATONEMENT_COURT" PrereqBuilding="BUILDING_HOH_SCHICKSAL_CHAPEL"/>
+    </BuildingPrereqs>
 
     <Building_ValidTerrains>
         <Row BuildingType="BUILDING_HOH_ST_FREYA" TerrainType="TERRAIN_GRASS_HILLS"/>
@@ -384,11 +459,43 @@
 
     <Building_YieldChanges>
         <Row BuildingType="BUILDING_HOH_SCHICKSAL_CATHEDRAL" YieldType="YIELD_FAITH" YieldChange="3"/>
+        <Row BuildingType="BUILDING_HOH_SCHICKSAL_CHAPEL" YieldType="YIELD_FAITH" YieldChange="1"/>
+        <Row BuildingType="BUILDING_HOH_ATONEMENT_COURT" YieldType="YIELD_FAITH" YieldChange="2"/>
     </Building_YieldChanges>
 
     <Building_GreatPersonPoints>
         <Row BuildingType="BUILDING_HOH_SCHICKSAL_CATHEDRAL" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" PointsPerTurn="1"/>
+        <Row BuildingType="BUILDING_HOH_ATONEMENT_COURT" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" PointsPerTurn="1"/>
     </Building_GreatPersonPoints>
+
+    <Building_GreatWorks>
+        <Row BuildingType="BUILDING_HOH_ATONEMENT_COURT" GreatWorkSlotType="GREATWORKSLOT_RELIC" NumSlots="2"/>
+    </Building_GreatWorks>
+
+    <Improvements>
+        <Row ImprovementType="IMPROVEMENT_HOH_PRAYER_ROOM" Name="LOC_IMPROVEMENT_HOH_PRAYER_ROOM_NAME" Description="LOC_IMPROVEMENT_HOH_PRAYER_ROOM_DESC" Icon="ICON_BUILDING_PAGODA" PlunderType="PLUNDER_FAITH" PlunderAmount="25" Buildable="true" PrereqCivic="CIVIC_SHADOW_PRAYER_ROOM" SameAdjacentValid="false" TraitType="TRAIT_CIVILIZATION_HONKAI"/>
+    </Improvements>
+
+    <Improvement_ValidTerrains>
+        <Row ImprovementType="IMPROVEMENT_HOH_PRAYER_ROOM" TerrainType="TERRAIN_GRASS"/>
+        <Row ImprovementType="IMPROVEMENT_HOH_PRAYER_ROOM" TerrainType="TERRAIN_GRASS_HILLS"/>
+        <Row ImprovementType="IMPROVEMENT_HOH_PRAYER_ROOM" TerrainType="TERRAIN_PLAINS"/>
+        <Row ImprovementType="IMPROVEMENT_HOH_PRAYER_ROOM" TerrainType="TERRAIN_PLAINS_HILLS"/>
+        <Row ImprovementType="IMPROVEMENT_HOH_PRAYER_ROOM" TerrainType="TERRAIN_DESERT"/>
+        <Row ImprovementType="IMPROVEMENT_HOH_PRAYER_ROOM" TerrainType="TERRAIN_DESERT_HILLS"/>
+        <Row ImprovementType="IMPROVEMENT_HOH_PRAYER_ROOM" TerrainType="TERRAIN_TUNDRA"/>
+        <Row ImprovementType="IMPROVEMENT_HOH_PRAYER_ROOM" TerrainType="TERRAIN_TUNDRA_HILLS"/>
+        <Row ImprovementType="IMPROVEMENT_HOH_PRAYER_ROOM" TerrainType="TERRAIN_SNOW"/>
+        <Row ImprovementType="IMPROVEMENT_HOH_PRAYER_ROOM" TerrainType="TERRAIN_SNOW_HILLS"/>
+    </Improvement_ValidTerrains>
+
+    <Improvement_ValidBuildUnits>
+        <Row ImprovementType="IMPROVEMENT_HOH_PRAYER_ROOM" UnitType="UNIT_HOH_VALKYRIE_MK1"/>
+    </Improvement_ValidBuildUnits>
+
+    <Improvement_YieldChanges>
+        <Row ImprovementType="IMPROVEMENT_HOH_PRAYER_ROOM" YieldType="YIELD_FAITH" YieldChange="1"/>
+    </Improvement_YieldChanges>
 
     <Modifiers>
         <Row ModifierId="MOD_HOH_HQ_GRANT_ENVOY" ModifierType="MODIFIER_PLAYER_GRANT_INFLUENCE_TOKEN" RunOnce="true" Permanent="true" OwnerRequirementSetId="REQSET_HOH_ADJACENT_TO_CITY_CENTER"/>
@@ -406,6 +513,16 @@
         <Row ModifierId="MOD_HOH_VALKYRIE_RANK_B_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
         <Row ModifierId="MOD_HOH_VALKYRIE_RANK_A_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
         <Row ModifierId="MOD_HOH_VALKYRIE_RANK_S_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
+        <Row ModifierId="MOD_HOH_SANGUINE_VALKYRIE_COMBAT" ModifierType="MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_HOH_UNIT_IS_VALKYRIE"/>
+        <Row ModifierId="MOD_HOH_ATONEMENT_SYSTEM_FAITH_KILLS" ModifierType="MODIFIER_PLAYER_UNITS_ADJUST_POST_COMBAT_YIELD"/>
+        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_GRANT_ABILITY" ModifierType="MODIFIER_PLAYER_UNITS_GRANT_ABILITY" SubjectRequirementSetId="REQSET_HOH_UNIT_IS_VALKYRIE"/>
+        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_NO_WOUNDED_PENALTY" ModifierType="MODIFIER_PLAYER_UNIT_ADJUST_NO_REDUCTION_DAMAGE" SubjectRequirementSetId="REQSET_HOH_ADJACENT_TO_HOLY_SITE_OR_BRANCH"/>
+        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_FAITH_BUY_WALLS" ModifierType="MODIFIER_HOH_PLAYER_CITIES_ENABLE_SPECIFIC_BUILDING_FAITH_PURCHASE"/>
+        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_FAITH_BUY_CASTLE" ModifierType="MODIFIER_HOH_PLAYER_CITIES_ENABLE_SPECIFIC_BUILDING_FAITH_PURCHASE"/>
+        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_FAITH_BUY_STAR_FORT" ModifierType="MODIFIER_HOH_PLAYER_CITIES_ENABLE_SPECIFIC_BUILDING_FAITH_PURCHASE"/>
+        <Row ModifierId="MOD_HOH_KNIGHT_OATH_WALLS_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
+        <Row ModifierId="MOD_HOH_KNIGHT_OATH_CASTLE_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
+        <Row ModifierId="MOD_HOH_KNIGHT_OATH_STAR_FORT_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
 
         <!-- 远古科技Modifiers -->
         <Row ModifierId="MOD_HOH_OMEN_FAITH" ModifierType="MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE" SubjectRequirementSetId="REQSET_HOH_DISTRICT_IS_CITY_CENTER"/>
@@ -435,6 +552,17 @@
         <Row ModifierId="MOD_HOH_VALKYRIE_RANK_B_COMBAT" Name="Amount" Value="5"/>
         <Row ModifierId="MOD_HOH_VALKYRIE_RANK_A_COMBAT" Name="Amount" Value="8"/>
         <Row ModifierId="MOD_HOH_VALKYRIE_RANK_S_COMBAT" Name="Amount" Value="12"/>
+        <Row ModifierId="MOD_HOH_SANGUINE_VALKYRIE_COMBAT" Name="Amount" Value="4"/>
+        <Row ModifierId="MOD_HOH_ATONEMENT_SYSTEM_FAITH_KILLS" Name="YieldType" Value="YIELD_FAITH"/>
+        <Row ModifierId="MOD_HOH_ATONEMENT_SYSTEM_FAITH_KILLS" Name="PercentDefeatedStrength" Value="100"/>
+        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_GRANT_ABILITY" Name="AbilityType" Value="ABILITY_HOH_SCHICKSAL_DOCTRINE"/>
+        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_NO_WOUNDED_PENALTY" Name="NoReduction" Value="true"/>
+        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_FAITH_BUY_WALLS" Name="BuildingType" Value="BUILDING_WALLS"/>
+        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_FAITH_BUY_CASTLE" Name="BuildingType" Value="BUILDING_CASTLE"/>
+        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_FAITH_BUY_STAR_FORT" Name="BuildingType" Value="BUILDING_STAR_FORT"/>
+        <Row ModifierId="MOD_HOH_KNIGHT_OATH_WALLS_COMBAT" Name="Amount" Value="2"/>
+        <Row ModifierId="MOD_HOH_KNIGHT_OATH_CASTLE_COMBAT" Name="Amount" Value="4"/>
+        <Row ModifierId="MOD_HOH_KNIGHT_OATH_STAR_FORT_COMBAT" Name="Amount" Value="6"/>
 
         <!-- 远古科技Modifiers -->
         <Row ModifierId="MOD_HOH_OMEN_FAITH" Name="YieldType" Value="YIELD_FAITH"/>
@@ -465,6 +593,12 @@
         <Row ModifierId="MOD_HOH_VALKYRIE_RANK_B_COMBAT" Context="Preview" Text="LOC_MOD_HOH_VALKYRIE_RANK_B_PREVIEW"/>
         <Row ModifierId="MOD_HOH_VALKYRIE_RANK_A_COMBAT" Context="Preview" Text="LOC_MOD_HOH_VALKYRIE_RANK_A_PREVIEW"/>
         <Row ModifierId="MOD_HOH_VALKYRIE_RANK_S_COMBAT" Context="Preview" Text="LOC_MOD_HOH_VALKYRIE_RANK_S_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_SANGUINE_VALKYRIE_COMBAT" Context="Preview" Text="LOC_MOD_HOH_SANGUINE_VALKYRIE_COMBAT_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_ATONEMENT_SYSTEM_FAITH_KILLS" Context="Preview" Text="LOC_MOD_HOH_ATONEMENT_SYSTEM_FAITH_KILLS_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_NO_WOUNDED_PENALTY" Context="Preview" Text="LOC_MOD_HOH_SCHICKSAL_DOCTRINE_NO_WOUNDED_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_KNIGHT_OATH_WALLS_COMBAT" Context="Preview" Text="LOC_MOD_HOH_KNIGHT_OATH_WALLS_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_KNIGHT_OATH_CASTLE_COMBAT" Context="Preview" Text="LOC_MOD_HOH_KNIGHT_OATH_CASTLE_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_KNIGHT_OATH_STAR_FORT_COMBAT" Context="Preview" Text="LOC_MOD_HOH_KNIGHT_OATH_STAR_FORT_PREVIEW"/>
     </ModifierStrings>
 
     <RequirementSets>
@@ -474,6 +608,8 @@
         <Row RequirementSetId="REQSET_HOH_VS_DISTRICT" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
         <Row RequirementSetId="HARASS_REQUIREMENTS" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
         <Row RequirementSetId="REQSET_HOH_DISTRICT_IS_CITY_CENTER" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+        <Row RequirementSetId="REQSET_HOH_UNIT_IS_VALKYRIE" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+        <Row RequirementSetId="REQSET_HOH_ADJACENT_TO_HOLY_SITE_OR_BRANCH" RequirementSetType="REQUIREMENTSET_TEST_ANY"/>
     </RequirementSets>
     
     <RequirementSetRequirements>
@@ -485,6 +621,9 @@
         <Row RequirementSetId="REQSET_HOH_VS_DISTRICT" RequirementId="REQ_HOH_OPP_IS_DISTRICT"/>
         <Row RequirementSetId="HARASS_REQUIREMENTS" RequirementId="HARASS_ADJACENT_UNIT_AT_WAR"/>
         <Row RequirementSetId="REQSET_HOH_DISTRICT_IS_CITY_CENTER" RequirementId="REQ_HOH_DISTRICT_IS_CITY_CENTER_REQ"/>
+        <Row RequirementSetId="REQSET_HOH_UNIT_IS_VALKYRIE" RequirementId="REQ_HOH_UNIT_IS_VALKYRIE"/>
+        <Row RequirementSetId="REQSET_HOH_ADJACENT_TO_HOLY_SITE_OR_BRANCH" RequirementId="REQ_HOH_ADJACENT_TO_HOLY_SITE"/>
+        <Row RequirementSetId="REQSET_HOH_ADJACENT_TO_HOLY_SITE_OR_BRANCH" RequirementId="REQ_HOH_ADJACENT_TO_SCHICKSAL_BRANCH"/>
     </RequirementSetRequirements>
     
     <Requirements>
@@ -492,6 +631,9 @@
         <Row RequirementId="REQ_HOH_OPP_IS_DISTRICT" RequirementType="REQUIREMENT_OPPONENT_IS_DISTRICT"/>
         <Row RequirementId="HARASS_ADJACENT_UNIT_AT_WAR" RequirementType="REQUIREMENT_PLOT_ADJACENT_TO_OWNER_AT_WAR"/>
         <Row RequirementId="REQ_HOH_DISTRICT_IS_CITY_CENTER_REQ" RequirementType="REQUIREMENT_DISTRICT_TYPE_MATCHES"/>
+        <Row RequirementId="REQ_HOH_UNIT_IS_VALKYRIE" RequirementType="REQUIREMENT_UNIT_TAG_MATCHES"/>
+        <Row RequirementId="REQ_HOH_ADJACENT_TO_HOLY_SITE" RequirementType="REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES"/>
+        <Row RequirementId="REQ_HOH_ADJACENT_TO_SCHICKSAL_BRANCH" RequirementType="REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES"/>
     </Requirements>
     
     <RequirementArguments>
@@ -499,6 +641,9 @@
         <Row RequirementId="HARASS_ADJACENT_UNIT_AT_WAR" Name="MinDistance" Value="1"/>
         <Row RequirementId="HARASS_ADJACENT_UNIT_AT_WAR" Name="MaxDistance" Value="1"/>
         <Row RequirementId="REQ_HOH_DISTRICT_IS_CITY_CENTER_REQ" Name="DistrictType" Value="DISTRICT_CITY_CENTER"/>
+        <Row RequirementId="REQ_HOH_UNIT_IS_VALKYRIE" Name="Tag" Value="CLASS_HOH_VALKYRIE"/>
+        <Row RequirementId="REQ_HOH_ADJACENT_TO_HOLY_SITE" Name="DistrictType" Value="DISTRICT_HOLY_SITE"/>
+        <Row RequirementId="REQ_HOH_ADJACENT_TO_SCHICKSAL_BRANCH" Name="DistrictType" Value="DISTRICT_SCHICKSAL_BRANCH"/>
     </RequirementArguments>
 
     <BuildingModifiers>
@@ -523,9 +668,13 @@
         <Row Type="ABILITY_HOH_VALKYRIE_RANK_B" Tag="CLASS_HOH_VALKYRIE"/>
         <Row Type="ABILITY_HOH_VALKYRIE_RANK_A" Tag="CLASS_HOH_VALKYRIE"/>
         <Row Type="ABILITY_HOH_VALKYRIE_RANK_S" Tag="CLASS_HOH_VALKYRIE"/>
+        <Row Type="ABILITY_HOH_SCHICKSAL_DOCTRINE" Tag="CLASS_HOH_VALKYRIE"/>
+        <Row Type="ABILITY_HOH_KNIGHT_OATH_WALLS" Tag="CLASS_HOH_VALKYRIE"/>
+        <Row Type="ABILITY_HOH_KNIGHT_OATH_CASTLE" Tag="CLASS_HOH_VALKYRIE"/>
+        <Row Type="ABILITY_HOH_KNIGHT_OATH_STAR_FORT" Tag="CLASS_HOH_VALKYRIE"/>
     </TypeTags>
 
     <Units>
-        <Row UnitType="UNIT_HOH_VALKYRIE_MK1" BaseMoves="2" Cost="90" ZoneOfControl="true" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" PromotionClass="PROMOTION_CLASS_HOH_VALKYRIE" AdvisorType="ADVISOR_CONQUEST" Name="LOC_UNIT_HONKAI_VALKYRIE_NAME" Description="LOC_UNIT_HONKAI_VALKYRIE_MK1_DESC" PurchaseYield="YIELD_GOLD" Combat="35" BaseSightRange="2" Maintenance="1" TraitType="TRAIT_CIVILIZATION_HONKAI" PrereqCivic="CIVIC_SHADOW_WEAPON_PROTOTYPE"/>
+        <Row UnitType="UNIT_HOH_VALKYRIE_MK1" BaseMoves="2" Cost="90" ZoneOfControl="true" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" PromotionClass="PROMOTION_CLASS_HOH_VALKYRIE" AdvisorType="ADVISOR_CONQUEST" Name="LOC_UNIT_HONKAI_VALKYRIE_NAME" Description="LOC_UNIT_HONKAI_VALKYRIE_MK1_DESC" PurchaseYield="YIELD_GOLD" Combat="35" BaseSightRange="2" BuildCharges="3" Maintenance="1" TraitType="TRAIT_CIVILIZATION_HONKAI" PrereqCivic="CIVIC_SHADOW_WEAPON_PROTOTYPE"/>
     </Units>
 </GameData>

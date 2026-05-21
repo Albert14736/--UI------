@@ -15,7 +15,7 @@
         <Replace Tag="LOC_HONKAI_TECH_ENERGY_CONTAINER_NAME" Language="zh_Hans_CN"><Text>能源容器雏形</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_ENERGY_CONTAINER_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁初级【崩坏能存储池】建筑。</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_DESTINY_CLERGY_NAME" Language="zh_Hans_CN"><Text>命运神职</Text></Replace>
-        <Replace Tag="LOC_HONKAI_TECH_DESTINY_CLERGY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁【天命总部】和【天命大教堂】，并提升天命支部建设速度。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_DESTINY_CLERGY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁【天命总部】、【天命大教堂】与天命支部 T1 建筑【天命礼拜堂】，并提升天命支部建设速度。</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_NUN_FORMATION_NAME" Language="zh_Hans_CN"><Text>天命修女编制</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_NUN_FORMATION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]允许使用信仰值购买女武神单位，并降低其购买费用。</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_BASIC_ISOLATION_NAME" Language="zh_Hans_CN"><Text>初级崩坏隔离</Text></Replace>
@@ -24,6 +24,24 @@
         <Replace Tag="LOC_HONKAI_TECH_ST_FREYA_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁世界奇观【圣芙蕾雅学园】。</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_WEAPON_PROTOTYPE_NAME" Language="zh_Hans_CN"><Text>崩坏能武器初设</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_WEAPON_PROTOTYPE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁 T1 B级女武神。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_STIGMATA_PROTOTYPE_NAME" Language="zh_Hans_CN"><Text>崩坏纹典记录</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_STIGMATA_PROTOTYPE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]每位专家额外提供 +0.1 崩坏能研究点。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_HONKAI_FURNACE_NAME" Language="zh_Hans_CN"><Text>崩坏能熔炉</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_HONKAI_FURNACE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁城市项目【崩坏能重聚反应】，将本城生产力转化为战术崩坏能。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_SCHICKSAL_DOCTRINE_NAME" Language="zh_Hans_CN"><Text>赎罪教义</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_SCHICKSAL_DOCTRINE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁军事政策卡【天命教义】与天命支部 T2 建筑【赎罪庭】。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_PRAYER_ROOM_NAME" Language="zh_Hans_CN"><Text>祈祷室基建</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_PRAYER_ROOM_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁特色改良【祈祷室】。女武神自带 3 次建造次数，可直接修建该改良。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_HONKAI_CONDUCTION_NAME" Language="zh_Hans_CN"><Text>崩坏能传导</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_HONKAI_CONDUCTION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]国内商路为出发城市提供额外战术崩坏能，数值取决于该城的特色区域基础值。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_ATONEMENT_SYSTEM_NAME" Language="zh_Hans_CN"><Text>赎罪体系</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_ATONEMENT_SYSTEM_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]击杀敌方单位时，获得等同于被击败单位战斗力 100% 的信仰值。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_KNIGHT_LEGACY_NAME" Language="zh_Hans_CN"><Text>骑士传承</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_KNIGHT_LEGACY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁军事政策卡【天命骑士誓约】，女武神按当前所在己方城市的城墙等级获得战斗力。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_POWER_ARMOR_NAME" Language="zh_Hans_CN"><Text>圣血构装预想</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_POWER_ARMOR_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁军事政策卡【圣血构装】，所有女武神战斗力 +4。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_VALKYRIE_ADVANCED_NAME" Language="zh_Hans_CN"><Text>女武神进阶教材</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_VALKYRIE_ADVANCED_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]帝国女武神训练等级 +1，优化动态评级概率。</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_KEY_OF_FINALITY_NAME" Language="zh_Hans_CN"><Text>终焉之钥</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_KEY_OF_FINALITY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]最终权限。</Text></Replace>
 

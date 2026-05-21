@@ -380,13 +380,136 @@ function GetEraArtXOffset(instArt, eraData)
 	return (centerx);
 end
 
+function IsHonkaiTechUnlockedForUI(playerID:number, techType:string)
+	local pPlayer = Players[playerID];
+	if pPlayer == nil or techType == nil then
+		return false;
+	end
+
+	if ExposedMembers.Honkai and ExposedMembers.Honkai.IsUnlocked then
+		local isUnlocked = ExposedMembers.Honkai.IsUnlocked(playerID, techType);
+		return isUnlocked == true or isUnlocked == 1;
+	end
+
+	return pPlayer:GetProperty("UNLOCKED_" .. techType) == 1;
+end
+
+function GetHonkaiCurrentResearchForUI(playerID:number)
+	local pPlayer = Players[playerID];
+	if pPlayer == nil then
+		return nil;
+	end
+
+	local currentResearch = nil;
+	if ExposedMembers.Honkai and ExposedMembers.Honkai.GetCurrentResearch then
+		currentResearch = ExposedMembers.Honkai.GetCurrentResearch(playerID);
+	end
+
+	if currentResearch == nil or currentResearch == "" then
+		currentResearch = pPlayer:GetProperty("HONKAI_CURRENT_RESEARCH");
+	end
+
+	if currentResearch == "" then
+		return nil;
+	end
+	return currentResearch;
+end
+
+function GetHonkaiResearchQueueForUI(playerID:number)
+	local pPlayer = Players[playerID];
+	if pPlayer == nil then
+		return {};
+	end
+
+	if ExposedMembers.Honkai and ExposedMembers.Honkai.GetResearchQueue then
+		local queue = ExposedMembers.Honkai.GetResearchQueue(playerID);
+		if queue ~= nil then
+			return queue;
+		end
+	end
+
+	local queue = {};
+	local queueStr = pPlayer:GetProperty("HONKAI_RESEARCH_QUEUE") or "";
+	if queueStr ~= "" then
+		for techType in string.gmatch(queueStr, '([^,]+)') do
+			table.insert(queue, techType);
+		end
+	end
+	return queue;
+end
+
+function HasActiveHonkaiResearchForUI(playerID:number)
+	if GetHonkaiCurrentResearchForUI(playerID) ~= nil then
+		return true;
+	end
+
+	local queue = GetHonkaiResearchQueueForUI(playerID);
+	return queue ~= nil and #queue > 0;
+end
+
+function HasSelectableHonkaiResearchForUI(playerID:number)
+	if g_kItemDefaults == nil then
+		return false;
+	end
+
+	for _, item in pairs(g_kItemDefaults) do
+		if item ~= nil and item.Type ~= nil and not IsHonkaiTechUnlockedForUI(playerID, item.Type) then
+			local hasAllPrereqs = true;
+			for _, prereqId in pairs(item.Prereqs or {}) do
+				if prereqId ~= PREREQ_ID_TREE_START then
+					local prereqItem = g_kItemDefaults[prereqId];
+					if prereqItem ~= nil and not IsHonkaiTechUnlockedForUI(playerID, prereqItem.Type) then
+						hasAllPrereqs = false;
+						break;
+					end
+				end
+			end
+			if hasAllPrereqs then
+				return true;
+			end
+		end
+	end
+
+	return false;
+end
+
+function ShouldRequireHonkaiResearchChoice(playerID:number)
+	local pPlayer = Players[playerID];
+	if pPlayer == nil or not pPlayer:IsTurnActive() then
+		return false;
+	end
+
+	return not HasActiveHonkaiResearchForUI(playerID) and HasSelectableHonkaiResearchForUI(playerID);
+end
+
+function PromptForHonkaiResearchIfNeeded(playerID:number)
+	if playerID == nil or playerID == -1 or playerID ~= Game.GetLocalPlayer() then
+		return;
+	end
+
+	if m_ePlayer ~= playerID then
+		m_ePlayer = playerID;
+	end
+
+	if ShouldRequireHonkaiResearchChoice(playerID) then
+		ShowHonkaiWindow();
+	end
+end
+
 function GetHonkaiUnlockFrameIcon(unlock:table)
 	if unlock.Type == "GENERIC" then
 		return "ICON_TECHUNLOCK_13";
 	end
 
+	if unlock.Type == "PROJECT" then
+		return "ICON_TECHUNLOCK_13";
+	end
+
 	if unlock.ID ~= nil and GameInfo.Types[unlock.ID] ~= nil then
-		return GetUnlockIcon(unlock.ID);
+		local frameIcon = GetUnlockIcon(unlock.ID);
+		if frameIcon ~= nil and frameIcon ~= "" then
+			return frameIcon;
+		end
 	end
 
 	if unlock.Type == "BUILDING" then
@@ -395,10 +518,14 @@ function GetHonkaiUnlockFrameIcon(unlock:table)
 		return "ICON_TECHUNLOCK_2";
 	elseif unlock.Type == "UNIT" then
 		return "ICON_TECHUNLOCK_4";
+	elseif unlock.Type == "IMPROVEMENT" then
+		return "ICON_TECHUNLOCK_3";
 	elseif unlock.Type == "RESOURCE" then
 		return "ICON_TECHUNLOCK_5";
 	elseif unlock.Type == "POLICY" then
 		return "ICON_TECHUNLOCK_9";
+	elseif unlock.Type == "PROJECT" then
+		return "ICON_TECHUNLOCK_13";
 	end
 
 	return "ICON_TECHUNLOCK_13";
@@ -1305,11 +1432,10 @@ function GetCurrentData( ePlayer:number, eCompletedTech:number )
 	local currentResearch = nil
 	if ExposedMembers.Honkai and ExposedMembers.Honkai.GetResearchPoints then
 		currentPoints = ExposedMembers.Honkai.GetResearchPoints(ePlayer)
-		currentResearch = ExposedMembers.Honkai.GetCurrentResearch(ePlayer)
 	else
 		currentPoints = pPlayer:GetProperty("HONKAI_RESEARCH_POINTS") or 0
-		currentResearch = pPlayer:GetProperty("HONKAI_CURRENT_RESEARCH")
 	end
+	currentResearch = GetHonkaiCurrentResearchForUI(ePlayer)
 
     -- 【阶段二】获取实时研究点产出
     local researchYield = 0
@@ -1321,12 +1447,7 @@ function GetCurrentData( ePlayer:number, eCompletedTech:number )
     end
 
 	for type,item in pairs(g_kItemDefaults) do
-		local isUnlocked = false
-		if ExposedMembers.Honkai and ExposedMembers.Honkai.IsUnlocked then
-			isUnlocked = ExposedMembers.Honkai.IsUnlocked(ePlayer, type)
-		else
-			isUnlocked = (pPlayer:GetProperty("UNLOCKED_" .. type) == 1)
-		end
+		local isUnlocked = IsHonkaiTechUnlockedForUI(ePlayer, type)
 		
 		local status = ITEM_STATUS.BLOCKED
 		if isUnlocked then
@@ -1336,7 +1457,7 @@ function GetCurrentData( ePlayer:number, eCompletedTech:number )
 			for _, prereqId in pairs(item.Prereqs) do
 				if prereqId ~= PREREQ_ID_TREE_START then
 					local prereqType = g_kItemDefaults[prereqId].Type
-					if pPlayer:GetProperty("UNLOCKED_" .. prereqType) ~= 1 then
+					if not IsHonkaiTechUnlockedForUI(ePlayer, prereqType) then
 						hasAllPrereqs = false
 						break
 					end
@@ -1392,13 +1513,13 @@ function OnLocalPlayerTurnBegin()
 	    end
         m_kCurrentData = GetCurrentData( ePlayer );
 
-        -- 【阶段一：自动弹出】如果是玩家回合开始且没有选科技，强制弹出
-        local pPlayer = Players[ePlayer]
-        local currentResearch = pPlayer:GetProperty("HONKAI_CURRENT_RESEARCH")
-        if currentResearch == nil then
-            ShowHonkaiWindow()
-        end
+        -- 如果是玩家回合开始且没有选科技，强制弹出。实际读取从 Gameplay 暴露函数走，避免 UI 侧属性滞后。
+        PromptForHonkaiResearchIfNeeded(ePlayer);
     end
+end
+
+function OnPlayerTurnActivated(playerID:number)
+	PromptForHonkaiResearchIfNeeded(playerID);
 end
 
 -- ===========================================================================
@@ -1600,6 +1721,7 @@ end
 -- ===========================================================================
 function ShowHonkaiWindow()
     if (Game.GetLocalPlayer() == -1) then return end
+    m_ePlayer = Game.GetLocalPlayer();
     UI.PlaySound("UI_Screen_Open");
     m_kCurrentData = GetCurrentData( m_ePlayer );
     View( m_kCurrentData );
@@ -1611,9 +1733,7 @@ function ShowHonkaiWindow()
     Controls.ScreenAnimIn:Play();
 
     -- 检查是否因为未选科技被强制打开
-    local pPlayer = Players[Game.GetLocalPlayer()]
-    local currentResearch = pPlayer:GetProperty("HONKAI_CURRENT_RESEARCH")
-    if currentResearch == nil then
+    if ShouldRequireHonkaiResearchChoice(Game.GetLocalPlayer()) then
         Controls.ModalScreenTitle:SetText("[COLOR_RED]请先选择一项崩坏研究项目！[ENDCOLOR]");
     end
 end
@@ -1624,9 +1744,7 @@ function HideHonkaiWindow(forceClose:boolean)
     local isForcedClose = forceClose == true
 
     -- 【阶段一：强制阻断】如果当前没有正在研究的项目，则不允许关闭
-    local pPlayer = Players[Game.GetLocalPlayer()]
-    local currentResearch = pPlayer:GetProperty("HONKAI_CURRENT_RESEARCH")
-    if not isForcedClose and currentResearch == nil then
+    if not isForcedClose and ShouldRequireHonkaiResearchChoice(Game.GetLocalPlayer()) then
         UI.PlaySound("Play_UI_Click_False");
         Controls.ModalScreenTitle:SetText("[COLOR_RED]警告：必须选择研究目标后才能关闭！[ENDCOLOR]");
         return 
@@ -1691,6 +1809,7 @@ function HonkaiInitHandler(isReload)
     LateInitialize()
     SetupLaunchBarButton()
     ContextPtr:SetHide(true)
+    PromptForHonkaiResearchIfNeeded(Game.GetLocalPlayer())
 end
 
 function OnShutdown()
@@ -1761,6 +1880,7 @@ function Initialize()
 
     -- Game engine Event
     Events.LocalPlayerTurnBegin.Add( OnLocalPlayerTurnBegin );
+    Events.PlayerTurnActivated.Add( OnPlayerTurnActivated );
     Events.LocalPlayerTurnEnd.Add( OnLocalPlayerTurnEnd );
     Events.LocalPlayerChanged.Add( BuildTree );
     Events.ResearchChanged.Add( OnResearchChanged );

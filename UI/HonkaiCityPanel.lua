@@ -90,6 +90,14 @@ local function BuildHonkaiCityEnergyTooltip(pCity)
         table.insert(lines, "[ICON_Bullet] 崩坏能感知首都激活：+" .. FormatAmount(data.ActivationBonus))
     end
 
+    if (data.ProjectBonus or 0) > 0 then
+        table.insert(lines, "[ICON_Bullet] 崩坏能重聚反应：+" .. FormatAmount(data.ProjectBonus))
+    end
+
+    if (data.TradeRouteBonus or 0) > 0 then
+        table.insert(lines, "[ICON_Bullet] 崩坏能传导：+" .. FormatAmount(data.TradeRouteBonus) .. "（" .. tostring(data.DomesticTradeRouteCount or 0) .. " 条国内商路，出发城基准 +" .. FormatAmount(data.FeatureDistrictTradeBase) .. "）")
+    end
+
     if (data.TechModifier or 0) > 0 then
         table.insert(lines, "[ICON_Bullet] 已解锁崩坏科技全局倍率：+" .. FormatPercent(data.TechModifier) .. "（" .. tostring(data.TechCount or 0) .. " 项）")
     end

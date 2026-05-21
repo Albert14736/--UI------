@@ -44,6 +44,15 @@ local ShadowCivicMap = {
     ["HONKAI_TECH_BASIC_ISOLATION"] = "CIVIC_SHADOW_BASIC_ISOLATION",
     ["HONKAI_TECH_ST_FREYA"] = "CIVIC_SHADOW_ST_FREYA",
     ["HONKAI_TECH_WEAPON_PROTOTYPE"] = "CIVIC_SHADOW_WEAPON_PROTOTYPE",
+    ["HONKAI_TECH_STIGMATA_PROTOTYPE"] = "CIVIC_SHADOW_STIGMATA_PROTOTYPE",
+    ["HONKAI_TECH_HONKAI_FURNACE"] = "CIVIC_SHADOW_HONKAI_FURNACE",
+    ["HONKAI_TECH_SCHICKSAL_DOCTRINE"] = "CIVIC_SHADOW_SCHICKSAL_DOCTRINE",
+    ["HONKAI_TECH_PRAYER_ROOM"] = "CIVIC_SHADOW_PRAYER_ROOM",
+    ["HONKAI_TECH_HONKAI_CONDUCTION"] = "CIVIC_SHADOW_HONKAI_CONDUCTION",
+    ["HONKAI_TECH_ATONEMENT_SYSTEM"] = "CIVIC_SHADOW_ATONEMENT_SYSTEM",
+    ["HONKAI_TECH_KNIGHT_LEGACY"] = "CIVIC_SHADOW_KNIGHT_LEGACY",
+    ["HONKAI_TECH_POWER_ARMOR"] = "CIVIC_SHADOW_POWER_ARMOR",
+    ["HONKAI_TECH_VALKYRIE_ADVANCED"] = "CIVIC_SHADOW_VALKYRIE_ADVANCED",
 }
 
 function GrantTechModifiers(playerID, techType)
@@ -85,6 +94,26 @@ local HonkaiDistricts = {
     ["DISTRICT_SCHICKSAL_BRANCH"] = true, 
     ["DISTRICT_ARMED_INDUSTRY"] = true, 
     ["DISTRICT_HIDDEN_RESEARCH"] = true
+}
+
+local HONKAI_REUNION_PROJECT = "PROJECT_HOH_HONKAI_REUNION_REACTION"
+local HONKAI_KNIGHT_OATH_POLICY = "POLICY_HOH_KNIGHT_OATH"
+
+local FeatureDistrictEnergyBase = {
+    ["DISTRICT_SCHICKSAL_BRANCH"] = 1,
+    ["DISTRICT_ARMED_INDUSTRY"] = 1
+}
+
+local KnightOathAbilityTypes = {
+    "ABILITY_HOH_KNIGHT_OATH_WALLS",
+    "ABILITY_HOH_KNIGHT_OATH_CASTLE",
+    "ABILITY_HOH_KNIGHT_OATH_STAR_FORT"
+}
+
+local KnightOathAbilityByWallLevel = {
+    [1] = "ABILITY_HOH_KNIGHT_OATH_WALLS",
+    [2] = "ABILITY_HOH_KNIGHT_OATH_CASTLE",
+    [3] = "ABILITY_HOH_KNIGHT_OATH_STAR_FORT"
 }
 
 local EncampmentBuildingCache = nil
@@ -265,6 +294,123 @@ function CalculateCityEnergyFormula(playerID, pCity)
     return details
 end
 
+function GetCityCurrentProjectType(pCity)
+    if pCity == nil or type(pCity.GetBuildQueue) ~= "function" then return nil end
+
+    local pBuildQueue = pCity:GetBuildQueue()
+    if pBuildQueue == nil or type(pBuildQueue.GetCurrentProductionTypeHash) ~= "function" then return nil end
+
+    local currentProductionHash = pBuildQueue:GetCurrentProductionTypeHash()
+    local projectInfo = currentProductionHash and GameInfo.Projects[currentProductionHash] or nil
+    return projectInfo and projectInfo.ProjectType or nil
+end
+
+function GetCityProductionYield(pCity)
+    if pCity == nil or type(pCity.GetYield) ~= "function" then return 0 end
+
+    if YieldTypes ~= nil and YieldTypes.PRODUCTION ~= nil then
+        return pCity:GetYield(YieldTypes.PRODUCTION) or 0
+    end
+
+    local productionYield = GameInfo.Yields and GameInfo.Yields["YIELD_PRODUCTION"] or nil
+    if productionYield ~= nil then
+        return pCity:GetYield(productionYield.Index) or 0
+    end
+
+    return 0
+end
+
+function CalculateHonkaiProjectEnergyBonus(playerID, pCity)
+    if not IsHonkaiTechUnlocked(playerID, "HONKAI_TECH_HONKAI_FURNACE") then
+        return 0
+    end
+
+    if GetCityCurrentProjectType(pCity) ~= HONKAI_REUNION_PROJECT then
+        return 0
+    end
+
+    return GetCityProductionYield(pCity)
+end
+
+function HasCityDistrict(pCity, districtType)
+    local districtInfo = GameInfo.Districts[districtType]
+    if pCity == nil or districtInfo == nil then return false end
+
+    local pCityDistricts = pCity:GetDistricts()
+    return pCityDistricts ~= nil and type(pCityDistricts.HasDistrict) == "function" and pCityDistricts:HasDistrict(districtInfo.Index)
+end
+
+function GetCityFeatureDistrictEnergyBase(pCity)
+    local base = 0
+    for districtType, amount in pairs(FeatureDistrictEnergyBase) do
+        if HasCityDistrict(pCity, districtType) then
+            base = base + amount
+        end
+    end
+    return base
+end
+
+function CalculateHonkaiTradeRouteEnergyBonus(playerID, pCity)
+    if not IsHonkaiTechUnlocked(playerID, "HONKAI_TECH_HONKAI_CONDUCTION") then
+        return 0, 0, 0
+    end
+
+    local cityBase = GetCityFeatureDistrictEnergyBase(pCity)
+    if pCity == nil or type(pCity.GetTrade) ~= "function" then
+        return 0, 0, cityBase
+    end
+
+    local pCityTrade = pCity:GetTrade()
+    if pCityTrade == nil or type(pCityTrade.GetOutgoingRoutes) ~= "function" then
+        return 0, 0, cityBase
+    end
+
+    local bonus = 0
+    local domesticRouteCount = 0
+    local outgoingRoutes = pCityTrade:GetOutgoingRoutes() or {}
+    for _, route in ipairs(outgoingRoutes) do
+        local originCityID = route.OriginCityID or route.OriginCity or pCity:GetID()
+        local originPlayerID = route.OriginCityPlayer or route.OriginPlayer or playerID
+        local destinationPlayerID = route.DestinationCityPlayer or route.DestinationPlayer
+
+        if originPlayerID == playerID and originCityID == pCity:GetID() and destinationPlayerID == playerID then
+            domesticRouteCount = domesticRouteCount + 1
+            bonus = bonus + cityBase
+        end
+    end
+
+    return bonus, domesticRouteCount, cityBase
+end
+
+function CountCitySpecialists(pCity)
+    if pCity == nil or type(pCity.GetOwnedPlots) ~= "function" then return 0 end
+
+    local total = 0
+    local pCityPlots = pCity:GetOwnedPlots() or {}
+    for _, pPlot in ipairs(pCityPlots) do
+        if pPlot ~= nil and type(pPlot.GetDistrictType) == "function" and type(pPlot.GetWorkerCount) == "function" then
+            local districtIndex = pPlot:GetDistrictType()
+            if districtIndex ~= nil and districtIndex ~= -1 then
+                local districtInfo = GameInfo.Districts[districtIndex]
+                if districtInfo ~= nil and districtInfo.DistrictType ~= "DISTRICT_CITY_CENTER" then
+                    total = total + (pPlot:GetWorkerCount() or 0)
+                end
+            end
+        end
+    end
+
+    return total
+end
+
+function CalculateHonkaiSpecialistResearchBonus(playerID, pCity)
+    if not IsHonkaiTechUnlocked(playerID, "HONKAI_TECH_STIGMATA_PROTOTYPE") then
+        return 0, 0
+    end
+
+    local specialistCount = CountCitySpecialists(pCity)
+    return specialistCount * 0.1, specialistCount
+end
+
 function CalculateHonkaiEnergyBreakdown(playerID)
     local pPlayer = Players[playerID]
     if not pPlayer then return nil end
@@ -287,8 +433,12 @@ function CalculateHonkaiEnergyBreakdown(playerID)
     local pCities = pPlayer:GetCities()
     for _, pCity in pCities:Members() do
         local cityDetails = CalculateCityEnergyFormula(playerID, pCity)
-        breakdown.CityDetails[cityDetails.CityName] = cityDetails.FormulaYield
-        breakdown.SubtotalFromCities = breakdown.SubtotalFromCities + cityDetails.FormulaYield
+        cityDetails.ProjectBonus = CalculateHonkaiProjectEnergyBonus(playerID, pCity)
+        cityDetails.TradeRouteBonus, cityDetails.DomesticTradeRouteCount, cityDetails.FeatureDistrictTradeBase = CalculateHonkaiTradeRouteEnergyBonus(playerID, pCity)
+
+        local cityTotal = cityDetails.FormulaYield + cityDetails.ProjectBonus + cityDetails.TradeRouteBonus
+        breakdown.CityDetails[cityDetails.CityName] = cityTotal
+        breakdown.SubtotalFromCities = breakdown.SubtotalFromCities + cityTotal
     end
 
     -- 2. 科技加成 (每个科技 +5%)
@@ -324,6 +474,10 @@ function CalculateHonkaiCityEnergyBreakdown(playerID, cityID)
     details.IsUnlocked = IsHonkaiTechUnlocked(playerID, "HONKAI_TECH_PERCEPTION")
     if not details.IsUnlocked then
         details.ActivationBonus = 0
+        details.ProjectBonus = 0
+        details.TradeRouteBonus = 0
+        details.DomesticTradeRouteCount = 0
+        details.FeatureDistrictTradeBase = 0
         details.TechCount = 0
         details.TechModifier = 0
         details.CoreBonus = pPlayer:GetProperty("HONKAI_CORE_YIELD_BONUS") or 0
@@ -334,10 +488,12 @@ function CalculateHonkaiCityEnergyBreakdown(playerID, cityID)
 
     local pCapital = pPlayer:GetCities():GetCapitalCity()
     details.ActivationBonus = (pCapital and pCapital:GetID() == cityID) and 2 or 0
+    details.ProjectBonus = CalculateHonkaiProjectEnergyBonus(playerID, pCity)
+    details.TradeRouteBonus, details.DomesticTradeRouteCount, details.FeatureDistrictTradeBase = CalculateHonkaiTradeRouteEnergyBonus(playerID, pCity)
     details.TechCount = GetUnlockedHonkaiTechCount(playerID)
     details.TechModifier = details.TechCount * 0.05
     details.CoreBonus = pPlayer:GetProperty("HONKAI_CORE_YIELD_BONUS") or 0
-    details.TotalBeforeTech = details.FormulaYield + details.ActivationBonus
+    details.TotalBeforeTech = details.FormulaYield + details.ActivationBonus + details.ProjectBonus + details.TradeRouteBonus
     details.TotalYield = details.TotalBeforeTech * (1 + details.TechModifier)
 
     return details
@@ -349,6 +505,7 @@ function CalculateHonkaiResearchBreakdown(playerID)
 
     local breakdown = {
         CityDetails = {},
+        SpecialistDetails = {},
         TotalYield = 0,
         BaseYield = 10 -- 基础还是给 10 点，保证前期能跑动
     }
@@ -367,6 +524,15 @@ function CalculateHonkaiResearchBreakdown(playerID)
                     cityResearch = cityResearch + 2
                 end
             end
+        end
+
+        local specialistResearch, specialistCount = CalculateHonkaiSpecialistResearchBonus(playerID, pCity)
+        if specialistResearch > 0 then
+            cityResearch = cityResearch + specialistResearch
+            breakdown.SpecialistDetails[cityName] = {
+                Count = specialistCount,
+                Yield = specialistResearch
+            }
         end
         
         if cityResearch > 0 then
@@ -498,6 +664,149 @@ end
 local VALKYRIE_UNIT_TYPES = {
     ["UNIT_HOH_VALKYRIE_MK1"] = true,
 }
+
+function IsHonkaiValkyrieUnit(pUnit)
+    if pUnit == nil then return false end
+
+    local unitInfo = GameInfo.Units[pUnit:GetType()]
+    return unitInfo ~= nil and VALKYRIE_UNIT_TYPES[unitInfo.UnitType] == true
+end
+
+function IsHonkaiPolicyActive(playerID, policyType)
+    local pPlayer = Players[playerID]
+    local policyInfo = GameInfo.Policies[policyType]
+    if pPlayer == nil or policyInfo == nil then return false end
+
+    local pCulture = pPlayer:GetCulture()
+    if pCulture ~= nil and type(pCulture.IsPolicyActive) == "function" then
+        return pCulture:IsPolicyActive(policyInfo.Index)
+    end
+
+    return false
+end
+
+function SetUnitAbilityCount(pUnit, abilityType, targetCount)
+    if pUnit == nil or abilityType == nil or type(pUnit.GetAbility) ~= "function" then return end
+
+    local pUnitAbility = pUnit:GetAbility()
+    if pUnitAbility == nil or type(pUnitAbility.ChangeAbilityCount) ~= "function" then return end
+
+    local currentCount = 0
+    if type(pUnitAbility.GetAbilityCount) == "function" then
+        currentCount = pUnitAbility:GetAbilityCount(abilityType) or 0
+    end
+
+    local delta = (targetCount or 0) - currentCount
+    if delta ~= 0 then
+        pUnitAbility:ChangeAbilityCount(abilityType, delta)
+    end
+end
+
+function ClearKnightOathAbilities(pUnit)
+    for _, abilityType in ipairs(KnightOathAbilityTypes) do
+        SetUnitAbilityCount(pUnit, abilityType, 0)
+    end
+end
+
+function GetCityWallLevel(pCity)
+    if pCity == nil then return 0 end
+
+    local pCityBuildings = pCity:GetBuildings()
+    if pCityBuildings == nil then return 0 end
+
+    local starFort = GameInfo.Buildings["BUILDING_STAR_FORT"]
+    if starFort ~= nil and pCityBuildings:HasBuilding(starFort.Index) then
+        return 3
+    end
+
+    local castle = GameInfo.Buildings["BUILDING_CASTLE"]
+    if castle ~= nil and pCityBuildings:HasBuilding(castle.Index) then
+        return 2
+    end
+
+    local walls = GameInfo.Buildings["BUILDING_WALLS"]
+    if walls ~= nil and pCityBuildings:HasBuilding(walls.Index) then
+        return 1
+    end
+
+    return 0
+end
+
+function FindCityOwningPlot(playerID, pPlot)
+    if pPlot == nil then return nil end
+
+    if Cities ~= nil and type(Cities.GetPlotPurchaseCity) == "function" then
+        local ok, pCity = pcall(Cities.GetPlotPurchaseCity, pPlot)
+        if ok and pCity ~= nil and pCity:GetOwner() == playerID then
+            return pCity
+        end
+
+        if type(pPlot.GetX) == "function" and type(pPlot.GetY) == "function" then
+            ok, pCity = pcall(Cities.GetPlotPurchaseCity, pPlot:GetX(), pPlot:GetY())
+            if ok and pCity ~= nil and pCity:GetOwner() == playerID then
+                return pCity
+            end
+        end
+    end
+
+    local pPlayer = Players[playerID]
+    if pPlayer == nil then return nil end
+
+    local plotX = type(pPlot.GetX) == "function" and pPlot:GetX() or nil
+    local plotY = type(pPlot.GetY) == "function" and pPlot:GetY() or nil
+    for _, pCity in pPlayer:GetCities():Members() do
+        if plotX ~= nil and plotY ~= nil and pCity:GetX() == plotX and pCity:GetY() == plotY then
+            return pCity
+        end
+
+        if type(pCity.GetOwnedPlots) == "function" then
+            for _, pCityPlot in ipairs(pCity:GetOwnedPlots() or {}) do
+                if pCityPlot == pPlot then
+                    return pCity
+                end
+                if plotX ~= nil and plotY ~= nil and type(pCityPlot.GetX) == "function" and type(pCityPlot.GetY) == "function" and pCityPlot:GetX() == plotX and pCityPlot:GetY() == plotY then
+                    return pCity
+                end
+            end
+        end
+    end
+
+    return nil
+end
+
+function FindOwningCityForUnit(playerID, pUnit)
+    if pUnit == nil or type(pUnit.GetX) ~= "function" or type(pUnit.GetY) ~= "function" then return nil end
+
+    local pPlot = Map.GetPlot(pUnit:GetX(), pUnit:GetY())
+    return FindCityOwningPlot(playerID, pPlot)
+end
+
+function ApplyKnightOathToUnit(playerID, unitID)
+    local pUnit = UnitManager.GetUnit(playerID, unitID)
+    if pUnit == nil or not IsHonkaiValkyrieUnit(pUnit) then return end
+
+    ClearKnightOathAbilities(pUnit)
+
+    if not IsHonkaiPolicyActive(playerID, HONKAI_KNIGHT_OATH_POLICY) then
+        return
+    end
+
+    local pCity = FindOwningCityForUnit(playerID, pUnit)
+    local wallLevel = GetCityWallLevel(pCity)
+    local abilityType = KnightOathAbilityByWallLevel[wallLevel]
+    if abilityType ~= nil then
+        SetUnitAbilityCount(pUnit, abilityType, 1)
+    end
+end
+
+function RefreshKnightOathForPlayer(playerID)
+    local pPlayer = Players[playerID]
+    if pPlayer == nil then return end
+
+    for _, pUnit in pPlayer:GetUnits():Members() do
+        ApplyKnightOathToUnit(playerID, pUnit:GetID())
+    end
+end
 
 local ValkyrieRankOrder = {
     { Rank = "F", Name = "F级", AbilityType = "ABILITY_HOH_VALKYRIE_RANK_F", CombatBonus = 0 },
@@ -698,8 +1007,7 @@ function AssignValkyrieRank(playerID, unitID)
     local pUnit = UnitManager.GetUnit(playerID, unitID)
     if pUnit == nil then return end
 
-    local unitInfo = GameInfo.Units[pUnit:GetType()]
-    if unitInfo == nil or not VALKYRIE_UNIT_TYPES[unitInfo.UnitType] then return end
+    if not IsHonkaiValkyrieUnit(pUnit) then return end
 
     if type(pUnit.GetProperty) == "function" then
         local storedRankID = pUnit:GetProperty("HOH_VALKYRIE_RANK")
@@ -742,6 +1050,19 @@ end
 
 function OnHonkaiUnitCreated(playerID, unitID)
     AssignValkyrieRank(playerID, unitID)
+    ApplyKnightOathToUnit(playerID, unitID)
+end
+
+function OnHonkaiUnitMoved(playerID, unitID)
+    ApplyKnightOathToUnit(playerID, unitID)
+end
+
+function OnHonkaiPolicyChanged(playerID)
+    RefreshKnightOathForPlayer(playerID)
+end
+
+function OnHonkaiCityProductionCompleted(playerID)
+    RefreshKnightOathForPlayer(playerID)
 end
 
 function AssignExistingValkyrieRanks()
@@ -753,6 +1074,7 @@ function AssignExistingValkyrieRanks()
             for _, pUnit in pPlayer:GetUnits():Members() do
                 AssignValkyrieRank(playerID, pUnit:GetID())
             end
+            RefreshKnightOathForPlayer(playerID)
         end
     end
 end
@@ -835,6 +1157,9 @@ function OnPlayerTurnStarted(playerID)
 
     -- 3. 处理队列结算
     ProcessResearchQueue(playerID, false)
+
+    -- 4. 刷新基于当前位置和政策的女武神动态能力
+    RefreshKnightOathForPlayer(playerID)
 end
 
 -- 指令：由 UI 触发，设定新的研究路径（队列）
@@ -903,6 +1228,18 @@ function Initialize()
     end
     if GameEvents.UnitCreated ~= nil and type(GameEvents.UnitCreated.Add) == "function" then
         GameEvents.UnitCreated.Add(OnHonkaiUnitCreated)
+    end
+    if GameEvents.OnUnitMoved ~= nil and type(GameEvents.OnUnitMoved.Add) == "function" then
+        GameEvents.OnUnitMoved.Add(OnHonkaiUnitMoved)
+    end
+    if Events.UnitMoved ~= nil and type(Events.UnitMoved.Add) == "function" then
+        Events.UnitMoved.Add(OnHonkaiUnitMoved)
+    end
+    if Events.GovernmentPolicyChanged ~= nil and type(Events.GovernmentPolicyChanged.Add) == "function" then
+        Events.GovernmentPolicyChanged.Add(OnHonkaiPolicyChanged)
+    end
+    if Events.CityProductionCompleted ~= nil and type(Events.CityProductionCompleted.Add) == "function" then
+        Events.CityProductionCompleted.Add(OnHonkaiCityProductionCompleted)
     end
 end
 

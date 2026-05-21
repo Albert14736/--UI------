@@ -103,7 +103,7 @@
         <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_NAME" Language="zh_Hans_CN" Text="女武神中队"/>
         <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_NAME" Language="zh_Hant_HK" Text="女武神中隊"/>
         <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_NAME" Language="en_US" Text="Valkyrie Squadron"/>
-        <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_MK1_DESC" Language="zh_Hans_CN" Text="天命组织的初级女武神。拥有较强的近战能力。"/>
+        <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_MK1_DESC" Language="zh_Hans_CN" Text="天命组织的初级女武神。拥有较强的近战能力，并自带 3 次建造次数。"/>
         <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_MK1_DESC" Language="zh_Hant_HK" Text="天命組織的初級女武神。擁有較強的近戰能力。"/>
         <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_MK1_DESC" Language="en_US" Text="Initial Valkyrie unit of Schicksal."/>
         <Replace Tag="LOC_PROMOTION_CLASS_HOH_VALKYRIE_NAME" Language="zh_Hans_CN" Text="女武神"/>
@@ -182,6 +182,8 @@
         <Replace Tag="LOC_BUILDING_HOH_ENERGY_POOL_DESC" Language="zh_Hans_CN" Text="+1000 战术崩坏能容量。"/>
         <Replace Tag="LOC_BUILDING_HOH_SCHICKSAL_CATHEDRAL_NAME" Language="zh_Hans_CN" Text="天命大教堂"/>
         <Replace Tag="LOC_BUILDING_HOH_SCHICKSAL_CATHEDRAL_DESC" Language="zh_Hans_CN" Text="+3 [ICON_Faith] 信仰值，+1 大预言家点数。建成时获得 1 支女武神中队。"/>
+        <Replace Tag="LOC_BUILDING_HOH_SCHICKSAL_CHAPEL_NAME" Language="zh_Hans_CN" Text="天命礼拜堂"/>
+        <Replace Tag="LOC_BUILDING_HOH_SCHICKSAL_CHAPEL_DESC" Language="zh_Hans_CN" Text="天命支部 T1 建筑，替代神社。+1 [ICON_Faith] 信仰值，+1 [ICON_Housing] 住房。"/>
         <Replace Tag="LOC_BUILDING_HOH_ST_FREYA_NAME" Language="zh_Hans_CN" Text="圣芙蕾雅学园"/>
         <Replace Tag="LOC_BUILDING_HOH_ST_FREYA_DESC" Language="zh_Hans_CN" Text="天命体系下的训练与教育奇观。"/>
         
@@ -199,8 +201,42 @@
         <Replace Tag="LOC_HONKAI_TECH_OMEN_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="崩坏预兆：城市中心每回合 +1 信仰值。"/>
         <Replace Tag="LOC_HONKAI_TECH_PATHOLOGY_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="崩坏病理学：所有城市 +1 宜居度。"/>
         <Replace Tag="LOC_HONKAI_TECH_BASIC_TACTICS_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="抗崩坏战术：解锁军事政策卡【崩坏抗击操典】。"/>
-        <Replace Tag="LOC_HONKAI_TECH_DESTINY_CLERGY_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="命运神职：建造天命支部时 +25% [ICON_Production] 生产力。"/>
+        <Replace Tag="LOC_HONKAI_TECH_DESTINY_CLERGY_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="命运神职：解锁天命礼拜堂；建造天命支部时 +25% [ICON_Production] 生产力。"/>
         <Replace Tag="LOC_HONKAI_TECH_NUN_FORMATION_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="修女编制：允许使用信仰值购买女武神单位，且购买费用 -10%。"/>
         <Replace Tag="LOC_HONKAI_TECH_BASIC_ISOLATION_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="崩坏隔离：当前不提供直接解锁。"/>
+        <Replace Tag="LOC_HONKAI_TECH_STIGMATA_PROTOTYPE_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="崩坏纹典记录：每位专家额外提供 +0.1 [ICON_HONKAI_RESEARCH] 崩坏能研究点。"/>
+        <Replace Tag="LOC_HONKAI_TECH_PRAYER_ROOM_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="祈祷室基建：女武神可使用建造次数修建特色改良【祈祷室】。"/>
+        <Replace Tag="LOC_HONKAI_TECH_HONKAI_CONDUCTION_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="崩坏能传导：国内商路为出发城市提供额外 [ICON_HONKAI_ENERGY] 战术崩坏能。"/>
+        <Replace Tag="LOC_HONKAI_TECH_ATONEMENT_SYSTEM_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="赎罪体系：击杀敌方单位时获得其战斗力 100% 等值的 [ICON_Faith] 信仰值。"/>
+        <Replace Tag="LOC_HONKAI_TECH_VALKYRIE_ADVANCED_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="女武神进阶教材：帝国女武神训练等级 +1。"/>
+
+        <!-- Classical Honkai unlock names -->
+        <Replace Tag="LOC_POLICY_HOH_SANGUINE_CONSTRUCT_NAME" Language="zh_Hans_CN" Text="圣血构装"/>
+        <Replace Tag="LOC_POLICY_HOH_SANGUINE_CONSTRUCT_DESC" Language="zh_Hans_CN" Text="所有女武神单位 +4 [ICON_Strength] 战斗力。"/>
+        <Replace Tag="LOC_POLICY_HOH_SCHICKSAL_DOCTRINE_NAME" Language="zh_Hans_CN" Text="天命教义"/>
+        <Replace Tag="LOC_POLICY_HOH_SCHICKSAL_DOCTRINE_DESC" Language="zh_Hans_CN" Text="女武神在圣地或天命支部相邻地块作战时无视受伤战斗力惩罚；允许用 [ICON_Faith] 信仰购买城墙、防御城堡和星形要塞。"/>
+        <Replace Tag="LOC_POLICY_HOH_KNIGHT_OATH_NAME" Language="zh_Hans_CN" Text="天命骑士誓约"/>
+        <Replace Tag="LOC_POLICY_HOH_KNIGHT_OATH_DESC" Language="zh_Hans_CN" Text="女武神按当前所在己方城市的城墙等级获得战斗力：城墙 +2，防御城堡 +4，星形要塞 +6。"/>
+        <Replace Tag="LOC_BUILDING_HOH_ATONEMENT_COURT_NAME" Language="zh_Hans_CN" Text="赎罪庭"/>
+        <Replace Tag="LOC_BUILDING_HOH_ATONEMENT_COURT_DESC" Language="zh_Hans_CN" Text="天命支部 T2 建筑，替代寺庙。需要天命礼拜堂。+2 [ICON_Faith] 信仰值，+1 大预言家点数，1 个专家槽位，2 个遗物槽位。"/>
+        <Replace Tag="LOC_IMPROVEMENT_HOH_PRAYER_ROOM_NAME" Language="zh_Hans_CN" Text="祈祷室"/>
+        <Replace Tag="LOC_IMPROVEMENT_HOH_PRAYER_ROOM_DESC" Language="zh_Hans_CN" Text="天命特色改良，由女武神建造。+1 [ICON_Faith] 信仰值。"/>
+        <Replace Tag="LOC_PROJECT_HOH_HONKAI_REUNION_REACTION_NAME" Language="zh_Hans_CN" Text="崩坏能重聚反应"/>
+        <Replace Tag="LOC_PROJECT_HOH_HONKAI_REUNION_REACTION_SHORT_NAME" Language="zh_Hans_CN" Text="重聚反应"/>
+        <Replace Tag="LOC_PROJECT_HOH_HONKAI_REUNION_REACTION_DESC" Language="zh_Hans_CN" Text="城市项目。项目进行期间，本城每回合将 100% 的 [ICON_Production] 生产力额外转化为 [ICON_HONKAI_ENERGY] 战术崩坏能，并显示在崩坏能城市明细中。"/>
+        <Replace Tag="LOC_ABILITY_HOH_SCHICKSAL_DOCTRINE_NAME" Language="zh_Hans_CN" Text="天命教义"/>
+        <Replace Tag="LOC_ABILITY_HOH_SCHICKSAL_DOCTRINE_DESC" Language="zh_Hans_CN" Text="在圣地或天命支部相邻地块作战时无视受伤战斗力惩罚。"/>
+        <Replace Tag="LOC_ABILITY_HOH_KNIGHT_OATH_WALLS_NAME" Language="zh_Hans_CN" Text="骑士誓约：城墙"/>
+        <Replace Tag="LOC_ABILITY_HOH_KNIGHT_OATH_WALLS_DESC" Language="zh_Hans_CN" Text="位于拥有古代城墙的己方城市境内时，战斗力 +2。"/>
+        <Replace Tag="LOC_ABILITY_HOH_KNIGHT_OATH_CASTLE_NAME" Language="zh_Hans_CN" Text="骑士誓约：防御城堡"/>
+        <Replace Tag="LOC_ABILITY_HOH_KNIGHT_OATH_CASTLE_DESC" Language="zh_Hans_CN" Text="位于拥有防御城堡的己方城市境内时，战斗力 +4。"/>
+        <Replace Tag="LOC_ABILITY_HOH_KNIGHT_OATH_STAR_FORT_NAME" Language="zh_Hans_CN" Text="骑士誓约：星形要塞"/>
+        <Replace Tag="LOC_ABILITY_HOH_KNIGHT_OATH_STAR_FORT_DESC" Language="zh_Hans_CN" Text="位于拥有星形要塞的己方城市境内时，战斗力 +6。"/>
+        <Replace Tag="LOC_MOD_HOH_SANGUINE_VALKYRIE_COMBAT_PREVIEW" Language="zh_Hans_CN" Text="+4 圣血构装"/>
+        <Replace Tag="LOC_MOD_HOH_ATONEMENT_SYSTEM_FAITH_KILLS_PREVIEW" Language="zh_Hans_CN" Text="击杀获得信仰"/>
+        <Replace Tag="LOC_MOD_HOH_SCHICKSAL_DOCTRINE_NO_WOUNDED_PREVIEW" Language="zh_Hans_CN" Text="无视受伤减力"/>
+        <Replace Tag="LOC_MOD_HOH_KNIGHT_OATH_WALLS_PREVIEW" Language="zh_Hans_CN" Text="+2 骑士誓约：城墙"/>
+        <Replace Tag="LOC_MOD_HOH_KNIGHT_OATH_CASTLE_PREVIEW" Language="zh_Hans_CN" Text="+4 骑士誓约：防御城堡"/>
+        <Replace Tag="LOC_MOD_HOH_KNIGHT_OATH_STAR_FORT_PREVIEW" Language="zh_Hans_CN" Text="+6 骑士誓约：星形要塞"/>
     </LocalizedText>
 </GameData>

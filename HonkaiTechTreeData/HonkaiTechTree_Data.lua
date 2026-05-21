@@ -93,6 +93,7 @@ function GetHonkaiTechTreeData()
 			Unlocks = {
 				{ Type = "DISTRICT", ID = "DISTRICT_SCHICKSAL_HQ" },
 				{ Type = "BUILDING", ID = "BUILDING_HOH_SCHICKSAL_CATHEDRAL", Icon = "ICON_BUILDING_HOH_ST_FREYA" },
+				{ Type = "BUILDING", ID = "BUILDING_HOH_SCHICKSAL_CHAPEL", Icon = "ICON_BUILDING_SHRINE" },
 				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_DESTINY_CLERGY_EFFECT_TOOLTIP" }
 			}
 		},
@@ -164,7 +165,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_CLASSICAL",
 			UITreeRow = -3,
 			Prereqs = {"HONKAI_TECH_BASIC_ISOLATION"},
-			Column = 1
+			Column = 1,
+			ShadowCivic = "CIVIC_SHADOW_STIGMATA_PROTOTYPE",
+			Unlocks = {
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_STIGMATA_PROTOTYPE_EFFECT_TOOLTIP" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_HONKAI_FURNACE",
@@ -174,7 +179,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_CLASSICAL",
 			UITreeRow = -1,
 			Prereqs = {"HONKAI_TECH_BASIC_ISOLATION"},
-			Column = 1
+			Column = 1,
+			ShadowCivic = "CIVIC_SHADOW_HONKAI_FURNACE",
+			Unlocks = {
+				{ Type = "PROJECT", ID = "PROJECT_HOH_HONKAI_REUNION_REACTION", Icon = "ICON_PROJECT_ENHANCE_DISTRICT_INDUSTRIAL_ZONE" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_SCHICKSAL_DOCTRINE",
@@ -184,7 +193,12 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_CLASSICAL",
 			UITreeRow = 2,
 			Prereqs = {"HONKAI_TECH_ST_FREYA"},
-			Column = 1
+			Column = 1,
+			ShadowCivic = "CIVIC_SHADOW_SCHICKSAL_DOCTRINE",
+			Unlocks = {
+				{ Type = "POLICY", ID = "POLICY_HOH_SCHICKSAL_DOCTRINE", Icon = "ICON_POLICY_DISCIPLINE" },
+				{ Type = "BUILDING", ID = "BUILDING_HOH_ATONEMENT_COURT", Icon = "ICON_BUILDING_TEMPLE" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_PRAYER_ROOM",
@@ -194,7 +208,12 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_CLASSICAL",
 			UITreeRow = 4,
 			Prereqs = {"HONKAI_TECH_ST_FREYA"},
-			Column = 1
+			Column = 1,
+			ShadowCivic = "CIVIC_SHADOW_PRAYER_ROOM",
+			Unlocks = {
+				{ Type = "IMPROVEMENT", ID = "IMPROVEMENT_HOH_PRAYER_ROOM", Icon = "ICON_BUILDING_PAGODA" },
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_PRAYER_ROOM_EFFECT_TOOLTIP" }
+			}
 		},
 		-- 第 2 列
 		{
@@ -205,7 +224,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_CLASSICAL",
 			UITreeRow = -1,
 			Prereqs = {"HONKAI_TECH_HONKAI_FURNACE"},
-			Column = 2
+			Column = 2,
+			ShadowCivic = "CIVIC_SHADOW_HONKAI_CONDUCTION",
+			Unlocks = {
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_HONKAI_CONDUCTION_EFFECT_TOOLTIP" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_ATONEMENT_SYSTEM",
@@ -215,7 +238,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_CLASSICAL",
 			UITreeRow = 2,
 			Prereqs = {"HONKAI_TECH_SCHICKSAL_DOCTRINE"},
-			Column = 2
+			Column = 2,
+			ShadowCivic = "CIVIC_SHADOW_ATONEMENT_SYSTEM",
+			Unlocks = {
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_ATONEMENT_SYSTEM_EFFECT_TOOLTIP" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_KNIGHT_LEGACY",
@@ -225,7 +252,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_CLASSICAL",
 			UITreeRow = 4,
 			Prereqs = {"HONKAI_TECH_PRAYER_ROOM"},
-			Column = 2
+			Column = 2,
+			ShadowCivic = "CIVIC_SHADOW_KNIGHT_LEGACY",
+			Unlocks = {
+				{ Type = "POLICY", ID = "POLICY_HOH_KNIGHT_OATH", Icon = "ICON_POLICY_DISCIPLINE" }
+			}
 		},
 		-- 第 3 列
 		{
@@ -236,7 +267,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_CLASSICAL",
 			UITreeRow = -2,
 			Prereqs = {"HONKAI_TECH_STIGMATA_PROTOTYPE", "HONKAI_TECH_HONKAI_CONDUCTION"},
-			Column = 3
+			Column = 3,
+			ShadowCivic = "CIVIC_SHADOW_POWER_ARMOR",
+			Unlocks = {
+				{ Type = "POLICY", ID = "POLICY_HOH_SANGUINE_CONSTRUCT", Icon = "ICON_POLICY_DISCIPLINE" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_VALKYRIE_ADVANCED",
@@ -246,7 +281,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_CLASSICAL",
 			UITreeRow = 3,
 			Prereqs = {"HONKAI_TECH_WEAPON_PROTOTYPE", "HONKAI_TECH_ATONEMENT_SYSTEM", "HONKAI_TECH_KNIGHT_LEGACY"},
-			Column = 3
+			Column = 3,
+			ShadowCivic = "CIVIC_SHADOW_VALKYRIE_ADVANCED",
+			Unlocks = {
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_VALKYRIE_ADVANCED_EFFECT_TOOLTIP" }
+			}
 		},
 		-- ==============================================
 		-- 中世纪 (ERA_MEDIEVAL)
