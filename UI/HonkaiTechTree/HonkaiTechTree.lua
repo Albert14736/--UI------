@@ -1900,6 +1900,20 @@ function Initialize()
         LuaEvents.HonkaiTech_DoRefresh(playerID)
     end
 
+    -- Gameplay Lua 的 BuildQueue API 不可用，由此函数代为查询（UI 上下文有完整 API）
+    ExposedMembers.HonkaiUI.GetCityCurrentProject = function(playerID, cityID)
+        local pPlayer = Players[playerID]
+        if pPlayer == nil then return nil end
+        local pCity = pPlayer:GetCities():FindID(cityID)
+        if pCity == nil then return nil end
+        local ok, bq = pcall(function() return pCity:GetBuildQueue() end)
+        if not ok or bq == nil then return nil end
+        local ok2, hash = pcall(function() return bq:GetCurrentProductionTypeHash() end)
+        if not ok2 or hash == nil or hash == 0 then return nil end
+        local info = GameInfo.Projects[hash]
+        return info and info.ProjectType or nil
+    end
+
     LuaEvents.HonkaiTech_DoRefresh.Add(function(playerID)
         if playerID == m_ePlayer then
             m_kCurrentData = GetCurrentData(m_ePlayer);

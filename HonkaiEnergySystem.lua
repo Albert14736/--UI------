@@ -303,29 +303,11 @@ end
 
 function GetCityCurrentProjectType(pCity)
     if pCity == nil then return nil end
-
-    local ok, pBuildQueue = pcall(function() return pCity:GetBuildQueue() end)
-    if not ok or pBuildQueue == nil then return nil end
-
-    -- 优先用 Hash 查询；若 API 不存在则回退到遍历生产队列
-    if type(pBuildQueue.GetCurrentProductionTypeHash) == "function" then
-        local hash = pBuildQueue:GetCurrentProductionTypeHash()
-        if hash and hash ~= 0 then
-            local projectInfo = GameInfo.Projects[hash]
-            if projectInfo then return projectInfo.ProjectType end
-        end
+    -- Gameplay Lua 的 BuildQueue API 不完整，通过 UI 上下文桥接查询
+    if ExposedMembers.HonkaiUI and ExposedMembers.HonkaiUI.GetCityCurrentProject then
+        local ok, result = pcall(ExposedMembers.HonkaiUI.GetCityCurrentProject, pCity:GetOwner(), pCity:GetID())
+        return ok and result or nil
     end
-
-    -- 回退：遍历队列条目匹配项目
-    if type(pBuildQueue.Members) == "function" then
-        for entry in pBuildQueue:Members() do
-            if entry and entry.ProjectType then
-                return entry.ProjectType
-            end
-            break -- 只取第一条（当前生产）
-        end
-    end
-
     return nil
 end
 
