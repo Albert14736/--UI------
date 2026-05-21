@@ -824,8 +824,3 @@ function GetHonkaiTechTreeData()
 		}
 	}
 end
-IMAGINARY_TREE_SIMULATION"},
-			Column = 1
-		}
-	}
-end

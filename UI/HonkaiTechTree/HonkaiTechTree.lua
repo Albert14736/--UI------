@@ -1738,7 +1738,7 @@ function ShowHonkaiWindow()
     end
 end
 
-function HideHonkaiWindow(forceClose:boolean)
+function HideHonkaiWindow(forceClose)
     if ContextPtr:IsHidden() then return end
 
     local isForcedClose = forceClose == true
@@ -1786,7 +1786,7 @@ function HonkaiInputHandler( pInputStruct:table )
 end
 
 function SetupLaunchBarButton()
-    local ctrl = ContextPtr:LookUpControl("/InGame/LaunchBar/ButtonStack")
+    local ctrl = ContextPtr:LookUpControl("/InGame/LaunchBar/LaunchContainer/ButtonStack")
     if ctrl == nil then return end
     if EntryButtonInstance == nil then
         EntryButtonInstance = m_LaunchItemManager:GetInstance(ctrl)
