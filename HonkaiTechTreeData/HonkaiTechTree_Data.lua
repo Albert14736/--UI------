@@ -8,7 +8,7 @@ function GetHonkaiTechTreeData()
 		-- ==============================================
 		-- 远古时代 (ERA_ANCIENT)
 		-- ==============================================
-		-- 第 1 列
+		-- 第 1 列 (Cost: 25)
 		{
 			Type = "HONKAI_TECH_PERCEPTION",
 			Name = "LOC_HONKAI_TECH_PERCEPTION_NAME",
@@ -37,7 +37,7 @@ function GetHonkaiTechTreeData()
 				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_OMEN_EFFECT_TOOLTIP" }
 			}
 		},
-		-- 第 2 列
+		-- 第 2 列 (Cost: 50)
 		{
 			Type = "HONKAI_TECH_PATHOLOGY",
 			Name = "LOC_HONKAI_TECH_PATHOLOGY_NAME",
@@ -72,7 +72,7 @@ function GetHonkaiTechTreeData()
 			Description = "LOC_HONKAI_TECH_ENERGY_CONTAINER_DESC",
 			Cost = 50,
 			EraType = "ERA_ANCIENT",
-			UITreeRow = 1,
+			UITreeRow = 0,
 			Prereqs = {"HONKAI_TECH_PERCEPTION"},
 			Column = 2,
 			ShadowCivic = "CIVIC_SHADOW_ENERGY_CONTAINER",
@@ -86,7 +86,7 @@ function GetHonkaiTechTreeData()
 			Description = "LOC_HONKAI_TECH_DESTINY_CLERGY_DESC",
 			Cost = 50,
 			EraType = "ERA_ANCIENT",
-			UITreeRow = 2,
+			UITreeRow = 1,
 			Prereqs = {"HONKAI_TECH_OMEN"},
 			Column = 2,
 			ShadowCivic = "CIVIC_SHADOW_DESTINY_CLERGY",
@@ -95,6 +95,20 @@ function GetHonkaiTechTreeData()
 				{ Type = "BUILDING", ID = "BUILDING_HOH_SCHICKSAL_CATHEDRAL", Icon = "ICON_BUILDING_HOH_ST_FREYA" },
 				{ Type = "BUILDING", ID = "BUILDING_HOH_SCHICKSAL_CHAPEL", Icon = "ICON_BUILDING_SHRINE" },
 				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_DESTINY_CLERGY_EFFECT_TOOLTIP" }
+			}
+		},
+		{
+			Type = "HONKAI_TECH_WEAPON_PROTOTYPE",
+			Name = "LOC_HONKAI_TECH_WEAPON_PROTOTYPE_NAME",
+			Description = "LOC_HONKAI_TECH_WEAPON_PROTOTYPE_DESC",
+			Cost = 50,
+			EraType = "ERA_ANCIENT",
+			UITreeRow = 3,
+			Prereqs = {"HONKAI_TECH_PERCEPTION"},
+			Column = 2,
+			ShadowCivic = "CIVIC_SHADOW_WEAPON_PROTOTYPE",
+			Unlocks = {
+				{ Type = "UNIT", ID = "UNIT_HOH_VALKYRIE_MK1" }
 			}
 		},
 		{
@@ -111,7 +125,7 @@ function GetHonkaiTechTreeData()
 				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_NUN_FORMATION_EFFECT_TOOLTIP" }
 			}
 		},
-		-- 第 3 列
+		-- 第 3 列 (Cost: 80)
 		{
 			Type = "HONKAI_TECH_BASIC_ISOLATION",
 			Name = "LOC_HONKAI_TECH_BASIC_ISOLATION_NAME",
@@ -130,33 +144,18 @@ function GetHonkaiTechTreeData()
 			Description = "LOC_HONKAI_TECH_ST_FREYA_DESC",
 			Cost = 80,
 			EraType = "ERA_ANCIENT",
-			UITreeRow = 3,
-			Prereqs = {"HONKAI_TECH_PERCEPTION", "HONKAI_TECH_OMEN"},
+			UITreeRow = 1,
+			Prereqs = {"HONKAI_TECH_DESTINY_CLERGY"},
 			Column = 3,
 			ShadowCivic = "CIVIC_SHADOW_ST_FREYA",
 			Unlocks = {
 				{ Type = "BUILDING", ID = "BUILDING_HOH_ST_FREYA" }
 			}
 		},
-		-- 第 4 列
-		{
-			Type = "HONKAI_TECH_WEAPON_PROTOTYPE",
-			Name = "LOC_HONKAI_TECH_WEAPON_PROTOTYPE_NAME",
-			Description = "LOC_HONKAI_TECH_WEAPON_PROTOTYPE_DESC",
-			Cost = 80,
-			EraType = "ERA_ANCIENT",
-			UITreeRow = 3,
-			Prereqs = {"HONKAI_TECH_ST_FREYA"},
-			Column = 4,
-			ShadowCivic = "CIVIC_SHADOW_WEAPON_PROTOTYPE",
-			Unlocks = {
-				{ Type = "UNIT", ID = "UNIT_HOH_VALKYRIE_MK1" }
-			}
-		},
 		-- ==============================================
 		-- 古典时代 (ERA_CLASSICAL)
 		-- ==============================================
-		-- 第 1 列
+		-- 第 1 列 (Cost: 120)
 		{
 			Type = "HONKAI_TECH_STIGMATA_PROTOTYPE",
 			Name = "LOC_HONKAI_TECH_STIGMATA_PROTOTYPE_NAME",
@@ -215,7 +214,7 @@ function GetHonkaiTechTreeData()
 				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_PRAYER_ROOM_EFFECT_TOOLTIP" }
 			}
 		},
-		-- 第 2 列
+		-- 第 2 列 (Cost: 200)
 		{
 			Type = "HONKAI_TECH_HONKAI_CONDUCTION",
 			Name = "LOC_HONKAI_TECH_HONKAI_CONDUCTION_NAME",
@@ -258,12 +257,12 @@ function GetHonkaiTechTreeData()
 				{ Type = "POLICY", ID = "POLICY_HOH_KNIGHT_OATH", Icon = "ICON_POLICY_DISCIPLINE" }
 			}
 		},
-		-- 第 3 列
+		-- 第 3 列 (Cost: 201 - 阶梯错位)
 		{
 			Type = "HONKAI_TECH_POWER_ARMOR",
 			Name = "LOC_HONKAI_TECH_POWER_ARMOR_NAME",
 			Description = "LOC_HONKAI_TECH_POWER_ARMOR_DESC",
-			Cost = 200,
+			Cost = 201,
 			EraType = "ERA_CLASSICAL",
 			UITreeRow = -2,
 			Prereqs = {"HONKAI_TECH_STIGMATA_PROTOTYPE", "HONKAI_TECH_HONKAI_CONDUCTION"},
@@ -277,7 +276,7 @@ function GetHonkaiTechTreeData()
 			Type = "HONKAI_TECH_VALKYRIE_ADVANCED",
 			Name = "LOC_HONKAI_TECH_VALKYRIE_ADVANCED_NAME",
 			Description = "LOC_HONKAI_TECH_VALKYRIE_ADVANCED_DESC",
-			Cost = 200,
+			Cost = 201,
 			EraType = "ERA_CLASSICAL",
 			UITreeRow = 3,
 			Prereqs = {"HONKAI_TECH_WEAPON_PROTOTYPE", "HONKAI_TECH_ATONEMENT_SYSTEM", "HONKAI_TECH_KNIGHT_LEGACY"},
@@ -651,11 +650,14 @@ function GetHonkaiTechTreeData()
 			Type = "HONKAI_TECH_SALT_LAKE_CORE",
 			Name = "LOC_HONKAI_TECH_SALT_LAKE_CORE_NAME",
 			Description = "LOC_HONKAI_TECH_SALT_LAKE_CORE_DESC",
-			Cost = 1370,
+			Cost = 1350,
 			EraType = "ERA_MODERN",
-			UITreeRow = 1,
-			Prereqs = {"HONKAI_TECH_DEEP_SEA_BLUEPRINT"},
-			Column = 2
+			UITreeRow = -1,
+			Prereqs = {"HONKAI_TECH_TITAN_PRODUCTION_LINE"},
+			Column = 2,
+			Unlocks = {
+				{ Type = "BUILDING", ID = "BUILDING_HOH_CORE_WORKSHOP" }
+			}
 		},
 		-- ==============================================
 		-- 原子能时代 (ERA_ATOMIC)
@@ -818,6 +820,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_FUTURE",
 			UITreeRow = -1,
 			Prereqs = {"HONKAI_TECH_MARK_OF_THE_SERPENT", "HONKAI_TECH_CORE_OF_REASON_RESONANCE", "HONKAI_TECH_IMAGINARY_TREE_SIMULATION"},
+			Column = 1
+		}
+	}
+end
+IMAGINARY_TREE_SIMULATION"},
 			Column = 1
 		}
 	}

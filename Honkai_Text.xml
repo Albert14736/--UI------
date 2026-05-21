@@ -59,45 +59,35 @@
         <Replace Tag="LOC_DISTRICT_SCHICKSAL_HQ_NAME" Language="zh_Hans_CN" Text="天命总部"/>
         <Replace Tag="LOC_DISTRICT_SCHICKSAL_HQ_NAME" Language="zh_Hant_HK" Text="天命總部"/>
         <Replace Tag="LOC_DISTRICT_SCHICKSAL_HQ_NAME" Language="en_US" Text="Schicksal Headquarters"/>
-        <Replace Tag="LOC_DISTRICT_SCHICKSAL_HQ_DESC" Language="zh_Hans_CN" Text="天命组织的核心控制中心。提供高额信仰产出，并对相邻区域产生神权辐射。"/>
-        <Replace Tag="LOC_DISTRICT_SCHICKSAL_HQ_DESC" Language="zh_Hant_HK" Text="天命組織的核心控制中心。提供高額信仰產出，並對相邻區域產生神權輻射。"/>
-        <Replace Tag="LOC_DISTRICT_SCHICKSAL_HQ_DESC" Language="en_US" Text="The core control center of Schicksal. Provides high Faith and radiates theocratic influence to adjacent districts."/>
+        <Replace Tag="LOC_DISTRICT_SCHICKSAL_HQ_DESC" Language="zh_Hans_CN" Text="天命组织的核心控制中心。提供高额信仰产出，允许在此创建宗教。"/>
+        <Replace Tag="LOC_DISTRICT_SCHICKSAL_HQ_DESC" Language="zh_Hant_HK" Text="天命組織的核心控制中心。提供高額信仰產出，允许在此创建宗教。"/>
+        <Replace Tag="LOC_DISTRICT_SCHICKSAL_HQ_DESC" Language="en_US" Text="The core control center of Schicksal. Provides Faith and allows founding a religion."/>
 
         <Replace Tag="LOC_DISTRICT_ANTI_ENTROPY_HQ_NAME" Language="zh_Hans_CN" Text="逆熵总部"/>
         <Replace Tag="LOC_DISTRICT_ANTI_ENTROPY_HQ_NAME" Language="zh_Hant_HK" Text="逆熵總部"/>
         <Replace Tag="LOC_DISTRICT_ANTI_ENTROPY_HQ_NAME" Language="en_US" Text="Anti-Entropy Headquarters"/>
-        <Replace Tag="LOC_DISTRICT_ANTI_ENTROPY_HQ_DESC" Language="zh_Hans_CN" Text="逆熵组织的指挥中枢。提供高额工业产出，并对相邻区域产生重工业辐射。"/>
-        <Replace Tag="LOC_DISTRICT_ANTI_ENTROPY_HQ_DESC" Language="zh_Hant_HK" Text="逆熵組織的指揮中樞。提供高額工業產出，並對相邻區域產生重工業輻射。"/>
-        <Replace Tag="LOC_DISTRICT_ANTI_ENTROPY_HQ_DESC" Language="en_US" Text="The command hub of Anti-Entropy. Provides high Production and radiates industrial influence to adjacent districts."/>
+        <Replace Tag="LOC_DISTRICT_ANTI_ENTROPY_HQ_DESC" Language="zh_Hans_CN" Text="逆熵组织的指挥中枢。提供高额工业产出。"/>
 
         <Replace Tag="LOC_DISTRICT_WORLD_SERPENT_HQ_NAME" Language="zh_Hans_CN" Text="世界蛇总部"/>
         <Replace Tag="LOC_DISTRICT_WORLD_SERPENT_HQ_NAME" Language="zh_Hant_HK" Text="世界蛇總部"/>
         <Replace Tag="LOC_DISTRICT_WORLD_SERPENT_HQ_NAME" Language="en_US" Text="World Serpent Headquarters" />
-        <Replace Tag="LOC_DISTRICT_WORLD_SERPENT_HQ_DESC" Language="zh_Hans_CN" Text="世界蛇组织极其隐秘的据点。提供高额科研与文化产出，并对相邻区域产生科研辐射。"/>
-        <Replace Tag="LOC_DISTRICT_WORLD_SERPENT_HQ_DESC" Language="zh_Hant_HK" Text="世界蛇組織極其隱秘的據點。提供高額科研與文化產出，並對相邻區域產生科研輻射。"/>
-        <Replace Tag="LOC_DISTRICT_WORLD_SERPENT_HQ_DESC" Language="en_US" Text="The highly secretive base of World Serpent. Provides high Science and Culture, radiating scientific influence to adjacent districts."/>
+        <Replace Tag="LOC_DISTRICT_WORLD_SERPENT_HQ_DESC" Language="zh_Hans_CN" Text="世界蛇组织极其隐秘的据点。提供高额科研与文化产出。"/>
 
         <!--分支区域 (Branches) -->
         <Replace Tag="LOC_DISTRICT_SCHICKSAL_BRANCH_NAME" Language="zh_Hans_CN" Text="天命支部"/>
         <Replace Tag="LOC_DISTRICT_SCHICKSAL_BRANCH_NAME" Language="zh_Hant_HK" Text="天命支部"/>
         <Replace Tag="LOC_DISTRICT_SCHICKSAL_BRANCH_NAME" Language="en_US" Text="Schicksal Branch"/>
-        <Replace Tag="LOC_DISTRICT_SCHICKSAL_BRANCH_DESC" Language="zh_Hans_CN" Text="天命组织的地区分支机构。提供基础的崩坏能研究支持并代替圣地。"/>
-        <Replace Tag="LOC_DISTRICT_SCHICKSAL_BRANCH_DESC" Language="zh_Hant_HK" Text="天命組織的地區分支機構。提供基礎的崩壞能研究支持並代替聖地。"/>
-        <Replace Tag="LOC_DISTRICT_SCHICKSAL_BRANCH_DESC" Language="en_US" Text="A local branch of Schicksal. Provides basic Honkai research and replaces Holy Site."/>
+        <Replace Tag="LOC_DISTRICT_SCHICKSAL_BRANCH_DESC" Language="zh_Hans_CN" Text="天命组织的地区分支机构。提供基础的崩坏能研究支持并代替圣地。允许在此创建宗教。"/>
 
         <Replace Tag="LOC_DISTRICT_ARMED_INDUSTRY_NAME" Language="zh_Hans_CN" Text="武装工造区"/>
         <Replace Tag="LOC_DISTRICT_ARMED_INDUSTRY_NAME" Language="zh_Hant_HK" Text="武裝工造區"/>
         <Replace Tag="LOC_DISTRICT_ARMED_INDUSTRY_NAME" Language="en_US" Text="Armed Industry"/>
         <Replace Tag="LOC_DISTRICT_ARMED_INDUSTRY_DESC" Language="zh_Hans_CN" Text="逆熵的大型机甲量产基地。提供极高的工业产出并代替工业区。"/>
-        <Replace Tag="LOC_DISTRICT_ARMED_INDUSTRY_DESC" Language="zh_Hant_HK" Text="逆熵的大型機甲量產基地。提供極高的工業產出並代替工業區。"/>
-        <Replace Tag="LOC_DISTRICT_ARMED_INDUSTRY_DESC" Language="en_US" Text="A mass-production base for Anti-Entropy mechs. Provides high production and replaces Industrial Zone."/>
 
         <Replace Tag="LOC_DISTRICT_HIDDEN_RESEARCH_NAME" Language="zh_Hans_CN" Text="隐秘研究站"/>
         <Replace Tag="LOC_DISTRICT_HIDDEN_RESEARCH_NAME" Language="zh_Hant_HK" Text="隱秘研究站"/>
         <Replace Tag="LOC_DISTRICT_HIDDEN_RESEARCH_NAME" Language="en_US" Text="Hidden Research Station"/>
         <Replace Tag="LOC_DISTRICT_HIDDEN_RESEARCH_DESC" Language="zh_Hans_CN" Text="世界蛇的地下实验场。负责解析崩坏能的终极奥秘并代替学院。"/>
-        <Replace Tag="LOC_DISTRICT_HIDDEN_RESEARCH_DESC" Language="zh_Hant_HK" Text="世界蛇的地下實驗場。負責解析崩壞能的終極奧秘並代替學院。"/>
-        <Replace Tag="LOC_DISTRICT_HIDDEN_RESEARCH_DESC" Language="en_US" Text="World Serpent's underground lab. Responsible for analyzing the ultimate mysteries of Honkai and replaces Campus."/>
 
         <!--单位-->
         <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_NAME" Language="zh_Hans_CN" Text="女武神中队"/>
@@ -110,49 +100,6 @@
         <Replace Tag="LOC_PROMOTION_CLASS_HOH_VALKYRIE_NAME" Language="zh_Hant_HK" Text="女武神"/>
         <Replace Tag="LOC_PROMOTION_CLASS_HOH_VALKYRIE_NAME" Language="en_US" Text="Valkyrie"/>
 
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_F_NAME" Language="zh_Hans_CN" Text="F级女武神"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_F_DESC" Language="zh_Hans_CN" Text="动态训练评级：F级。战斗力 +0。"/>
-        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_F_PREVIEW" Language="zh_Hans_CN" Text="+0 F级训练评级"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_E_NAME" Language="zh_Hans_CN" Text="E级女武神"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_E_DESC" Language="zh_Hans_CN" Text="动态训练评级：E级。战斗力 +1。"/>
-        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_E_PREVIEW" Language="zh_Hans_CN" Text="+1 E级训练评级"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_D_NAME" Language="zh_Hans_CN" Text="D级女武神"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_D_DESC" Language="zh_Hans_CN" Text="动态训练评级：D级。战斗力 +2。"/>
-        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_D_PREVIEW" Language="zh_Hans_CN" Text="+2 D级训练评级"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_C_NAME" Language="zh_Hans_CN" Text="C级女武神"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_C_DESC" Language="zh_Hans_CN" Text="动态训练评级：C级。战斗力 +3。"/>
-        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_C_PREVIEW" Language="zh_Hans_CN" Text="+3 C级训练评级"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_B_NAME" Language="zh_Hans_CN" Text="B级女武神"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_B_DESC" Language="zh_Hans_CN" Text="动态训练评级：B级。战斗力 +5。"/>
-        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_B_PREVIEW" Language="zh_Hans_CN" Text="+5 B级训练评级"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_A_NAME" Language="zh_Hans_CN" Text="A级女武神"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_A_DESC" Language="zh_Hans_CN" Text="动态训练评级：A级。战斗力 +8。"/>
-        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_A_PREVIEW" Language="zh_Hans_CN" Text="+8 A级训练评级"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_S_NAME" Language="zh_Hans_CN" Text="S级女武神"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_S_DESC" Language="zh_Hans_CN" Text="动态训练评级：S级。战斗力 +12。"/>
-        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_S_PREVIEW" Language="zh_Hans_CN" Text="+12 S级训练评级"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_F_NAME" Language="en_US" Text="Rank F Valkyrie"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_F_DESC" Language="en_US" Text="Dynamic training rank: F. Combat Strength +0."/>
-        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_F_PREVIEW" Language="en_US" Text="+0 Rank F training"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_E_NAME" Language="en_US" Text="Rank E Valkyrie"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_E_DESC" Language="en_US" Text="Dynamic training rank: E. Combat Strength +1."/>
-        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_E_PREVIEW" Language="en_US" Text="+1 Rank E training"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_D_NAME" Language="en_US" Text="Rank D Valkyrie"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_D_DESC" Language="en_US" Text="Dynamic training rank: D. Combat Strength +2."/>
-        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_D_PREVIEW" Language="en_US" Text="+2 Rank D training"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_C_NAME" Language="en_US" Text="Rank C Valkyrie"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_C_DESC" Language="en_US" Text="Dynamic training rank: C. Combat Strength +3."/>
-        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_C_PREVIEW" Language="en_US" Text="+3 Rank C training"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_B_NAME" Language="en_US" Text="Rank B Valkyrie"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_B_DESC" Language="en_US" Text="Dynamic training rank: B. Combat Strength +5."/>
-        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_B_PREVIEW" Language="en_US" Text="+5 Rank B training"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_A_NAME" Language="en_US" Text="Rank A Valkyrie"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_A_DESC" Language="en_US" Text="Dynamic training rank: A. Combat Strength +8."/>
-        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_A_PREVIEW" Language="en_US" Text="+8 Rank A training"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_S_NAME" Language="en_US" Text="Rank S Valkyrie"/>
-        <Replace Tag="LOC_ABILITY_HOH_VALKYRIE_RANK_S_DESC" Language="en_US" Text="Dynamic training rank: S. Combat Strength +12."/>
-        <Replace Tag="LOC_MOD_HOH_VALKYRIE_RANK_S_PREVIEW" Language="en_US" Text="+12 Rank S training"/>
-        
         <!--晋升-->
         <Replace Tag="LOC_PROMOTION_HOH_VALKYRIE_1_L_NAME" Language="zh_Hans_CN" Text="远程防护"/>
         <Replace Tag="LOC_PROMOTION_HOH_VALKYRIE_1_L_DESC" Language="zh_Hans_CN" Text="防御远程攻击时 +10 战斗力。"/>
@@ -187,6 +134,26 @@
         <Replace Tag="LOC_BUILDING_HOH_ST_FREYA_NAME" Language="zh_Hans_CN" Text="圣芙蕾雅学园"/>
         <Replace Tag="LOC_BUILDING_HOH_ST_FREYA_DESC" Language="zh_Hans_CN" Text="天命体系下的训练与教育奇观。"/>
         
+        <!-- New HQ Buildings -->
+        <Replace Tag="LOC_BUILDING_HOH_VALKYRIE_CONTROL_CENTER_NAME" Language="zh_Hans_CN" Text="女武神总控中枢"/>
+        <Replace Tag="LOC_BUILDING_HOH_VALKYRIE_CONTROL_CENTER_DESC" Language="zh_Hans_CN" Text="全帝国女武神永久 +1 [ICON_Strength] 战斗力。"/>
+        <Replace Tag="LOC_BUILDING_HOH_CENTRAL_ARCHIVE_NAME" Language="zh_Hans_CN" Text="中央机甲档案馆"/>
+        <Replace Tag="LOC_BUILDING_HOH_CENTRAL_ARCHIVE_DESC" Language="zh_Hans_CN" Text="记录逆熵初期泰坦开发数据的核心数据库。"/>
+        <Replace Tag="LOC_BUILDING_HOH_CORE_WORKSHOP_NAME" Language="zh_Hans_CN" Text="崩坏能核心车间"/>
+        <Replace Tag="LOC_BUILDING_HOH_CORE_WORKSHOP_DESC" Language="zh_Hans_CN" Text="专门用于组装和调试律者核心兼容模块的精密车间。"/>
+        <Replace Tag="LOC_BUILDING_HOH_ATONEMENT_COURT_NAME" Language="zh_Hans_CN" Text="赎罪庭"/>
+        <Replace Tag="LOC_BUILDING_HOH_ATONEMENT_COURT_DESC" Language="zh_Hans_CN" Text="天命支部 T2 建筑，替代寺庙。+2 [ICON_Faith] 信仰值，+2 [ICON_Relic] 遗物槽位。"/>
+        <Replace Tag="LOC_IMPROVEMENT_HOH_PRAYER_ROOM_NAME" Language="zh_Hans_CN" Text="祈祷室"/>
+        <Replace Tag="LOC_IMPROVEMENT_HOH_PRAYER_ROOM_DESC" Language="zh_Hans_CN" Text="女武神建造的特色改良设施。+1 [ICON_Faith] 信仰值。"/>
+
+        <!-- Policies -->
+        <Replace Tag="LOC_POLICY_HOH_SANGUINE_CONSTRUCT_NAME" Language="zh_Hans_CN" Text="圣血构装"/>
+        <Replace Tag="LOC_POLICY_HOH_SANGUINE_CONSTRUCT_DESC" Language="zh_Hans_CN" Text="所有女武神单位 +4 [ICON_Strength] 战斗力。"/>
+        <Replace Tag="LOC_POLICY_HOH_SCHICKSAL_DOCTRINE_NAME" Language="zh_Hans_CN" Text="天命教义"/>
+        <Replace Tag="LOC_POLICY_HOH_SCHICKSAL_DOCTRINE_DESC" Language="zh_Hans_CN" Text="女武神在圣地旁作战无视受伤减力。可用 [ICON_Faith] 信仰值购买城墙。"/>
+        <Replace Tag="LOC_POLICY_HOH_KNIGHT_OATH_NAME" Language="zh_Hans_CN" Text="天命骑士誓约"/>
+        <Replace Tag="LOC_POLICY_HOH_KNIGHT_OATH_DESC" Language="zh_Hans_CN" Text="女武神在拥有城墙的城市领土内获得战斗力加成。"/>
+
         <!-- Tooltips -->
         <Replace Tag="LOC_HONKAI_TOOLTIP_ENERGY_HEADER" Language="zh_Hans_CN" Text="[COLOR:110,30,180,255]战术崩坏能每回合产出：[ENDCOLOR]"/>
         <Replace Tag="LOC_HONKAI_TOOLTIP_RESEARCH_HEADER" Language="zh_Hans_CN" Text="[COLOR:0,240,255,255]崩坏研究点每回合产出：[ENDCOLOR]"/>
@@ -198,45 +165,5 @@
 
         <!-- Tech Tree Unlock Tooltips -->
         <Replace Tag="LOC_HONKAI_TECH_PERCEPTION_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="崩坏能感知：解锁战术崩坏能产出，首都每回合 +2 [ICON_HONKAI_ENERGY] 战术崩坏能。"/>
-        <Replace Tag="LOC_HONKAI_TECH_OMEN_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="崩坏预兆：城市中心每回合 +1 信仰值。"/>
-        <Replace Tag="LOC_HONKAI_TECH_PATHOLOGY_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="崩坏病理学：所有城市 +1 宜居度。"/>
-        <Replace Tag="LOC_HONKAI_TECH_BASIC_TACTICS_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="抗崩坏战术：解锁军事政策卡【崩坏抗击操典】。"/>
-        <Replace Tag="LOC_HONKAI_TECH_DESTINY_CLERGY_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="命运神职：解锁天命礼拜堂；建造天命支部时 +25% [ICON_Production] 生产力。"/>
-        <Replace Tag="LOC_HONKAI_TECH_NUN_FORMATION_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="修女编制：允许使用信仰值购买女武神单位，且购买费用 -10%。"/>
-        <Replace Tag="LOC_HONKAI_TECH_BASIC_ISOLATION_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="崩坏隔离：当前不提供直接解锁。"/>
-        <Replace Tag="LOC_HONKAI_TECH_STIGMATA_PROTOTYPE_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="崩坏纹典记录：每位专家额外提供 +0.1 [ICON_HONKAI_RESEARCH] 崩坏能研究点。"/>
-        <Replace Tag="LOC_HONKAI_TECH_PRAYER_ROOM_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="祈祷室基建：女武神可使用建造次数修建特色改良【祈祷室】。"/>
-        <Replace Tag="LOC_HONKAI_TECH_HONKAI_CONDUCTION_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="崩坏能传导：国内商路为出发城市提供额外 [ICON_HONKAI_ENERGY] 战术崩坏能。"/>
-        <Replace Tag="LOC_HONKAI_TECH_ATONEMENT_SYSTEM_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="赎罪体系：击杀敌方单位时获得其战斗力 100% 等值的 [ICON_Faith] 信仰值。"/>
-        <Replace Tag="LOC_HONKAI_TECH_VALKYRIE_ADVANCED_EFFECT_TOOLTIP" Language="zh_Hans_CN" Text="女武神进阶教材：帝国女武神训练等级 +1。"/>
-
-        <!-- Classical Honkai unlock names -->
-        <Replace Tag="LOC_POLICY_HOH_SANGUINE_CONSTRUCT_NAME" Language="zh_Hans_CN" Text="圣血构装"/>
-        <Replace Tag="LOC_POLICY_HOH_SANGUINE_CONSTRUCT_DESC" Language="zh_Hans_CN" Text="所有女武神单位 +4 [ICON_Strength] 战斗力。"/>
-        <Replace Tag="LOC_POLICY_HOH_SCHICKSAL_DOCTRINE_NAME" Language="zh_Hans_CN" Text="天命教义"/>
-        <Replace Tag="LOC_POLICY_HOH_SCHICKSAL_DOCTRINE_DESC" Language="zh_Hans_CN" Text="女武神在圣地或天命支部相邻地块作战时无视受伤战斗力惩罚；允许用 [ICON_Faith] 信仰购买城墙、防御城堡和星形要塞。"/>
-        <Replace Tag="LOC_POLICY_HOH_KNIGHT_OATH_NAME" Language="zh_Hans_CN" Text="天命骑士誓约"/>
-        <Replace Tag="LOC_POLICY_HOH_KNIGHT_OATH_DESC" Language="zh_Hans_CN" Text="女武神按当前所在己方城市的城墙等级获得战斗力：城墙 +2，防御城堡 +4，星形要塞 +6。"/>
-        <Replace Tag="LOC_BUILDING_HOH_ATONEMENT_COURT_NAME" Language="zh_Hans_CN" Text="赎罪庭"/>
-        <Replace Tag="LOC_BUILDING_HOH_ATONEMENT_COURT_DESC" Language="zh_Hans_CN" Text="天命支部 T2 建筑，替代寺庙。需要天命礼拜堂。+2 [ICON_Faith] 信仰值，+1 大预言家点数，1 个专家槽位，2 个遗物槽位。"/>
-        <Replace Tag="LOC_IMPROVEMENT_HOH_PRAYER_ROOM_NAME" Language="zh_Hans_CN" Text="祈祷室"/>
-        <Replace Tag="LOC_IMPROVEMENT_HOH_PRAYER_ROOM_DESC" Language="zh_Hans_CN" Text="天命特色改良，由女武神建造。+1 [ICON_Faith] 信仰值。"/>
-        <Replace Tag="LOC_PROJECT_HOH_HONKAI_REUNION_REACTION_NAME" Language="zh_Hans_CN" Text="崩坏能重聚反应"/>
-        <Replace Tag="LOC_PROJECT_HOH_HONKAI_REUNION_REACTION_SHORT_NAME" Language="zh_Hans_CN" Text="重聚反应"/>
-        <Replace Tag="LOC_PROJECT_HOH_HONKAI_REUNION_REACTION_DESC" Language="zh_Hans_CN" Text="城市项目。项目进行期间，本城每回合将 100% 的 [ICON_Production] 生产力额外转化为 [ICON_HONKAI_ENERGY] 战术崩坏能，并显示在崩坏能城市明细中。"/>
-        <Replace Tag="LOC_ABILITY_HOH_SCHICKSAL_DOCTRINE_NAME" Language="zh_Hans_CN" Text="天命教义"/>
-        <Replace Tag="LOC_ABILITY_HOH_SCHICKSAL_DOCTRINE_DESC" Language="zh_Hans_CN" Text="在圣地或天命支部相邻地块作战时无视受伤战斗力惩罚。"/>
-        <Replace Tag="LOC_ABILITY_HOH_KNIGHT_OATH_WALLS_NAME" Language="zh_Hans_CN" Text="骑士誓约：城墙"/>
-        <Replace Tag="LOC_ABILITY_HOH_KNIGHT_OATH_WALLS_DESC" Language="zh_Hans_CN" Text="位于拥有古代城墙的己方城市境内时，战斗力 +2。"/>
-        <Replace Tag="LOC_ABILITY_HOH_KNIGHT_OATH_CASTLE_NAME" Language="zh_Hans_CN" Text="骑士誓约：防御城堡"/>
-        <Replace Tag="LOC_ABILITY_HOH_KNIGHT_OATH_CASTLE_DESC" Language="zh_Hans_CN" Text="位于拥有防御城堡的己方城市境内时，战斗力 +4。"/>
-        <Replace Tag="LOC_ABILITY_HOH_KNIGHT_OATH_STAR_FORT_NAME" Language="zh_Hans_CN" Text="骑士誓约：星形要塞"/>
-        <Replace Tag="LOC_ABILITY_HOH_KNIGHT_OATH_STAR_FORT_DESC" Language="zh_Hans_CN" Text="位于拥有星形要塞的己方城市境内时，战斗力 +6。"/>
-        <Replace Tag="LOC_MOD_HOH_SANGUINE_VALKYRIE_COMBAT_PREVIEW" Language="zh_Hans_CN" Text="+4 圣血构装"/>
-        <Replace Tag="LOC_MOD_HOH_ATONEMENT_SYSTEM_FAITH_KILLS_PREVIEW" Language="zh_Hans_CN" Text="击杀获得信仰"/>
-        <Replace Tag="LOC_MOD_HOH_SCHICKSAL_DOCTRINE_NO_WOUNDED_PREVIEW" Language="zh_Hans_CN" Text="无视受伤减力"/>
-        <Replace Tag="LOC_MOD_HOH_KNIGHT_OATH_WALLS_PREVIEW" Language="zh_Hans_CN" Text="+2 骑士誓约：城墙"/>
-        <Replace Tag="LOC_MOD_HOH_KNIGHT_OATH_CASTLE_PREVIEW" Language="zh_Hans_CN" Text="+4 骑士誓约：防御城堡"/>
-        <Replace Tag="LOC_MOD_HOH_KNIGHT_OATH_STAR_FORT_PREVIEW" Language="zh_Hans_CN" Text="+6 骑士誓约：星形要塞"/>
     </LocalizedText>
 </GameData>
