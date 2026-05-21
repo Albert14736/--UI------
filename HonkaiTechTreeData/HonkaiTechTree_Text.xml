@@ -70,6 +70,12 @@
         <Replace Tag="LOC_PROJECT_HOH_HONKAI_REUNION_REACTION_SHORT_NAME" Language="zh_Hans_CN"><Text>重聚反应</Text></Replace>
         <Replace Tag="LOC_PROJECT_HOH_HONKAI_REUNION_REACTION_DESC" Language="zh_Hans_CN"><Text>将本城本回合的生产力产出转化为等量的战术崩坏能。项目持续进行中，解锁需要研究【崩坏能熔炉】科技。</Text></Replace>
 
+        <!-- 流体合金资源文本 -->
+        <Replace Tag="LOC_RESOURCE_HOH_FLUID_ALLOY_NAME" Language="zh_Hans_CN"><Text>流体合金</Text></Replace>
+        <Replace Tag="LOC_RESOURCE_HOH_FLUID_ALLOY_DESC" Language="zh_Hans_CN"><Text>一种呈液态金属状态的稀有合金材料，在崩坏能场强辐射下保持稳定结构。是制造 Mk II 以上女武神装甲的核心材料，也是逆熵重工体系的战略基础。</Text></Replace>
+        <Replace Tag="LOC_RESOURCE_HOH_FLUID_ALLOY_NAME" Language="en_US"><Text>Fluid Alloy</Text></Replace>
+        <Replace Tag="LOC_RESOURCE_HOH_FLUID_ALLOY_DESC" Language="en_US"><Text>A rare alloy that maintains a liquid-metal state under Honkai field irradiation. The core material for manufacturing Mk II and higher Valkyrie armor.</Text></Replace>
+
         <!-- 中世纪科技名称和描述 -->
         <Replace Tag="LOC_HONKAI_TECH_STIGMATA_PRINCIPLE_NAME" Language="zh_Hans_CN"><Text>圣痕刻印原理</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_STIGMATA_PRINCIPLE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁隐秘研究站 T2 建筑【圣痕炼金室】，并解锁军事政策卡【前文明医疗协议】。</Text></Replace>
@@ -79,8 +85,8 @@
         <Replace Tag="LOC_HONKAI_TECH_VALKYRIE_BLOODLINE_PURIFICATION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]帝国女武神训练等级 +1，剔除 F 级废卡，最低保底 E 级出战。</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_CLERGY_PRIVILEGE_NAME" Language="zh_Hans_CN"><Text>圣职特权</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_CLERGY_PRIVILEGE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁经济政策卡【圣职特权】：拥有天命支部的城市每回合额外 +2 忠诚度、+2 住房、+1 宜居度。</Text></Replace>
-        <Replace Tag="LOC_HONKAI_TECH_SOULLIQUOR_SMELTING_NAME" Language="zh_Hans_CN"><Text>魂钢冶炼</Text></Replace>
-        <Replace Tag="LOC_HONKAI_TECH_SOULLIQUOR_SMELTING_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁武装工造区 T1 建筑【崩坏能熔炼坊】。帝国地图上的隐藏资源【魂钢】正式显现。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_SOULLIQUOR_SMELTING_NAME" Language="zh_Hans_CN"><Text>流体合金冶炼</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_SOULLIQUOR_SMELTING_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁武装工造区 T1 建筑【崩坏能熔炼坊】。帝国地图上的隐藏资源【流体合金】正式显现。</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_HONKAI_CRYSTAL_EXTRACTION_NAME" Language="zh_Hans_CN"><Text>崩坏贤者之石</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_HONKAI_CRYSTAL_EXTRACTION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁崩坏能结晶转化系统（独立 UI 界面，后续版本实装）。</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_PROTOTYPE_NAME" Language="zh_Hans_CN"><Text>弑神装甲原型</Text></Replace>
@@ -92,7 +98,7 @@
         <Replace Tag="LOC_HONKAI_TECH_GREAT_ERUPTION_HYPOTHESIS_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>帝国所有城市防御力 +5，宜居度 +1。</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_VALKYRIE_BLOODLINE_PURIFICATION_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>帝国女武神训练等级 +1，剔除 F 级，最低 E 级出战。</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_CLERGY_PRIVILEGE_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>拥有天命支部的城市：+2 忠诚度、+2 住房、+1 宜居度/回合。</Text></Replace>
-        <Replace Tag="LOC_HONKAI_TECH_SOULLIQUOR_SMELTING_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>【魂钢】战略资源正式显现，是后期女武神 Mk II+ 的维护材料。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_SOULLIQUOR_SMELTING_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>【流体合金】战略资源正式显现，是后期女武神 Mk II+ 的维护材料。</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_HONKAI_CRYSTAL_EXTRACTION_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>战术崩坏能→崩坏能结晶转化系统（待实装 UI）。</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_PROTOTYPE_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>女武神可升级至 Mk II；解锁战术加力【装甲限制解除】(+5力)。</Text></Replace>
 
@@ -140,7 +146,7 @@
         <Replace Tag="LOC_HONKAI_TECH_GREAT_ERUPTION_HYPOTHESIS_NAME" Language="en_US"><Text>Great Honkai Eruption Hypothesis</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_VALKYRIE_BLOODLINE_PURIFICATION_NAME" Language="en_US"><Text>Valkyrie Bloodline Purification</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_CLERGY_PRIVILEGE_NAME" Language="en_US"><Text>Clergy Privilege</Text></Replace>
-        <Replace Tag="LOC_HONKAI_TECH_SOULLIQUOR_SMELTING_NAME" Language="en_US"><Text>Soulliquor Smelting</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_SOULLIQUOR_SMELTING_NAME" Language="en_US"><Text>Fluid Alloy Smelting</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_HONKAI_CRYSTAL_EXTRACTION_NAME" Language="en_US"><Text>Honkai Crystal Extraction</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_PROTOTYPE_NAME" Language="en_US"><Text>God-Slayer Armor Prototype</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_SCHICKSAL_ARMED_FORMATION_NAME" Language="en_US"><Text>Schicksal Armed Formation</Text></Replace>

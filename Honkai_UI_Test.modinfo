@@ -59,6 +59,11 @@
         <File>ResourceAndText_Textures/benghuaineng_22.dds</File>
         <File>ResourceAndText_Textures/benghuainengjiejing_22.dds</File>
         <File>ResourceAndText_Textures/benghuainengyanjiudian_22.dds</File>
+        <File>ResourceAndText_Textures/liutihejin_256.dds</File>
+        <File>ResourceAndText_Textures/liutihejin_22.dds</File>
+        <File>ResourceAndText_Textures/liutihejin_38.dds</File>
+        <File>ResourceAndText_Textures/liutihejin_50.dds</File>
+        <File>ResourceAndText_Textures/liutihejin_64.dds</File>
         <File>HonkaiTechTreeData/HonkaiTechTree_Data.lua</File>
         <File>Honkai_FontIcons.ggxml</File>
       </Items>
@@ -101,6 +106,11 @@
         <File>ResourceAndText_Textures/benghuaineng_22.dds</File>
         <File>ResourceAndText_Textures/benghuainengjiejing_22.dds</File>
         <File>ResourceAndText_Textures/benghuainengyanjiudian_22.dds</File>
+        <File>ResourceAndText_Textures/liutihejin_256.dds</File>
+        <File>ResourceAndText_Textures/liutihejin_22.dds</File>
+        <File>ResourceAndText_Textures/liutihejin_38.dds</File>
+        <File>ResourceAndText_Textures/liutihejin_50.dds</File>
+        <File>ResourceAndText_Textures/liutihejin_64.dds</File>
         <File>UnitTextures/nvwushen_22.dds</File>
         <File>UnitTextures/nvwushen_32.dds</File>
         <File>UnitTextures/nvwushen_38.dds</File>
@@ -177,6 +187,11 @@
     <File>ResourceAndText_Textures/benghuaineng_22.dds</File>
     <File>ResourceAndText_Textures/benghuainengjiejing_22.dds</File>
     <File>ResourceAndText_Textures/benghuainengyanjiudian_22.dds</File>
+    <File>ResourceAndText_Textures/liutihejin_256.dds</File>
+    <File>ResourceAndText_Textures/liutihejin_22.dds</File>
+    <File>ResourceAndText_Textures/liutihejin_38.dds</File>
+    <File>ResourceAndText_Textures/liutihejin_50.dds</File>
+    <File>ResourceAndText_Textures/liutihejin_64.dds</File>
     <File>UnitTextures/nvwushen_22.dds</File>
     <File>UnitTextures/nvwushen_32.dds</File>
     <File>UnitTextures/nvwushen_38.dds</File>

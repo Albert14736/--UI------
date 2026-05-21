@@ -18,6 +18,13 @@
         <Row Name="ATLAS_HONKAI_WORLD_SERPENT" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="shijieshe_logo_256.dds"/>
 
         <!-- 资源图标 (标准图集) -->
+        <!-- 流体合金资源图集 -->
+        <Row Name="ATLAS_HOH_FLUID_ALLOY" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="ResourceAndText_Textures/liutihejin_256.dds"/>
+        <Row Name="ATLAS_HOH_FLUID_ALLOY" Baseline="5" IconSize="22" IconsPerRow="1" IconsPerColumn="1" Filename="ResourceAndText_Textures/liutihejin_22.dds"/>
+        <Row Name="ATLAS_HOH_FLUID_ALLOY" IconSize="38" IconsPerRow="1" IconsPerColumn="1" Filename="ResourceAndText_Textures/liutihejin_38.dds"/>
+        <Row Name="ATLAS_HOH_FLUID_ALLOY" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="ResourceAndText_Textures/liutihejin_50.dds"/>
+        <Row Name="ATLAS_HOH_FLUID_ALLOY" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="ResourceAndText_Textures/liutihejin_64.dds"/>
+
         <Row Name="ATLAS_HONKAI_ENERGY" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="benghuaineng_256.dds"/>
         <Row Name="ATLAS_HONKAI_ENERGY" Baseline="5" IconSize="22" IconsPerRow="1" IconsPerColumn="1" Filename="benghuaineng_22.dds"/>
 
@@ -71,6 +78,12 @@
         <Row Name="ICON_HONKAI_ENERGY"  Atlas="ATLAS_HONKAI_ENERGY" Index="0"/>
         <Row Name="ICON_HONKAI_RESEARCH" Atlas="ATLAS_HONKAI_RESEARCH" Index="0"/>
         <Row Name="ICON_RESOURCE_STIGMATA_ACTIVATOR" Atlas="ATLAS_HONKAI_TECH" Index="0"/>
+
+        <!-- 流体合金图标（多别名保证各 UI 系统都能找到） -->
+        <Row Name="ICON_RESOURCE_HOH_FLUID_ALLOY" Atlas="ATLAS_HOH_FLUID_ALLOY" Index="0"/>
+        <Row Name="RESOURCE_HOH_FLUID_ALLOY"      Atlas="ATLAS_HOH_FLUID_ALLOY" Index="0"/>
+        <Row Name="HOH_FLUID_ALLOY"               Atlas="ATLAS_HOH_FLUID_ALLOY" Index="0"/>
+        <Row Name="ICON_FLUID_ALLOY"              Atlas="ATLAS_HOH_FLUID_ALLOY" Index="0"/>
 
         <Row Name="ICON_UNIT_HOH_VALKYRIE_MK1" Atlas="ATLAS_HOH_VALKYRIE" Index="0"/>
         <Row Name="ICON_UNIT_HOH_VALKYRIE_MK1_PORTRAIT" Atlas="ATLAS_HOH_VALKYRIE_PORTRAIT" Index="0"/>

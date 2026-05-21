@@ -14,4 +14,8 @@
     
     <Glyph Name="[ICON_HONKAI_RESEARCH]" Texture="benghuainengyanjiudian_22.dds" U="0" V="0" SizeX="22" SizeY="22" />
     <Glyph Name="[ICON_RESOURCE_HONKAI_RESEARCH]" Texture="benghuainengyanjiudian_22.dds" U="0" V="0" SizeX="22" SizeY="22" />
+
+    <Texture Name="ResourceAndText_Textures/liutihejin_22.dds" />
+    <Glyph Name="[ICON_FLUID_ALLOY]" Texture="ResourceAndText_Textures/liutihejin_22.dds" U="0" V="0" SizeX="22" SizeY="22" />
+    <Glyph Name="[ICON_RESOURCE_HOH_FLUID_ALLOY]" Texture="ResourceAndText_Textures/liutihejin_22.dds" U="0" V="0" SizeX="22" SizeY="22" />
 </GlyphSet>

@@ -57,6 +57,8 @@
         <Row Type="CIVIC_SHADOW_KNIGHT_LEGACY" Kind="KIND_CIVIC"/>
         <Row Type="CIVIC_SHADOW_POWER_ARMOR" Kind="KIND_CIVIC"/>
         <Row Type="CIVIC_SHADOW_VALKYRIE_ADVANCED" Kind="KIND_CIVIC"/>
+        <!-- 流体合金战略资源 -->
+        <Row Type="RESOURCE_HOH_FLUID_ALLOY" Kind="KIND_RESOURCE"/>
         <!-- 中世纪影子市政 -->
         <Row Type="CIVIC_SHADOW_STIGMATA_PRINCIPLE" Kind="KIND_CIVIC"/>
         <Row Type="CIVIC_SHADOW_GREAT_ERUPTION_HYPOTHESIS" Kind="KIND_CIVIC"/>
@@ -750,6 +752,19 @@
         <Row Type="ABILITY_HOH_KNIGHT_OATH_CASTLE" Tag="CLASS_HOH_VALKYRIE"/>
         <Row Type="ABILITY_HOH_KNIGHT_OATH_STAR_FORT" Tag="CLASS_HOH_VALKYRIE"/>
     </TypeTags>
+
+    <!-- ===== 流体合金战略资源 ===== -->
+    <Resources>
+        <Row ResourceType="RESOURCE_HOH_FLUID_ALLOY"
+             Name="LOC_RESOURCE_HOH_FLUID_ALLOY_NAME"
+             Description="LOC_RESOURCE_HOH_FLUID_ALLOY_DESC"
+             ResourceClassType="RESOURCECLASS_STRATEGIC"
+             Happiness="0"
+             AdjacentToLand="true"
+             Frequency="5"
+             Clumped="false"
+             Icon="ICON_RESOURCE_HOH_FLUID_ALLOY"/>
+    </Resources>
 
     <Units>
         <Row UnitType="UNIT_HOH_VALKYRIE_MK1" BaseMoves="2" Cost="90" ZoneOfControl="true" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" PromotionClass="PROMOTION_CLASS_HOH_VALKYRIE" AdvisorType="ADVISOR_CONQUEST" Name="LOC_UNIT_HONKAI_VALKYRIE_NAME" Description="LOC_UNIT_HONKAI_VALKYRIE_MK1_DESC" PurchaseYield="YIELD_GOLD" Combat="35" BaseSightRange="2" BuildCharges="3" Maintenance="1" TraitType="TRAIT_CIVILIZATION_HONKAI" PrereqCivic="CIVIC_SHADOW_WEAPON_PROTOTYPE"/>
