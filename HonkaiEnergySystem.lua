@@ -1203,10 +1203,55 @@ function OnPlayerTurnStarted(playerID)
         end
     end
 
-    -- 4. 处理队列结算
+    -- 4. 圣痕计划·初筛：驻外灰蛇每回合收取目标城市 10% 金币
+    if IsHonkaiTechUnlocked(playerID, "HONKAI_TECH_STIGMATA_SCREENING") then
+        local graySerIdx = GameInfo.Units["UNIT_HOH_GRAY_SERPENT"] and GameInfo.Units["UNIT_HOH_GRAY_SERPENT"].Index or -1
+        if graySerIdx >= 0 then
+            local totalGold = 0
+            for _, unit in pPlayer:GetUnits():Members() do
+                if unit:GetType() == graySerIdx then
+                    local plot = Map.GetPlot(unit:GetX(), unit:GetY())
+                    if plot then
+                        local ownerID = plot:GetOwner()
+                        if ownerID ~= playerID and ownerID >= 0 then
+                            local otherPlayer = Players[ownerID]
+                            if otherPlayer then
+                                for _, city in otherPlayer:GetCities():Members() do
+                                    if city:GetX() == unit:GetX() and city:GetY() == unit:GetY() then
+                                        local gold = city:GetYield(2)  -- YIELD_GOLD
+                                        totalGold = totalGold + math.floor(gold * 0.1)
+                                        break
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+            if totalGold > 0 then
+                pPlayer:GetTreasury():ChangeGoldBalance(totalGold)
+            end
+        end
+    end
+
+    -- 5. 崩坏侵蚀化武：减少侵蚀计数器，到期恢复宜居
+    if IsHonkaiTechUnlocked(playerID, "HONKAI_TECH_GENE_TOXIN") then
+        for targetID = 0, 8 do
+            local key = "HOH_EROSION_" .. targetID
+            local turns = pPlayer:GetProperty(key) or 0
+            if turns > 0 then
+                pPlayer:SetProperty(key, turns - 1)
+                if turns == 1 then
+                    pcall(function() Players[targetID]:AttachModifierByID("MOD_HOH_GENE_TOXIN_AMENITY_POS") end)
+                end
+            end
+        end
+    end
+
+    -- 6. 处理队列结算
     ProcessResearchQueue(playerID, false)
 
-    -- 4. 刷新基于当前位置和政策的女武神动态能力
+    -- 7. 刷新基于当前位置和政策的女武神动态能力
     RefreshKnightOathForPlayer(playerID)
 end
 
@@ -1271,6 +1316,39 @@ end
 function Initialize()
     GameEvents.PlayerTurnStarted.Add(OnPlayerTurnStarted)
     GameEvents.HonkaiSetResearchTarget.Add(OnHonkaiSetResearchTarget)
+
+    -- 崩坏侵蚀化武：间谍操作完成时 25% 概率触发侵蚀效果
+    if GameEvents.UnitOperationCompleted ~= nil and type(GameEvents.UnitOperationCompleted.Add) == "function" then
+        GameEvents.UnitOperationCompleted.Add(function(playerID, unitID, operationType, plotX, plotY, isSuccess)
+            if not isSuccess then return end
+            if not IsHonkaiTechUnlocked(playerID, "HONKAI_TECH_GENE_TOXIN") then return end
+            local pPlayer = Players[playerID]
+            if not pPlayer then return end
+
+            local unit = UnitManager.GetUnit(playerID, unitID)
+            if not unit then return end
+            local graySerIdx = GameInfo.Units["UNIT_HOH_GRAY_SERPENT"] and GameInfo.Units["UNIT_HOH_GRAY_SERPENT"].Index or -1
+            if unit:GetType() ~= graySerIdx then return end
+
+            -- 25% 概率触发侵蚀
+            if Game.GetRandNum(100, "HohErosion") >= 25 then return end
+
+            local plot = plotX and Map.GetPlot(plotX, plotY) or nil
+            if not plot then return end
+            local targetOwner = plot:GetOwner()
+            if targetOwner < 0 or targetOwner == playerID then return end
+
+            local key = "HOH_EROSION_" .. targetOwner
+            local existing = pPlayer:GetProperty(key) or 0
+            if existing == 0 then
+                -- 首次施加：-2 宜居
+                pcall(function() Players[targetOwner]:AttachModifierByID("MOD_HOH_GENE_TOXIN_AMENITY_NEG") end)
+            end
+            -- 刷新或叠加计时（取最大值，避免重复叠加）
+            pPlayer:SetProperty(key, math.max(existing, 10))
+            print("【侵蚀化武】对玩家 " .. targetOwner .. " 施加宜居-2，持续10回合")
+        end)
+    end
     if GameEvents.UnitInitialized ~= nil and type(GameEvents.UnitInitialized.Add) == "function" then
         GameEvents.UnitInitialized.Add(OnHonkaiUnitCreated)
     end

@@ -310,6 +310,9 @@
         <Row ModifierId="MOD_HOH_VALKYRIE_MOBILIZATION_PROD" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PRODUCTION_MODIFIER" SubjectRequirementSetId="REQSET_HOH_UNIT_IS_VALKYRIE"/>
         <Row ModifierId="MOD_HOH_AE_STD_ADJACENCY_SCIENCE" ModifierType="MODIFIER_PLAYER_DISTRICT_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS" SubjectRequirementSetId="REQSET_HOH_DISTRICT_IS_ARMED_INDUSTRY"/>
 
+        <!-- 侵蚀化武：宜居减益和取消 -->
+        <Row ModifierId="MOD_HOH_GENE_TOXIN_AMENITY_NEG" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_POLICY_AMENITY"/>
+        <Row ModifierId="MOD_HOH_GENE_TOXIN_AMENITY_POS" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_POLICY_AMENITY"/>
     </Modifiers>
 
     <ModifierArguments>
@@ -391,6 +394,8 @@
         <Row ModifierId="MOD_HOH_VALKYRIE_MOBILIZATION_PROD" Name="Amount" Value="30"/>
         <Row ModifierId="MOD_HOH_AE_STD_ADJACENCY_SCIENCE" Name="YieldType" Value="YIELD_SCIENCE"/>
 
+        <Row ModifierId="MOD_HOH_GENE_TOXIN_AMENITY_NEG" Name="Amount" Value="-2"/>
+        <Row ModifierId="MOD_HOH_GENE_TOXIN_AMENITY_POS" Name="Amount" Value="2"/>
     </ModifierArguments>
 
     <ModifierStrings>
