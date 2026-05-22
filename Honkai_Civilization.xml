@@ -256,6 +256,8 @@
         <Row ModifierId="MOD_HOH_FLOATING_ISLAND_SIEGE" ModifierType="MODIFIER_CITY_ADJUST_SIEGE_PROTECTION"/>
         <Row ModifierId="MOD_HOH_FLOATING_ISLAND_DEFENSE" ModifierType="MODIFIER_CITY_ADJUST_CITY_COMBAT_BONUS"/>
 
+        <Row ModifierId="MOD_HOH_STIGMATA_GENE_HOUSING" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING"/>
+        <Row ModifierId="MOD_HOH_STIGMATA_GENE_FOOD" ModifierType="MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE" SubjectRequirementSetId="REQSET_HOH_DISTRICT_IS_CITY_CENTER"/>
     </Modifiers>
 
     <ModifierArguments>
@@ -323,6 +325,9 @@
         <Row ModifierId="MOD_HOH_ISOLATION_DOME_RANGED" Name="Amount" Value="4"/>
         <Row ModifierId="MOD_HOH_FLOATING_ISLAND_DEFENSE" Name="Amount" Value="15"/>
 
+        <Row ModifierId="MOD_HOH_STIGMATA_GENE_HOUSING" Name="Amount" Value="1"/>
+        <Row ModifierId="MOD_HOH_STIGMATA_GENE_FOOD" Name="YieldType" Value="YIELD_FOOD"/>
+        <Row ModifierId="MOD_HOH_STIGMATA_GENE_FOOD" Name="Amount" Value="1"/>
     </ModifierArguments>
 
     <ModifierStrings>
@@ -923,9 +928,11 @@
 
     </UnitUpgrades>
 
-    <Unit_ResourceUsages>
-        <Row Unit="UNIT_HOH_VALKYRIE_MK3" ResourceType="RESOURCE_HOH_FLUID_ALLOY" Amount="1" Maintenance="true"/>
-    </Unit_ResourceUsages>
+    <Units_XP2>
+        <Row UnitType="UNIT_HOH_VALKYRIE_MK3" ResourceMaintenanceType="RESOURCE_HOH_FLUID_ALLOY" ResourceMaintenanceAmount="1"/>
+    </Units_XP2>
+
+
 
 
     <Improvement_ValidBuildUnits>

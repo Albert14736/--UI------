@@ -1164,7 +1164,24 @@ function OnPlayerTurnStarted(playerID)
     pPlayer:SetProperty("HONKAI_ENERGY_CAPACITY", energyCap)
     pPlayer:SetProperty("HONKAI_ENERGY_YIELD", energyBreakdown.TotalYield)
 
-    -- 3. 处理队列结算
+    -- 3. 圣痕谱系解剖学：每2专家 +1住房 +1食物（增量式 AttachModifierByID）
+    if IsHonkaiTechUnlocked(playerID, "HONKAI_TECH_STIGMATA_GENE_COMPLETION") then
+        local totalSpec = 0
+        for _, pCity in pPlayer:GetCities():Members() do
+            totalSpec = totalSpec + CountCitySpecialists(pCity)
+        end
+        local newBonus = math.floor(totalSpec / 2)
+        local oldBonus = pPlayer:GetProperty("STIGMATA_GENE_BONUS") or 0
+        for _ = 1, math.max(0, newBonus - oldBonus) do
+            pPlayer:AttachModifierByID("MOD_HOH_STIGMATA_GENE_HOUSING")
+            pPlayer:AttachModifierByID("MOD_HOH_STIGMATA_GENE_FOOD")
+        end
+        if newBonus > oldBonus then
+            pPlayer:SetProperty("STIGMATA_GENE_BONUS", newBonus)
+        end
+    end
+
+    -- 4. 处理队列结算
     ProcessResearchQueue(playerID, false)
 
     -- 4. 刷新基于当前位置和政策的女武神动态能力
