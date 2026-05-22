@@ -102,6 +102,55 @@
         <Replace Tag="LOC_HONKAI_TECH_HONKAI_CRYSTAL_EXTRACTION_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>战术崩坏能→崩坏能结晶转化系统（待实装 UI）。</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_PROTOTYPE_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>女武神可升级至 Mk II；解锁战术加力【装甲限制解除】(+5力)。</Text></Replace>
 
+        <!-- 文艺复兴科技名称和描述 -->
+        <Replace Tag="LOC_HONKAI_TECH_IMAGINARY_INTERFERENCE_THEORY_NAME" Language="zh_Hans_CN"><Text>虚数天体观测</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_IMAGINARY_INTERFERENCE_THEORY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]全军获得反隐能力，可见潜行单位。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_IMAGINARY_INTERFERENCE_THEORY_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>全军单位可透过地形地貌发现潜行单位。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_FISSION_REACTOR_NAME" Language="zh_Hans_CN"><Text>崩坏能动力学</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_FISSION_REACTOR_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]所有城市进行城市项目时生产力 +15%。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_FISSION_REACTOR_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>所有城市项目生产速度 +15%。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GRAY_SERPENT_NETWORK_NAME" Language="zh_Hans_CN"><Text>灰蛇情报网</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GRAY_SERPENT_NETWORK_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]世界蛇首登场。全文明外交能见度永久 +1。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GRAY_SERPENT_NETWORK_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>全文明外交能见度 +1，可获取更多文明情报。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_ABSOLUTE_THEOCRACY_NAME" Language="zh_Hans_CN"><Text>绝对神权统治</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_ABSOLUTE_THEOCRACY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]宗教传播压力 +50%，传播距离 +100%。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_ABSOLUTE_THEOCRACY_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>所有传教士/使徒的传播压力 +50%，传播距离 +100%。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_STIGMATA_GENE_COMPLETION_NAME" Language="zh_Hans_CN"><Text>圣痕谱系解剖学</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_STIGMATA_GENE_COMPLETION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]每 2 位专家额外提供 +1 住房和 +1 食物（待实装）。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_STIGMATA_GENE_COMPLETION_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>每 2 位专家 +1 住房、+1 食物（效果待实装）。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_HONKAI_ISOLATION_DOME_NAME" Language="zh_Hans_CN"><Text>崩坏隔离穹顶</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_HONKAI_ISOLATION_DOME_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁市中心 T4 建筑【崩坏隔离穹顶】：+100 城墙防御，城市驻军 +3 战斗力，城市远程攻击 +4。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_FANG_IN_THE_SHADOWS_NAME" Language="zh_Hans_CN"><Text>阴影中的毒牙</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_FANG_IN_THE_SHADOWS_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]灰蛇特工执行攻击任务等级 +1。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_FANG_IN_THE_SHADOWS_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>所有间谍单位执行攻击任务时如同高一级别。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_DEPLOYMENT_NAME" Language="zh_Hans_CN"><Text>弑神装甲列装</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_DEPLOYMENT_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]允许 Mk II 女武神升级为 Mk III，维护需消耗流体合金。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_FLOATING_ISLAND_TECH_NAME" Language="zh_Hans_CN"><Text>浮空岛技术</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_FLOATING_ISLAND_TECH_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁天命总部 T3 建筑【浮空岛总控平台】：此城市不会被围攻，城市防御 +15，+3 科技，+3 文化。</Text></Replace>
+        <!-- 文艺复兴建筑文本 -->
+        <Replace Tag="LOC_BUILDING_HOH_ISOLATION_DOME_NAME" Language="zh_Hans_CN"><Text>崩坏隔离穹顶</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_ISOLATION_DOME_DESC" Language="zh_Hans_CN"><Text>市中心 T4 建筑。+100 城墙防御值，城市驻军 +3 [ICON_STRENGTH] 战斗力，城市远程攻击 +4。需要星形要塞。</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_FLOATING_ISLAND_PLATFORM_NAME" Language="zh_Hans_CN"><Text>浮空岛总控平台</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_FLOATING_ISLAND_PLATFORM_DESC" Language="zh_Hans_CN"><Text>天命总部 T3 建筑。+3 [ICON_SCIENCE] 科技，+3 [ICON_CULTURE] 文化，城市防御 +15。此城市永远不会被围攻——即使被包围，依然可以自动回血并正常运作。</Text></Replace>
+        <!-- 女武神 Mk III 文本 -->
+        <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_MK3_NAME" Language="zh_Hans_CN"><Text>女武神中队 Mk III</Text></Replace>
+        <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_MK3_DESC" Language="zh_Hans_CN"><Text>弑神装甲列装完成后，Mk II 女武神可升级为 Mk III。战斗力大幅提升，每回合消耗 1 单位流体合金进行维护。</Text></Replace>
+        <!-- 辅助能力文本 -->
+        <Replace Tag="LOC_ABILITY_HOH_SEE_THROUGH_NAME" Language="zh_Hans_CN"><Text>崩坏感应</Text></Replace>
+        <Replace Tag="LOC_ABILITY_HOH_SEE_THROUGH_DESC" Language="zh_Hans_CN"><Text>可透过地形地貌发现潜行中的敌方单位。</Text></Replace>
+        <!-- EN -->
+        <Replace Tag="LOC_HONKAI_TECH_IMAGINARY_INTERFERENCE_THEORY_NAME" Language="en_US"><Text>Imaginary Stellar Observation</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_FISSION_REACTOR_NAME" Language="en_US"><Text>Honkai Energy Dynamics</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GRAY_SERPENT_NETWORK_NAME" Language="en_US"><Text>Gray Serpent Network</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_ABSOLUTE_THEOCRACY_NAME" Language="en_US"><Text>Absolute Theocracy</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_STIGMATA_GENE_COMPLETION_NAME" Language="en_US"><Text>Stigmata Gene Analysis</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_HONKAI_ISOLATION_DOME_NAME" Language="en_US"><Text>Honkai Isolation Dome</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_FANG_IN_THE_SHADOWS_NAME" Language="en_US"><Text>Fang in the Shadows</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_DEPLOYMENT_NAME" Language="en_US"><Text>God-Slayer Armor Deployment</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_FLOATING_ISLAND_TECH_NAME" Language="en_US"><Text>Floating Island Technology</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_ISOLATION_DOME_NAME" Language="en_US"><Text>Honkai Isolation Dome</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_FLOATING_ISLAND_PLATFORM_NAME" Language="en_US"><Text>Floating Island Control Platform</Text></Replace>
+        <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_MK3_NAME" Language="en_US"><Text>Valkyrie Squad Mk III</Text></Replace>
         <!-- 女武神 Mk II -->
         <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_MK2_NAME" Language="zh_Hans_CN"><Text>女武神中队 Mk II</Text></Replace>
         <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_MK2_DESC" Language="zh_Hans_CN"><Text>弑神装甲原型研究完成后，Mk I 女武神可升级为 Mk II。装甲防护大幅提升，战斗力 +10，维护需消耗流体合金。</Text></Replace>
@@ -137,6 +186,46 @@
         <Replace Tag="LOC_POLICY_HOH_CLERGY_PRIVILEGE_DESC" Language="zh_Hans_CN"><Text>【经济】拥有天命支部的城市：+2 忠诚度、+2 住房、+1 宜居度/回合。</Text></Replace>
 
         <!-- ========================================================== -->
+        <!-- 文艺复兴科技名称和描述 -->
+        <Replace Tag="LOC_HONKAI_TECH_IMAGINARY_INTERFERENCE_THEORY_NAME" Language="zh_Hans_CN"><Text>虚数天体观测</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_IMAGINARY_INTERFERENCE_THEORY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]全军获得反隐能力，可见任何潜行中的敌方单位。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_IMAGINARY_INTERFERENCE_THEORY_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>全帝国所有军事单位获得穿透地形遮蔽的视野，可发现潜行单位。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_FISSION_REACTOR_NAME" Language="zh_Hans_CN"><Text>崩坏能动力学</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_FISSION_REACTOR_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]所有城市进行城市项目时生产力 +15%。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_FISSION_REACTOR_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>所有城市项目 +15% [ICON_PRODUCTION] 生产力加成，加速重型工程进度。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GRAY_SERPENT_NETWORK_NAME" Language="zh_Hans_CN"><Text>灰蛇情报网</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GRAY_SERPENT_NETWORK_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]世界蛇首登场。全文明外交能见度永久 +1。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GRAY_SERPENT_NETWORK_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>全文明外交能见度 +1，可获知更多文明的内政与军事情报。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_ABSOLUTE_THEOCRACY_NAME" Language="zh_Hans_CN"><Text>绝对神权统治</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_ABSOLUTE_THEOCRACY_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]宗教传播压力 +50%，传播距离 +100%。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_ABSOLUTE_THEOCRACY_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>天命信仰传播压力 +50%，传播距离翻倍，席卷已知世界。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_STIGMATA_GENE_COMPLETION_NAME" Language="zh_Hans_CN"><Text>圣痕谱系解剖学</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_STIGMATA_GENE_COMPLETION_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]每 2 位专家额外提供 +1 住房和 +1 食物（效果待实装）。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_STIGMATA_GENE_COMPLETION_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>圣痕基因工程：每 2 位专家额外 +1 [ICON_HOUSING] 住房、+1 [ICON_FOOD] 食物。（待实装）</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_HONKAI_ISOLATION_DOME_NAME" Language="zh_Hans_CN"><Text>崩坏隔离穹顶</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_HONKAI_ISOLATION_DOME_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁市中心 T4 建筑【崩坏隔离穹顶】：+100 城墙血量，城市驻军 +3 战斗力，远程打击 +4。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_FANG_IN_THE_SHADOWS_NAME" Language="zh_Hans_CN"><Text>阴影中的毒牙</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_FANG_IN_THE_SHADOWS_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]【灰蛇】特工执行攻击任务等级 +1。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_FANG_IN_THE_SHADOWS_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>所有间谍/灰蛇单位执行渗透行动时等级 +1，提升任务成功率。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_DEPLOYMENT_NAME" Language="zh_Hans_CN"><Text>弑神装甲列装</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_DEPLOYMENT_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]允许将 Mk II 女武神升级为 Mk III，维护需消耗 [ICON_RESOURCE_HOH_FLUID_ALLOY] 流体合金。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_FLOATING_ISLAND_TECH_NAME" Language="zh_Hans_CN"><Text>浮空岛技术</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_FLOATING_ISLAND_TECH_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁天命总部 T3 建筑【浮空岛总控平台】：+3 科技 +3 文化，城市 +15 防御力，且此城市不会被围攻。</Text></Replace>
+
+        <!-- 文艺复兴建筑文本 -->
+        <Replace Tag="LOC_BUILDING_HOH_ISOLATION_DOME_NAME" Language="zh_Hans_CN"><Text>崩坏隔离穹顶</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_ISOLATION_DOME_DESC" Language="zh_Hans_CN"><Text>市中心 T4 建筑。+100 城墙血量，城市驻军战斗力 +3，城市远程攻击力 +4。</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_FLOATING_ISLAND_PLATFORM_NAME" Language="zh_Hans_CN"><Text>浮空岛总控平台</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_FLOATING_ISLAND_PLATFORM_DESC" Language="zh_Hans_CN"><Text>天命总部 T3 建筑。+3 [ICON_SCIENCE] 科技值，+3 [ICON_CULTURE] 文化值，城市防御力 +15，此城市永远不会被围攻。</Text></Replace>
+
+        <!-- 女武神 Mk III -->
+        <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_MK3_NAME" Language="zh_Hans_CN"><Text>女武神中队 Mk III</Text></Replace>
+        <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_MK3_DESC" Language="zh_Hans_CN"><Text>弑神装甲列装完成后，Mk II 可升级为 Mk III。战斗力大幅提升，每回合消耗 [ICON_RESOURCE_HOH_FLUID_ALLOY] 流体合金维护。</Text></Replace>
+
+        <!-- 反隐能力内部文本 -->
+        <Replace Tag="LOC_ABILITY_HOH_SEE_THROUGH_NAME" Language="zh_Hans_CN"><Text>虚数干涉视野</Text></Replace>
+        <Replace Tag="LOC_ABILITY_HOH_SEE_THROUGH_DESC" Language="zh_Hans_CN"><Text>可穿透地形遮蔽发现潜行单位。</Text></Replace>
+
         <!-- 英语 (en_US) -->
         <!-- ========================================================== -->
         <Replace Tag="LOC_HONKAI_TECH_PERCEPTION_NAME" Language="en_US"><Text>Honkai Perception</Text></Replace>
@@ -172,5 +261,18 @@
         <Replace Tag="LOC_POLICY_HOH_VALK_CHARGE_NAME" Language="en_US"><Text>Valkyrie Charge</Text></Replace>
         <Replace Tag="LOC_POLICY_HOH_VALK_PHALANX_NAME" Language="en_US"><Text>Valkyrie Phalanx</Text></Replace>
         <Replace Tag="LOC_POLICY_HOH_CLERGY_PRIVILEGE_NAME" Language="en_US"><Text>Clergy Privilege</Text></Replace>
+        <!-- Renaissance EN -->
+        <Replace Tag="LOC_HONKAI_TECH_IMAGINARY_INTERFERENCE_THEORY_NAME" Language="en_US"><Text>Imaginary Interference Theory</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_FISSION_REACTOR_NAME" Language="en_US"><Text>Honkai Energy Dynamics</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GRAY_SERPENT_NETWORK_NAME" Language="en_US"><Text>Gray Serpent Network</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_ABSOLUTE_THEOCRACY_NAME" Language="en_US"><Text>Absolute Theocracy</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_STIGMATA_GENE_COMPLETION_NAME" Language="en_US"><Text>Stigmata Gene Anatomy</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_HONKAI_ISOLATION_DOME_NAME" Language="en_US"><Text>Honkai Isolation Dome</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_FANG_IN_THE_SHADOWS_NAME" Language="en_US"><Text>Fang in the Shadows</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_DEPLOYMENT_NAME" Language="en_US"><Text>God-Slayer Armor Deployment</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_FLOATING_ISLAND_TECH_NAME" Language="en_US"><Text>Floating Island Technology</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_ISOLATION_DOME_NAME" Language="en_US"><Text>Honkai Isolation Dome</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_FLOATING_ISLAND_PLATFORM_NAME" Language="en_US"><Text>Floating Island Command Platform</Text></Replace>
+        <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_MK3_NAME" Language="en_US"><Text>Valkyrie Squad Mk III</Text></Replace>
     </LocalizedText>
 </GameData>

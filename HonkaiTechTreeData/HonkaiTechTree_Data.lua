@@ -421,7 +421,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_RENAISSANCE",
 			UITreeRow = -3,
 			Prereqs = {"HONKAI_TECH_SOULLIQUOR_SMELTING"},
-			Column = 1
+			Column = 1,
+			ShadowCivic = "CIVIC_SHADOW_IMAGINARY_INTERFERENCE_THEORY",
+			Unlocks = {
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_IMAGINARY_INTERFERENCE_THEORY_EFFECT_TOOLTIP" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_FISSION_REACTOR",
@@ -431,7 +435,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_RENAISSANCE",
 			UITreeRow = -1,
 			Prereqs = {"HONKAI_TECH_SOULLIQUOR_SMELTING"},
-			Column = 1
+			Column = 1,
+			ShadowCivic = "CIVIC_SHADOW_FISSION_REACTOR",
+			Unlocks = {
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_FISSION_REACTOR_EFFECT_TOOLTIP" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_GRAY_SERPENT_NETWORK",
@@ -441,7 +449,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_RENAISSANCE",
 			UITreeRow = 0,
 			Prereqs = {"HONKAI_TECH_HONKAI_CRYSTAL_EXTRACTION"},
-			Column = 1
+			Column = 1,
+			ShadowCivic = "CIVIC_SHADOW_GRAY_SERPENT_NETWORK",
+			Unlocks = {
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_GRAY_SERPENT_NETWORK_EFFECT_TOOLTIP" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_ABSOLUTE_THEOCRACY",
@@ -451,7 +463,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_RENAISSANCE",
 			UITreeRow = 3,
 			Prereqs = {"HONKAI_TECH_SCHICKSAL_ARMED_FORMATION"},
-			Column = 1
+			Column = 1,
+			ShadowCivic = "CIVIC_SHADOW_ABSOLUTE_THEOCRACY",
+			Unlocks = {
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_ABSOLUTE_THEOCRACY_EFFECT_TOOLTIP" }
+			}
 		},
 		-- 第 2 列 (Cost: 730)
 		{
@@ -462,7 +478,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_RENAISSANCE",
 			UITreeRow = -2,
 			Prereqs = {"HONKAI_TECH_IMAGINARY_INTERFERENCE_THEORY", "HONKAI_TECH_FISSION_REACTOR"},
-			Column = 2
+			Column = 2,
+			ShadowCivic = "CIVIC_SHADOW_STIGMATA_GENE_COMPLETION",
+			Unlocks = {
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_STIGMATA_GENE_COMPLETION_EFFECT_TOOLTIP" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_HONKAI_ISOLATION_DOME",
@@ -472,7 +492,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_RENAISSANCE",
 			UITreeRow = -1,
 			Prereqs = {"HONKAI_TECH_FISSION_REACTOR"},
-			Column = 2
+			Column = 2,
+			ShadowCivic = "CIVIC_SHADOW_HONKAI_ISOLATION_DOME",
+			Unlocks = {
+				{ Type = "BUILDING", ID = "BUILDING_HOH_ISOLATION_DOME", Icon = "ICON_BUILDING_STAR_FORT" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_FANG_IN_THE_SHADOWS",
@@ -482,7 +506,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_RENAISSANCE",
 			UITreeRow = 1,
 			Prereqs = {"HONKAI_TECH_GRAY_SERPENT_NETWORK"},
-			Column = 2
+			Column = 2,
+			ShadowCivic = "CIVIC_SHADOW_FANG_IN_THE_SHADOWS",
+			Unlocks = {
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_FANG_IN_THE_SHADOWS_EFFECT_TOOLTIP" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_GOD_SLAYER_ARMOR_DEPLOYMENT",
@@ -492,7 +520,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_RENAISSANCE",
 			UITreeRow = 2,
 			Prereqs = {"HONKAI_TECH_ABSOLUTE_THEOCRACY"},
-			Column = 2
+			Column = 2,
+			ShadowCivic = "CIVIC_SHADOW_GOD_SLAYER_ARMOR_DEPLOYMENT",
+			Unlocks = {
+				{ Type = "UNIT", ID = "UNIT_HOH_VALKYRIE_MK3" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_FLOATING_ISLAND_TECH",
@@ -502,7 +534,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_RENAISSANCE",
 			UITreeRow = 4,
 			Prereqs = {"HONKAI_TECH_ABSOLUTE_THEOCRACY"},
-			Column = 2
+			Column = 2,
+			ShadowCivic = "CIVIC_SHADOW_FLOATING_ISLAND_TECH",
+			Unlocks = {
+				{ Type = "BUILDING", ID = "BUILDING_HOH_FLOATING_ISLAND_PLATFORM", Icon = "ICON_BUILDING_BARRACKS" }
+			}
 		},
 		-- ==============================================
 		-- 工业时代 (ERA_INDUSTRIAL) [主线断绝，逆熵与世界蛇爆发]
