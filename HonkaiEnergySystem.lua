@@ -550,7 +550,14 @@ function CalculateHonkaiResearchBreakdown(playerID)
                 Yield = specialistResearch
             }
         end
-        
+
+        -- 崩坏能逆向解析：每座武装工造区额外 +2 崩坏研究点
+        if IsHonkaiTechUnlocked(playerID, "HONKAI_TECH_HONKAI_REVERSE_ENGINEERING") then
+            if HasCityDistrict(pCity, "DISTRICT_ARMED_INDUSTRY") then
+                cityResearch = cityResearch + 2
+            end
+        end
+
         if cityResearch > 0 then
             breakdown.CityDetails[cityName] = cityResearch
             breakdown.TotalYield = breakdown.TotalYield + cityResearch
