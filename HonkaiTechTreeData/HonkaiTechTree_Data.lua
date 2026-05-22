@@ -136,7 +136,9 @@ function GetHonkaiTechTreeData()
 			Prereqs = {"HONKAI_TECH_PATHOLOGY", "HONKAI_TECH_ENERGY_CONTAINER"},
 			Column = 3,
 			ShadowCivic = "CIVIC_SHADOW_BASIC_ISOLATION",
-			Unlocks = {}
+			Unlocks = {
+				{ Type = "BUILDING", ID = "BUILDING_HOH_PREMODERN_RUINS_EXCAVATION", Icon = "ICON_BUILDING_LIBRARY" },
+			}
 		},
 		{
 			Type = "HONKAI_TECH_ST_FREYA",

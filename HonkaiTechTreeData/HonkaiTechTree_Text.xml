@@ -108,6 +108,14 @@
         <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_MK2_NAME" Language="en_US"><Text>Valkyrie Squad Mk II</Text></Replace>
         <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_MK2_DESC" Language="en_US"><Text>Upgraded Valkyrie armor with significantly improved combat strength. Requires Fluid Alloy for maintenance.</Text></Replace>
 
+        <!-- 前文明遗迹挖掘点 -->
+        <Replace Tag="LOC_BUILDING_HOH_PREMODERN_RUINS_EXCAVATION_NAME" Language="zh_Hans_CN"><Text>前文明遗迹挖掘点</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_PREMODERN_RUINS_EXCAVATION_DESC" Language="zh_Hans_CN"><Text>隐秘研究站 T1 建筑。+1 [ICON_SCIENCE] 科技值，+2 [ICON_CULTURE] 文化值，+1 专家槽，+1 大科学家点数。</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_PREMODERN_RUINS_EXCAVATION_NAME" Language="en_US"><Text>Pre-Civilization Ruins Excavation</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_PREMODERN_RUINS_EXCAVATION_DESC" Language="en_US"><Text>Hidden Research Station T1 building. +1 Science, +2 Culture, +1 Specialist slot, +1 Great Scientist point.</Text></Replace>
+        <!-- 方阵能力文本（内部用） -->
+        <Replace Tag="LOC_ABILITY_HOH_VALK_PHALANX_SUPPORT_NAME" Language="zh_Hans_CN"><Text>瓦尔基里方阵</Text></Replace>
+        <Replace Tag="LOC_ABILITY_HOH_VALK_PHALANX_SUPPORT_DESC" Language="zh_Hans_CN"><Text>女武神编队支援加成翻倍。</Text></Replace>
         <!-- 中世纪建筑名称/描述 -->
         <Replace Tag="LOC_BUILDING_HOH_STIGMATA_ALCHEMY_CHAMBER_NAME" Language="zh_Hans_CN"><Text>圣痕炼金室</Text></Replace>
         <Replace Tag="LOC_BUILDING_HOH_STIGMATA_ALCHEMY_CHAMBER_DESC" Language="zh_Hans_CN"><Text>隐秘研究站 T2 建筑。+3 [ICON_SCIENCE] 科技值，+1 专家槽，+1 大科学家点数。</Text></Replace>
