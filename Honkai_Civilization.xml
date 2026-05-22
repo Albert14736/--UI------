@@ -670,9 +670,6 @@
         <Row ImprovementType="IMPROVEMENT_HOH_PRAYER_ROOM" TerrainType="TERRAIN_SNOW_HILLS"/>
     </Improvement_ValidTerrains>
 
-    <Improvement_ValidBuildUnits>
-        <Row ImprovementType="IMPROVEMENT_HOH_PRAYER_ROOM" UnitType="UNIT_HOH_VALKYRIE_MK1"/>
-    </Improvement_ValidBuildUnits>
 
     <Improvement_YieldChanges>
         <Row ImprovementType="IMPROVEMENT_HOH_PRAYER_ROOM" YieldType="YIELD_FAITH" YieldChange="1"/>
@@ -759,7 +756,6 @@
     <Resources>
         <Row ResourceType="RESOURCE_HOH_FLUID_ALLOY"
              Name="LOC_RESOURCE_HOH_FLUID_ALLOY_NAME"
-             Description="LOC_RESOURCE_HOH_FLUID_ALLOY_DESC"
              ResourceClassType="RESOURCECLASS_STRATEGIC"
              Happiness="0"
              AdjacentToLand="false"
@@ -800,4 +796,8 @@
     <Units>
         <Row UnitType="UNIT_HOH_VALKYRIE_MK1" BaseMoves="2" Cost="90" ZoneOfControl="true" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" PromotionClass="PROMOTION_CLASS_HOH_VALKYRIE" AdvisorType="ADVISOR_CONQUEST" Name="LOC_UNIT_HONKAI_VALKYRIE_NAME" Description="LOC_UNIT_HONKAI_VALKYRIE_MK1_DESC" PurchaseYield="YIELD_GOLD" Combat="35" BaseSightRange="2" BuildCharges="3" Maintenance="1" TraitType="TRAIT_CIVILIZATION_HONKAI" PrereqCivic="CIVIC_SHADOW_WEAPON_PROTOTYPE"/>
     </Units>
+
+    <Improvement_ValidBuildUnits>
+        <Row ImprovementType="IMPROVEMENT_HOH_PRAYER_ROOM" UnitType="UNIT_HOH_VALKYRIE_MK1"/>
+    </Improvement_ValidBuildUnits>
 </GameData>
