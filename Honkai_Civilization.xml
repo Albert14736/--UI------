@@ -195,6 +195,8 @@
         <Row ModifierId="MOD_HOH_NUN_FORMATION_DISCOUNT" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PURCHASE_COST"/>
         <Row ModifierId="MOD_HOH_IS_NUN_FORMATION_FAITH_PURCHASE" ModifierType="MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE"/>
         <Row ModifierId="MOD_HOH_ISOLATION_HOUSING" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING"/>
+        <!-- 前文明医疗协议：领土内回血 -->
+        <Row ModifierId="MOD_HOH_PREMODERN_MEDICAL_HEAL" ModifierType="MODIFIER_PLAYER_UNITS_ADJUST_HEAL_PER_TURN" SubjectRequirementSetId="REQSET_HOH_UNIT_IN_OWNER_TERRITORY"/>
         <!-- 瓦尔基里冲锋/方阵政策 Modifiers -->
         <Row ModifierId="MOD_HOH_VALK_CHARGE_FLANKING" ModifierType="MODIFIER_PLAYER_UNITS_ADJUST_FLANKING_BONUS_MODIFIER" SubjectRequirementSetId="REQSET_HOH_UNIT_IS_VALKYRIE"/>
         <Row ModifierId="MOD_HOH_VALK_PHALANX_GRANT_ABILITY" ModifierType="MODIFIER_PLAYER_UNITS_GRANT_ABILITY" SubjectRequirementSetId="REQSET_HOH_UNIT_IS_VALKYRIE"/>
@@ -251,6 +253,7 @@
         <Row ModifierId="MOD_HOH_NUN_FORMATION_DISCOUNT" Name="Amount" Value="10"/>
         <Row ModifierId="MOD_HOH_IS_NUN_FORMATION_FAITH_PURCHASE" Name="Tag" Value="CLASS_HOH_VALKYRIE"/>
         <Row ModifierId="MOD_HOH_ISOLATION_HOUSING" Name="Amount" Value="1"/>
+        <Row ModifierId="MOD_HOH_PREMODERN_MEDICAL_HEAL" Name="Amount" Value="5"/>
         <Row ModifierId="MOD_HOH_VALK_CHARGE_FLANKING" Name="Amount" Value="100"/>
         <Row ModifierId="MOD_HOH_VALK_PHALANX_GRANT_ABILITY" Name="AbilityType" Value="ABILITY_HOH_VALK_PHALANX_SUPPORT"/>
         <Row ModifierId="MOD_HOH_VALK_PHALANX_SUPPORT_BONUS" Name="Amount" Value="100"/>
@@ -315,6 +318,7 @@
         <Row PolicyType="POLICY_HOH_SCHICKSAL_DOCTRINE" ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_FAITH_BUY_STAR_FORT"/>
         <Row PolicyType="POLICY_HOH_VALK_CHARGE" ModifierId="MOD_HOH_VALK_CHARGE_FLANKING"/>
         <Row PolicyType="POLICY_HOH_VALK_PHALANX" ModifierId="MOD_HOH_VALK_PHALANX_GRANT_ABILITY"/>
+        <Row PolicyType="POLICY_HOH_PREMODERN_MEDICAL" ModifierId="MOD_HOH_PREMODERN_MEDICAL_HEAL"/>
         <!-- 中世纪政策 Modifiers -->
         <Row PolicyType="POLICY_HOH_RESISTANCE_BARRIER" ModifierId="MOD_HOH_RESISTANCE_BARRIER_DEFENSE"/>
         <Row PolicyType="POLICY_HOH_RESISTANCE_BARRIER" ModifierId="MOD_HOH_RESISTANCE_BARRIER_AMENITY"/>
@@ -720,6 +724,8 @@
         <Row RequirementSetId="REQSET_HOH_ADJACENT_TO_HOLY_SITE_OR_BRANCH" RequirementId="REQ_HOH_ADJACENT_TO_HOLY_SITE"/>
         <Row RequirementSetId="REQSET_HOH_ADJACENT_TO_HOLY_SITE_OR_BRANCH" RequirementId="REQ_HOH_ADJACENT_TO_SCHICKSAL_BRANCH"/>
         <Row RequirementSetId="REQSET_HOH_CITY_HAS_SCHICKSAL_BRANCH" RequirementId="REQ_HOH_CITY_HAS_SCHICKSAL_BRANCH"/>
+        <Row RequirementSetId="REQSET_HOH_UNIT_IN_OWNER_TERRITORY" RequirementId="REQ_HOH_UNIT_IN_OWNER_TERRITORY"/>
+        <Row RequirementSetId="REQSET_HOH_UNIT_IN_OWNER_TERRITORY" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
     </RequirementSetRequirements>
     
     <Requirements>
@@ -742,6 +748,7 @@
         <Row RequirementId="REQ_HOH_ADJACENT_TO_HOLY_SITE" Name="DistrictType" Value="DISTRICT_HOLY_SITE"/>
         <Row RequirementId="REQ_HOH_ADJACENT_TO_SCHICKSAL_BRANCH" Name="DistrictType" Value="DISTRICT_SCHICKSAL_BRANCH"/>
         <Row RequirementId="REQ_HOH_CITY_HAS_SCHICKSAL_BRANCH" Name="DistrictType" Value="DISTRICT_SCHICKSAL_BRANCH"/>
+        <Row RequirementId="REQ_HOH_UNIT_IN_OWNER_TERRITORY" RequirementType="REQUIREMENT_UNIT_IN_OWNER_TERRITORY"/>
     </RequirementArguments>
 
     <BuildingModifiers>
