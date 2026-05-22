@@ -362,7 +362,7 @@ function GetHonkaiTechTreeData()
 			ShadowCivic = "CIVIC_SHADOW_SOULLIQUOR_SMELTING",
 			Unlocks = {
 				{ Type = "BUILDING", ID = "BUILDING_HOH_HONKAI_SMELTER", Icon = "ICON_BUILDING_WORKSHOP" },
-				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_SOULLIQUOR_SMELTING_EFFECT_TOOLTIP" },
+				{ Type = "RESOURCE", ID = "RESOURCE_HOH_FLUID_ALLOY" },
 			}
 		},
 		{

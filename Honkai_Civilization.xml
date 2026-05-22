@@ -20,6 +20,7 @@
         <Row Type="IMPROVEMENT_HOH_PRAYER_ROOM" Kind="KIND_IMPROVEMENT"/>
 
         <Row Type="UNIT_HOH_VALKYRIE_MK1" Kind="KIND_UNIT"/>
+        <Row Type="UNIT_HOH_VALKYRIE_MK2" Kind="KIND_UNIT"/>
         <Row Type="ABILITY_HOH_VALKYRIE_RANK_F" Kind="KIND_ABILITY"/>
         <Row Type="ABILITY_HOH_VALKYRIE_RANK_E" Kind="KIND_ABILITY"/>
         <Row Type="ABILITY_HOH_VALKYRIE_RANK_D" Kind="KIND_ABILITY"/>
@@ -739,6 +740,7 @@
     </Tags>
     <TypeTags>
         <Row Type="UNIT_HOH_VALKYRIE_MK1" Tag="CLASS_HOH_VALKYRIE"/>
+        <Row Type="UNIT_HOH_VALKYRIE_MK2" Tag="CLASS_HOH_VALKYRIE"/>
         <Row Type="ABILITY_HOH_VALKYRIE_RANK_F" Tag="CLASS_HOH_VALKYRIE"/>
         <Row Type="ABILITY_HOH_VALKYRIE_RANK_E" Tag="CLASS_HOH_VALKYRIE"/>
         <Row Type="ABILITY_HOH_VALKYRIE_RANK_D" Tag="CLASS_HOH_VALKYRIE"/>
@@ -794,7 +796,12 @@
 
     <Units>
         <Row UnitType="UNIT_HOH_VALKYRIE_MK1" BaseMoves="2" Cost="90" ZoneOfControl="true" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" PromotionClass="PROMOTION_CLASS_HOH_VALKYRIE" AdvisorType="ADVISOR_CONQUEST" Name="LOC_UNIT_HONKAI_VALKYRIE_NAME" Description="LOC_UNIT_HONKAI_VALKYRIE_MK1_DESC" PurchaseYield="YIELD_GOLD" Combat="35" BaseSightRange="2" BuildCharges="3" Maintenance="1" TraitType="TRAIT_CIVILIZATION_HONKAI" PrereqCivic="CIVIC_SHADOW_WEAPON_PROTOTYPE"/>
+        <Row UnitType="UNIT_HOH_VALKYRIE_MK2" BaseMoves="2" Cost="160" ZoneOfControl="true" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" PromotionClass="PROMOTION_CLASS_HOH_VALKYRIE" AdvisorType="ADVISOR_CONQUEST" Name="LOC_UNIT_HONKAI_VALKYRIE_MK2_NAME" Description="LOC_UNIT_HONKAI_VALKYRIE_MK2_DESC" PurchaseYield="YIELD_GOLD" Combat="45" BaseSightRange="2" BuildCharges="3" Maintenance="2" TraitType="TRAIT_CIVILIZATION_HONKAI" PrereqCivic="CIVIC_SHADOW_GOD_SLAYER_ARMOR_PROTOTYPE"/>
     </Units>
+
+    <UnitUpgrades>
+        <Row Unit="UNIT_HOH_VALKYRIE_MK1" UpgradeUnit="UNIT_HOH_VALKYRIE_MK2"/>
+    </UnitUpgrades>
 
     <Improvement_ValidBuildUnits>
         <Row ImprovementType="IMPROVEMENT_HOH_PRAYER_ROOM" UnitType="UNIT_HOH_VALKYRIE_MK1"/>
