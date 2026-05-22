@@ -552,7 +552,8 @@ function PopulateHonkaiManualUnlock(unlock:table, instance:table, playerId:numbe
 	elseif unlock.Type == "GENERIC" then
 		toolTip = Locale.Lookup(unlock.ID);
 	elseif unlock.ID ~= nil then
-		toolTip = ToolTipHelper.GetToolTip(unlock.ID, playerId, nil);
+		local ok, result = pcall(ToolTipHelper.GetToolTip, unlock.ID, playerId, nil);
+		toolTip = (ok and result) or "";
 		if toolTip == nil or toolTip == "" then
 			toolTip = Locale.Lookup(unlock.ID);
 		end
