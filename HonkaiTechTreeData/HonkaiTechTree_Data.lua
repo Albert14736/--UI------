@@ -552,7 +552,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_INDUSTRIAL",
 			UITreeRow = -3,
 			Prereqs = {"HONKAI_TECH_IMAGINARY_INTERFERENCE_THEORY", "HONKAI_TECH_FANG_IN_THE_SHADOWS"},
-			Column = 1
+			Column = 1,
+			ShadowCivic = "CIVIC_SHADOW_STIGMATA_SCREENING",
+			Unlocks = {
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_STIGMATA_SCREENING_EFFECT_TOOLTIP" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_GENE_TOXIN",
@@ -562,7 +566,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_INDUSTRIAL",
 			UITreeRow = -2,
 			Prereqs = {"HONKAI_TECH_STIGMATA_GENE_COMPLETION"},
-			Column = 1
+			Column = 1,
+			ShadowCivic = "CIVIC_SHADOW_GENE_TOXIN",
+			Unlocks = {
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_GENE_TOXIN_EFFECT_TOOLTIP" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_TACTICAL_TITAN",
@@ -572,7 +580,12 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_INDUSTRIAL",
 			UITreeRow = 0,
 			Prereqs = {"HONKAI_TECH_HONKAI_ISOLATION_DOME"},
-			Column = 1
+			Column = 1,
+			ShadowCivic = "CIVIC_SHADOW_TACTICAL_TITAN",
+			Unlocks = {
+				{ Type = "DISTRICT", ID = "DISTRICT_ANTI_ENTROPY_HQ" },
+				{ Type = "BUILDING", ID = "BUILDING_HOH_CENTRAL_MECHA_ARCHIVE", Icon = "ICON_BUILDING_BARRACKS" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_AE_MANUFACTURING",
@@ -582,7 +595,12 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_INDUSTRIAL",
 			UITreeRow = 1,
 			Prereqs = {"HONKAI_TECH_GOD_SLAYER_ARMOR_DEPLOYMENT"},
-			Column = 1
+			Column = 1,
+			ShadowCivic = "CIVIC_SHADOW_AE_MANUFACTURING",
+			Unlocks = {
+				{ Type = "POLICY", ID = "POLICY_HOH_AE_MANUFACTURING_STANDARD", Icon = "ICON_POLICY_DISCIPLINE" },
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_AE_MANUFACTURING_EFFECT_TOOLTIP" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_SCHICKSAL_GEN4",
@@ -592,7 +610,12 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_INDUSTRIAL",
 			UITreeRow = 4,
 			Prereqs = {"HONKAI_TECH_FLOATING_ISLAND_TECH"},
-			Column = 1
+			Column = 1,
+			ShadowCivic = "CIVIC_SHADOW_SCHICKSAL_GEN4",
+			Unlocks = {
+				{ Type = "UNIT", ID = "UNIT_HOH_VALKYRIE_MK4" },
+				{ Type = "POLICY", ID = "POLICY_HOH_VALKYRIE_MOBILIZATION", Icon = "ICON_POLICY_CONSCRIPTION" }
+			}
 		},
 		-- 第 2 列 (Cost: 1070)
 		{
@@ -603,7 +626,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_INDUSTRIAL",
 			UITreeRow = -3,
 			Prereqs = {"HONKAI_TECH_STIGMATA_SCREENING", "HONKAI_TECH_GENE_TOXIN"},
-			Column = 2
+			Column = 2,
+			ShadowCivic = "CIVIC_SHADOW_MANTIS_EXPERIMENT",
+			Unlocks = {
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_MANTIS_EXPERIMENT_EFFECT_TOOLTIP" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_TITAN_PRODUCTION_LINE",
@@ -613,7 +640,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_INDUSTRIAL",
 			UITreeRow = 0,
 			Prereqs = {"HONKAI_TECH_TACTICAL_TITAN"},
-			Column = 2
+			Column = 2,
+			ShadowCivic = "CIVIC_SHADOW_TITAN_PRODUCTION_LINE",
+			Unlocks = {
+				{ Type = "POLICY", ID = "POLICY_HOH_HEAVY_MOBILIZATION", Icon = "ICON_POLICY_DISCIPLINE" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_HONKAI_REVERSE_ENGINEERING",
@@ -623,7 +654,11 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_INDUSTRIAL",
 			UITreeRow = 1,
 			Prereqs = {"HONKAI_TECH_AE_MANUFACTURING"},
-			Column = 2
+			Column = 2,
+			ShadowCivic = "CIVIC_SHADOW_HONKAI_REVERSE_ENGINEERING",
+			Unlocks = {
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_HONKAI_REVERSE_ENGINEERING_EFFECT_TOOLTIP" }
+			}
 		},
 		{
 			Type = "HONKAI_TECH_HEAVY_ARTILLERY_MECHA",
@@ -633,7 +668,13 @@ function GetHonkaiTechTreeData()
 			EraType = "ERA_INDUSTRIAL",
 			UITreeRow = 2,
 			Prereqs = {"HONKAI_TECH_AE_MANUFACTURING"},
-			Column = 2
+			Column = 2,
+			ShadowCivic = "CIVIC_SHADOW_HEAVY_ARTILLERY_MECHA",
+			Unlocks = {
+				{ Type = "BUILDING", ID = "BUILDING_HOH_MECHA_ASSEMBLY_FACTORY", Icon = "ICON_BUILDING_FACTORY" },
+				{ Type = "UNIT", ID = "UNIT_HOH_TITAN_MK1" },
+				{ Type = "UNIT", ID = "UNIT_HOH_THUNDER_MK1" }
+			}
 		},
 		-- ==============================================
 		-- 现代 (ERA_MODERN)

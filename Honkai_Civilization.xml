@@ -107,6 +107,28 @@
         <Row Type="ABILITY_HOH_SEE_THROUGH_FEATURES" Kind="KIND_ABILITY"/>
 
         <Row Type="UNIT_HOH_GRAY_SERPENT" Kind="KIND_UNIT"/>
+        <!-- 工业时代影子市政 -->
+        <Row Type="CIVIC_SHADOW_STIGMATA_SCREENING" Kind="KIND_CIVIC"/>
+        <Row Type="CIVIC_SHADOW_GENE_TOXIN" Kind="KIND_CIVIC"/>
+        <Row Type="CIVIC_SHADOW_TACTICAL_TITAN" Kind="KIND_CIVIC"/>
+        <Row Type="CIVIC_SHADOW_AE_MANUFACTURING" Kind="KIND_CIVIC"/>
+        <Row Type="CIVIC_SHADOW_SCHICKSAL_GEN4" Kind="KIND_CIVIC"/>
+        <Row Type="CIVIC_SHADOW_MANTIS_EXPERIMENT" Kind="KIND_CIVIC"/>
+        <Row Type="CIVIC_SHADOW_TITAN_PRODUCTION_LINE" Kind="KIND_CIVIC"/>
+        <Row Type="CIVIC_SHADOW_HONKAI_REVERSE_ENGINEERING" Kind="KIND_CIVIC"/>
+        <Row Type="CIVIC_SHADOW_HEAVY_ARTILLERY_MECHA" Kind="KIND_CIVIC"/>
+        <!-- 工业时代建筑 -->
+        <Row Type="BUILDING_HOH_CENTRAL_MECHA_ARCHIVE" Kind="KIND_BUILDING"/>
+        <Row Type="BUILDING_HOH_MECHA_ASSEMBLY_FACTORY" Kind="KIND_BUILDING"/>
+        <!-- 工业时代单位 -->
+        <Row Type="UNIT_HOH_TITAN_MK1" Kind="KIND_UNIT"/>
+        <Row Type="UNIT_HOH_THUNDER_MK1" Kind="KIND_UNIT"/>
+        <Row Type="UNIT_HOH_VALKYRIE_MK4" Kind="KIND_UNIT"/>
+        <!-- 工业时代政策 -->
+        <Row Type="POLICY_HOH_HEAVY_MOBILIZATION" Kind="KIND_POLICY"/>
+        <Row Type="POLICY_HOH_VALKYRIE_MOBILIZATION" Kind="KIND_POLICY"/>
+        <Row Type="POLICY_HOH_AE_MANUFACTURING_STANDARD" Kind="KIND_POLICY"/>
+
     </Types>
 
     <DynamicModifiers>
@@ -152,6 +174,16 @@
         <Row CivicType="CIVIC_SHADOW_GOD_SLAYER_ARMOR_DEPLOYMENT" Name="LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_DEPLOYMENT_NAME" Cost="20" EraType="ERA_ANCIENT" UITreeRow="0"/>
         <Row CivicType="CIVIC_SHADOW_FLOATING_ISLAND_TECH" Name="LOC_HONKAI_TECH_FLOATING_ISLAND_TECH_NAME" Cost="20" EraType="ERA_ANCIENT" UITreeRow="0"/>
 
+        <Row CivicType="CIVIC_SHADOW_STIGMATA_SCREENING" Name="LOC_HONKAI_TECH_STIGMATA_SCREENING_NAME" Cost="20" EraType="ERA_ANCIENT" UITreeRow="0"/>
+        <Row CivicType="CIVIC_SHADOW_GENE_TOXIN" Name="LOC_HONKAI_TECH_GENE_TOXIN_NAME" Cost="20" EraType="ERA_ANCIENT" UITreeRow="0"/>
+        <Row CivicType="CIVIC_SHADOW_TACTICAL_TITAN" Name="LOC_HONKAI_TECH_TACTICAL_TITAN_NAME" Cost="20" EraType="ERA_ANCIENT" UITreeRow="0"/>
+        <Row CivicType="CIVIC_SHADOW_AE_MANUFACTURING" Name="LOC_HONKAI_TECH_AE_MANUFACTURING_NAME" Cost="20" EraType="ERA_ANCIENT" UITreeRow="0"/>
+        <Row CivicType="CIVIC_SHADOW_SCHICKSAL_GEN4" Name="LOC_HONKAI_TECH_SCHICKSAL_GEN4_NAME" Cost="20" EraType="ERA_ANCIENT" UITreeRow="0"/>
+        <Row CivicType="CIVIC_SHADOW_MANTIS_EXPERIMENT" Name="LOC_HONKAI_TECH_MANTIS_EXPERIMENT_NAME" Cost="20" EraType="ERA_ANCIENT" UITreeRow="0"/>
+        <Row CivicType="CIVIC_SHADOW_TITAN_PRODUCTION_LINE" Name="LOC_HONKAI_TECH_TITAN_PRODUCTION_LINE_NAME" Cost="20" EraType="ERA_ANCIENT" UITreeRow="0"/>
+        <Row CivicType="CIVIC_SHADOW_HONKAI_REVERSE_ENGINEERING" Name="LOC_HONKAI_TECH_HONKAI_REVERSE_ENGINEERING_NAME" Cost="20" EraType="ERA_ANCIENT" UITreeRow="0"/>
+        <Row CivicType="CIVIC_SHADOW_HEAVY_ARTILLERY_MECHA" Name="LOC_HONKAI_TECH_HEAVY_ARTILLERY_MECHA_NAME" Cost="20" EraType="ERA_ANCIENT" UITreeRow="0"/>
+
     </Civics>
 
     <CivicPrereqs>
@@ -191,6 +223,16 @@
         <Row Civic="CIVIC_SHADOW_FANG_IN_THE_SHADOWS" PrereqCivic="CIVIC_HOH_LOCK"/>
         <Row Civic="CIVIC_SHADOW_GOD_SLAYER_ARMOR_DEPLOYMENT" PrereqCivic="CIVIC_HOH_LOCK"/>
         <Row Civic="CIVIC_SHADOW_FLOATING_ISLAND_TECH" PrereqCivic="CIVIC_HOH_LOCK"/>
+
+        <Row Civic="CIVIC_SHADOW_STIGMATA_SCREENING" PrereqCivic="CIVIC_HOH_LOCK"/>
+        <Row Civic="CIVIC_SHADOW_GENE_TOXIN" PrereqCivic="CIVIC_HOH_LOCK"/>
+        <Row Civic="CIVIC_SHADOW_TACTICAL_TITAN" PrereqCivic="CIVIC_HOH_LOCK"/>
+        <Row Civic="CIVIC_SHADOW_AE_MANUFACTURING" PrereqCivic="CIVIC_HOH_LOCK"/>
+        <Row Civic="CIVIC_SHADOW_SCHICKSAL_GEN4" PrereqCivic="CIVIC_HOH_LOCK"/>
+        <Row Civic="CIVIC_SHADOW_MANTIS_EXPERIMENT" PrereqCivic="CIVIC_HOH_LOCK"/>
+        <Row Civic="CIVIC_SHADOW_TITAN_PRODUCTION_LINE" PrereqCivic="CIVIC_HOH_LOCK"/>
+        <Row Civic="CIVIC_SHADOW_HONKAI_REVERSE_ENGINEERING" PrereqCivic="CIVIC_HOH_LOCK"/>
+        <Row Civic="CIVIC_SHADOW_HEAVY_ARTILLERY_MECHA" PrereqCivic="CIVIC_HOH_LOCK"/>
 
     </CivicPrereqs>
 
@@ -261,6 +303,13 @@
         <Row ModifierId="MOD_HOH_STIGMATA_GENE_FOOD" ModifierType="MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE" SubjectRequirementSetId="REQSET_HOH_DISTRICT_IS_CITY_CENTER"/>
         <Row ModifierId="MOD_HOH_STIGMATA_GENE_HOUSING_NEG" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING"/>
         <Row ModifierId="MOD_HOH_STIGMATA_GENE_FOOD_NEG" ModifierType="MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE" SubjectRequirementSetId="REQSET_HOH_DISTRICT_IS_CITY_CENTER"/>
+        <!-- 工业时代 Modifiers -->
+        <Row ModifierId="MOD_HOH_AE_MANUFACTURING_DISTRICT_PROD" ModifierType="MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE" SubjectRequirementSetId="REQSET_HOH_DISTRICT_IS_ARMED_INDUSTRY"/>
+        <Row ModifierId="MOD_HOH_MANTIS_HEAL_FROM_COMBAT" ModifierType="MODIFIER_PLAYER_UNITS_ADJUST_HEAL_FROM_COMBAT"/>
+        <Row ModifierId="MOD_HOH_HEAVY_MOBILIZATION_PROD" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PRODUCTION_MODIFIER" SubjectRequirementSetId="REQSET_HOH_UNIT_IS_MECHA"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_MOBILIZATION_PROD" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PRODUCTION_MODIFIER" SubjectRequirementSetId="REQSET_HOH_UNIT_IS_VALKYRIE"/>
+        <Row ModifierId="MOD_HOH_AE_STD_ADJACENCY_SCIENCE" ModifierType="MODIFIER_PLAYER_DISTRICT_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS" SubjectRequirementSetId="REQSET_HOH_DISTRICT_IS_ARMED_INDUSTRY"/>
+
     </Modifiers>
 
     <ModifierArguments>
@@ -334,6 +383,14 @@
         <Row ModifierId="MOD_HOH_STIGMATA_GENE_HOUSING_NEG" Name="Amount" Value="-1"/>
         <Row ModifierId="MOD_HOH_STIGMATA_GENE_FOOD_NEG" Name="YieldType" Value="YIELD_FOOD"/>
         <Row ModifierId="MOD_HOH_STIGMATA_GENE_FOOD_NEG" Name="Amount" Value="-1"/>
+        <!-- 工业时代 Modifiers 参数 -->
+        <Row ModifierId="MOD_HOH_AE_MANUFACTURING_DISTRICT_PROD" Name="YieldType" Value="YIELD_PRODUCTION"/>
+        <Row ModifierId="MOD_HOH_AE_MANUFACTURING_DISTRICT_PROD" Name="Amount" Value="2"/>
+        <Row ModifierId="MOD_HOH_MANTIS_HEAL_FROM_COMBAT" Name="Amount" Value="15"/>
+        <Row ModifierId="MOD_HOH_HEAVY_MOBILIZATION_PROD" Name="Amount" Value="30"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_MOBILIZATION_PROD" Name="Amount" Value="30"/>
+        <Row ModifierId="MOD_HOH_AE_STD_ADJACENCY_SCIENCE" Name="YieldType" Value="YIELD_SCIENCE"/>
+
     </ModifierArguments>
 
     <ModifierStrings>
@@ -372,6 +429,10 @@
         <Row CivicType="CIVIC_SHADOW_ABSOLUTE_THEOCRACY" ModifierId="MOD_HOH_THEOCRACY_DISTANCE"/>
         <Row CivicType="CIVIC_SHADOW_FANG_IN_THE_SHADOWS" ModifierId="MOD_HOH_FANG_SPY_BONUS"/>
 
+        <!-- 工业时代 CivicModifiers -->
+        <Row CivicType="CIVIC_SHADOW_AE_MANUFACTURING" ModifierId="MOD_HOH_AE_MANUFACTURING_DISTRICT_PROD"/>
+        <Row CivicType="CIVIC_SHADOW_MANTIS_EXPERIMENT" ModifierId="MOD_HOH_MANTIS_HEAL_FROM_COMBAT"/>
+
     </CivicModifiers>
 
     <Policies>
@@ -385,6 +446,11 @@
         <Row PolicyType="POLICY_HOH_VALK_CHARGE" Name="LOC_POLICY_HOH_VALK_CHARGE_NAME" Description="LOC_POLICY_HOH_VALK_CHARGE_DESC" PrereqCivic="CIVIC_SHADOW_SCHICKSAL_ARMED_FORMATION" GovernmentSlotType="SLOT_MILITARY"/>
         <Row PolicyType="POLICY_HOH_VALK_PHALANX" Name="LOC_POLICY_HOH_VALK_PHALANX_NAME" Description="LOC_POLICY_HOH_VALK_PHALANX_DESC" PrereqCivic="CIVIC_SHADOW_SCHICKSAL_ARMED_FORMATION" GovernmentSlotType="SLOT_MILITARY"/>
         <Row PolicyType="POLICY_HOH_CLERGY_PRIVILEGE" Name="LOC_POLICY_HOH_CLERGY_PRIVILEGE_NAME" Description="LOC_POLICY_HOH_CLERGY_PRIVILEGE_DESC" PrereqCivic="CIVIC_SHADOW_CLERGY_PRIVILEGE" GovernmentSlotType="SLOT_ECONOMIC"/>
+        <!-- 工业时代政策 -->
+        <Row PolicyType="POLICY_HOH_HEAVY_MOBILIZATION" Name="LOC_POLICY_HOH_HEAVY_MOBILIZATION_NAME" Description="LOC_POLICY_HOH_HEAVY_MOBILIZATION_DESC" PrereqCivic="CIVIC_SHADOW_TITAN_PRODUCTION_LINE" GovernmentSlotType="SLOT_MILITARY"/>
+        <Row PolicyType="POLICY_HOH_VALKYRIE_MOBILIZATION" Name="LOC_POLICY_HOH_VALKYRIE_MOBILIZATION_NAME" Description="LOC_POLICY_HOH_VALKYRIE_MOBILIZATION_DESC" PrereqCivic="CIVIC_SHADOW_SCHICKSAL_GEN4" GovernmentSlotType="SLOT_MILITARY"/>
+        <Row PolicyType="POLICY_HOH_AE_MANUFACTURING_STANDARD" Name="LOC_POLICY_HOH_AE_MANUFACTURING_STANDARD_NAME" Description="LOC_POLICY_HOH_AE_MANUFACTURING_STANDARD_DESC" PrereqCivic="CIVIC_SHADOW_AE_MANUFACTURING" GovernmentSlotType="SLOT_ECONOMIC"/>
+
     </Policies>
 
     <PolicyModifiers>
@@ -403,6 +469,11 @@
         <Row PolicyType="POLICY_HOH_CLERGY_PRIVILEGE" ModifierId="MOD_HOH_CLERGY_PRIVILEGE_HOUSING"/>
         <Row PolicyType="POLICY_HOH_CLERGY_PRIVILEGE" ModifierId="MOD_HOH_CLERGY_PRIVILEGE_AMENITY"/>
         <Row PolicyType="POLICY_HOH_CLERGY_PRIVILEGE" ModifierId="MOD_HOH_CLERGY_PRIVILEGE_LOYALTY"/>
+        <!-- 工业时代政策 Modifiers -->
+        <Row PolicyType="POLICY_HOH_HEAVY_MOBILIZATION" ModifierId="MOD_HOH_HEAVY_MOBILIZATION_PROD"/>
+        <Row PolicyType="POLICY_HOH_VALKYRIE_MOBILIZATION" ModifierId="MOD_HOH_VALKYRIE_MOBILIZATION_PROD"/>
+        <Row PolicyType="POLICY_HOH_AE_MANUFACTURING_STANDARD" ModifierId="MOD_HOH_AE_STD_ADJACENCY_SCIENCE"/>
+
     </PolicyModifiers>
 
     <Projects>
@@ -718,6 +789,10 @@
         <Row BuildingType="BUILDING_HOH_ISOLATION_DOME" Name="LOC_BUILDING_HOH_ISOLATION_DOME_NAME" Description="LOC_BUILDING_HOH_ISOLATION_DOME_DESC" PrereqDistrict="DISTRICT_CITY_CENTER" PrereqCivic="CIVIC_SHADOW_HONKAI_ISOLATION_DOME" Cost="450" Maintenance="3" AdvisorType="ADVISOR_MILITARY" OuterDefenseHitPoints="100" MustPurchase="false" PurchaseYield="YIELD_GOLD"/>
         <Row BuildingType="BUILDING_HOH_FLOATING_ISLAND_PLATFORM" Name="LOC_BUILDING_HOH_FLOATING_ISLAND_PLATFORM_NAME" Description="LOC_BUILDING_HOH_FLOATING_ISLAND_PLATFORM_DESC" PrereqDistrict="DISTRICT_SCHICKSAL_HQ" PrereqCivic="CIVIC_SHADOW_FLOATING_ISLAND_TECH" Cost="300" Maintenance="2" AdvisorType="ADVISOR_MILITARY" MustPurchase="false" PurchaseYield="YIELD_GOLD"/>
 
+        <!-- 工业时代建筑 -->
+        <Row BuildingType="BUILDING_HOH_CENTRAL_MECHA_ARCHIVE" Name="LOC_BUILDING_HOH_CENTRAL_MECHA_ARCHIVE_NAME" Description="LOC_BUILDING_HOH_CENTRAL_MECHA_ARCHIVE_DESC" PrereqDistrict="DISTRICT_ANTI_ENTROPY_HQ" PrereqCivic="CIVIC_SHADOW_TACTICAL_TITAN" Cost="70" Maintenance="1" AdvisorType="ADVISOR_GENERIC" MustPurchase="false" PurchaseYield="YIELD_GOLD"/>
+        <Row BuildingType="BUILDING_HOH_MECHA_ASSEMBLY_FACTORY" Name="LOC_BUILDING_HOH_MECHA_ASSEMBLY_FACTORY_NAME" Description="LOC_BUILDING_HOH_MECHA_ASSEMBLY_FACTORY_DESC" PrereqDistrict="DISTRICT_ARMED_INDUSTRY" PrereqCivic="CIVIC_SHADOW_HEAVY_ARTILLERY_MECHA" Cost="250" Maintenance="2" AdvisorType="ADVISOR_GENERIC" MustPurchase="false" PurchaseYield="YIELD_GOLD"/>
+
     </Buildings>
 
     <BuildingReplaces>
@@ -730,6 +805,8 @@
         <Row Building="BUILDING_HOH_VALKYRIE_COMMAND_CENTER" PrereqBuilding="BUILDING_HOH_SCHICKSAL_CATHEDRAL"/>
         <Row Building="BUILDING_HOH_ISOLATION_DOME" PrereqBuilding="BUILDING_STAR_FORT"/>
         <Row Building="BUILDING_HOH_FLOATING_ISLAND_PLATFORM" PrereqBuilding="BUILDING_HOH_VALKYRIE_COMMAND_CENTER"/>
+        <Row Building="BUILDING_HOH_MECHA_ASSEMBLY_FACTORY" PrereqBuilding="BUILDING_HOH_HONKAI_SMELTER"/>
+
     </BuildingPrereqs>
 
     <Building_ValidTerrains>
@@ -755,6 +832,9 @@
         <!-- 浮空岛总控平台产出 -->
         <Row BuildingType="BUILDING_HOH_FLOATING_ISLAND_PLATFORM" YieldType="YIELD_SCIENCE" YieldChange="3"/>
         <Row BuildingType="BUILDING_HOH_FLOATING_ISLAND_PLATFORM" YieldType="YIELD_CULTURE" YieldChange="3"/>
+
+        <Row BuildingType="BUILDING_HOH_CENTRAL_MECHA_ARCHIVE" YieldType="YIELD_SCIENCE" YieldChange="1"/>
+        <Row BuildingType="BUILDING_HOH_CENTRAL_MECHA_ARCHIVE" YieldType="YIELD_PRODUCTION" YieldChange="1"/>
 
     </Building_YieldChanges>
 
@@ -802,6 +882,9 @@
         <Row RequirementSetId="REQSET_HOH_ADJACENT_TO_HOLY_SITE_OR_BRANCH" RequirementSetType="REQUIREMENTSET_TEST_ANY"/>
         <Row RequirementSetId="REQSET_HOH_CITY_HAS_SCHICKSAL_BRANCH" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
         <Row RequirementSetId="REQSET_HOH_UNIT_IN_OWNER_TERRITORY" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+        <Row RequirementSetId="REQSET_HOH_UNIT_IS_MECHA" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+        <Row RequirementSetId="REQSET_HOH_DISTRICT_IS_ARMED_INDUSTRY" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+
     </RequirementSets>
     
     <RequirementSetRequirements>
@@ -818,6 +901,9 @@
         <Row RequirementSetId="REQSET_HOH_ADJACENT_TO_HOLY_SITE_OR_BRANCH" RequirementId="REQ_HOH_ADJACENT_TO_SCHICKSAL_BRANCH"/>
         <Row RequirementSetId="REQSET_HOH_CITY_HAS_SCHICKSAL_BRANCH" RequirementId="REQ_HOH_CITY_HAS_SCHICKSAL_BRANCH"/>
         <Row RequirementSetId="REQSET_HOH_UNIT_IN_OWNER_TERRITORY" RequirementId="REQ_HOH_UNIT_IN_OWNER_TERRITORY"/>
+        <Row RequirementSetId="REQSET_HOH_UNIT_IS_MECHA" RequirementId="REQ_HOH_UNIT_IS_MECHA"/>
+        <Row RequirementSetId="REQSET_HOH_DISTRICT_IS_ARMED_INDUSTRY" RequirementId="REQ_HOH_DISTRICT_IS_ARMED_INDUSTRY"/>
+
     </RequirementSetRequirements>
     
     <Requirements>
@@ -830,6 +916,9 @@
         <Row RequirementId="REQ_HOH_ADJACENT_TO_SCHICKSAL_BRANCH" RequirementType="REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES"/>
         <Row RequirementId="REQ_HOH_CITY_HAS_SCHICKSAL_BRANCH" RequirementType="REQUIREMENT_CITY_HAS_DISTRICT"/>
         <Row RequirementId="REQ_HOH_UNIT_IN_OWNER_TERRITORY" RequirementType="REQUIREMENT_UNIT_IN_OWNER_TERRITORY"/>
+        <Row RequirementId="REQ_HOH_UNIT_IS_MECHA" RequirementType="REQUIREMENT_UNIT_HAS_CLASS"/>
+        <Row RequirementId="REQ_HOH_DISTRICT_IS_ARMED_INDUSTRY" RequirementType="REQUIREMENT_PLOT_DISTRICT_TYPE_MATCHES"/>
+
     </Requirements>
     
     <RequirementArguments>
@@ -841,6 +930,9 @@
         <Row RequirementId="REQ_HOH_ADJACENT_TO_HOLY_SITE" Name="DistrictType" Value="DISTRICT_HOLY_SITE"/>
         <Row RequirementId="REQ_HOH_ADJACENT_TO_SCHICKSAL_BRANCH" Name="DistrictType" Value="DISTRICT_SCHICKSAL_BRANCH"/>
         <Row RequirementId="REQ_HOH_CITY_HAS_SCHICKSAL_BRANCH" Name="DistrictType" Value="DISTRICT_SCHICKSAL_BRANCH"/>
+        <Row RequirementId="REQ_HOH_UNIT_IS_MECHA" Name="UnitClassType" Value="CLASS_HOH_MECHA"/>
+        <Row RequirementId="REQ_HOH_DISTRICT_IS_ARMED_INDUSTRY" Name="DistrictType" Value="DISTRICT_ARMED_INDUSTRY"/>
+
     </RequirementArguments>
 
     <BuildingModifiers>
@@ -862,6 +954,8 @@
 
     <Tags>
         <Row Tag="CLASS_HOH_VALKYRIE" Vocabulary="ABILITY_CLASS"/>
+        <Row Tag="CLASS_HOH_MECHA" Vocabulary="ABILITY_CLASS"/>
+
     </Tags>
     <TypeTags>
         <Row Type="UNIT_HOH_VALKYRIE_MK1" Tag="CLASS_HOH_VALKYRIE"/>
@@ -878,6 +972,10 @@
         <Row Type="ABILITY_HOH_KNIGHT_OATH_CASTLE" Tag="CLASS_HOH_VALKYRIE"/>
         <Row Type="ABILITY_HOH_KNIGHT_OATH_STAR_FORT" Tag="CLASS_HOH_VALKYRIE"/>
         <Row Type="UNIT_HOH_VALKYRIE_MK3" Tag="CLASS_HOH_VALKYRIE"/>
+
+        <Row Type="UNIT_HOH_TITAN_MK1" Tag="CLASS_HOH_MECHA"/>
+        <Row Type="UNIT_HOH_THUNDER_MK1" Tag="CLASS_HOH_MECHA"/>
+        <Row Type="UNIT_HOH_VALKYRIE_MK4" Tag="CLASS_HOH_VALKYRIE"/>
 
     </TypeTags>
 
@@ -927,11 +1025,17 @@
         <Row UnitType="UNIT_HOH_VALKYRIE_MK3" BaseMoves="2" Cost="220" ZoneOfControl="true" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" PromotionClass="PROMOTION_CLASS_HOH_VALKYRIE" AdvisorType="ADVISOR_CONQUEST" Name="LOC_UNIT_HONKAI_VALKYRIE_MK3_NAME" Description="LOC_UNIT_HONKAI_VALKYRIE_MK3_DESC" PurchaseYield="YIELD_GOLD" Combat="55" BaseSightRange="2" BuildCharges="3" Maintenance="3" TraitType="TRAIT_CIVILIZATION_HONKAI" PrereqCivic="CIVIC_SHADOW_GOD_SLAYER_ARMOR_DEPLOYMENT"/>
 
         <Row UnitType="UNIT_HOH_GRAY_SERPENT" Cost="225" Maintenance="4" BaseMoves="1" BaseSightRange="3" ZoneOfControl="false" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_CIVILIAN" PromotionClass="PROMOTION_CLASS_SPY" AdvisorType="ADVISOR_TECHNOLOGY" Name="LOC_UNIT_HOH_GRAY_SERPENT_NAME" Description="LOC_UNIT_HOH_GRAY_SERPENT_DESC" CanCapture="false" CostProgressionModel="COST_PROGRESSION_PREVIOUS_COPIES" CostProgressionParam1="75" Spy="true" TeamVisibility="true" NumRandomChoices="3" TraitType="TRAIT_CIVILIZATION_HONKAI"/>
+        <Row UnitType="UNIT_HOH_TITAN_MK1" BaseMoves="2" Cost="280" ZoneOfControl="true" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" AdvisorType="ADVISOR_CONQUEST" Name="LOC_UNIT_HOH_TITAN_MK1_NAME" Description="LOC_UNIT_HOH_TITAN_MK1_DESC" PurchaseYield="YIELD_GOLD" Combat="65" BaseSightRange="2" Maintenance="5" TraitType="TRAIT_CIVILIZATION_HONKAI" PrereqCivic="CIVIC_SHADOW_HEAVY_ARTILLERY_MECHA"/>
+        <Row UnitType="UNIT_HOH_THUNDER_MK1" BaseMoves="2" Cost="290" ZoneOfControl="false" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" AdvisorType="ADVISOR_CONQUEST" Name="LOC_UNIT_HOH_THUNDER_MK1_NAME" Description="LOC_UNIT_HOH_THUNDER_MK1_DESC" PurchaseYield="YIELD_GOLD" Combat="55" RangedCombat="65" Range="1" BaseSightRange="2" Maintenance="5" TraitType="TRAIT_CIVILIZATION_HONKAI" PrereqCivic="CIVIC_SHADOW_HEAVY_ARTILLERY_MECHA"/>
+        <Row UnitType="UNIT_HOH_VALKYRIE_MK4" BaseMoves="2" Cost="300" ZoneOfControl="true" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" PromotionClass="PROMOTION_CLASS_HOH_VALKYRIE" AdvisorType="ADVISOR_CONQUEST" Name="LOC_UNIT_HONKAI_VALKYRIE_MK4_NAME" Description="LOC_UNIT_HONKAI_VALKYRIE_MK4_DESC" PurchaseYield="YIELD_GOLD" Combat="70" BaseSightRange="2" BuildCharges="3" Maintenance="4" TraitType="TRAIT_CIVILIZATION_HONKAI" PrereqCivic="CIVIC_SHADOW_SCHICKSAL_GEN4"/>
+
     </Units>
 
     <UnitUpgrades>
         <Row Unit="UNIT_HOH_VALKYRIE_MK1" UpgradeUnit="UNIT_HOH_VALKYRIE_MK2"/>
         <Row Unit="UNIT_HOH_VALKYRIE_MK2" UpgradeUnit="UNIT_HOH_VALKYRIE_MK3"/>
+
+        <Row Unit="UNIT_HOH_VALKYRIE_MK3" UpgradeUnit="UNIT_HOH_VALKYRIE_MK4"/>
 
     </UnitUpgrades>
 
@@ -942,6 +1046,10 @@
 
     <Units_XP2>
         <Row UnitType="UNIT_HOH_VALKYRIE_MK3" ResourceMaintenanceType="RESOURCE_HOH_FLUID_ALLOY" ResourceMaintenanceAmount="1"/>
+        <Row UnitType="UNIT_HOH_TITAN_MK1" ResourceMaintenanceType="RESOURCE_HOH_FLUID_ALLOY" ResourceMaintenanceAmount="1"/>
+        <Row UnitType="UNIT_HOH_THUNDER_MK1" ResourceMaintenanceType="RESOURCE_HOH_FLUID_ALLOY" ResourceMaintenanceAmount="1"/>
+        <Row UnitType="UNIT_HOH_VALKYRIE_MK4" ResourceMaintenanceType="RESOURCE_HOH_FLUID_ALLOY" ResourceMaintenanceAmount="1"/>
+
     </Units_XP2>
 
 
@@ -950,6 +1058,8 @@
     <Improvement_ValidBuildUnits>
         <Row ImprovementType="IMPROVEMENT_HOH_PRAYER_ROOM" UnitType="UNIT_HOH_VALKYRIE_MK1"/>
         <Row ImprovementType="IMPROVEMENT_HOH_PRAYER_ROOM" UnitType="UNIT_HOH_VALKYRIE_MK3"/>
+
+        <Row ImprovementType="IMPROVEMENT_HOH_PRAYER_ROOM" UnitType="UNIT_HOH_VALKYRIE_MK4"/>
 
     </Improvement_ValidBuildUnits>
 </GameData>

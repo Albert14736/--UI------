@@ -266,6 +266,67 @@
         <Replace Tag="LOC_UNIT_HOH_GRAY_SERPENT_DESC" Language="zh_Hans_CN"><Text>世界蛇组织麾下的精英渗透者。以崩坏感应元素改造神经系统，执行渗透、破坏与情报窃取任务。代替原版间谍单位。</Text></Replace>
         <Replace Tag="LOC_UNIT_HOH_GRAY_SERPENT_NAME" Language="en_US"><Text>Gray Serpent Agent</Text></Replace>
         <Replace Tag="LOC_UNIT_HOH_GRAY_SERPENT_DESC" Language="en_US"><Text>Elite infiltrator of the World Serpent organization. Replaces the standard Spy unit for Honkai civilization.</Text></Replace>
+        <!-- 工业时代科技文本 -->
+        <Replace Tag="LOC_HONKAI_TECH_TACTICAL_TITAN_NAME" Language="zh_Hans_CN"><Text>战术泰坦工程</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_TACTICAL_TITAN_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁全国唯一区域【逆熵总部】及 T1 建筑【中央机甲档案馆】。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_AE_MANUFACTURING_NAME" Language="zh_Hans_CN"><Text>逆熵制造域</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_AE_MANUFACTURING_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]武装工造区基础产出 +2 [ICON_PRODUCTION] 生产力。解锁经济卡【逆熵工造标准】：武装工造区相邻加成额外提供等量 [ICON_SCIENCE] 科技。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_AE_MANUFACTURING_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>所有武装工造区（工业区）基础产出 +2 [ICON_PRODUCTION] 生产力。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_TITAN_PRODUCTION_LINE_NAME" Language="zh_Hans_CN"><Text>泰坦量产线</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_TITAN_PRODUCTION_LINE_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁军事政策卡【重工动员】：机甲单位生产力 +30%。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_HONKAI_REVERSE_ENGINEERING_NAME" Language="zh_Hans_CN"><Text>崩坏能逆向解析</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_HONKAI_REVERSE_ENGINEERING_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]每座武装工造区额外提供 +2 崩坏能研究点/回合。（效果待实装）</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_HONKAI_REVERSE_ENGINEERING_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>每座武装工造区额外 +2 [ICON_HONKAI_RESEARCH] 崩坏能研究点/回合。（待实装）</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_HEAVY_ARTILLERY_MECHA_NAME" Language="zh_Hans_CN"><Text>重装火炮机甲</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_HEAVY_ARTILLERY_MECHA_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]解锁武装工造区 T2 建筑【机甲装配厂】，允许生产【泰坦机甲 Mk I】（近战）与【御雷机甲 Mk I】（远程，射程1）。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_STIGMATA_SCREENING_NAME" Language="zh_Hans_CN"><Text>圣痕计划·初筛</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_STIGMATA_SCREENING_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]派驻外国城市的灰蛇特工，该城每回合 10% 金币上缴。（效果待灰蛇任务系统实装）</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_STIGMATA_SCREENING_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>灰蛇驻外城市 10% 金币上缴世界蛇。（待实装）</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GENE_TOXIN_NAME" Language="zh_Hans_CN"><Text>崩坏侵蚀化武</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GENE_TOXIN_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]灰蛇特工执行破坏任务时，25% 概率使目标城市宜居度 -2 持续 10 回合。（效果待实装）</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GENE_TOXIN_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>灰蛇破坏任务 25% 概率：敌城 -2 宜居 10 回合。（待实装）</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_MANTIS_EXPERIMENT_NAME" Language="zh_Hans_CN"><Text>活体嵌合手术</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_MANTIS_EXPERIMENT_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]所有女武神和机甲单位在击杀敌人后，恢复 +15 点生命值。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_MANTIS_EXPERIMENT_EFFECT_TOOLTIP" Language="zh_Hans_CN"><Text>所有女武神和机甲单位击杀敌方后恢复 +15 [ICON_STRENGTH] 生命值。</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_SCHICKSAL_GEN4_NAME" Language="zh_Hans_CN"><Text>第四代装甲计划</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_SCHICKSAL_GEN4_DESC" Language="zh_Hans_CN"><Text>消耗 {1_Amount} [ICON_HONKAI_RESEARCH] 崩坏能研究点[NEWLINE][NEWLINE]允许将 Mk III 女武神升级为 Mk IV。解锁军事政策卡【女武神动员令】：女武神生产力 +30%。</Text></Replace>
+
+        <!-- 工业时代建筑/单位/政策文本 -->
+        <Replace Tag="LOC_BUILDING_HOH_CENTRAL_MECHA_ARCHIVE_NAME" Language="zh_Hans_CN"><Text>中央机甲档案馆</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_CENTRAL_MECHA_ARCHIVE_DESC" Language="zh_Hans_CN"><Text>逆熵总部 T1 建筑。+1 [ICON_SCIENCE] 科技值，+1 [ICON_PRODUCTION] 生产力。</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_MECHA_ASSEMBLY_FACTORY_NAME" Language="zh_Hans_CN"><Text>机甲装配厂</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_MECHA_ASSEMBLY_FACTORY_DESC" Language="zh_Hans_CN"><Text>武装工造区 T2 建筑。允许在此城直接训练泰坦机甲和御雷机甲。</Text></Replace>
+        <Replace Tag="LOC_UNIT_HOH_TITAN_MK1_NAME" Language="zh_Hans_CN"><Text>泰坦机甲 Mk I</Text></Replace>
+        <Replace Tag="LOC_UNIT_HOH_TITAN_MK1_DESC" Language="zh_Hans_CN"><Text>逆熵重工出品的第一代近战机甲，战斗力强悍，消耗流体合金维护。</Text></Replace>
+        <Replace Tag="LOC_UNIT_HOH_THUNDER_MK1_NAME" Language="zh_Hans_CN"><Text>御雷机甲 Mk I</Text></Replace>
+        <Replace Tag="LOC_UNIT_HOH_THUNDER_MK1_DESC" Language="zh_Hans_CN"><Text>逆熵重工出品的第一代远程机甲，射程 1 格（研发【全图饱和打击】后可扩展至 2 格）。</Text></Replace>
+        <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_MK4_NAME" Language="zh_Hans_CN"><Text>女武神中队 Mk IV</Text></Replace>
+        <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_MK4_DESC" Language="zh_Hans_CN"><Text>对标战列步兵的第四代女武神装甲，消耗流体合金维护。</Text></Replace>
+        <Replace Tag="LOC_POLICY_HOH_HEAVY_MOBILIZATION_NAME" Language="zh_Hans_CN"><Text>重工动员</Text></Replace>
+        <Replace Tag="LOC_POLICY_HOH_HEAVY_MOBILIZATION_DESC" Language="zh_Hans_CN"><Text>【军事】机甲单位（泰坦/御雷系列）生产力 +30%。</Text></Replace>
+        <Replace Tag="LOC_POLICY_HOH_VALKYRIE_MOBILIZATION_NAME" Language="zh_Hans_CN"><Text>女武神动员令</Text></Replace>
+        <Replace Tag="LOC_POLICY_HOH_VALKYRIE_MOBILIZATION_DESC" Language="zh_Hans_CN"><Text>【军事】女武神单位生产力 +30%。</Text></Replace>
+        <Replace Tag="LOC_POLICY_HOH_AE_MANUFACTURING_STANDARD_NAME" Language="zh_Hans_CN"><Text>逆熵工造标准</Text></Replace>
+        <Replace Tag="LOC_POLICY_HOH_AE_MANUFACTURING_STANDARD_DESC" Language="zh_Hans_CN"><Text>【经济】武装工造区（工业区）的相邻加成额外提供等量 [ICON_SCIENCE] 科技值。</Text></Replace>
+
+        <!-- English names -->
+        <Replace Tag="LOC_HONKAI_TECH_TACTICAL_TITAN_NAME" Language="en_US"><Text>Tactical Titan Project</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_AE_MANUFACTURING_NAME" Language="en_US"><Text>Anti-Entropy Manufacturing Domain</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_TITAN_PRODUCTION_LINE_NAME" Language="en_US"><Text>Titan Production Line</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_HONKAI_REVERSE_ENGINEERING_NAME" Language="en_US"><Text>Honkai Reverse Engineering</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_HEAVY_ARTILLERY_MECHA_NAME" Language="en_US"><Text>Heavy Artillery Mecha</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_STIGMATA_SCREENING_NAME" Language="en_US"><Text>Stigmata Plan: Initial Screen</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_GENE_TOXIN_NAME" Language="en_US"><Text>Honkai Erosion Bioweapon</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_MANTIS_EXPERIMENT_NAME" Language="en_US"><Text>Living Chimera Surgery</Text></Replace>
+        <Replace Tag="LOC_HONKAI_TECH_SCHICKSAL_GEN4_NAME" Language="en_US"><Text>4th Generation Armor Plan</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_CENTRAL_MECHA_ARCHIVE_NAME" Language="en_US"><Text>Central Mecha Archive</Text></Replace>
+        <Replace Tag="LOC_BUILDING_HOH_MECHA_ASSEMBLY_FACTORY_NAME" Language="en_US"><Text>Mecha Assembly Factory</Text></Replace>
+        <Replace Tag="LOC_UNIT_HOH_TITAN_MK1_NAME" Language="en_US"><Text>Titan Mecha Mk I</Text></Replace>
+        <Replace Tag="LOC_UNIT_HOH_THUNDER_MK1_NAME" Language="en_US"><Text>Thunder Mecha Mk I</Text></Replace>
+        <Replace Tag="LOC_UNIT_HONKAI_VALKYRIE_MK4_NAME" Language="en_US"><Text>Valkyrie Squad Mk IV</Text></Replace>
+        <Replace Tag="LOC_POLICY_HOH_HEAVY_MOBILIZATION_NAME" Language="en_US"><Text>Heavy Mobilization</Text></Replace>
+        <Replace Tag="LOC_POLICY_HOH_VALKYRIE_MOBILIZATION_NAME" Language="en_US"><Text>Valkyrie Mobilization Order</Text></Replace>
+        <Replace Tag="LOC_POLICY_HOH_AE_MANUFACTURING_STANDARD_NAME" Language="en_US"><Text>AE Manufacturing Standard</Text></Replace>
         <!-- Renaissance EN -->
         <Replace Tag="LOC_HONKAI_TECH_IMAGINARY_INTERFERENCE_THEORY_NAME" Language="en_US"><Text>Imaginary Interference Theory</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_FISSION_REACTOR_NAME" Language="en_US"><Text>Honkai Energy Dynamics</Text></Replace>
