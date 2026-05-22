@@ -34,6 +34,14 @@
         <Row Name="ATLAS_HONKAI_RESEARCH" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="benghuainengyanjiudian_256.dds"/>
         <Row Name="ATLAS_HONKAI_RESEARCH" Baseline="5" IconSize="22" IconsPerRow="1" IconsPerColumn="1" Filename="benghuainengyanjiudian_22.dds"/>
 
+        <!-- 末日机甲 XP2 图集引用（GDR 在 col=3 row=4，IconsPerRow=8，Index=35） -->
+        <Row Name="ATLAS_GDR_UNITS" IconSize="22" IconsPerRow="8" IconsPerColumn="8" Filename="XP2_Units22.dds"/>
+        <Row Name="ATLAS_GDR_UNITS" IconSize="38" IconsPerRow="8" IconsPerColumn="8" Filename="XP2_Units38.dds"/>
+        <Row Name="ATLAS_GDR_UNITS" IconSize="50" IconsPerRow="8" IconsPerColumn="8" Filename="XP2_Units50.dds"/>
+        <Row Name="ATLAS_GDR_UNITS" IconSize="80" IconsPerRow="8" IconsPerColumn="8" Filename="XP2_Units80.dds"/>
+        <Row Name="ATLAS_GDR_UNITS" IconSize="256" IconsPerRow="8" IconsPerColumn="8" Filename="XP2_Units256.dds"/>
+        <Row Name="ATLAS_GDR_PORTRAITS" IconSize="256" IconsPerRow="8" IconsPerColumn="8" Filename="XP2_UnitPortraits256.dds"/>
+
         <!-- 灰蛇单位图集 -->
         <Row Name="ATLAS_HOH_GRAY_SERPENT" IconSize="22" Filename="UnitTextures/huishe_22.dds"/>
         <Row Name="ATLAS_HOH_GRAY_SERPENT" IconSize="32" Filename="UnitTextures/huishe_32.dds"/>
@@ -111,13 +119,13 @@
         <Row Name="ICON_UNIT_HOH_VALKYRIE_MK3" Atlas="ATLAS_HOH_VALKYRIE" Index="0"/>
         <Row Name="ICON_UNIT_HOH_VALKYRIE_MK3_PORTRAIT" Atlas="ATLAS_HOH_VALKYRIE_PORTRAIT" Index="0"/>
         <Row Name="ICON_ETHNIC_UNIT_HOH_VALKYRIE_MK3_PORTRAIT" Atlas="ATLAS_HOH_VALKYRIE_PORTRAIT" Index="0"/>
-        <!-- 工业时代机甲单位图标（暂用逆熵 Logo） -->
-        <Row Name="ICON_UNIT_HOH_TITAN_MK1" Atlas="ATLAS_HONKAI_ANTI_ENTROPY" Index="0"/>
-        <Row Name="ICON_UNIT_HOH_TITAN_MK1_PORTRAIT" Atlas="ATLAS_HONKAI_ANTI_ENTROPY" Index="0"/>
-        <Row Name="ICON_ETHNIC_UNIT_HOH_TITAN_MK1_PORTRAIT" Atlas="ATLAS_HONKAI_ANTI_ENTROPY" Index="0"/>
-        <Row Name="ICON_UNIT_HOH_THUNDER_MK1" Atlas="ATLAS_HONKAI_ANTI_ENTROPY" Index="0"/>
-        <Row Name="ICON_UNIT_HOH_THUNDER_MK1_PORTRAIT" Atlas="ATLAS_HONKAI_ANTI_ENTROPY" Index="0"/>
-        <Row Name="ICON_ETHNIC_UNIT_HOH_THUNDER_MK1_PORTRAIT" Atlas="ATLAS_HONKAI_ANTI_ENTROPY" Index="0"/>
+        <!-- 工业时代机甲单位图标（复用末日机甲 XP2 图集，col=3 row=4 Index=35） -->
+        <Row Name="ICON_UNIT_HOH_TITAN_MK1" Atlas="ATLAS_GDR_UNITS" Index="35"/>
+        <Row Name="ICON_UNIT_HOH_TITAN_MK1_PORTRAIT" Atlas="ATLAS_GDR_PORTRAITS" Index="35"/>
+        <Row Name="ICON_ETHNIC_UNIT_HOH_TITAN_MK1_PORTRAIT" Atlas="ATLAS_GDR_PORTRAITS" Index="35"/>
+        <Row Name="ICON_UNIT_HOH_THUNDER_MK1" Atlas="ATLAS_GDR_UNITS" Index="35"/>
+        <Row Name="ICON_UNIT_HOH_THUNDER_MK1_PORTRAIT" Atlas="ATLAS_GDR_PORTRAITS" Index="35"/>
+        <Row Name="ICON_ETHNIC_UNIT_HOH_THUNDER_MK1_PORTRAIT" Atlas="ATLAS_GDR_PORTRAITS" Index="35"/>
         <Row Name="ICON_UNIT_HOH_VALKYRIE_MK4" Atlas="ATLAS_HOH_VALKYRIE" Index="0"/>
         <Row Name="ICON_UNIT_HOH_VALKYRIE_MK4_PORTRAIT" Atlas="ATLAS_HOH_VALKYRIE_PORTRAIT" Index="0"/>
         <Row Name="ICON_ETHNIC_UNIT_HOH_VALKYRIE_MK4_PORTRAIT" Atlas="ATLAS_HOH_VALKYRIE_PORTRAIT" Index="0"/>
