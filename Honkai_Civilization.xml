@@ -737,6 +737,7 @@
         <Row RequirementId="REQ_HOH_ADJACENT_TO_HOLY_SITE" RequirementType="REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES"/>
         <Row RequirementId="REQ_HOH_ADJACENT_TO_SCHICKSAL_BRANCH" RequirementType="REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES"/>
         <Row RequirementId="REQ_HOH_CITY_HAS_SCHICKSAL_BRANCH" RequirementType="REQUIREMENT_CITY_HAS_DISTRICT"/>
+        <Row RequirementId="REQ_HOH_UNIT_IN_OWNER_TERRITORY" RequirementType="REQUIREMENT_UNIT_IN_OWNER_TERRITORY"/>
     </Requirements>
     
     <RequirementArguments>
@@ -748,7 +749,6 @@
         <Row RequirementId="REQ_HOH_ADJACENT_TO_HOLY_SITE" Name="DistrictType" Value="DISTRICT_HOLY_SITE"/>
         <Row RequirementId="REQ_HOH_ADJACENT_TO_SCHICKSAL_BRANCH" Name="DistrictType" Value="DISTRICT_SCHICKSAL_BRANCH"/>
         <Row RequirementId="REQ_HOH_CITY_HAS_SCHICKSAL_BRANCH" Name="DistrictType" Value="DISTRICT_SCHICKSAL_BRANCH"/>
-        <Row RequirementId="REQ_HOH_UNIT_IN_OWNER_TERRITORY" RequirementType="REQUIREMENT_UNIT_IN_OWNER_TERRITORY"/>
     </RequirementArguments>
 
     <BuildingModifiers>
