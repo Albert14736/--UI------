@@ -667,7 +667,6 @@
         <Row BuildingType="BUILDING_HOH_ATONEMENT_COURT" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" PointsPerTurn="1"/>
         <Row BuildingType="BUILDING_HOH_PREMODERN_RUINS_EXCAVATION" GreatPersonClassType="GREAT_PERSON_CLASS_SCIENTIST" PointsPerTurn="1"/>
         <Row BuildingType="BUILDING_HOH_STIGMATA_ALCHEMY_CHAMBER" GreatPersonClassType="GREAT_PERSON_CLASS_SCIENTIST" PointsPerTurn="1"/>
-        <Row BuildingType="BUILDING_HOH_PREMODERN_RUINS_EXCAVATION" Name="LOC_BUILDING_HOH_PREMODERN_RUINS_EXCAVATION_NAME" Description="LOC_BUILDING_HOH_PREMODERN_RUINS_EXCAVATION_DESC" PrereqDistrict="DISTRICT_HIDDEN_RESEARCH" PrereqCivic="CIVIC_SHADOW_BASIC_ISOLATION" Cost="90" Maintenance="1" AdvisorType="ADVISOR_TECHNOLOGY" CitizenSlots="1" MustPurchase="false" PurchaseYield="YIELD_GOLD"/>
         <Row BuildingType="BUILDING_HOH_HONKAI_SMELTER" GreatPersonClassType="GREAT_PERSON_CLASS_SCIENTIST" PointsPerTurn="1"/>
     </Building_GreatPersonPoints>
 
