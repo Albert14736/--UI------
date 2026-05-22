@@ -330,7 +330,9 @@
 		</Element>
 		<Element>
 			<ConsumerName text="Units"/>
-			<ArtDefDependencyPaths/>
+			<ArtDefDependencyPaths>
+				<Element text="ArtDefs/units_hoh_mecha.artdef"/>
+			</ArtDefDependencyPaths>
 			<LibraryDependencies>
 				<Element text="Unit"/>
 				<Element text="VFX"/>
