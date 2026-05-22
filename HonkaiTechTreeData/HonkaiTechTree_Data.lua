@@ -108,7 +108,7 @@ function GetHonkaiTechTreeData()
 			Column = 2,
 			ShadowCivic = "CIVIC_SHADOW_WEAPON_PROTOTYPE",
 			Unlocks = {
-				{ Type = "UNIT", ID = "UNIT_HOH_VALKYRIE_MK1" }
+				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_WEAPON_PROTOTYPE_EFFECT_TOOLTIP" }
 			}
 		},
 		{

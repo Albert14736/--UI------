@@ -762,8 +762,7 @@
              Frequency="6"
              Clumped="false"
              RevealedEra="3"
-             PrereqCivic="CIVIC_SHADOW_SOULLIQUOR_SMELTING"
-             Icon="ICON_RESOURCE_HOH_FLUID_ALLOY"/>
+             PrereqCivic="CIVIC_SHADOW_SOULLIQUOR_SMELTING"/>
     </Resources>
 
     <!-- 流体合金：有效地形（沙漠/平原/草原 × 平地+丘陵，共6种） -->
