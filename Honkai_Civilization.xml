@@ -258,6 +258,8 @@
 
         <Row ModifierId="MOD_HOH_STIGMATA_GENE_HOUSING" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING"/>
         <Row ModifierId="MOD_HOH_STIGMATA_GENE_FOOD" ModifierType="MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE" SubjectRequirementSetId="REQSET_HOH_DISTRICT_IS_CITY_CENTER"/>
+        <Row ModifierId="MOD_HOH_STIGMATA_GENE_HOUSING_NEG" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING"/>
+        <Row ModifierId="MOD_HOH_STIGMATA_GENE_FOOD_NEG" ModifierType="MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE" SubjectRequirementSetId="REQSET_HOH_DISTRICT_IS_CITY_CENTER"/>
     </Modifiers>
 
     <ModifierArguments>
@@ -328,6 +330,9 @@
         <Row ModifierId="MOD_HOH_STIGMATA_GENE_HOUSING" Name="Amount" Value="1"/>
         <Row ModifierId="MOD_HOH_STIGMATA_GENE_FOOD" Name="YieldType" Value="YIELD_FOOD"/>
         <Row ModifierId="MOD_HOH_STIGMATA_GENE_FOOD" Name="Amount" Value="1"/>
+        <Row ModifierId="MOD_HOH_STIGMATA_GENE_HOUSING_NEG" Name="Amount" Value="-1"/>
+        <Row ModifierId="MOD_HOH_STIGMATA_GENE_FOOD_NEG" Name="YieldType" Value="YIELD_FOOD"/>
+        <Row ModifierId="MOD_HOH_STIGMATA_GENE_FOOD_NEG" Name="Amount" Value="-1"/>
     </ModifierArguments>
 
     <ModifierStrings>

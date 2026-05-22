@@ -1164,7 +1164,7 @@ function OnPlayerTurnStarted(playerID)
     pPlayer:SetProperty("HONKAI_ENERGY_CAPACITY", energyCap)
     pPlayer:SetProperty("HONKAI_ENERGY_YIELD", energyBreakdown.TotalYield)
 
-    -- 3. 圣痕谱系解剖学：每2专家 +1住房 +1食物（增量式 AttachModifierByID）
+    -- 3. 圣痕谱系解剖学：每2专家 +1住房 +1食物（正负 Modifier 对冲，支持可增可减）
     if IsHonkaiTechUnlocked(playerID, "HONKAI_TECH_STIGMATA_GENE_COMPLETION") then
         local totalSpec = 0
         for _, pCity in pPlayer:GetCities():Members() do
@@ -1172,11 +1172,19 @@ function OnPlayerTurnStarted(playerID)
         end
         local newBonus = math.floor(totalSpec / 2)
         local oldBonus = pPlayer:GetProperty("STIGMATA_GENE_BONUS") or 0
-        for _ = 1, math.max(0, newBonus - oldBonus) do
-            pPlayer:AttachModifierByID("MOD_HOH_STIGMATA_GENE_HOUSING")
-            pPlayer:AttachModifierByID("MOD_HOH_STIGMATA_GENE_FOOD")
+        local delta = newBonus - oldBonus
+        if delta > 0 then
+            for _ = 1, delta do
+                pPlayer:AttachModifierByID("MOD_HOH_STIGMATA_GENE_HOUSING")
+                pPlayer:AttachModifierByID("MOD_HOH_STIGMATA_GENE_FOOD")
+            end
+        elseif delta < 0 then
+            for _ = 1, -delta do
+                pPlayer:AttachModifierByID("MOD_HOH_STIGMATA_GENE_HOUSING_NEG")
+                pPlayer:AttachModifierByID("MOD_HOH_STIGMATA_GENE_FOOD_NEG")
+            end
         end
-        if newBonus > oldBonus then
+        if delta ~= 0 then
             pPlayer:SetProperty("STIGMATA_GENE_BONUS", newBonus)
         end
     end
