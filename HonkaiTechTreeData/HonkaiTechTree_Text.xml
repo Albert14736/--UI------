@@ -261,6 +261,11 @@
         <Replace Tag="LOC_POLICY_HOH_VALK_CHARGE_NAME" Language="en_US"><Text>Valkyrie Charge</Text></Replace>
         <Replace Tag="LOC_POLICY_HOH_VALK_PHALANX_NAME" Language="en_US"><Text>Valkyrie Phalanx</Text></Replace>
         <Replace Tag="LOC_POLICY_HOH_CLERGY_PRIVILEGE_NAME" Language="en_US"><Text>Clergy Privilege</Text></Replace>
+        <!-- 灰蛇单位文本 -->
+        <Replace Tag="LOC_UNIT_HOH_GRAY_SERPENT_NAME" Language="zh_Hans_CN"><Text>灰蛇暗影特工</Text></Replace>
+        <Replace Tag="LOC_UNIT_HOH_GRAY_SERPENT_DESC" Language="zh_Hans_CN"><Text>世界蛇组织麾下的精英渗透者。以崩坏感应元素改造神经系统，执行渗透、破坏与情报窃取任务。代替原版间谍单位。</Text></Replace>
+        <Replace Tag="LOC_UNIT_HOH_GRAY_SERPENT_NAME" Language="en_US"><Text>Gray Serpent Agent</Text></Replace>
+        <Replace Tag="LOC_UNIT_HOH_GRAY_SERPENT_DESC" Language="en_US"><Text>Elite infiltrator of the World Serpent organization. Replaces the standard Spy unit for Honkai civilization.</Text></Replace>
         <!-- Renaissance EN -->
         <Replace Tag="LOC_HONKAI_TECH_IMAGINARY_INTERFERENCE_THEORY_NAME" Language="en_US"><Text>Imaginary Interference Theory</Text></Replace>
         <Replace Tag="LOC_HONKAI_TECH_FISSION_REACTOR_NAME" Language="en_US"><Text>Honkai Energy Dynamics</Text></Replace>

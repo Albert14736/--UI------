@@ -53,6 +53,15 @@
         <File>UnitTextures/nvwushen_38.dds</File>
         <File>UnitTextures/nvwushen_32.dds</File>
         <File>UnitTextures/nvwushen_22.dds</File>
+        <File>UnitTextures/huishe_22.dds</File>
+        <File>UnitTextures/huishe_32.dds</File>
+        <File>UnitTextures/huishe_38.dds</File>
+        <File>UnitTextures/huishe_50.dds</File>
+        <File>UnitTextures/huishe_70.dds</File>
+        <File>UnitTextures/huishe_80.dds</File>
+        <File>UnitTextures/huishe_95.dds</File>
+        <File>UnitTextures/huishe_200.dds</File>
+        <File>UnitTextures/huishe_256.dds</File>
         <File>ResourceAndText_Textures/benghuaineng_256.dds</File>
         <File>ResourceAndText_Textures/benghuainengjiejing_256.dds</File>
         <File>ResourceAndText_Textures/benghuainengyanjiudian_256.dds</File>
@@ -112,6 +121,15 @@
         <File>ResourceAndText_Textures/liutihejin_50.dds</File>
         <File>ResourceAndText_Textures/liutihejin_64.dds</File>
         <File>UnitTextures/nvwushen_22.dds</File>
+        <File>UnitTextures/huishe_22.dds</File>
+        <File>UnitTextures/huishe_32.dds</File>
+        <File>UnitTextures/huishe_38.dds</File>
+        <File>UnitTextures/huishe_50.dds</File>
+        <File>UnitTextures/huishe_70.dds</File>
+        <File>UnitTextures/huishe_80.dds</File>
+        <File>UnitTextures/huishe_95.dds</File>
+        <File>UnitTextures/huishe_200.dds</File>
+        <File>UnitTextures/huishe_256.dds</File>
         <File>UnitTextures/nvwushen_32.dds</File>
         <File>UnitTextures/nvwushen_38.dds</File>
         <File>UnitTextures/nvwushen_50.dds</File>
@@ -193,6 +211,15 @@
     <File>ResourceAndText_Textures/liutihejin_50.dds</File>
     <File>ResourceAndText_Textures/liutihejin_64.dds</File>
     <File>UnitTextures/nvwushen_22.dds</File>
+    <File>UnitTextures/huishe_22.dds</File>
+    <File>UnitTextures/huishe_32.dds</File>
+    <File>UnitTextures/huishe_38.dds</File>
+    <File>UnitTextures/huishe_50.dds</File>
+    <File>UnitTextures/huishe_70.dds</File>
+    <File>UnitTextures/huishe_80.dds</File>
+    <File>UnitTextures/huishe_95.dds</File>
+    <File>UnitTextures/huishe_200.dds</File>
+    <File>UnitTextures/huishe_256.dds</File>
     <File>UnitTextures/nvwushen_32.dds</File>
     <File>UnitTextures/nvwushen_38.dds</File>
     <File>UnitTextures/nvwushen_50.dds</File>

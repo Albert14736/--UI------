@@ -106,6 +106,7 @@
         <Row Type="UNIT_HOH_VALKYRIE_MK3" Kind="KIND_UNIT"/>
         <Row Type="ABILITY_HOH_SEE_THROUGH_FEATURES" Kind="KIND_ABILITY"/>
 
+        <Row Type="UNIT_HOH_GRAY_SERPENT" Kind="KIND_UNIT"/>
     </Types>
 
     <DynamicModifiers>
@@ -925,6 +926,7 @@
         <Row UnitType="UNIT_HOH_VALKYRIE_MK2" BaseMoves="2" Cost="160" ZoneOfControl="true" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" PromotionClass="PROMOTION_CLASS_HOH_VALKYRIE" AdvisorType="ADVISOR_CONQUEST" Name="LOC_UNIT_HONKAI_VALKYRIE_MK2_NAME" Description="LOC_UNIT_HONKAI_VALKYRIE_MK2_DESC" PurchaseYield="YIELD_GOLD" Combat="45" BaseSightRange="2" BuildCharges="3" Maintenance="2" TraitType="TRAIT_CIVILIZATION_HONKAI" PrereqCivic="CIVIC_SHADOW_GOD_SLAYER_ARMOR_PROTOTYPE"/>
         <Row UnitType="UNIT_HOH_VALKYRIE_MK3" BaseMoves="2" Cost="220" ZoneOfControl="true" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" PromotionClass="PROMOTION_CLASS_HOH_VALKYRIE" AdvisorType="ADVISOR_CONQUEST" Name="LOC_UNIT_HONKAI_VALKYRIE_MK3_NAME" Description="LOC_UNIT_HONKAI_VALKYRIE_MK3_DESC" PurchaseYield="YIELD_GOLD" Combat="55" BaseSightRange="2" BuildCharges="3" Maintenance="3" TraitType="TRAIT_CIVILIZATION_HONKAI" PrereqCivic="CIVIC_SHADOW_GOD_SLAYER_ARMOR_DEPLOYMENT"/>
 
+        <Row UnitType="UNIT_HOH_GRAY_SERPENT" Cost="225" Maintenance="4" BaseMoves="1" BaseSightRange="3" ZoneOfControl="false" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_CIVILIAN" PromotionClass="PROMOTION_CLASS_SPY" AdvisorType="ADVISOR_TECHNOLOGY" Name="LOC_UNIT_HOH_GRAY_SERPENT_NAME" Description="LOC_UNIT_HOH_GRAY_SERPENT_DESC" CanCapture="false" CostProgressionModel="COST_PROGRESSION_PREVIOUS_COPIES" CostProgressionParam1="75" Spy="true" TeamVisibility="true" NumRandomChoices="3" TraitType="TRAIT_CIVILIZATION_HONKAI"/>
     </Units>
 
     <UnitUpgrades>
@@ -932,6 +934,11 @@
         <Row Unit="UNIT_HOH_VALKYRIE_MK2" UpgradeUnit="UNIT_HOH_VALKYRIE_MK3"/>
 
     </UnitUpgrades>
+
+    <UnitReplaces>
+        <Row CivUniqueUnitType="UNIT_HOH_GRAY_SERPENT" ReplacesUnitType="UNIT_SPY"/>
+    </UnitReplaces>
+
 
     <Units_XP2>
         <Row UnitType="UNIT_HOH_VALKYRIE_MK3" ResourceMaintenanceType="RESOURCE_HOH_FLUID_ALLOY" ResourceMaintenanceAmount="1"/>
