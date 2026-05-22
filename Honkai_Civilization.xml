@@ -154,6 +154,126 @@
         <Row Civic="CIVIC_SHADOW_SCHICKSAL_ARMED_FORMATION" PrereqCivic="CIVIC_HOH_LOCK"/>
     </CivicPrereqs>
 
+
+    <Modifiers>
+        <Row ModifierId="MOD_HOH_HQ_GRANT_ENVOY" ModifierType="MODIFIER_PLAYER_GRANT_INFLUENCE_TOKEN" RunOnce="true" Permanent="true" OwnerRequirementSetId="REQSET_HOH_ADJACENT_TO_CITY_CENTER"/>
+        <Row ModifierId="HOH_VALK_DEFEND_RANGED_BONUS" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_HOH_DEFEND_RANGED"/>
+        <Row ModifierId="HOH_VALK_VS_MELEE_RANGED_BONUS" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_HOH_VS_MELEE_RANGED"/>
+        <Row ModifierId="HOH_VALK_HARASS_NEGATIVE_COMBAT" ModifierType="MODIFIER_ALL_UNITS_ATTACH_MODIFIER" SubjectRequirementSetId="HARASS_REQUIREMENTS"/>
+        <Row ModifierId="HOH_VALK_HARASS_NEGATIVE_COMBAT_MODIFIER" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
+        <Row ModifierId="HOH_VALK_CITY_ATTACK_BONUS" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_HOH_VS_DISTRICT"/>
+        <Row ModifierId="HOH_VALK_EXTRA_ATTACK" ModifierType="MODIFIER_UNIT_ADJUST_NUM_ATTACKS"/>
+        <Row ModifierId="MOD_HOH_EXTRA_MOVEMENT" ModifierType="MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_F_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_E_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_D_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_C_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_B_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_A_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_S_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
+        <Row ModifierId="MOD_HOH_SANGUINE_VALKYRIE_COMBAT" ModifierType="MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_HOH_UNIT_IS_VALKYRIE"/>
+        <Row ModifierId="MOD_HOH_ATONEMENT_SYSTEM_FAITH_KILLS" ModifierType="MODIFIER_PLAYER_UNITS_ADJUST_POST_COMBAT_YIELD"/>
+        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_GRANT_ABILITY" ModifierType="MODIFIER_PLAYER_UNITS_GRANT_ABILITY" SubjectRequirementSetId="REQSET_HOH_UNIT_IS_VALKYRIE"/>
+        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_NO_WOUNDED_PENALTY" ModifierType="MODIFIER_PLAYER_UNIT_ADJUST_NO_REDUCTION_DAMAGE" SubjectRequirementSetId="REQSET_HOH_ADJACENT_TO_HOLY_SITE_OR_BRANCH"/>
+        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_FAITH_BUY_WALLS" ModifierType="MODIFIER_HOH_PLAYER_CITIES_ENABLE_SPECIFIC_BUILDING_FAITH_PURCHASE"/>
+        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_FAITH_BUY_CASTLE" ModifierType="MODIFIER_HOH_PLAYER_CITIES_ENABLE_SPECIFIC_BUILDING_FAITH_PURCHASE"/>
+        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_FAITH_BUY_STAR_FORT" ModifierType="MODIFIER_HOH_PLAYER_CITIES_ENABLE_SPECIFIC_BUILDING_FAITH_PURCHASE"/>
+        <Row ModifierId="MOD_HOH_KNIGHT_OATH_WALLS_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
+        <Row ModifierId="MOD_HOH_KNIGHT_OATH_CASTLE_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
+        <Row ModifierId="MOD_HOH_KNIGHT_OATH_STAR_FORT_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
+
+        <!-- 远古科技Modifiers -->
+        <Row ModifierId="MOD_HOH_OMEN_FAITH" ModifierType="MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE" SubjectRequirementSetId="REQSET_HOH_DISTRICT_IS_CITY_CENTER"/>
+        <Row ModifierId="MOD_HOH_PATHOLOGY_AMENITY" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_POLICY_AMENITY"/>
+        <Row ModifierId="MOD_HOH_TACTICS_BARB_COMBAT" ModifierType="MODIFIER_PLAYER_UNITS_ADJUST_BARBARIAN_COMBAT"/>
+        <Row ModifierId="MOD_HOH_CLERGY_PROPHET_POINTS" ModifierType="MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS"/>
+        <Row ModifierId="MOD_HOH_CLERGY_HOLY_SITE_PRODUCTION" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION"/>
+        <Row ModifierId="MOD_HOH_CATHEDRAL_GRANT_VALKYRIE" ModifierType="MODIFIER_SINGLE_CITY_GRANT_UNIT_IN_CITY" RunOnce="true" Permanent="true"/>
+        <Row ModifierId="MOD_HOH_NUN_FORMATION_DISCOUNT" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PURCHASE_COST"/>
+        <Row ModifierId="MOD_HOH_IS_NUN_FORMATION_FAITH_PURCHASE" ModifierType="MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE"/>
+        <Row ModifierId="MOD_HOH_ISOLATION_HOUSING" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING"/>
+        <!-- 中世纪科技Modifiers -->
+        <Row ModifierId="MOD_HOH_RESISTANCE_BARRIER_DEFENSE" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_CITY_DEFENSE"/>
+        <Row ModifierId="MOD_HOH_RESISTANCE_BARRIER_AMENITY" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_POLICY_AMENITY"/>
+        <Row ModifierId="MOD_HOH_CLERGY_PRIVILEGE_HOUSING" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING" SubjectRequirementSetId="REQSET_HOH_CITY_HAS_SCHICKSAL_BRANCH"/>
+        <Row ModifierId="MOD_HOH_CLERGY_PRIVILEGE_AMENITY" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_POLICY_AMENITY" SubjectRequirementSetId="REQSET_HOH_CITY_HAS_SCHICKSAL_BRANCH"/>
+        <Row ModifierId="MOD_HOH_CLERGY_PRIVILEGE_LOYALTY" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_LOYALTY_PER_TURN" SubjectRequirementSetId="REQSET_HOH_CITY_HAS_SCHICKSAL_BRANCH"/>
+        <Row ModifierId="MOD_HOH_COMMAND_CENTER_VALKYRIE_COMBAT" ModifierType="MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_HOH_UNIT_IS_VALKYRIE"/>
+    </Modifiers>
+
+    <ModifierArguments>
+        <Row ModifierId="MOD_HOH_HQ_GRANT_ENVOY" Name="Amount" Value="1"/>
+        <Row ModifierId="HOH_VALK_DEFEND_RANGED_BONUS" Name="Amount" Value="10"/>
+        <Row ModifierId="HOH_VALK_VS_MELEE_RANGED_BONUS" Name="Amount" Value="7"/>
+        <Row ModifierId="HOH_VALK_HARASS_NEGATIVE_COMBAT" Name="ModifierId" Value="HOH_VALK_HARASS_NEGATIVE_COMBAT_MODIFIER"/>
+        <Row ModifierId="HOH_VALK_HARASS_NEGATIVE_COMBAT_MODIFIER" Name="Amount" Value="-4"/>
+        <Row ModifierId="HOH_VALK_CITY_ATTACK_BONUS" Name="Amount" Value="10"/>
+        <Row ModifierId="HOH_VALK_EXTRA_ATTACK" Name="Amount" Value="1"/>
+        <Row ModifierId="MOD_HOH_EXTRA_MOVEMENT" Name="Amount" Value="1"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_F_COMBAT" Name="Amount" Value="0"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_E_COMBAT" Name="Amount" Value="1"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_D_COMBAT" Name="Amount" Value="2"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_C_COMBAT" Name="Amount" Value="3"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_B_COMBAT" Name="Amount" Value="5"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_A_COMBAT" Name="Amount" Value="8"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_S_COMBAT" Name="Amount" Value="12"/>
+        <Row ModifierId="MOD_HOH_SANGUINE_VALKYRIE_COMBAT" Name="Amount" Value="4"/>
+        <Row ModifierId="MOD_HOH_ATONEMENT_SYSTEM_FAITH_KILLS" Name="YieldType" Value="YIELD_FAITH"/>
+        <Row ModifierId="MOD_HOH_ATONEMENT_SYSTEM_FAITH_KILLS" Name="PercentDefeatedStrength" Value="100"/>
+        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_GRANT_ABILITY" Name="AbilityType" Value="ABILITY_HOH_SCHICKSAL_DOCTRINE"/>
+        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_NO_WOUNDED_PENALTY" Name="NoReduction" Value="true"/>
+        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_FAITH_BUY_WALLS" Name="BuildingType" Value="BUILDING_WALLS"/>
+        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_FAITH_BUY_CASTLE" Name="BuildingType" Value="BUILDING_CASTLE"/>
+        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_FAITH_BUY_STAR_FORT" Name="BuildingType" Value="BUILDING_STAR_FORT"/>
+        <Row ModifierId="MOD_HOH_KNIGHT_OATH_WALLS_COMBAT" Name="Amount" Value="2"/>
+        <Row ModifierId="MOD_HOH_KNIGHT_OATH_CASTLE_COMBAT" Name="Amount" Value="4"/>
+        <Row ModifierId="MOD_HOH_KNIGHT_OATH_STAR_FORT_COMBAT" Name="Amount" Value="6"/>
+
+        <!-- 远古科技Modifiers -->
+        <Row ModifierId="MOD_HOH_OMEN_FAITH" Name="YieldType" Value="YIELD_FAITH"/>
+        <Row ModifierId="MOD_HOH_OMEN_FAITH" Name="Amount" Value="1"/>
+        <Row ModifierId="MOD_HOH_PATHOLOGY_AMENITY" Name="Amount" Value="1"/>
+        <Row ModifierId="MOD_HOH_TACTICS_BARB_COMBAT" Name="Amount" Value="10"/>
+        <Row ModifierId="MOD_HOH_CLERGY_PROPHET_POINTS" Name="GreatPersonClassType" Value="GREAT_PERSON_CLASS_PROPHET"/>
+        <Row ModifierId="MOD_HOH_CLERGY_PROPHET_POINTS" Name="Amount" Value="2"/>
+        <Row ModifierId="MOD_HOH_CLERGY_HOLY_SITE_PRODUCTION" Name="DistrictType" Value="DISTRICT_SCHICKSAL_BRANCH"/>
+        <Row ModifierId="MOD_HOH_CLERGY_HOLY_SITE_PRODUCTION" Name="Amount" Value="25"/>
+        <Row ModifierId="MOD_HOH_CATHEDRAL_GRANT_VALKYRIE" Name="UnitType" Value="UNIT_HOH_VALKYRIE_MK1"/>
+        <Row ModifierId="MOD_HOH_CATHEDRAL_GRANT_VALKYRIE" Name="Amount" Value="1"/>
+        <Row ModifierId="MOD_HOH_NUN_FORMATION_DISCOUNT" Name="UnitType" Value="UNIT_HOH_VALKYRIE_MK1"/>
+        <Row ModifierId="MOD_HOH_NUN_FORMATION_DISCOUNT" Name="Amount" Value="10"/>
+        <Row ModifierId="MOD_HOH_IS_NUN_FORMATION_FAITH_PURCHASE" Name="Tag" Value="CLASS_HOH_VALKYRIE"/>
+        <Row ModifierId="MOD_HOH_ISOLATION_HOUSING" Name="Amount" Value="1"/>
+        <!-- 中世纪 Modifiers 参数 -->
+        <Row ModifierId="MOD_HOH_RESISTANCE_BARRIER_DEFENSE" Name="Amount" Value="5"/>
+        <Row ModifierId="MOD_HOH_RESISTANCE_BARRIER_AMENITY" Name="Amount" Value="1"/>
+        <Row ModifierId="MOD_HOH_CLERGY_PRIVILEGE_HOUSING" Name="Amount" Value="2"/>
+        <Row ModifierId="MOD_HOH_CLERGY_PRIVILEGE_AMENITY" Name="Amount" Value="1"/>
+        <Row ModifierId="MOD_HOH_CLERGY_PRIVILEGE_LOYALTY" Name="Amount" Value="2"/>
+        <Row ModifierId="MOD_HOH_COMMAND_CENTER_VALKYRIE_COMBAT" Name="Amount" Value="1"/>
+    </ModifierArguments>
+
+    <ModifierStrings>
+        <Row ModifierId="HOH_VALK_DEFEND_RANGED_BONUS" Context="Preview" Text="LOC_MOD_HOH_VALK_1L_RANGED_DEF_PREVIEW"/>
+        <Row ModifierId="HOH_VALK_VS_MELEE_RANGED_BONUS" Context="Preview" Text="LOC_MOD_HOH_VALK_1R_VS_MELEE_RANGED_PREVIEW"/>
+        <Row ModifierId="HOH_VALK_HARASS_NEGATIVE_COMBAT_MODIFIER" Context="Preview" Text="LOC_MOD_HOH_VALK_2L_HARASS_PREVIEW"/>
+        <Row ModifierId="HOH_VALK_CITY_ATTACK_BONUS" Context="Preview" Text="LOC_MOD_HOH_VALK_3R_CITY_ATTACK_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_F_COMBAT" Context="Preview" Text="LOC_MOD_HOH_VALKYRIE_RANK_F_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_E_COMBAT" Context="Preview" Text="LOC_MOD_HOH_VALKYRIE_RANK_E_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_D_COMBAT" Context="Preview" Text="LOC_MOD_HOH_VALKYRIE_RANK_D_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_C_COMBAT" Context="Preview" Text="LOC_MOD_HOH_VALKYRIE_RANK_C_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_B_COMBAT" Context="Preview" Text="LOC_MOD_HOH_VALKYRIE_RANK_B_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_A_COMBAT" Context="Preview" Text="LOC_MOD_HOH_VALKYRIE_RANK_A_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_S_COMBAT" Context="Preview" Text="LOC_MOD_HOH_VALKYRIE_RANK_S_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_SANGUINE_VALKYRIE_COMBAT" Context="Preview" Text="LOC_MOD_HOH_SANGUINE_VALKYRIE_COMBAT_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_ATONEMENT_SYSTEM_FAITH_KILLS" Context="Preview" Text="LOC_MOD_HOH_ATONEMENT_SYSTEM_FAITH_KILLS_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_NO_WOUNDED_PENALTY" Context="Preview" Text="LOC_MOD_HOH_SCHICKSAL_DOCTRINE_NO_WOUNDED_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_KNIGHT_OATH_WALLS_COMBAT" Context="Preview" Text="LOC_MOD_HOH_KNIGHT_OATH_WALLS_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_KNIGHT_OATH_CASTLE_COMBAT" Context="Preview" Text="LOC_MOD_HOH_KNIGHT_OATH_CASTLE_PREVIEW"/>
+        <Row ModifierId="MOD_HOH_KNIGHT_OATH_STAR_FORT_COMBAT" Context="Preview" Text="LOC_MOD_HOH_KNIGHT_OATH_STAR_FORT_PREVIEW"/>
+    </ModifierStrings>
+
+
     <CivicModifiers>
         <Row CivicType="CIVIC_SHADOW_OMEN" ModifierId="MOD_HOH_OMEN_FAITH"/>
         <Row CivicType="CIVIC_SHADOW_PATHOLOGY" ModifierId="MOD_HOH_PATHOLOGY_AMENITY"/>
@@ -490,7 +610,7 @@
         <!-- 中世纪建筑 -->
         <Row BuildingType="BUILDING_HOH_STIGMATA_ALCHEMY_CHAMBER" Name="LOC_BUILDING_HOH_STIGMATA_ALCHEMY_CHAMBER_NAME" Description="LOC_BUILDING_HOH_STIGMATA_ALCHEMY_CHAMBER_DESC" PrereqDistrict="DISTRICT_HIDDEN_RESEARCH" PrereqCivic="CIVIC_SHADOW_STIGMATA_PRINCIPLE" Cost="250" Maintenance="2" AdvisorType="ADVISOR_TECHNOLOGY" CitizenSlots="1" MustPurchase="false" PurchaseYield="YIELD_GOLD"/>
         <Row BuildingType="BUILDING_HOH_HONKAI_SMELTER" Name="LOC_BUILDING_HOH_HONKAI_SMELTER_NAME" Description="LOC_BUILDING_HOH_HONKAI_SMELTER_DESC" PrereqDistrict="DISTRICT_ARMED_INDUSTRY" PrereqCivic="CIVIC_SHADOW_SOULLIQUOR_SMELTING" Cost="195" Maintenance="1" AdvisorType="ADVISOR_GENERIC" CitizenSlots="1" MustPurchase="false" PurchaseYield="YIELD_GOLD"/>
-        <Row BuildingType="BUILDING_HOH_VALKYRIE_COMMAND_CENTER" Name="LOC_BUILDING_HOH_VALKYRIE_COMMAND_CENTER_NAME" Description="LOC_BUILDING_HOH_VALKYRIE_COMMAND_CENTER_DESC" PrereqDistrict="DISTRICT_SCHICKSAL_HQ" PrereqBuilding="BUILDING_HOH_SCHICKSAL_CATHEDRAL" PrereqCivic="CIVIC_SHADOW_SCHICKSAL_ARMED_FORMATION" Cost="150" Maintenance="2" AdvisorType="ADVISOR_MILITARY" CitizenSlots="2" MustPurchase="false" PurchaseYield="YIELD_GOLD"/>
+        <Row BuildingType="BUILDING_HOH_VALKYRIE_COMMAND_CENTER" Name="LOC_BUILDING_HOH_VALKYRIE_COMMAND_CENTER_NAME" Description="LOC_BUILDING_HOH_VALKYRIE_COMMAND_CENTER_DESC" PrereqDistrict="DISTRICT_SCHICKSAL_HQ" PrereqCivic="CIVIC_SHADOW_SCHICKSAL_ARMED_FORMATION" Cost="150" Maintenance="2" AdvisorType="ADVISOR_MILITARY" CitizenSlots="2" MustPurchase="false" PurchaseYield="YIELD_GOLD"/>
     </Buildings>
 
     <BuildingReplaces>
@@ -500,6 +620,7 @@
 
     <BuildingPrereqs>
         <Row Building="BUILDING_HOH_ATONEMENT_COURT" PrereqBuilding="BUILDING_HOH_SCHICKSAL_CHAPEL"/>
+        <Row Building="BUILDING_HOH_VALKYRIE_COMMAND_CENTER" PrereqBuilding="BUILDING_HOH_SCHICKSAL_CATHEDRAL"/>
     </BuildingPrereqs>
 
     <Building_ValidTerrains>
@@ -556,125 +677,6 @@
     <Improvement_YieldChanges>
         <Row ImprovementType="IMPROVEMENT_HOH_PRAYER_ROOM" YieldType="YIELD_FAITH" YieldChange="1"/>
     </Improvement_YieldChanges>
-
-    <Modifiers>
-        <Row ModifierId="MOD_HOH_HQ_GRANT_ENVOY" ModifierType="MODIFIER_PLAYER_GRANT_INFLUENCE_TOKEN" RunOnce="true" Permanent="true" OwnerRequirementSetId="REQSET_HOH_ADJACENT_TO_CITY_CENTER"/>
-        <Row ModifierId="HOH_VALK_DEFEND_RANGED_BONUS" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_HOH_DEFEND_RANGED"/>
-        <Row ModifierId="HOH_VALK_VS_MELEE_RANGED_BONUS" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_HOH_VS_MELEE_RANGED"/>
-        <Row ModifierId="HOH_VALK_HARASS_NEGATIVE_COMBAT" ModifierType="MODIFIER_ALL_UNITS_ATTACH_MODIFIER" SubjectRequirementSetId="HARASS_REQUIREMENTS"/>
-        <Row ModifierId="HOH_VALK_HARASS_NEGATIVE_COMBAT_MODIFIER" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
-        <Row ModifierId="HOH_VALK_CITY_ATTACK_BONUS" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_HOH_VS_DISTRICT"/>
-        <Row ModifierId="HOH_VALK_EXTRA_ATTACK" ModifierType="MODIFIER_UNIT_ADJUST_NUM_ATTACKS"/>
-        <Row ModifierId="MOD_HOH_EXTRA_MOVEMENT" ModifierType="MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT"/>
-        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_F_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
-        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_E_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
-        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_D_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
-        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_C_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
-        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_B_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
-        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_A_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
-        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_S_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
-        <Row ModifierId="MOD_HOH_SANGUINE_VALKYRIE_COMBAT" ModifierType="MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_HOH_UNIT_IS_VALKYRIE"/>
-        <Row ModifierId="MOD_HOH_ATONEMENT_SYSTEM_FAITH_KILLS" ModifierType="MODIFIER_PLAYER_UNITS_ADJUST_POST_COMBAT_YIELD"/>
-        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_GRANT_ABILITY" ModifierType="MODIFIER_PLAYER_UNITS_GRANT_ABILITY" SubjectRequirementSetId="REQSET_HOH_UNIT_IS_VALKYRIE"/>
-        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_NO_WOUNDED_PENALTY" ModifierType="MODIFIER_PLAYER_UNIT_ADJUST_NO_REDUCTION_DAMAGE" SubjectRequirementSetId="REQSET_HOH_ADJACENT_TO_HOLY_SITE_OR_BRANCH"/>
-        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_FAITH_BUY_WALLS" ModifierType="MODIFIER_HOH_PLAYER_CITIES_ENABLE_SPECIFIC_BUILDING_FAITH_PURCHASE"/>
-        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_FAITH_BUY_CASTLE" ModifierType="MODIFIER_HOH_PLAYER_CITIES_ENABLE_SPECIFIC_BUILDING_FAITH_PURCHASE"/>
-        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_FAITH_BUY_STAR_FORT" ModifierType="MODIFIER_HOH_PLAYER_CITIES_ENABLE_SPECIFIC_BUILDING_FAITH_PURCHASE"/>
-        <Row ModifierId="MOD_HOH_KNIGHT_OATH_WALLS_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
-        <Row ModifierId="MOD_HOH_KNIGHT_OATH_CASTLE_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
-        <Row ModifierId="MOD_HOH_KNIGHT_OATH_STAR_FORT_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH"/>
-
-        <!-- 远古科技Modifiers -->
-        <Row ModifierId="MOD_HOH_OMEN_FAITH" ModifierType="MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE" SubjectRequirementSetId="REQSET_HOH_DISTRICT_IS_CITY_CENTER"/>
-        <Row ModifierId="MOD_HOH_PATHOLOGY_AMENITY" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_POLICY_AMENITY"/>
-        <Row ModifierId="MOD_HOH_TACTICS_BARB_COMBAT" ModifierType="MODIFIER_PLAYER_UNITS_ADJUST_BARBARIAN_COMBAT"/>
-        <Row ModifierId="MOD_HOH_CLERGY_PROPHET_POINTS" ModifierType="MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS"/>
-        <Row ModifierId="MOD_HOH_CLERGY_HOLY_SITE_PRODUCTION" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION"/>
-        <Row ModifierId="MOD_HOH_CATHEDRAL_GRANT_VALKYRIE" ModifierType="MODIFIER_SINGLE_CITY_GRANT_UNIT_IN_CITY" RunOnce="true" Permanent="true"/>
-        <Row ModifierId="MOD_HOH_NUN_FORMATION_DISCOUNT" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PURCHASE_COST"/>
-        <Row ModifierId="MOD_HOH_IS_NUN_FORMATION_FAITH_PURCHASE" ModifierType="MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE"/>
-        <Row ModifierId="MOD_HOH_ISOLATION_HOUSING" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING"/>
-        <!-- 中世纪科技Modifiers -->
-        <Row ModifierId="MOD_HOH_RESISTANCE_BARRIER_DEFENSE" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_CITY_DEFENSE"/>
-        <Row ModifierId="MOD_HOH_RESISTANCE_BARRIER_AMENITY" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_POLICY_AMENITY"/>
-        <Row ModifierId="MOD_HOH_CLERGY_PRIVILEGE_HOUSING" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING" SubjectRequirementSetId="REQSET_HOH_CITY_HAS_SCHICKSAL_BRANCH"/>
-        <Row ModifierId="MOD_HOH_CLERGY_PRIVILEGE_AMENITY" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_POLICY_AMENITY" SubjectRequirementSetId="REQSET_HOH_CITY_HAS_SCHICKSAL_BRANCH"/>
-        <Row ModifierId="MOD_HOH_CLERGY_PRIVILEGE_LOYALTY" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_LOYALTY_PER_TURN" SubjectRequirementSetId="REQSET_HOH_CITY_HAS_SCHICKSAL_BRANCH"/>
-        <Row ModifierId="MOD_HOH_COMMAND_CENTER_VALKYRIE_COMBAT" ModifierType="MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_HOH_UNIT_IS_VALKYRIE"/>
-    </Modifiers>
-
-    <ModifierArguments>
-        <Row ModifierId="MOD_HOH_HQ_GRANT_ENVOY" Name="Amount" Value="1"/>
-        <Row ModifierId="HOH_VALK_DEFEND_RANGED_BONUS" Name="Amount" Value="10"/>
-        <Row ModifierId="HOH_VALK_VS_MELEE_RANGED_BONUS" Name="Amount" Value="7"/>
-        <Row ModifierId="HOH_VALK_HARASS_NEGATIVE_COMBAT" Name="ModifierId" Value="HOH_VALK_HARASS_NEGATIVE_COMBAT_MODIFIER"/>
-        <Row ModifierId="HOH_VALK_HARASS_NEGATIVE_COMBAT_MODIFIER" Name="Amount" Value="-4"/>
-        <Row ModifierId="HOH_VALK_CITY_ATTACK_BONUS" Name="Amount" Value="10"/>
-        <Row ModifierId="HOH_VALK_EXTRA_ATTACK" Name="Amount" Value="1"/>
-        <Row ModifierId="MOD_HOH_EXTRA_MOVEMENT" Name="Amount" Value="1"/>
-        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_F_COMBAT" Name="Amount" Value="0"/>
-        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_E_COMBAT" Name="Amount" Value="1"/>
-        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_D_COMBAT" Name="Amount" Value="2"/>
-        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_C_COMBAT" Name="Amount" Value="3"/>
-        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_B_COMBAT" Name="Amount" Value="5"/>
-        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_A_COMBAT" Name="Amount" Value="8"/>
-        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_S_COMBAT" Name="Amount" Value="12"/>
-        <Row ModifierId="MOD_HOH_SANGUINE_VALKYRIE_COMBAT" Name="Amount" Value="4"/>
-        <Row ModifierId="MOD_HOH_ATONEMENT_SYSTEM_FAITH_KILLS" Name="YieldType" Value="YIELD_FAITH"/>
-        <Row ModifierId="MOD_HOH_ATONEMENT_SYSTEM_FAITH_KILLS" Name="PercentDefeatedStrength" Value="100"/>
-        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_GRANT_ABILITY" Name="AbilityType" Value="ABILITY_HOH_SCHICKSAL_DOCTRINE"/>
-        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_NO_WOUNDED_PENALTY" Name="NoReduction" Value="true"/>
-        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_FAITH_BUY_WALLS" Name="BuildingType" Value="BUILDING_WALLS"/>
-        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_FAITH_BUY_CASTLE" Name="BuildingType" Value="BUILDING_CASTLE"/>
-        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_FAITH_BUY_STAR_FORT" Name="BuildingType" Value="BUILDING_STAR_FORT"/>
-        <Row ModifierId="MOD_HOH_KNIGHT_OATH_WALLS_COMBAT" Name="Amount" Value="2"/>
-        <Row ModifierId="MOD_HOH_KNIGHT_OATH_CASTLE_COMBAT" Name="Amount" Value="4"/>
-        <Row ModifierId="MOD_HOH_KNIGHT_OATH_STAR_FORT_COMBAT" Name="Amount" Value="6"/>
-
-        <!-- 远古科技Modifiers -->
-        <Row ModifierId="MOD_HOH_OMEN_FAITH" Name="YieldType" Value="YIELD_FAITH"/>
-        <Row ModifierId="MOD_HOH_OMEN_FAITH" Name="Amount" Value="1"/>
-        <Row ModifierId="MOD_HOH_PATHOLOGY_AMENITY" Name="Amount" Value="1"/>
-        <Row ModifierId="MOD_HOH_TACTICS_BARB_COMBAT" Name="Amount" Value="10"/>
-        <Row ModifierId="MOD_HOH_CLERGY_PROPHET_POINTS" Name="GreatPersonClassType" Value="GREAT_PERSON_CLASS_PROPHET"/>
-        <Row ModifierId="MOD_HOH_CLERGY_PROPHET_POINTS" Name="Amount" Value="2"/>
-        <Row ModifierId="MOD_HOH_CLERGY_HOLY_SITE_PRODUCTION" Name="DistrictType" Value="DISTRICT_SCHICKSAL_BRANCH"/>
-        <Row ModifierId="MOD_HOH_CLERGY_HOLY_SITE_PRODUCTION" Name="Amount" Value="25"/>
-        <Row ModifierId="MOD_HOH_CATHEDRAL_GRANT_VALKYRIE" Name="UnitType" Value="UNIT_HOH_VALKYRIE_MK1"/>
-        <Row ModifierId="MOD_HOH_CATHEDRAL_GRANT_VALKYRIE" Name="Amount" Value="1"/>
-        <Row ModifierId="MOD_HOH_NUN_FORMATION_DISCOUNT" Name="UnitType" Value="UNIT_HOH_VALKYRIE_MK1"/>
-        <Row ModifierId="MOD_HOH_NUN_FORMATION_DISCOUNT" Name="Amount" Value="10"/>
-        <Row ModifierId="MOD_HOH_IS_NUN_FORMATION_FAITH_PURCHASE" Name="Tag" Value="CLASS_HOH_VALKYRIE"/>
-        <Row ModifierId="MOD_HOH_ISOLATION_HOUSING" Name="Amount" Value="1"/>
-        <!-- 中世纪 Modifiers 参数 -->
-        <Row ModifierId="MOD_HOH_RESISTANCE_BARRIER_DEFENSE" Name="Amount" Value="5"/>
-        <Row ModifierId="MOD_HOH_RESISTANCE_BARRIER_AMENITY" Name="Amount" Value="1"/>
-        <Row ModifierId="MOD_HOH_CLERGY_PRIVILEGE_HOUSING" Name="Amount" Value="2"/>
-        <Row ModifierId="MOD_HOH_CLERGY_PRIVILEGE_AMENITY" Name="Amount" Value="1"/>
-        <Row ModifierId="MOD_HOH_CLERGY_PRIVILEGE_LOYALTY" Name="Amount" Value="2"/>
-        <Row ModifierId="MOD_HOH_COMMAND_CENTER_VALKYRIE_COMBAT" Name="Amount" Value="1"/>
-    </ModifierArguments>
-
-    <ModifierStrings>
-        <Row ModifierId="HOH_VALK_DEFEND_RANGED_BONUS" Context="Preview" Text="LOC_MOD_HOH_VALK_1L_RANGED_DEF_PREVIEW"/>
-        <Row ModifierId="HOH_VALK_VS_MELEE_RANGED_BONUS" Context="Preview" Text="LOC_MOD_HOH_VALK_1R_VS_MELEE_RANGED_PREVIEW"/>
-        <Row ModifierId="HOH_VALK_HARASS_NEGATIVE_COMBAT_MODIFIER" Context="Preview" Text="LOC_MOD_HOH_VALK_2L_HARASS_PREVIEW"/>
-        <Row ModifierId="HOH_VALK_CITY_ATTACK_BONUS" Context="Preview" Text="LOC_MOD_HOH_VALK_3R_CITY_ATTACK_PREVIEW"/>
-        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_F_COMBAT" Context="Preview" Text="LOC_MOD_HOH_VALKYRIE_RANK_F_PREVIEW"/>
-        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_E_COMBAT" Context="Preview" Text="LOC_MOD_HOH_VALKYRIE_RANK_E_PREVIEW"/>
-        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_D_COMBAT" Context="Preview" Text="LOC_MOD_HOH_VALKYRIE_RANK_D_PREVIEW"/>
-        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_C_COMBAT" Context="Preview" Text="LOC_MOD_HOH_VALKYRIE_RANK_C_PREVIEW"/>
-        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_B_COMBAT" Context="Preview" Text="LOC_MOD_HOH_VALKYRIE_RANK_B_PREVIEW"/>
-        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_A_COMBAT" Context="Preview" Text="LOC_MOD_HOH_VALKYRIE_RANK_A_PREVIEW"/>
-        <Row ModifierId="MOD_HOH_VALKYRIE_RANK_S_COMBAT" Context="Preview" Text="LOC_MOD_HOH_VALKYRIE_RANK_S_PREVIEW"/>
-        <Row ModifierId="MOD_HOH_SANGUINE_VALKYRIE_COMBAT" Context="Preview" Text="LOC_MOD_HOH_SANGUINE_VALKYRIE_COMBAT_PREVIEW"/>
-        <Row ModifierId="MOD_HOH_ATONEMENT_SYSTEM_FAITH_KILLS" Context="Preview" Text="LOC_MOD_HOH_ATONEMENT_SYSTEM_FAITH_KILLS_PREVIEW"/>
-        <Row ModifierId="MOD_HOH_SCHICKSAL_DOCTRINE_NO_WOUNDED_PENALTY" Context="Preview" Text="LOC_MOD_HOH_SCHICKSAL_DOCTRINE_NO_WOUNDED_PREVIEW"/>
-        <Row ModifierId="MOD_HOH_KNIGHT_OATH_WALLS_COMBAT" Context="Preview" Text="LOC_MOD_HOH_KNIGHT_OATH_WALLS_PREVIEW"/>
-        <Row ModifierId="MOD_HOH_KNIGHT_OATH_CASTLE_COMBAT" Context="Preview" Text="LOC_MOD_HOH_KNIGHT_OATH_CASTLE_PREVIEW"/>
-        <Row ModifierId="MOD_HOH_KNIGHT_OATH_STAR_FORT_COMBAT" Context="Preview" Text="LOC_MOD_HOH_KNIGHT_OATH_STAR_FORT_PREVIEW"/>
-    </ModifierStrings>
-
     <RequirementSets>
         <Row RequirementSetId="REQSET_HOH_ADJACENT_TO_CITY_CENTER" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
         <Row RequirementSetId="REQSET_HOH_DEFEND_RANGED" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
