@@ -108,7 +108,7 @@ function GetHonkaiTechTreeData()
 			Column = 2,
 			ShadowCivic = "CIVIC_SHADOW_WEAPON_PROTOTYPE",
 			Unlocks = {
-				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_WEAPON_PROTOTYPE_EFFECT_TOOLTIP" }
+				{ Type = "UNIT", ID = "UNIT_HOH_VALKYRIE_MK1" }
 			}
 		},
 		{
@@ -317,7 +317,6 @@ function GetHonkaiTechTreeData()
 			ShadowCivic = "CIVIC_SHADOW_GREAT_ERUPTION_HYPOTHESIS",
 			Unlocks = {
 				{ Type = "POLICY", ID = "POLICY_HOH_RESISTANCE_BARRIER", Icon = "ICON_POLICY_MANEUVER" },
-				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_GREAT_ERUPTION_HYPOTHESIS_EFFECT_TOOLTIP" },
 			}
 		},
 		{
@@ -346,7 +345,6 @@ function GetHonkaiTechTreeData()
 			ShadowCivic = "CIVIC_SHADOW_CLERGY_PRIVILEGE",
 			Unlocks = {
 				{ Type = "POLICY", ID = "POLICY_HOH_CLERGY_PRIVILEGE", Icon = "ICON_POLICY_CITIES_FIRST" },
-				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_CLERGY_PRIVILEGE_EFFECT_TOOLTIP" },
 			}
 		},
 		-- 第 2 列 (Cost: 390)
@@ -390,7 +388,7 @@ function GetHonkaiTechTreeData()
 			Column = 2,
 			ShadowCivic = "CIVIC_SHADOW_GOD_SLAYER_ARMOR_PROTOTYPE",
 			Unlocks = {
-				{ Type = "GENERIC", ID = "LOC_HONKAI_TECH_GOD_SLAYER_ARMOR_PROTOTYPE_EFFECT_TOOLTIP" },
+				{ Type = "UNIT", ID = "UNIT_HOH_VALKYRIE_MK2" }
 			}
 		},
 		{
