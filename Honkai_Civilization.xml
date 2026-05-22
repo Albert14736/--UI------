@@ -709,6 +709,7 @@
         <Row RequirementSetId="REQSET_HOH_UNIT_IS_VALKYRIE" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
         <Row RequirementSetId="REQSET_HOH_ADJACENT_TO_HOLY_SITE_OR_BRANCH" RequirementSetType="REQUIREMENTSET_TEST_ANY"/>
         <Row RequirementSetId="REQSET_HOH_CITY_HAS_SCHICKSAL_BRANCH" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+        <Row RequirementSetId="REQSET_HOH_UNIT_IN_OWNER_TERRITORY" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
     </RequirementSets>
     
     <RequirementSetRequirements>
@@ -725,7 +726,6 @@
         <Row RequirementSetId="REQSET_HOH_ADJACENT_TO_HOLY_SITE_OR_BRANCH" RequirementId="REQ_HOH_ADJACENT_TO_SCHICKSAL_BRANCH"/>
         <Row RequirementSetId="REQSET_HOH_CITY_HAS_SCHICKSAL_BRANCH" RequirementId="REQ_HOH_CITY_HAS_SCHICKSAL_BRANCH"/>
         <Row RequirementSetId="REQSET_HOH_UNIT_IN_OWNER_TERRITORY" RequirementId="REQ_HOH_UNIT_IN_OWNER_TERRITORY"/>
-        <Row RequirementSetId="REQSET_HOH_UNIT_IN_OWNER_TERRITORY" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
     </RequirementSetRequirements>
     
     <Requirements>
